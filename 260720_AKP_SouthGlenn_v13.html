@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SouthGlenn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<style>
+:root{
+  /* d'strict 컬러 시스템 · 26 Arte Kids Park (arte_kids_park · light · vivid) */
+  /* Meta */
+  --m1:#FFFFFF; --m2:#111111; --m3:#353535; --m4:#D6D6D6;
+  /* Core C1-C8 */
+  --c1:#0065B2; --c2:#FFDF00; --c3:#E41E2E; --c4:#00913B;
+  --c5:#FF8000; --c6:#ED92B9; --c7:#62B5E5; --c8:#00A7B5;
+  /* Data 5-step (gray scale) */
+  --d1:#353535; --d2:#5E5E5E; --d3:#888888; --d4:#B0B0B0; --d5:#D6D6D6;
+  /* Semantic */
+  --ok:#00B050; --ok-bg:#E6F1ED;
+  --mid:#F59E0B; --mid-bg:#FEF3C7;
+  --no:#FF0000; --no-bg:#FCEBEB;
+  --info:#185FA5; --info-bg:#E6F1FB;
+  --link:#185FA5; --link-visited:#534AB7;
+  /* 문서 적용 별칭 */
+  --paper:#FFFFFF; --paper2:#F5F5F5; --card:#FFFFFF;
+  --ink:#111111; --ink2:#353535; --ink3:#888888;
+  --rule:#D6D6D6; --rule2:#E8E8E8;
+  --pine:#0065B2; --pine-soft:#E6F1FB;
+  --accent:#FF8000;
+  --adventure:#E41E2E; --quest:#0065B2; --experience:#00A7B5;
+  --social:#FF8000; --public:#62B5E5; --boh:#353535;
+  --sans:"LINESeedKR","LINE Seed KR","LINE Seed Sans KR","Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  --disp:"LINESeedKR","LINE Seed KR","LINE Seed Sans KR","Pretendard Variable",Pretendard,sans-serif;
+  --mono:"LINESeedKR","LINE Seed KR","LINE Seed Sans KR","Pretendard Variable",Pretendard,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.shell{display:flex;align-items:flex-start}
+.side{position:sticky;top:0;height:100vh;width:250px;flex:none;border-right:1px solid var(--rule);background:var(--paper2);padding:24px 20px;display:flex;flex-direction:column;gap:14px}
+.brand{font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:-.025em;line-height:1.1}
+.brand small{display:block;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ink3);letter-spacing:.08em;margin-top:8px;line-height:1.6}
+nav{display:flex;flex-direction:column;gap:1px;overflow-y:auto}
+nav a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:var(--ink2);font-size:13px;padding:6px 9px;border-radius:6px;border-left:2px solid transparent}
+nav a span{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+nav a:hover{background:#EFEFEF;color:var(--ink)}
+nav a.on{background:var(--pine-soft);color:var(--pine);font-weight:600;border-left-color:var(--pine)}
+nav a:focus-visible{outline:2px solid var(--pine);outline-offset:1px}
+.side footer{margin-top:auto;font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--rule2);padding-top:12px}
+
+main{flex:1;min-width:0;padding:0 46px 120px}
+section{padding-top:56px}
+h2{font-family:var(--disp);font-size:27px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--ink3);text-transform:uppercase;margin:0 0 8px}
+.lede{color:var(--ink2);max-width:66ch;margin:0 0 26px;font-size:14.5px}
+h3{font-size:15px;font-weight:700;margin:32px 0 12px;letter-spacing:-.01em;padding-bottom:8px;border-bottom:1px solid var(--rule2)}
+h3 i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--pine);margin-right:9px;font-weight:700}
+p{margin:0 0 12px}
+
+.hero{padding:52px 0 8px;border-bottom:1px solid var(--rule)}
+.hero .logo{display:block;height:clamp(38px,4.4vw,54px);width:auto;margin:14px 0 10px}
+.hero h1{font-family:var(--disp);font-size:clamp(20px,2.2vw,27px);line-height:1.1;letter-spacing:-.02em;font-weight:700;margin:0 0 6px;color:var(--ink2)}
+.hero .eyebrow{margin:0 0 16px}
+.hero p{color:var(--ink2);max-width:none}
+.keyrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:30px 0 0}
+.key{background:var(--paper2);padding:15px 17px}
+.key b{display:block;font-family:var(--disp);font-size:23px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.key b em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--ink2);margin-left:3px}
+.key span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;color:var(--ink3);text-transform:uppercase;margin-top:7px}
+
+.card{background:var(--card);border:1px solid var(--rule2);border-radius:3px;padding:20px 22px;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card h4{margin:0 0 8px;font-size:13.5px;font-weight:700}
+.card p{font-size:13.5px;color:var(--ink2);margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--rule)}
+td{padding:10px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.7}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.rnum{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#FAFAFA}
+tbody tr.focus td{background:#EFF5FB;font-weight:600}
+tbody tr.total td{background:#E6F1FB;font-weight:700;border-top:1px solid var(--rule)}
+td.item{font-weight:600;white-space:nowrap}
+.tcap{font-size:11.5px;color:var(--ink3);margin:6px 0 0;font-family:var(--mono);line-height:1.6}
+
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.06em;padding:2px 7px;border-radius:2px;color:#fff;white-space:nowrap}
+.t-adventure{background:var(--adventure)}.t-quest{background:var(--quest)}.t-experience{background:var(--experience)}
+.t-social{background:var(--social)}.t-public{background:var(--public)}.t-boh{background:var(--boh)}
+.st{display:inline-block;font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:var(--ok);border-color:#B9DEC7;background:#E6F1ED}
+.st-mid{color:var(--mid);border-color:#F5DFA0;background:#FEF3C7}
+.st-no{color:var(--no);border-color:#F5C2C2;background:#FEF3C7}
+
+.src{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9.5px;letter-spacing:.02em;color:var(--pine);background:var(--pine-soft);border:1px solid #BBD6EE;border-radius:2px;padding:3px 7px;cursor:pointer;white-space:nowrap;margin-top:5px;line-height:1.4}
+.src:hover{background:#D5E6F7}
+.src:before{content:"";width:8px;height:9px;border:1px solid currentColor;border-radius:1px;flex:none}
+.src.na{color:var(--ink3);background:#F2F2F2;border-color:var(--rule)}
+.src.na:hover{background:#E8E8E8}
+.src:focus-visible{outline:2px solid var(--pine);outline-offset:1px}
+.srcrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.srcrow .src{margin-top:0}
+sup.fn{font-family:var(--mono);font-size:9px;color:var(--pine);font-weight:700;padding-left:1px}
+
+.modal{position:fixed;inset:0;background:rgba(17,17,17,.60);display:flex;align-items:center;justify-content:center;padding:24px;z-index:60}
+.modal[hidden]{display:none}
+.mbox{background:var(--paper2);border:1px solid var(--rule);border-radius:4px;max-width:640px;width:100%;max-height:88vh;overflow:auto;padding:22px 24px;position:relative}
+.mbox h5{font-family:var(--disp);font-size:17px;font-weight:800;letter-spacing:-.02em;margin:0 0 4px;padding-right:70px}
+.mbox .mkind{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin:0 0 14px}
+.mclose{position:absolute;top:18px;right:20px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;background:none;border:1px solid var(--rule);border-radius:2px;padding:5px 10px;color:var(--ink2);cursor:pointer}
+.mclose:hover{background:#EDEDED}
+#mfig{background:var(--card);border:1px solid var(--rule2);padding:14px;margin-bottom:14px}
+#mfig svg{width:100%;height:auto;display:block}
+.mcite{font-family:var(--mono);font-size:11px;color:var(--ink2);border-left:2px solid var(--pine);padding:8px 12px;background:var(--pine-soft);word-break:break-all;line-height:1.6}
+.mcite b{display:block;color:var(--ink);font-size:11.5px}
+.mnote{font-size:12.5px;color:var(--ink3);margin:10px 0 0}
+
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:13px 16px;font-size:13px;color:#10466E;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
+.warn{border-left:2px solid var(--no);background:#FEF3C7;padding:13px 16px;font-size:13px;color:#7C4A03;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
+.danger{border-left:3px solid var(--no);background:var(--no-bg);padding:13px 16px;font-size:13px;color:#8A0A0A;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
+.danger .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px;color:var(--no)}
+.hero{border-top:4px solid var(--accent)}
+.eyebrow{color:var(--accent);font-weight:700}
+a{color:var(--link)}
+a:visited{color:var(--link-visited)}
+.side footer .dst{height:13px;width:auto;display:block;margin-bottom:6px}
+.note .lab,.warn .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.note .lab{color:var(--ok)}.warn .lab{color:var(--no)}
+
+.verdict{border:1px solid var(--rule);border-left:3px solid var(--pine);background:var(--paper2);border-radius:3px;padding:16px 18px;margin:0 0 20px}
+.verdict b{display:block;font-family:var(--disp);font-size:16px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.verdict span{color:var(--ink2);font-size:13.5px;line-height:1.75}
+
+.kpi{background:var(--card);border:1px solid var(--rule2);border-radius:3px;padding:15px 16px}
+.kpi .v{font-family:var(--disp);font-size:25px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.kpi .k{font-size:12px;color:var(--ink2);margin-top:6px;line-height:1.55}
+.kpi .s{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:6px;line-height:1.5}
+
+.risks{list-style:none;padding:0;margin:8px 0 0}
+.risks li{border-bottom:1px solid var(--rule2);padding:12px 0;font-size:13.5px}
+.risks li:last-child{border-bottom:0}
+.risks b{display:block;margin-bottom:3px}
+.risks span{color:var(--ink2);line-height:1.75}
+
+.sources{margin-top:26px;padding-top:14px;border-top:1px solid var(--rule)}
+.sources h5{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin:0 0 8px;font-weight:500}
+.sources ol{margin:0;padding-left:20px;font-size:12px;color:var(--ink2);line-height:1.7}
+.sources li{margin-bottom:4px}
+
+.planwrap{background:var(--paper2);border:1px solid var(--rule);padding:18px;display:grid;grid-template-columns:1fr 232px;gap:18px;align-items:start}
+.planbox{position:relative;min-width:0}
+svg.plan,svg.cmap,svg.chart{width:100%;height:auto;display:block}
+.zone{cursor:pointer;transition:opacity .18s ease}
+.plan.dimmed .zone{opacity:.16}
+.plan.dimmed .zone.active{opacity:.95}
+.zone:hover{opacity:.95!important}
+.wall{fill:none;stroke:var(--ink);stroke-width:3.2}
+.gridline{stroke:var(--rule);stroke-width:.7;stroke-dasharray:5 5}
+.col{fill:var(--ink)}
+.dim{font-family:var(--mono);font-size:9px;fill:var(--ink2)}
+.dimline{stroke:var(--ink3);stroke-width:.7}
+.zlabel{font-family:var(--disp);font-size:12px;font-weight:800;fill:#fff;pointer-events:none}
+.zsub{font-family:var(--mono);font-size:8px;fill:rgba(255,255,255,.82);pointer-events:none}
+.pin circle{fill:var(--paper2);stroke:var(--ink);stroke-width:1.4}
+.pin text{font-family:var(--mono);font-size:9px;font-weight:700;fill:var(--ink);text-anchor:middle}
+.pin.tall circle{fill:var(--ink);stroke:var(--ink)}
+.pin.tall text{fill:var(--paper2)}
+.hatch{fill:url(#hatch);stroke:var(--ink3);stroke-width:.8}
+.entry{fill:none;stroke:var(--ok);stroke-width:4}
+
+.legend{border:1px solid var(--rule2);background:var(--card);padding:14px}
+.legend h5{margin:0 0 10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:500}
+.lgi{display:flex;gap:9px;align-items:flex-start;width:100%;text-align:left;background:none;border:none;padding:7px 6px;border-radius:4px;cursor:pointer;font-family:inherit;font-size:12.5px;color:var(--ink)}
+.lgi:hover{background:#F2F2F2}
+.lgi.on{background:#E6F1FB;font-weight:600}
+.lgi:focus-visible{outline:2px solid var(--pine);outline-offset:1px}
+.sw{width:11px;height:11px;border-radius:2px;flex:none;margin-top:4px}
+.lgi em{display:block;font-style:normal;font-family:var(--mono);font-size:10px;color:var(--ink3);font-weight:400}
+.legend .reset{margin-top:8px;width:100%;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:none;border:1px solid var(--rule);padding:7px;border-radius:3px;color:var(--ink2);cursor:pointer}
+.legend .reset:hover{background:#F2F2F2}
+#zoneinfo,#cinfo{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule2);font-size:12.5px;color:var(--ink2);min-height:60px;line-height:1.7}
+#zoneinfo strong,#cinfo strong{display:block;color:var(--ink);font-size:13px;margin-bottom:4px}
+
+.ring{fill:none;stroke:var(--rule);stroke-width:1;stroke-dasharray:4 5}
+.band{fill:none;stroke:var(--rule);stroke-width:1;stroke-dasharray:2 6}
+.ringlabel{font-family:var(--mono);font-size:9.5px;fill:var(--ink3)}
+.road{stroke:var(--rule);stroke-width:1.4}
+.roadlabel{font-family:var(--mono);font-size:9px;fill:var(--ink3);letter-spacing:.06em}
+.site circle{fill:var(--pine);stroke:var(--paper2);stroke-width:2.5}
+.site text{font-family:var(--disp);font-size:13px;font-weight:800;fill:var(--pine)}
+.cp{cursor:pointer}
+.cp circle{stroke:var(--paper2);stroke-width:1.6}
+.cp text{font-family:var(--mono);font-size:9.5px;fill:var(--ink2)}
+.cmap.dimmed .cp{opacity:.18}
+.cmap.dimmed .cp.active{opacity:1}
+
+.chartbox{background:var(--card);border:1px solid var(--rule2);border-radius:3px;padding:18px 20px}
+.chartbox .ch-h{font-size:13.5px;font-weight:700;margin:0 0 2px}
+.chartbox .ch-s{font-family:var(--mono);font-size:10.5px;color:var(--ink3);margin:0 0 14px}
+.kpi.c1{border-top:3px solid var(--c1)} .kpi.c1 .v{color:var(--c1)}
+.kpi.c5{border-top:3px solid var(--c5)} .kpi.c5 .v{color:var(--c5)}
+.kpi.c3{border-top:3px solid var(--c3)} .kpi.c3 .v{color:var(--c3)}
+.kpi.c8{border-top:3px solid var(--c8)} .kpi.c8 .v{color:var(--c8)}
+.clabel{font-family:var(--mono);font-size:11px;fill:var(--ink)}
+.cval{font-family:var(--mono);font-size:11px;font-weight:700;fill:var(--ink)}
+.csub{font-family:var(--mono);font-size:9.5px;fill:var(--ink3)}
+.axis{stroke:var(--rule);stroke-width:1}
+.bench{stroke:var(--ink3);stroke-width:1;stroke-dasharray:4 4}
+
+.bar{height:9px;background:var(--rule2);border-radius:2px;overflow:hidden;min-width:70px;display:block}
+.bar i{display:block;height:100%}
+
+.chk{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--rule2)}
+.chk:last-child{border-bottom:none}
+.chk input{margin-top:4px;width:15px;height:15px;accent-color:var(--pine);flex:none;cursor:pointer}
+.chk label{font-size:13.5px;cursor:pointer}
+.chk label em{display:block;font-style:normal;font-size:12px;color:var(--ink3);margin-top:2px}
+.chk .who{font-family:var(--mono);font-size:10px;color:var(--ink3);border:1px solid var(--rule);padding:1px 6px;border-radius:2px;margin-left:auto;flex:none;white-space:nowrap}
+
+.tl{border-left:2px solid var(--rule);margin-left:8px;padding-left:22px}
+.tl .step{position:relative;padding-bottom:22px}
+.tl .step:before{content:"";position:absolute;left:-29px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--card);border:2px solid var(--pine)}
+.tl .step b{display:block;font-size:14px;font-weight:700}
+.tl .step .dur{font-family:var(--mono);font-size:10.5px;color:var(--pine);letter-spacing:.06em;margin:2px 0 5px}
+.tl .step p{font-size:13px;color:var(--ink2);margin:0;line-height:1.75}
+
+.cmt-form{display:grid;grid-template-columns:170px 1fr;gap:8px;margin-bottom:14px}
+.cmt-form select,.cmt-form textarea,.cmt-form input{font-family:inherit;font-size:13px;border:1px solid var(--rule);background:var(--card);padding:9px 10px;border-radius:3px;color:var(--ink)}
+.cmt-form textarea{grid-column:1/-1;resize:vertical;min-height:78px}
+.cmt-form .row{grid-column:1/-1;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button.act{font-family:var(--sans);font-size:13px;font-weight:600;background:var(--pine);color:#fff;border:none;padding:10px 20px;border-radius:3px;cursor:pointer}
+button.act:hover{background:#004E8A}
+button.ghost{background:none;border:1px solid var(--rule);color:var(--ink2)}
+button.ghost:hover{background:#F2F2F2}
+button:focus-visible{outline:2px solid var(--pine);outline-offset:2px}
+.savebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;color:var(--ink3);border-top:1px solid var(--rule2);margin-top:14px;padding-top:12px}
+.savebar .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none}
+.savebar .dot.off{background:var(--mid)}
+.cmt{border-left:2px solid var(--rule);padding:10px 0 10px 14px;margin-bottom:10px}
+.cmt .meta{font-family:var(--mono);font-size:10.5px;color:var(--ink3);display:flex;gap:9px;align-items:center;margin-bottom:4px;flex-wrap:wrap}
+.cmt .meta b{color:var(--ink);font-weight:700}
+.cmt .body{font-size:13.5px;white-space:pre-wrap;line-height:1.75}
+.cmt .del{margin-left:auto;background:none;border:none;color:var(--ink3);cursor:pointer;font-size:11px;font-family:var(--mono)}
+.cmt .del:hover{color:var(--no)}
+.empty{font-size:13px;color:var(--ink3);border:1px dashed var(--rule);padding:18px;text-align:center;border-radius:3px}
+
+@media (max-width:1000px){
+  .shell{display:block}
+  .side{position:static;height:auto;width:auto;border-right:none;border-bottom:1px solid var(--rule);flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:14px 18px}
+  .side footer{display:none}
+  .brand small{display:none}
+  nav{flex-direction:row;gap:2px}
+  nav a span{display:none}
+  nav a{white-space:nowrap;border-left:none;border-bottom:2px solid transparent}
+  nav a.on{border-left:none;border-bottom-color:var(--pine)}
+  main{padding:0 20px 90px}
+  .keyrow{grid-template-columns:1fr 1fr}
+  .grid2,.grid3,.grid4{grid-template-columns:1fr}
+  .planwrap{grid-template-columns:1fr}
+  .cmt-form{grid-template-columns:1fr}
+  .tablewrap{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<aside class="side">
+  <div class="brand">SouthGlenn
+    <small>B8-846 · 30,512 SF<br>Centennial, Colorado<br>v13 · 2026.07.20</small>
+  </div>
+  <nav id="nav">
+    <a href="#s1" class="on"><span>01</span>개요</a>
+    <a href="#s2"><span>02</span>센터 · 입지</a>
+    <a href="#s3"><span>03</span>공간 실측</a>
+    <a href="#s4"><span>04</span>구조 · 층고</a>
+    <a href="#s5"><span>05</span>출입 · 파사드</a>
+    <a href="#s6"><span>06</span>존 배분 계획</a>
+    <a href="#s7"><span>07</span>어트랙션 15종</a>
+    <a href="#s8"><span>08</span>설비 검토</a>
+    <a href="#s9"><span>09</span>임대 조건</a>
+    <a href="#s10"><span>10</span>수요 예측 · 캐파</a>
+    <a href="#s11"><span>11</span>지역 분석</a>
+    <a href="#s12"><span>12</span>키즈 직접 경쟁</a>
+    <a href="#s13"><span>13</span>인허가 일정</a>
+    <a href="#s14"><span>14</span>확인 필요 항목</a>
+    <a href="#s15"><span>15</span>다음 단계</a>
+    <a href="#s16"><span>16</span>팀 코멘트</a>
+  </nav>
+  <footer>
+    <img class="dst" src="data:image/png;base64,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" alt="d'strict"><br>
+    LOD 2023.07.24 / 2023.09.05<br>
+    CEN0800595 (2008)<br>
+    시장성 리포트 2026.07.20
+    <button class="src" data-s="palette" style="margin-top:6px">COLOR · 26 Arte Kids Park</button>
+  </footer>
+</aside>
+
+<main>
+
+<!-- 01 ------------------------------------------------------------ -->
+<section id="s1" class="hero">
+  <img class="logo" src="data:image/png;base64,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" alt="Arte Kids Park">
+  <h1>SouthGlenn</h1>
+  <p class="eyebrow">The Streets at SouthGlenn · Centennial, Colorado 80122</p>
+  <p>아르떼 키즈파크로 전환하기 위한 공간 검토입니다.<br>
+    LOD 도면 2매에서 확정 가능한 사항과, 현장 실사 없이는 확정할 수 없는 사항을 구분해 정리했습니다.<br>
+    임대 협의 조건과 내부 시장성 리포트를 함께 반영해 공간·수요·비용을 한 문서에서 대조합니다.</p>
+  <div class="keyrow">
+    <div class="key"><b>30,512<em>SF</em></b><span>Lease Area · 857.5평</span></div>
+    <div class="key"><b>5.56<em>~7.06m</em></b><span>구조체 하단고 (LOD)</span></div>
+    <div class="key"><b>44.1<em>만 명</em></b><span>안정기 연 방문 예측</span></div>
+    <div class="key"><b>5~10<em>세</em></b><span>타겟 연령</span></div>
+    <div class="key"><b>$20<em>→$22 /SF</em></b><span>Base Rent · 1–5 / 6–10년</span></div>
+    <div class="key"><b>$11.31<em>~12.23</em></b><span>NNN /SF</span></div>
+    <div class="key"><b>$50<em>/SF</em></b><span>TI 공사지원금 · 약 $1.53M</span></div>
+    <div class="key"><b>10<em>+5년</em></b><span>계약 기간 · 연장 옵션</span></div>
+  </div>
+
+  <h3><i>01</i>항목별 현황</h3>
+  <p class="lede" style="margin-bottom:14px">도면에서 읽히는 항목과 미확인 항목을 같은 표에 둡니다.<br>
+    <b>미확인 항목이 이 프로젝트의 실제 리스크</b>이므로 감추지 않고 나열합니다.<br>
+    각 항목의 근거는 오른쪽 버튼에서 확인할 수 있습니다.</p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th style="width:104px">항목</th><th>내용</th><th style="width:152px">근거</th></tr></thead>
+      <tbody>
+        <tr><td class="item">시설 상태</td><td>Streets at SouthGlenn 센터 북측 구 Best Buy 자리이며 영업 종료 후 임대 가능 상태입니다.<br>기존 storefront와 awning이 존치되어 있고 LOD에 임차인 변경 허용 조건이 명시되어 있습니다.<br>내부 마감·설비의 원상 철거 여부는 미확인입니다.</td>
+          <td><span class="st st-ok">도면·스펙</span><button class="src" data-s="s1p2">LOD 072423 · p.2</button></td></tr>
+        <tr><td class="item">면적</td><td>30,512 SF = 2,834.6 m² = 857.5평입니다.<br>단층 대형 박스 공간이며, ANSI/BOMA Z65.5-2020 기준 임대면적입니다.<br>도면에 "모든 치수는 임차인이 현장 검증"이라는 단서가 붙어 있습니다.</td>
+          <td><span class="st st-ok">도면</span><button class="src" data-s="s1p1">LOD 072423 · p.1</button></td></tr>
+        <tr><td class="item">층 구성</td><td>단층이며 메자닌·중2층이 없습니다.<br>앵커급 통 공간이라 별도 구조 분할 없이 활용 가능하고 센터 내 시인성이 우수합니다.<br>다만 수직 적층 이득이 없으므로 콘텐츠 밀도는 어트랙션 구조물 높이로만 확보됩니다.</td>
+          <td><span class="st st-ok">도면</span><button class="src" data-s="s1p1">LOD 072423 · p.1</button></td></tr>
+        <tr><td class="item">천장</td><td>마감 천장 없는 노출 구조입니다.<br>LOD 09/05 개정판 기준 BO Steel 최저 ±18'-3"(5.56m) ~ BO Deck 최고 ±23'-2"(7.06m)입니다.<br>구역별 편차는 1.5m입니다.</td>
+          <td><span class="st st-ok">도면</span><button class="src" data-s="s2p1">LOD 090523 · p.1</button></td></tr>
+        <tr><td class="item">컬럼 그리드</td><td>32'-3" / 32'-0" (E-W) × 40'-0" / 37'-4" (N-S)입니다.<br>내부 기둥 15본, 약 9.8m × 12.2m 무주 스팬입니다.</td>
+          <td><span class="st st-ok">도면</span><button class="src" data-s="s2g">LOD 090523 · p.1</button></td></tr>
+        <tr><td class="item">BOH 화장실</td><td>LOD에 위생시설 표기가 없습니다.<br>2008년 인허가 세트의 기구 수량은 판매시설 기준이므로 키즈파크 재실 인원 기준 재산정이 필요합니다.<br>유아용 기구·수유실·기저귀 교환대는 신설 전제입니다.</td>
+          <td><span class="st st-no">미확인</span><button class="src na" data-s="s3">CEN0800595 · 확인 요</button></td></tr>
+        <tr><td class="item">BOH 기타</td><td>하역구·창고·직원실·기계실 위치가 모두 도면에 없습니다.<br>대형 부재(네트 구조물) 반입 가능 개구부 치수가 어트랙션 사양을 좌우하므로 우선 확인 대상입니다.</td>
+          <td><span class="st st-no">미확인</span><button class="src na" data-s="none">해당 도면 없음</button></td></tr>
+        <tr><td class="item">메인 전기</td><td>인입 용량·차단기 사양·간선 경로가 미확인입니다.<br>판매시설 조명 부하 기준이라 총량은 여유가 예상되나, 미디어·프로젝션 장비의 분전반 분산 배치를 위해 실측이 필요합니다.</td>
+          <td><span class="st st-no">미확인</span><button class="src na" data-s="s3">CEN0800595 · 확인 요</button></td></tr>
+        <tr><td class="item">공조</td><td>RTU 방식으로 추정되며 2008년 설치분입니다.<br>대수·용량·잔여 수명은 미확인입니다.<br>용도 변경 시 재실 밀도가 급증해 외기도입량 기준(ASHRAE 62.1)이 완전히 달라지므로 <b>기존 용량 승계 가부가 초기 판정 항목</b>입니다.</td>
+          <td><span class="st st-mid">추정</span><button class="src na" data-s="s3">CEN0800595 · 확인 요</button></td></tr>
+        <tr><td class="item">급배수</td><td>인입 위치·관경이 미확인입니다.<br>화장실 증설과 F&amp;B 도입을 전제로 Public 존 하부에서 배관 경로를 확보해야 합니다.</td>
+          <td><span class="st st-no">미확인</span><button class="src na" data-s="s3">CEN0800595 · 확인 요</button></td></tr>
+        <tr><td class="item">그리스 트랩</td><td>판매시설 용도였으므로 <b>미설치 가능성이 높습니다.</b><br>F&amp;B 운영 시 신설이 필요하며, 위치·용량·배출 경로가 Public 존 평면을 직접 제약합니다.<br>바닥 매립형은 슬래브 파취를 수반해 임대인 승인 사항입니다.</td>
+          <td><span class="st st-no">미확인</span><button class="src na" data-s="none">해당 도면 없음</button></td></tr>
+        <tr><td class="item">센터 · 입지</td><td>Whole Foods·Regal 14관 영화관·Dick's 등 앵커 구성이 강하고, 구 Macy's 부지에 약 900세대 주거 재개발이 진행 중입니다.<br>공용 주차가 넉넉합니다.<br>→ <a href="#s2" style="color:var(--pine)">02 참조</a></td>
+          <td><span class="st st-ok">스펙시트</span><button class="src" data-s="spec">내부 스펙시트</button></td></tr>
+        <tr><td class="item">임대 조건</td><td>10년 계약(+5년 옵션), Base Rent $20/SF(1–5년) → $22/SF(6–10년), NNN $11.31~12.23/SF입니다.<br>TI $50/SF, Rent Abatement 120일 조건입니다.<br>→ <a href="#s9" style="color:var(--pine)">09 참조</a></td>
+          <td><span class="st st-mid">협의 중</span><button class="src" data-s="spec">협의 조건</button></td></tr>
+        <tr><td class="item">수요 예측</td><td>내부 시장성 리포트 기준 안정기 연 44.1만 명(범위 41.5만~47.8만), 1년차 38.8만 명입니다.<br>제주(AKJJ) 실측 계수를 보정 없이 적용한 잠재 수요입니다.<br>→ <a href="#s10" style="color:var(--pine)">10 참조</a></td>
+          <td><span class="st st-ok">내부 리포트</span><button class="src" data-s="mkt">시장성 리포트</button></td></tr>
+        <tr><td class="item">지역 분석</td><td>인구 성장·가구소득·타겟 연령 구조 3개 축이 모두 우호적입니다.<br>야외활동 문화가 강한 지역이나 실제 활동은 저강도·캐주얼형이며 1인당 빈도는 감소 추세입니다.<br>→ <a href="#s11" style="color:var(--pine)">11 참조</a></td>
+          <td><span class="st st-ok">조사</span><button class="src" data-s="web2">공개 통계 자료</button></td></tr>
+        <tr><td class="item">키즈 직접 경쟁</td><td>반경 8mi 내 키즈 시설 15개소와 광역 문화 시설 5개소를 조사했습니다.<br>30,000 SF급 프리미엄 실내 키즈 어트랙션 포맷은 조사 범위 내에 없습니다.<br>→ <a href="#s12" style="color:var(--pine)">12 참조</a></td>
+          <td><span class="st st-ok">조사</span><button class="src" data-s="web">공개 지도 데이터</button></td></tr>
+        <tr><td class="item">인허가 일정</td><td>Centennial 시 건축과 소관이며 Arapahoe 카운티가 아닙니다.<br>상업 TI 1차 도면 심사는 통상 15~20영업일이고 소방은 South Metro Fire Rescue 별도 트랙입니다.<br>누적 11~14개월로 예상합니다.<br>→ <a href="#s13" style="color:var(--pine)">13 참조</a></td>
+          <td><span class="st st-ok">조사</span><button class="src" data-s="web">공개 인허가 자료</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note"><span class="lab">층고 기준 — LOD 09/05 확정</span>
+    층고는 <b>LOD 2023.09.05 개정판의 ±18'-3" ~ ±23'-2"</b>를 기준으로 합니다.<br>
+    구역별 편차 1.5m가 조닝을 사실상 결정하며, Adventure 존을 최고 층고대에 고정하는 배치가 여기서 나옵니다.<br>
+    다만 도면 수치가 모두 ±(approximate) 표기이므로 현장 실측 검증은 유지합니다.</div>
+</section>
+
+<!-- 02 ------------------------------------------------------------ -->
+<section id="s2">
+  <p class="eyebrow">02 — Center &amp; Location</p>
+  <h2>센터 · 입지</h2>
+  <p class="lede">The Streets at SouthGlenn은 복합 쇼핑·라이프스타일 센터입니다.<br>
+    검토 대상은 센터 북측 구 Best Buy 자리이며, 앵커급 위치라 센터 내 시인성이 우수합니다.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>앵커 구성이 만드는 유입</h4>
+      <p>식료품은 Whole Foods가 핵심 앵커이고, 엔터테인먼트는 Regal SouthGlenn 14관 영화관이 있습니다.<br>
+        리테일은 Dick's, Marshalls, Ross, Old Navy, H&amp;M, Sephora, LOFT 등이 들어와 있고 카페·은행 등 생활 편의도 갖춰져 있습니다.<br>
+        인근 주민이 쇼핑과 볼일을 이 센터에서 대부분 처리하는 구조로 확인됩니다.</p>
+      <p><b>키즈파크 관점의 의미는 목적 방문이 아니어도 유입이 생긴다는 점입니다.</b><br>
+        영화관과 식료품 앵커는 가족 단위 체류 시간이 길고 방문 빈도가 높아, 인지 획득 비용을 낮춥니다.</p>
+    </div>
+    <div class="card">
+      <h4>배후 수요가 증가 중</h4>
+      <p>구 Macy's 부지는 폐점 후 약 900세대 규모 주거 재개발이 진행 중입니다.<br>
+        센터 내부에 상주 수요가 직접 추가되는 구조이며, 개장 시점과 입주 시점이 겹치면 초기 트래픽에 유리합니다.</p>
+      <p>인접 지역은 Littleton, Highlands Ranch, Greenwood Village이고 DTC(Denver Tech Center)와 가깝습니다.<br>
+        Centennial 중위소득은 약 $120K(지역 평균 $114K~$131K)이고 인구밀도는 약 3,746명/sq mi인 가족 중심 교외 상권입니다.</p>
+    </div>
+    <div class="card">
+      <h4>주차 — 검증이 필요한 강점</h4>
+      <p>공용 주차가 넉넉하다는 것이 스펙시트상 장점으로 정리되어 있습니다.<br>
+        다만 키즈파크는 <b>주말 오전~오후에 체류형 수요가 몰리는</b> 업태로, 영화관·식료품 앵커의 피크와 겹칩니다.</p>
+      <p>수요 예측 기준 피크월 일평균 1,208~1,740명을 가족 단위(대당 3.3명)로 환산하면 <b>일 366~527대</b> 규모입니다.<br>
+        공용 주차 총 대수와 앵커별 배정 조건, 피크 시간대 점유율을 임대인에게 확인해야 합니다.</p>
+    </div>
+    <div class="card">
+      <h4>센터 내 직접 경쟁 없음</h4>
+      <p>센터 및 인근에 미디어아트 기반 키즈 시설은 확인되지 않습니다.<br>
+        My Music Skool, Engineering for Kids 정도의 교육형 소규모 시설이 있으나 포맷과 체류 구조가 다릅니다.</p>
+      <p>이는 반경 8마일 독립 조사 결과와도 일치합니다.<br>
+        → <a href="#s12" style="color:var(--pine)">12 키즈 직접 경쟁 참조</a></p>
+    </div>
+  </div>
+
+  <div class="note"><span class="lab">소득 수치 정합</span>
+    스펙시트의 Centennial 중위소득 약 $120K와, 11 지역 분석의 애러파호 카운티 $97,215는 상충하지 않습니다.<br>
+    전자는 시(市) 단위, 후자는 카운티 단위로 집계 범위가 다르며, <b>Centennial 시가 카운티 평균을 크게 상회한다는 뜻</b>입니다.<br>
+    1차 상권 소득 수준은 지역 분석에서 추정한 것보다 오히려 유리하게 읽어야 합니다.</div>
+</section>
+
+<!-- 03 ------------------------------------------------------------ -->
+<section id="s3">
+  <p class="eyebrow">03 — Dimensions</p>
+  <h2>공간 실측</h2>
+  <p class="lede">LOD 도면 기준 외곽 치수와 기둥 그리드입니다.<br>
+    아래 평면에서 존을 선택하면 해당 구역만 강조됩니다.<br>
+    검은 핀은 09/05 개정판에 추가된 구조체 하단고(AFF) 실측점입니다.</p>
+
+  <div class="planwrap">
+    <div class="planbox">
+      <svg class="plan" id="plan" viewBox="0 0 940 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="B8-846 평면 및 존 배분 계획">
+        <defs>
+          <pattern id="hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="7" stroke="#888888" stroke-width="1.6"/>
+          </pattern>
+        </defs>
+        <g id="zones">
+          <polygon class="zone" data-z="adventure" fill="#E41E2E" opacity=".82" points="100,201 644,201 644,390 100,390"/>
+          <text class="zlabel" x="120" y="240">ADVENTURE</text><text class="zsub" x="120" y="256">606 m² · 183평 · 최고 층고대</text>
+          <polygon class="zone" data-z="quest" fill="#0065B2" opacity=".82" points="644,510 865,510 865,83 848,83 644,201"/>
+          <text class="zlabel" x="664" y="250">QUEST</text><text class="zsub" x="664" y="266">441 m² · 133평</text>
+          <polygon class="zone" data-z="experience" fill="#00A7B5" opacity=".82" points="340,398 644,398 644,670 340,670"/>
+          <text class="zlabel" x="360" y="430">EXPERIENCE</text><text class="zsub" x="360" y="446">480 m² · 145평</text>
+          <polygon class="zone" data-z="social" fill="#FF8000" opacity=".82" points="100,390 340,390 340,670 100,670"/>
+          <text class="zlabel" x="120" y="422">SOCIAL</text><text class="zsub" x="120" y="438">390 m² · 118평</text>
+          <polygon class="zone" data-z="public" fill="#62B5E5" opacity=".82" points="100,670 644,670 644,830 100,830"/>
+          <text class="zlabel" x="120" y="702">PUBLIC</text><text class="zsub" x="120" y="718">505 m² · 153평 · 로비 / F&amp;B / 화장실</text>
+          <polygon class="zone" data-z="boh" fill="#353535" opacity=".82" points="644,510 865,510 865,830 644,830"/>
+          <text class="zlabel" x="664" y="542">BOH</text><text class="zsub" x="664" y="558">411 m² · 124평</text>
+        </g>
+        <g class="gridline">
+          <line x1="229" y1="201" x2="229" y2="830"/><line x1="358" y1="201" x2="358" y2="830"/>
+          <line x1="487" y1="201" x2="487" y2="830"/><line x1="616" y1="201" x2="616" y2="830"/>
+          <line x1="745" y1="150" x2="745" y2="830"/>
+          <line x1="100" y1="670" x2="865" y2="670"/><line x1="100" y1="510" x2="865" y2="510"/>
+          <line x1="100" y1="350" x2="865" y2="350"/>
+        </g>
+        <g class="col">
+          <circle cx="229" cy="670" r="4"/><circle cx="358" cy="670" r="4"/><circle cx="487" cy="670" r="4"/><circle cx="616" cy="670" r="4"/><circle cx="745" cy="670" r="4"/>
+          <circle cx="229" cy="510" r="4"/><circle cx="358" cy="510" r="4"/><circle cx="487" cy="510" r="4"/><circle cx="616" cy="510" r="4"/><circle cx="745" cy="510" r="4"/>
+          <circle cx="229" cy="350" r="4"/><circle cx="358" cy="350" r="4"/><circle cx="487" cy="350" r="4"/><circle cx="616" cy="350" r="4"/><circle cx="745" cy="350" r="4"/>
+        </g>
+        <polygon class="wall" points="100,830 865,830 865,83 848,83 644,201 100,201"/>
+        <rect class="hatch" x="100" y="800" width="188" height="30"/>
+        <rect class="hatch" x="740" y="800" width="125" height="30"/>
+        <line class="entry" x1="288" y1="830" x2="476" y2="830"/>
+        <text class="dim" x="300" y="852" fill="#00B050">주출입 47'-0"</text>
+        <text class="dim" x="106" y="852">NO ENTRY</text>
+        <text class="dim" x="748" y="852">NO ENTRY</text>
+        <g>
+          <line class="dimline" x1="100" y1="178" x2="644" y2="178"/>
+          <text class="dim" x="340" y="172">162'-1" (49.4m)</text>
+          <line class="dimline" x1="100" y1="878" x2="865" y2="878"/>
+          <text class="dim" x="430" y="893">191'-4" (58.3m)</text>
+          <line class="dimline" x1="76" y1="201" x2="76" y2="830"/>
+          <text class="dim" x="16" y="520">157'-4" (48.0m)</text>
+          <line class="dimline" x1="892" y1="83" x2="892" y2="830"/>
+          <text class="dim" x="898" y="460">186'-8"</text>
+          <text class="dim" x="700" y="150">25'-8" 챔퍼</text>
+          <text class="dim" x="234" y="196">32'-3" typ</text>
+          <text class="dim" x="106" y="345">37'-4"</text>
+          <text class="dim" x="106" y="505">40'-0" typ</text>
+        </g>
+        <g id="pins">
+          <g class="pin tall" transform="translate(300,265)"><circle r="21"/><text y="-2">21'-0"</text><text y="9" style="font-size:7px;font-weight:400">JOIST</text></g>
+          <g class="pin tall" transform="translate(590,265)"><circle r="21"/><text y="-2">23'-2"</text><text y="9" style="font-size:7px;font-weight:400">DECK</text></g>
+          <g class="pin tall" transform="translate(445,420)"><circle r="21"/><text y="-2">19'-11"</text><text y="9" style="font-size:7px;font-weight:400">STEEL</text></g>
+          <g class="pin" transform="translate(445,580)"><circle r="21"/><text y="-2">18'-11"</text><text y="9" style="font-size:7px;font-weight:400">STEEL</text></g>
+          <g class="pin" transform="translate(255,600)"><circle r="21"/><text y="-2">18'-8"</text><text y="9" style="font-size:7px;font-weight:400">JOIST</text></g>
+          <g class="pin tall" transform="translate(700,600)"><circle r="21"/><text y="-2">20'-11"</text><text y="9" style="font-size:7px;font-weight:400">DECK</text></g>
+          <g class="pin" transform="translate(445,725)"><circle r="21"/><text y="-2">18'-3"</text><text y="9" style="font-size:7px;font-weight:400">STEEL</text></g>
+          <g class="pin" transform="translate(255,762)"><circle r="21"/><text y="-2">19'-3"</text><text y="9" style="font-size:7px;font-weight:400">DECK</text></g>
+          <g class="pin tall" transform="translate(700,762)"><circle r="21"/><text y="-2">21'-10"</text><text y="9" style="font-size:7px;font-weight:400">DECK</text></g>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <h5>Zone Filter</h5>
+      <button class="lgi" data-z="adventure"><span class="sw" style="background:var(--adventure)"></span><span>어드벤처<em>606 m² · 21.4%</em></span></button>
+      <button class="lgi" data-z="quest"><span class="sw" style="background:var(--quest)"></span><span>퀘스트<em>441 m² · 15.6%</em></span></button>
+      <button class="lgi" data-z="experience"><span class="sw" style="background:var(--experience)"></span><span>익스피리언스<em>480 m² · 16.9%</em></span></button>
+      <button class="lgi" data-z="social"><span class="sw" style="background:var(--social)"></span><span>소셜<em>390 m² · 13.8%</em></span></button>
+      <button class="lgi" data-z="public"><span class="sw" style="background:var(--public)"></span><span>퍼블릭<em>505 m² · 17.8%</em></span></button>
+      <button class="lgi" data-z="boh"><span class="sw" style="background:var(--boh)"></span><span>BOH<em>411 m² · 14.5%</em></span></button>
+      <button class="reset" id="resetZone">전체 보기</button>
+      <div id="zoneinfo"><strong>존을 선택하세요</strong>선택한 구역의 배치 근거와 층고 조건이 여기에 표시됩니다.</div>
+    </div>
+  </div>
+  <div class="srcrow">
+    <button class="src" data-s="s1p1">B8_846_LOD_-Tenant_072423.pdf · p.1</button>
+    <button class="src" data-s="s2p1">B8_846_LOD_-Tenant_090523.pdf · p.1</button>
+  </div>
+
+  <div class="warn"><span class="lab">도면 표기 확인 필요</span>
+    하단 면(191'-4")이 East Elevation으로, 상단 면(168'-8")이 North Elevation으로 표기되어 있으나 평면의 북측 치수는 162'-1"입니다.<br>
+    방위 표기와 168'-8" 치수의 기준선을 임대인 측에 확인해야 합니다.<br>
+    본 문서는 <b>주출입면 = 하단</b>으로 가정했습니다.</div>
+</section>
+
+<!-- 04 ------------------------------------------------------------ -->
+<section id="s4">
+  <p class="eyebrow">04 — Structure</p>
+  <h2>구조 · 층고</h2>
+  <p class="lede">2023.09.05 개정 LOD에 추가된 9개 실측점입니다.<br>
+    이 부지의 가장 중요한 설계 조건은 <b>구역별 층고 편차가 1.5m에 달한다</b>는 점입니다.<br>
+    수직형 어트랙션의 배치 자유도가 사실상 상부 밴드로 제한됩니다.</p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>위치</th><th>부재</th><th>AFF</th><th>미터</th><th>배분 존</th><th>가용 순층고(추정)</th></tr></thead>
+      <tbody>
+        <tr><td>상부 좌</td><td>BO Joists</td><td class="num">±21'-0"</td><td class="num">6.40 m</td><td><span class="tag t-adventure">Adventure</span></td><td class="num">≈5.6 m</td></tr>
+        <tr><td>상부 우</td><td>BO Deck</td><td class="num">±23'-2"</td><td class="num">7.06 m</td><td><span class="tag t-adventure">Adventure</span></td><td class="num">≈6.2 m</td></tr>
+        <tr><td>중상 중앙</td><td>BO Steel</td><td class="num">±19'-11"</td><td class="num">6.07 m</td><td><span class="tag t-experience">Experience</span></td><td class="num">≈5.3 m</td></tr>
+        <tr><td>중앙</td><td>BO Steel</td><td class="num">±18'-11"</td><td class="num">5.77 m</td><td><span class="tag t-experience">Experience</span></td><td class="num">≈5.0 m</td></tr>
+        <tr><td>중하 좌</td><td>BO Joists</td><td class="num">±18'-8"</td><td class="num">5.69 m</td><td><span class="tag t-social">Social</span></td><td class="num">≈4.9 m</td></tr>
+        <tr><td>중하 우</td><td>BO Deck</td><td class="num">±20'-11"</td><td class="num">6.38 m</td><td><span class="tag t-quest">Quest</span></td><td class="num">≈5.5 m</td></tr>
+        <tr><td>하부 중앙</td><td>BO Steel</td><td class="num">±18'-3"</td><td class="num">5.56 m</td><td><span class="tag t-public">Public</span></td><td class="num">≈4.8 m</td></tr>
+        <tr><td>하부 좌</td><td>BO Deck</td><td class="num">±19'-3"</td><td class="num">5.87 m</td><td><span class="tag t-public">Public</span></td><td class="num">≈5.1 m</td></tr>
+        <tr><td>하부 우</td><td>BO Deck</td><td class="num">±21'-10"</td><td class="num">6.66 m</td><td><span class="tag t-boh">BOH</span></td><td class="num">≈5.8 m</td></tr>
+      </tbody>
+    </table>
+    <p class="tcap">가용 순층고 = 구조체 하단고 − 스프링클러 · 덕트 · 조명 · 마감 여유 0.6~0.9m 가정. 실측 검증 전 계획용 수치.</p>
+    <div class="srcrow"><button class="src" data-s="s2p1">B8_846_LOD_-Tenant_090523.pdf · p.1</button></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h4>층고가 조닝으로 연결</h4><p>최고 7.06m(상부 우) 대 최저 5.56m(하부 중앙)입니다.<br>1.5m 차이는 3층 네트 구조물의 존치 여부를 가르는 폭입니다.<br>상부 밴드를 Adventure로 고정하는 것이 유일하게 합리적인 배치이며, 나머지 존은 이 결정에 따라 자동으로 정해집니다.</p></div>
+    <div class="card"><h4>기둥 15본은 자산</h4><p>32'-3" × 40'-0"(9.8m × 12.2m) 그리드는 국내 사례 대비 넓습니다.<br>기둥을 네트 구조물의 지지점이 아닌 <b>존 경계</b>로 사용하면 별도 가벽 물량을 줄일 수 있습니다.</p><div class="srcrow"><button class="src" data-s="s2g">컬럼 그리드 상세</button></div></div>
+  </div>
+  <div class="warn"><span class="lab">구조 확인 필요</span>
+    도면상 수치는 모두 ±(approximate) 표기입니다.<br>
+    네트·클라이밍·집라인 등 지붕 구조체에 하중을 거는 어트랙션은 현장 실측과 원 구조계산서, 현지 구조기술사 검토가 모두 끝나야 확정할 수 있습니다.</div>
+</section>
+
+<!-- 05 ------------------------------------------------------------ -->
+<section id="s5">
+  <p class="eyebrow">05 — Entry &amp; Facade</p>
+  <h2>출입 · 파사드</h2>
+  <div class="grid2">
+    <div class="card">
+      <h4>주출입 47'-0" (14.3m)</h4>
+      <p>기존 storefront 구간이며, LOD에 <b>"MAY BE MODIFIED BY TENANT AS NEEDED"</b>로 명시되어 있습니다.<br>파사드 변경 권한이 임차인에게 열려 있다는 뜻으로, 브랜드 사인 계획의 자유도가 높습니다.</p>
+      <p>기존 awning(캐노피)도 존치 상태이므로 대기열이 실외에 형성될 때의 우천·적설 대응에 활용 가능합니다.<br>콜로라도 기후 특성상 이 부분의 가치가 큽니다.</p>
+      <div class="srcrow"><button class="src" data-s="s1p2">LOD 072423 · p.2 입면</button></div>
+    </div>
+    <div class="card">
+      <h4>진입 불가 구역 2개소</h4>
+      <p>정면 양단에 "NO ENTRY ZONE, TYP." 해치가 지정되어 있습니다.<br>출입구 추가 신설이 불가하므로 <b>단일 출입 동선</b>을 전제로 계획합니다.</p>
+      <p>단일 출입은 티켓·팔찌 검수에는 유리하나, 피난 동선은 별도 확보가 필수입니다.<br>기존 Best Buy 계획의 후면 비상구 위치를 CEN0800595에서 확인해 승계하는 방향을 권합니다.</p>
+      <div class="srcrow"><button class="src" data-s="s1p1">LOD 072423 · p.1 평면</button></div>
+    </div>
+  </div>
+  <div class="note"><span class="lab">별내 운영 경험 반영</span>
+    키오스크 결제 → QR 정보입력 → 데스크 매칭 → 팔찌 발급 흐름을 유지하려면 출입구 안쪽에 최소 폭 6m, 깊이 8m의 대기 홀이 필요합니다.<br>
+    Public 존 하부 밴드(순층고 4.8m)가 이를 수용합니다.<br>
+    다만 피크일 시간제 입장을 운영할 경우 대기 홀 규모를 재산정해야 합니다. → <a href="#s10" style="color:var(--pine)">10 참조</a></div>
+</section>
+
+<!-- 06 ------------------------------------------------------------ -->
+<section id="s6">
+  <p class="eyebrow">06 — Zoning</p>
+  <h2>존 배분 계획</h2>
+  <p class="lede">Type B 수준의 조닝(6존 · 어트랙션 15종) 구성을 30,512 SF에 배분한 계획안입니다.<br>
+    배분 원칙은 하나입니다 — <b>층고가 높은 곳에 부피가 큰 것을</b>.</p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>존</th><th>면적</th><th>평</th><th>비중</th><th></th><th>배치 근거</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag t-adventure">Adventure</span></td><td class="num">606 m²</td><td class="num">183</td><td class="num">21.4%</td><td style="width:110px"><span class="bar"><i style="width:100%;background:var(--adventure)"></i></span></td><td>최고 층고대(6.4~7.1m) 전량 점유.<br>3층 네트·클라이밍 타워 수용</td></tr>
+        <tr><td><span class="tag t-public">Public</span></td><td class="num">505 m²</td><td class="num">153</td><td class="num">17.8%</td><td><span class="bar"><i style="width:83%;background:var(--public)"></i></span></td><td>주출입 직결.<br>층고 요구가 가장 낮아 최저 구간에 배치</td></tr>
+        <tr><td><span class="tag t-experience">Experience</span></td><td class="num">480 m²</td><td class="num">145</td><td class="num">16.9%</td><td><span class="bar"><i style="width:79%;background:var(--experience)"></i></span></td><td>중앙부.<br>미디어·인터랙티브 + 스카이 라이딩 · 암전 제어 유리</td></tr>
+        <tr><td><span class="tag t-quest">Quest</span></td><td class="num">441 m²</td><td class="num">133</td><td class="num">15.6%</td><td><span class="bar"><i style="width:73%;background:var(--quest)"></i></span></td><td>챔퍼 벽면이 만드는 비정형 평면을 미로형 동선에 활용</td></tr>
+        <tr><td><span class="tag t-boh">BOH</span></td><td class="num">411 m²</td><td class="num">124</td><td class="num">14.5%</td><td><span class="bar"><i style="width:68%;background:var(--boh)"></i></span></td><td>후면 코너.<br>하역·창고·직원공간·기계실 집약</td></tr>
+        <tr><td><span class="tag t-social">Social</span></td><td class="num">390 m²</td><td class="num">118</td><td class="num">13.8%</td><td><span class="bar"><i style="width:64%;background:var(--social)"></i></span></td><td>토들러 존 + 보호자 라운지 + 파티룸.<br>파티룸은 별도 실 구획 · 면적 재산정 필요</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2">
+    <div class="card"><h4>BOH 14.5%는 상향 조정 여지</h4><p>미국 운영은 국내 대비 창고·직원 라커·소방 설비실 요구가 큽니다.<br>실시설계 단계에서 15~17%로 조정될 가능성을 열어두고, Quest 존 면적을 완충으로 두는 것을 권합니다.</p></div>
+    <div class="card"><h4>어트랙션 순면적 62.0%</h4><p>Adventure+Quest+Experience+Social = 1,917 m²입니다.<br>이 수치가 <a href="#s10" style="color:var(--pine)">10 수요 예측</a>의 동시 수용 인원 산정 기준이 됩니다.<br>단층이므로 수직 적층 이득이 없고, 3층 네트 구조물이 밀도를 만드는 유일한 수단입니다.</p></div>
+  </div>
+</section>
+
+<!-- 07 ------------------------------------------------------------ -->
+<section id="s7">
+  <p class="eyebrow">07 — Attractions</p>
+  <h2>어트랙션 15종 배치</h2>
+  <p class="lede">Type B 수준의 조닝 구성입니다.<br>
+    소요 층고 대비 배치 구간의 가용 순층고를 대조해 성립 여부를 표시했습니다.<br>
+    타겟 연령 5~10세 기준으로 난이도를 배분했습니다.</p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>#</th><th>어트랙션</th><th>존</th><th>소요 층고</th><th>가용 순층고</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td class="num">01</td><td>클라이밍 타워</td><td><span class="tag t-adventure">Adventure</span></td><td class="num">6.0 m</td><td class="num">6.2 m</td><td>성립</td></tr>
+        <tr><td class="num">02</td><td>3층 네트 정글</td><td><span class="tag t-adventure">Adventure</span></td><td class="num">5.5 m</td><td class="num">6.2 m</td><td>성립</td></tr>
+        <tr><td class="num">03</td><td>어드벤처 놀이기구</td><td><span class="tag t-adventure">Adventure</span></td><td class="num">5.0 m</td><td class="num">5.6 m</td><td>성립</td></tr>
+        <tr><td class="num">04</td><td>튜브 슬라이드</td><td><span class="tag t-adventure">Adventure</span></td><td class="num">5.0 m</td><td class="num">5.6 m</td><td>성립</td></tr>
+        <tr><td class="num">05</td><td>미션 트레일</td><td><span class="tag t-quest">Quest</span></td><td class="num">3.5 m</td><td class="num">5.5 m</td><td>여유</td></tr>
+        <tr><td class="num">06</td><td>라이트 퍼즐 룸</td><td><span class="tag t-quest">Quest</span></td><td class="num">3.0 m</td><td class="num">5.5 m</td><td>여유</td></tr>
+        <tr><td class="num">07</td><td>볼 배틀 아레나</td><td><span class="tag t-quest">Quest</span></td><td class="num">4.0 m</td><td class="num">5.5 m</td><td>여유</td></tr>
+        <tr><td class="num">08</td><td>스타 점핑(트램펄린)</td><td><span class="tag t-experience">Experience</span></td><td class="num">3.5 m</td><td class="num">5.0 m</td><td>여유</td></tr>
+        <tr><td class="num">09</td><td>가든 스텝핑(바닥 인터랙티브)</td><td><span class="tag t-experience">Experience</span></td><td class="num">3.0 m</td><td class="num">5.0 m</td><td>여유</td></tr>
+        <tr><td class="num">10</td><td>미디어 월</td><td><span class="tag t-experience">Experience</span></td><td class="num">4.0 m</td><td class="num">5.3 m</td><td>성립</td></tr>
+        <tr><td class="num">11</td><td>샌드 비치</td><td><span class="tag t-experience">Experience</span></td><td class="num">3.0 m</td><td class="num">5.0 m</td><td>여유</td></tr>
+        <tr><td class="num">12</td><td>스카이 라이딩(자전거)</td><td><span class="tag t-experience">Experience</span></td><td class="num">4.0 m</td><td class="num">5.3 m</td><td>여유 · 인증 별도</td></tr>
+        <tr><td class="num">13</td><td>토들러 가든</td><td><span class="tag t-social">Social</span></td><td class="num">3.0 m</td><td class="num">4.9 m</td><td>여유</td></tr>
+        <tr><td class="num">14</td><td>패밀리 라운지</td><td><span class="tag t-social">Social</span></td><td class="num">2.7 m</td><td class="num">4.9 m</td><td>여유</td></tr>
+        <tr><td class="num">15</td><td>파티룸</td><td><span class="tag t-social">Social</span></td><td class="num">2.7 m</td><td class="num">4.9 m</td><td>여유 · 구획 필요</td></tr>
+      </tbody>
+    </table>
+    <p class="tcap">가용 순층고 = LOD 09/05 실측점 − 스프링클러 · 덕트 · 조명 · 마감 여유 0.6~0.9m 가정.</p>
+  </div>
+  <div class="grid2">
+    <div class="card"><h4>높은 층고를 쓰는 것은 소수</h4><p>대형 수직 구조물 계열만 5.0m 이상을 요구하고, 나머지 대부분은 4.0m 이하에서 성립합니다.<br>따라서 <b>높은 구간에 부피가 큰 것을, 낮은 구간에 그 외를 배치</b>하면 구역별 층고 편차로 인한 손실이 발생하지 않습니다.</p></div>
+    <div class="card"><h4>5~10세 기준의 난이도</h4><p>클라이밍 타워와 네트 정글은 이 연령대의 상단(8~10세)을 겨냥합니다.<br>스타 점핑·가든 스텝핑·샌드 비치는 하단(5~7세)을 받칩니다.<br>토들러 가든은 동반 형제 대응용이고, 파티룸은 생일파티 수요를 받는 별도 상품입니다.</p></div>
+  </div>
+  <div class="warn"><span class="lab">미국 안전 인증</span>
+    국내 유기기구 확인검사 체계와 콜로라도주 기준은 별개입니다.<br>
+    특히 <b>유기기구</b>는 ASTM F1918 / F2375 계열 적용 여부를 현지 컨설턴트로 사전 확인해야 하며, 이 결과가 설계 확정보다 앞서야 합니다.</div>
+</section>
+
+<!-- 08 ------------------------------------------------------------ -->
+<section id="s8">
+  <p class="eyebrow">08 — MEP</p>
+  <h2>설비 검토</h2>
+  <p class="lede">확보 도서는 2008년 Best Buy 인허가 세트(CEN0800595)입니다.<br>
+    18년 전 도서이므로 <b>계획의 출발점이지 현황이 아닙니다.</b><br>
+    아래는 검토 항목이며, 수치는 현장 실사로 대체되어야 합니다.</p>
+  <div class="grid2">
+    <div class="card"><h4>공조 — 용도 변경 부하가 관건</h4><p>대형 판매시설은 재실 밀도가 낮고 조명 부하가 지배적입니다.<br>키즈파크는 반대로 <b>인체 발열과 환기량</b>이 지배합니다.<br>피크 시 동시 재실 500명 이상을 전제하면 외기도입량 기준(ASHRAE 62.1)이 완전히 달라지므로 기존 RTU 용량 승계 가능 여부를 가장 먼저 판정해야 합니다.</p></div>
+    <div class="card"><h4>전기 — 인입 용량 승계 검토</h4><p>Best Buy는 매장 조명·전시 부하가 큰 업태라 인입 용량 자체는 여유가 있을 가능성이 높습니다.<br>다만 미디어·프로젝션·인터랙티브 장비의 분전반 분산 배치가 필요하므로 기존 간선 경로 확인이 선행됩니다.</p></div>
+    <div class="card"><h4>소방 — 네트 구조물이 변수</h4><p>3층 네트·플레이 구조물은 스프링클러 살수 장애 요소로 취급됩니다.<br>구조물 내부 헤드 추가 또는 헤드 재배치가 거의 확실히 발생합니다.<br>기존 헤드 배치도 기준으로 물량을 선산정해 두어야 합니다.</p></div>
+    <div class="card"><h4>급배수 · 그리스 트랩</h4><p>판매시설 기준 위생기구 수량으로는 키즈파크 재실 인원을 감당하지 못할 가능성이 큽니다.<br>유아용 기구·수유실·기저귀 교환대 신설을 전제로 배관 경로를 확보하고, F&amp;B 도입 시 그리스 트랩 신설 위치를 Public 존 계획 초기에 고정해야 합니다.</p></div>
+  </div>
+  <div class="srcrow"><button class="src na" data-s="s3">260611_HVAC_관련___CEN0800595_Plans.pdf</button></div>
+  <div class="warn"><span class="lab">본 절의 한계</span>
+    CEN0800595 도서의 개별 장비 스케줄(RTU 대수·용량, 인입 차단기 용량, 헤드 수량, 위생기구 수량)은 본 문서에 반영되지 않았습니다.<br>
+    설비 파트너 검토 후 실수치로 대체합니다.</div>
+</section>
+
+<!-- 09 ------------------------------------------------------------ -->
+<section id="s9">
+  <p class="eyebrow">09 — Lease Terms</p>
+  <h2>임대 조건</h2>
+  <p class="lede">현재 협의 중인 조건입니다.<br>
+    아래 연환산·10년 누계는 30,512 SF를 곱해 산출한 수치이며, 계약서 확정 전 검토용입니다.</p>
+
+  <div class="card tablewrap">
+    <h4>협의 조건</h4>
+    <table>
+      <thead><tr><th style="width:150px">항목</th><th style="width:210px">조건</th><th>연환산 (30,512 SF)</th></tr></thead>
+      <tbody>
+        <tr><td class="item">계약 기간</td><td class="num">10년 + 5년 연장 옵션</td><td>초기 투자 회수 기간 확보에 충분한 길이입니다.</td></tr>
+        <tr><td class="item">Base Rent · 1–5년</td><td class="num">$20 / SF</td><td class="rnum">$610,240 / 년</td></tr>
+        <tr><td class="item">Base Rent · 6–10년</td><td class="num">$22 / SF</td><td class="rnum">$671,264 / 년</td></tr>
+        <tr><td class="item">NNN (pass-through)</td><td class="num">$11.31 ~ 12.23 / SF</td><td class="rnum">$345,091 ~ 373,162 / 년</td></tr>
+        <tr class="total"><td class="item">총 점유비용 · 1–5년</td><td class="num">$31.31 ~ 32.23 / SF</td><td class="rnum">$955,331 ~ 983,402 / 년</td></tr>
+        <tr class="total"><td class="item">총 점유비용 · 6–10년</td><td class="num">$33.31 ~ 34.23 / SF</td><td class="rnum">$1,016,355 ~ 1,044,426 / 년</td></tr>
+        <tr><td class="item">TI 공사지원금</td><td class="num">$50 / SF</td><td class="rnum">$1,525,600 (일시)</td></tr>
+        <tr><td class="item">Rent Abatement</td><td class="num">120일 (4개월)</td><td class="rnum">약 $203,413 상당</td></tr>
+      </tbody>
+    </table>
+    <p class="tcap">Abatement는 Base Rent 기준 4개월분으로 산정. NNN 포함 여부는 계약서 확인 필요. NNN은 재산세·CAM·보험 변동에 따라 매년 조정되며 상기 수치는 초년도 예상치.</p>
+    <div class="srcrow"><button class="src" data-s="spec">협의 조건 · 내부 스펙시트</button></div>
+  </div>
+
+  <h3><i>1</i>수요 대비 점유비용</h3>
+  <p class="lede" style="margin-bottom:14px">10 수요 예측의 방문객 수와 대조하면 임대 조건의 부담 수준을 가늠할 수 있습니다.<br>
+    객단가는 확정되지 않았으므로 임의로 가정하지 않고, <b>점유비용에서 역산한 필요 객단가</b>로 제시합니다.</p>
+  <div class="grid3">
+    <div class="kpi c1"><div class="v">$2.17</div><div class="k">방문객 1인당 점유비용<br>(안정기 44.1만 명 기준)</div><div class="s">1–5년 · 중간값 $960K 기준</div></div>
+    <div class="kpi c8"><div class="v">$2.47</div><div class="k">방문객 1인당 점유비용<br>(1년차 38.8만 명 기준)</div><div class="s">1–5년 · 중간값 $960K 기준</div></div>
+    <div class="kpi c5"><div class="v">$18 ~ 27</div><div class="k">필요 객단가 범위<br>(점유비용 12%~8% 구간)</div><div class="s">안정기 44.1만 명 기준 역산</div></div>
+  </div>
+  <div class="card tablewrap">
+    <h4>필요 객단가 역산</h4>
+    <table>
+      <thead><tr><th style="width:210px">목표 점유비용 비율</th><th style="text-align:right">안정기 44.1만 명</th><th style="text-align:right">1년차 38.8만 명</th><th>구간 평가</th></tr></thead>
+      <tbody>
+        <tr><td class="item">8% (여유)</td><td class="rnum">$27.21</td><td class="rnum">$30.93</td><td>업계 통상 구간 하단</td></tr>
+        <tr class="focus"><td class="item">10% (표준)</td><td class="rnum">$21.77</td><td class="rnum">$24.74</td><td>업계 통상 구간 중앙</td></tr>
+        <tr><td class="item">12% (상한)</td><td class="rnum">$18.14</td><td class="rnum">$20.62</td><td>업계 통상 구간 상단</td></tr>
+      </tbody>
+    </table>
+    <p class="tcap">필요 객단가 = 연 점유비용 $960K(1–5년 중간값) ÷ (연 방문객 × 목표 비율). 미국 FEC 업계 점유비용은 통상 매출의 8~12% 구간.</p>
+  </div>
+  <div class="note"><span class="lab">해석</span>
+    객단가를 얼마로 잡느냐에 따라 판단이 달라지므로, 임의 가정 대신 <b>버텨야 할 최저 객단가</b>를 역산했습니다.<br>
+    점유비용을 업계 표준인 10%로 유지하려면 안정기 기준 $21.77, 1년차 기준 $24.74가 필요합니다.<br>
+    현재 확보된 유일한 실측 참고점은 12 경쟁 조사의 <b>Bubble Planet 실적가(성인 $26.90 / 아동 $20.90, 체류 60–90분)</b>이며, 이 수준의 가격이 형성된다면 점유비용은 통상 구간 안에 들어옵니다.<br>
+    다만 이는 참고 지표일 뿐이므로, 가격 정책이 확정되면 이 표를 실제 수치로 대체해야 합니다.</div>
+
+  <h3><i>2</i>협의 잔여 항목</h3>
+  <ul class="risks">
+    <li><b>TI 사용 범위 정의</b><span>$50/SF는 미국 리테일 관행에서 견조한 수준입니다.<br>다만 TI는 통상 부동산에 귀속되는 공사(건축·기계·전기)를 대상으로 하며, <b>어트랙션 장비 취득비는 대개 제외</b>됩니다.<br>키즈파크는 어트랙션 비중이 커 이 경계가 총 투자비를 좌우하므로, 계약서에서 사용 가능 항목을 명시해야 합니다.</span></li>
+    <li><b>LC(보증금) 시점 및 금액 — TBD</b><span>미정 상태입니다.<br>금액과 납입 시점이 초기 현금흐름에 직접 영향을 주므로 우선 확정이 필요합니다.</span></li>
+    <li><b>재무 현황 공유</b><span>임대인 측 요구사항으로 확인됩니다.<br>제출 범위와 형식, 한국 법인 자료의 인정 여부를 사전에 정리해야 일정 지연을 막을 수 있습니다.</span></li>
+    <li><b>NNN 산정 근거</b><span>$11.31~12.23/SF의 배분 기준이 되는 센터 총 임대면적(GLA)을 확인해야 합니다.<br>CAM 항목별 내역과 연간 상한(cap) 조항 유무도 함께 확인이 필요합니다.</span></li>
+    <li><b>Abatement 적용 범위</b><span>120일이 Base Rent만인지 NNN을 포함하는지에 따라 약 $115K 차이가 발생합니다.<br>인허가 11~14개월을 감안하면 <b>Abatement 개시 시점을 인도일이 아닌 개장일 기준으로 협의</b>하는 것이 유리합니다.</span></li>
+  </ul>
+</section>
+
+<!-- 10 ------------------------------------------------------------ -->
+<section id="s10">
+  <p class="eyebrow">10 — Demand &amp; Capacity</p>
+  <h2>수요 예측 · 캐파</h2>
+  <p class="lede">내부 시장성 리포트(2026.07.17)의 예측치를 옮기고, 이를 본 공간의 수용 능력과 대조했습니다.<br>
+    예측은 제주(AKJJ) 실측 계수를 보정 없이 적용한 <b>잠재 수요</b>이며, 제주 수준의 브랜드 인지도 달성을 전제합니다.</p>
+
+  <div class="grid3">
+    <div class="kpi c1"><div class="v">44.1만 명</div><div class="k">안정기 연 방문객</div><div class="s">일평균 1,208명 · 범위 41.5만~47.8만</div></div>
+    <div class="kpi c5"><div class="v">38.8만 명</div><div class="k">1년차 (램프업 88%)</div><div class="s">일평균 1,063명 · 제주 1→2년차 실측</div></div>
+    <div class="kpi c3"><div class="v">1,740명</div><div class="k">피크월 일평균</div><div class="s">제주 계절성 적용</div></div>
+  </div>
+
+  <h3><i>1</i>캡처율 민감도</h3>
+  <div class="chartbox">
+    <p class="ch-h">연간 방문객 추정 — 캡처율 민감도</p>
+    <p class="ch-s">보정계수 미적용 · 로컬(다회 방문) + 관광(1회 방문) 이원 구조</p>
+    <svg class="chart" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="캡처율 시나리오별 연간 방문객 추정">
+      <line class="axis" x1="210" y1="24" x2="210" y2="272"/>
+      <line class="bench" x1="830" y1="24" x2="830" y2="252"/>
+      <text class="csub" x="826" y="18" text-anchor="end">벤치마크 — 덴버 어린이박물관 약 50만</text>
+
+      <text class="clabel" x="200" y="52" text-anchor="end">하한 4.7%</text>
+      <rect x="210" y="38" width="208" height="24" fill="#0065B2" opacity=".85"/>
+      <rect x="418" y="38" width="306" height="24" fill="#FF8000" opacity=".85"/>
+      <text class="cval" x="734" y="55">41.5만</text>
+
+      <text class="clabel" x="200" y="100" text-anchor="end">중심 5.2%</text>
+      <rect x="210" y="86" width="208" height="24" fill="#0065B2"/>
+      <rect x="418" y="86" width="339" height="24" fill="#FF8000"/>
+      <text class="cval" x="767" y="103">44.1만</text>
+
+      <text class="clabel" x="200" y="148" text-anchor="end">상한 5.9%</text>
+      <rect x="210" y="134" width="208" height="24" fill="#0065B2" opacity=".85"/>
+      <rect x="418" y="134" width="384" height="24" fill="#FF8000" opacity=".85"/>
+      <text class="cval" x="812" y="151">47.8만</text>
+
+      <line class="axis" x1="210" y1="180" x2="880" y2="180" opacity=".5"/>
+      <text class="clabel" x="200" y="212" text-anchor="end">제주 실적 (참고)</text>
+      <rect x="210" y="198" width="123" height="24" fill="#888888" opacity=".6"/>
+      <rect x="333" y="198" width="201" height="24" fill="#888888"/>
+      <text class="cval" x="544" y="215">26.1만</text>
+
+      <rect x="210" y="256" width="12" height="12" fill="#0065B2"/><text class="csub" x="228" y="266">로컬 수요 (덴버시 · 다회 방문)</text>
+      <rect x="420" y="256" width="12" height="12" fill="#FF8000"/><text class="csub" x="438" y="266">관광 수요 (관광객 + 광역권 · 1회 방문)</text>
+    </svg>
+  </div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h4>① 관광 수요 — 유동 풀 × 캡처율 5.2%</h4>
+      <p>덴버 레저 숙박 방문객 1,740만 명 중 자녀동반 25%인 435만 명에, 덴버시 외 메트로 지역 0–12세 가족 인구 89.8만 명을 더해 유동 풀 524.8만 명을 잡았습니다.<br>
+        여기에 제주 실측 캡처율 5.2%를 적용해 <b>연 27.3만 명</b>이 나옵니다.<br>
+        당일 방문객 1,730만 명은 보수적으로 제외했습니다.</p></div>
+    <div class="card"><h4>② 로컬 수요 — 가구 × 연 0.68회</h4>
+      <p>덴버시 0–12세 가구 7.5만에 제주 실측 방문율 가구당 연 0.68회, 가구당 3.3명을 적용해 <b>연 16.8만 명</b>입니다.<br>
+        제주에서는 도민 유래 9.9만 명이 0–12세 가구 4.4만 기준 0.68회로 측정되었고, 침투율 약 34% × 빈도 약 2회 구조로 추정됩니다.<br>
+        연간권·재방문율 실측이 확보되면 이 분리를 데이터로 고정할 수 있습니다.</p></div>
+  </div>
+
+  <h3><i>2</i>시장 규모 — 제주 대비</h3>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>항목</th><th style="text-align:right">제주</th><th style="text-align:right">덴버</th><th style="text-align:right">배율</th></tr></thead>
+      <tbody>
+        <tr><td>로컬 기반: 0–12세 아동 (시 거주)</td><td class="rnum">5.7만 명</td><td class="rnum">9.7만 명</td><td class="rnum">1.7배</td></tr>
+        <tr><td>광역권 가족 인구 (0–12세 가구)</td><td class="rnum">—</td><td class="rnum">89.8만 명</td><td class="rnum">—</td></tr>
+        <tr><td>연간 관광객</td><td class="rnum">1,378만 명</td><td class="rnum">3,710만 명</td><td class="rnum">2.7배</td></tr>
+        <tr><td>자녀동반 가족 관광 풀</td><td class="rnum">276~345만</td><td class="rnum">약 435만</td><td class="rnum">1.4배</td></tr>
+        <tr class="focus"><td>메타 도달 가능 3–8세 부모</td><td class="rnum">1천 명 미만</td><td class="rnum">4.3~5.1만 명</td><td class="rnum">40배+</td></tr>
+      </tbody>
+    </table>
+    <p class="tcap">출처: KOSIS 주민등록(2026) · U.S. Census · 제주관광공사 · VISIT DENVER. 메타 오디언스는 광고 관리자 실측(2026.07).</p>
+  </div>
+  <div class="note"><span class="lab">마케팅 채널의 구조적 차이</span>
+    미국은 부모 타게팅 커버리지가 한국의 약 10배입니다.<br>
+    제주에서 사실상 불가능했던 정밀 퍼포먼스 마케팅이 덴버에서는 주력 채널이 됩니다.<br>
+    이는 12 키즈 직접 경쟁에서 확인한 "근거리 소형점과 연령대가 어긋나 실제 경쟁은 원거리 대형점"이라는 구조와 맞물립니다.<br>
+    광역 타게팅으로 5마일 이상 상권을 직접 공략할 수단이 있다는 뜻입니다.</div>
+
+  <h3><i>3</i>공간 수용력 검증</h3>
+  <p class="lede" style="margin-bottom:14px">예측 방문객을 본 공간이 실제로 소화할 수 있는지 대조했습니다.<br>
+    <b>이 표는 시장성 리포트에 없던 항목이며, 06 존 배분의 어트랙션 순면적 1,917 m²를 기준으로 산출했습니다.</b></p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>구분</th><th style="text-align:right">일 방문객</th><th style="text-align:right">동시 수용</th><th style="text-align:right">1인당 순면적</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td>1년차 일평균</td><td class="rnum">1,063명</td><td class="rnum">266명</td><td class="rnum">7.2 m²</td><td style="color:var(--ok);font-weight:700">여유</td></tr>
+        <tr><td>안정기 일평균</td><td class="rnum">1,208명</td><td class="rnum">302명</td><td class="rnum">6.3 m²</td><td style="color:var(--ok);font-weight:700">여유</td></tr>
+        <tr class="focus"><td>피크월 일평균</td><td class="rnum">1,740명</td><td class="rnum">435명</td><td class="rnum">4.4 m²</td><td style="color:var(--mid);font-weight:700">적정 상한</td></tr>
+        <tr><td>피크일 (피크월 × 1.6)</td><td class="rnum">2,784명</td><td class="rnum">696명</td><td class="rnum">2.8 m²</td><td style="color:var(--no);font-weight:700">혼잡 · 대응 필요</td></tr>
+      </tbody>
+    </table>
+    <p class="tcap">가정: 운영 10시간/일, 평균 체류 2.5시간 → 회전 4.0회. 동시 수용 = 일 방문객 ÷ 4.0. 1인당 순면적 = 어트랙션 순면적 1,917 m² ÷ 동시 수용.</p>
+  </div>
+
+  <div class="danger"><span class="lab">체류시간 목표와 캐파는 상충한다</span>
+    12 키즈 직접 경쟁에서 도출한 결론은 <b>3시간 이상 체류를 목표로 잡아야 이 지역 기준을 충족한다</b>는 것이었습니다.<br>
+    그러나 체류 3시간을 적용하면 회전이 3.33회로 떨어져 피크일 1인당 순면적이 2.3 m²까지 좁아집니다.<br>
+    긴 체류와 높은 처리량은 같은 면적에서 동시에 달성되지 않습니다.<br>
+    <b>2.5~3시간 세션제 + 시간대별 예약 슬롯</b>으로 피크를 분산하는 운영 설계를 전제해야 하며, 이는 05 출입 동선의 대기 홀 규모와 08 공조 용량 산정에 함께 반영되어야 합니다.</div>
+
+  <div class="note"><span class="lab">추가 검토 여지</span>
+    시장성 리포트가 미반영 상방으로 남겨둔 항목은 단체(학교) 채널과 당일 방문객 1,730만 명입니다.<br>
+    단체 채널은 <b>평일 오전이라는 비피크 시간대를 채운다</b>는 점에서 캐파 관점의 가치가 특히 큽니다.<br>
+    피크 분산이 이 사이트의 핵심 운영 과제이므로, 단체 채널은 매출 상방이 아니라 캐파 해법으로 다뤄야 합니다.</div>
+
+  <div class="warn"><span class="lab">예측의 성격</span>
+    본 예측은 제주 수준의 브랜드 인지도와 가족 나들이 코스 편입을 달성했을 때의 <b>잠재 수요</b>입니다.<br>
+    신규 진입 초기에는 하회할 수 있으며, 미국 시장에서의 브랜드 인지도는 제주와 달리 처음부터 쌓아야 합니다.<br>
+    벤치마크로 제시된 덴버 어린이박물관 연 약 50만 명은 공공 시설이자 수십 년간 축적된 인지도를 가진 기관이라는 점을 감안해야 합니다.</div>
+  <div class="srcrow"><button class="src" data-s="mkt">260717_아르떼키즈파크_덴버_시장성리포트.html</button></div>
+</section>
+
+<!-- 11 ------------------------------------------------------------ -->
+<section id="s11">
+  <p class="eyebrow">11 — Regional Analysis</p>
+  <h2>지역 분석</h2>
+  <p class="lede">Denver–Aurora–Centennial 광역권 및 SouthGlenn 1차 상권(반경 약 10마일)에 대한 시장 적합성 검토입니다.<br>
+    본 절의 모든 수치는 2024–2026년 발표 자료를 기준으로 하며, 출처는 하단 각주에 표기했습니다.</p>
+
+  <div class="verdict">
+    <b>검토 의견 — 적합</b>
+    <span>인구 성장·가구소득·타겟 연령 구조 3개 축이 모두 우호적입니다.<br>
+      야외활동 문화가 강한 지역이나, 실제 활동 성격은 동네 공원 중심의 저강도·캐주얼형이며 1인당 활동 빈도는 감소 추세입니다.<br>
+      실내 유료 체험시설의 대체 수요가 확보되는 국면으로 판단합니다.</span>
+  </div>
+
+  <h3><i>1</i>상권 규모 및 성장성</h3>
+  <div class="grid4">
+    <div class="kpi"><div class="v">300만+</div><div class="k">덴버 광역권 인구</div><div class="s">2030년 360만 전망<sup class="fn">1</sup></div></div>
+    <div class="kpi"><div class="v">37세</div><div class="k">광역권 중위연령</div><div class="s">전국 37.7세<sup class="fn">1</sup></div></div>
+    <div class="kpi"><div class="v">22.5%</div><div class="k">30–44세 인구 비중</div><div class="s">최대 집중 연령대<sup class="fn">1</sup></div></div>
+    <div class="kpi"><div class="v">15.5%</div><div class="k">15세 미만 인구 비중</div><div class="s">덴버시 기준<sup class="fn">2</sup></div></div>
+  </div>
+  <p style="margin-top:16px;color:var(--ink2);font-size:14px">덴버 광역권은 1930년대 이후 매 10년 전국 평균을 상회하는 인구 증가율을 유지해 왔으며, 최근 성장의 90%가 프론트레인지 축(덴버–콜로라도스프링스 회랑)에 집중되고 있습니다.<sup class="fn">1,3</sup><br>
+    최대 인구 집중 구간인 30–44세는 <b>5–10세 자녀를 둔 부모 코호트</b>와 정확히 일치합니다.<br>
+    이는 본 시설의 1차 타겟 수요층이 구조적으로 두텁게 형성되어 있음을 의미합니다.</p>
+
+  <h3><i>2</i>가구소득 — SouthGlenn 상권 특성</h3>
+  <p style="color:var(--ink2);font-size:14px">SouthGlenn은 애러파호 카운티에 위치하며 더글러스 카운티 경계에 인접합니다.<br>
+    콜로라도 주 내 최상위 소득 구간을 1차 상권으로 흡수하는 입지입니다.</p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>지역</th><th>구분</th><th style="text-align:right">중위 가구소득</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr class="focus"><td>더글러스 카운티</td><td>카운티</td><td class="rnum">$145,737</td><td>콜로라도 64개 카운티 중 1위</td></tr>
+        <tr><td>파커</td><td>도시</td><td class="rnum">$129,342</td><td>1차 상권 인접</td></tr>
+        <tr><td>론트리</td><td>도시</td><td class="rnum">$125,699</td><td>1차 상권 인접</td></tr>
+        <tr class="focus"><td>Centennial</td><td>도시</td><td class="rnum">약 $120,000</td><td>사이트 소재 도시 · 지역 평균 $114K~$131K</td></tr>
+        <tr><td>제퍼슨 카운티</td><td>카운티</td><td class="rnum">$107,800</td><td>—</td></tr>
+        <tr><td>애러파호 카운티</td><td>카운티</td><td class="rnum">$97,215</td><td>사이트 소재 카운티</td></tr>
+        <tr><td>리틀턴</td><td>도시</td><td class="rnum">$96,611</td><td>1차 상권 인접</td></tr>
+        <tr><td>콜로라도 주</td><td>주</td><td class="rnum">$92,470</td><td>—</td></tr>
+        <tr><td>덴버 카운티</td><td>카운티</td><td class="rnum">$91,681</td><td>—</td></tr>
+        <tr><td>미국 전체</td><td>국가</td><td class="rnum">$78,538</td><td>기준선</td></tr>
+      </tbody>
+    </table>
+    <p class="tcap">U.S. Census ACS 5년 추계 (2023년 달러 기준), 2025년 갱신<sup class="fn">4</sup>. Centennial 시 수치는 확정값이며 지역 평균 범위는 $114K~$131K.</p>
+  </div>
+  <div class="note"><span class="lab">시사점 — 가격 정책</span>
+    1차 상권 가구소득이 전국 중위값 대비 약 1.2–1.9배 구간에 형성되어 있습니다.<br>
+    사이트가 위치한 Centennial 시는 약 $120K로 소재 카운티 평균($97,215)을 크게 상회하며, 인접 파커·론트리와 함께 상위 구간을 형성합니다.<br>
+    프리미엄 티켓 및 연간권 가격 설정에 대한 시장 저항이 낮을 것으로 판단하며, 이는 09 임대 조건에서 역산한 필요 객단가($18~27) 달성 가능성을 뒷받침합니다.<br>
+    전국 기준으로도 연소득 $100,000 이상 가구의 유료 레저 참여가 전년 대비 3.2% 증가하며 가장 견조한 성장 구간을 형성하고 있습니다.<sup class="fn">5</sup></div>
+
+  <h3><i>3</i>지역 문화 — 야외활동 지향성의 실제 성격</h3>
+  <p style="color:var(--ink2);font-size:14px">콜로라도는 미국 내에서 야외활동 참여율이 가장 높은 주 중 하나로, 주 GDP의 3.3%($181억)가 야외 레크리에이션에서 발생합니다(전국 평균 2.4%).<sup class="fn">6</sup><br>
+    주 정부 조사에 따르면 주민의 72%가 주 1회 이상 야외활동을 하고, 81%가 이를 웰빙에 필수적이라고 응답했습니다.<sup class="fn">3</sup></p>
+  <p style="color:var(--ink2);font-size:14px">다만 <b>활동의 실제 내용을 보면 시사점이 달라집니다.</b><br>
+    동일 조사에서 활동 대부분은 거주지 인근 공원과 트레일에서 이뤄지며, 가장 인기 있는 활동은 걷기·하이킹·피크닉으로 나타났습니다.<br>
+    주요 참여 장애 요인은 시간 부족과 혼잡이었습니다.<sup class="fn">3</sup></p>
+  <div class="grid4" style="margin-top:16px">
+    <div class="kpi"><div class="v">75.5%</div><div class="k">6–12세 야외활동 참여율<br>(전국, 역대 최고치)</div><div class="s">2,260만 명, 전년 대비 +5%<sup class="fn">5</sup></div></div>
+    <div class="kpi"><div class="v">66%</div><div class="k">유자녀 가구 야외활동 참여율</div><div class="s">무자녀 가구 52.5%<sup class="fn">5</sup></div></div>
+    <div class="kpi"><div class="v">65.2회</div><div class="k">참여자 1인당 연간 활동 횟수</div><div class="s">2012년 87회 이상에서 감소<sup class="fn">5</sup></div></div>
+    <div class="kpi"><div class="v">12%</div><div class="k">야외 레크리에이션 관련<br>주(州) 노동력 비중</div><div class="s">404,000개 일자리<sup class="fn">7</sup></div></div>
+  </div>
+  <div class="note"><span class="lab">시사점 — 경쟁 상대의 재정의</span>
+    참여 인구 기반은 확대되는 반면 1인당 활동 빈도는 지속 하락하고 있으며, 다수 참여자는 고강도·모험형이 아닌 캐주얼형으로 분류됩니다.<sup class="fn">5</sup><br>
+    따라서 본 시설의 실질 경쟁 상대는 로키산맥 레저가 아니라 <b>동네 공원 및 커뮤니티 레크리에이션 센터</b>입니다.<br>
+    차별화 축은 옥외에서 구현 불가능한 연출·IP 기반 몰입 경험에 있습니다.</div>
+  <div class="warn"><span class="lab">시사점 — 프로그램 구성</span>
+    타겟 연령대(5–10세)와 소득 구간이 전국에서 가장 활동적인 가족층과 일치합니다.<br>
+    신체활동형 어트랙션에 대한 수용도가 높은 대신 정적 관람형 콘텐츠의 체감 가치는 낮게 평가될 가능성이 있습니다.<br>
+    6존 구성 중 Adventure·Quest 존의 체류시간 배분을 상향 검토해야 합니다.<br>
+    이 판단은 07에서 확인한 층고 리스크와 정면으로 부딪칩니다 — Adventure 존의 핵심 2종이 층고에 걸려 있기 때문입니다.</div>
+
+  <h3><i>4</i>관광 수요 — 매출 근거에서 제외</h3>
+  <p style="color:var(--ink2);font-size:14px">덴버는 2025년 3,760만 명(숙박 2,010만 / 당일 1,760만)의 방문객과 105억 달러의 관광 지출을 기록해 역대 최고치를 경신했으며, 광역권에서 73,200개 일자리를 지지합니다.<sup class="fn">8</sup><br>
+    다만 <b>이 수요는 본 사이트의 매출 근거로 사용하지 않습니다.</b></p>
+  <ul class="risks">
+    <li><b>동선 불일치</b><span>주요 이벤트·페스티벌은 다운타운(16th Street, Civic Center Park, 컨벤션센터)에 집중되어 있습니다.<br>SouthGlenn은 남측 약 20km 교외 커뮤니티 센터로 관광 동선과 중첩되지 않습니다.</span></li>
+    <li><b>체류 구조</b><span>숙박 방문객 평균 체류는 2.8박이며 여정의 약 70%만 덴버 시내에서 소비되고, 나머지는 주 내 산악지역으로 이동합니다.<br>덴버는 목적지보다 로키산맥 관문 성격이 강합니다.<sup class="fn">8</sup></span></li>
+  </ul>
+  <div class="danger"><span class="lab">10 수요 예측과의 관계 — 확인 필요</span>
+    본 절은 관광 수요를 매출 근거에서 제외하는 입장인 반면, 10 수요 예측은 유동 풀 524.8만 명 중 435만 명을 관광 숙박객으로 잡아 <b>관광 수요를 연 27.3만 명(전체의 62%)으로 계상</b>합니다.<br>
+    두 문서의 전제가 다르므로 어느 쪽을 채택할지 정리가 필요합니다.<br>
+    관광 수요를 전액 제외할 경우 로컬 수요만 남아 <b>연 16.8만 명</b>이 되며, 이 경우 점유비용을 10%로 유지하는 데 필요한 객단가가 $57 수준까지 올라가 현실성이 없습니다.<br>
+    보수 시나리오에서는 광역권 가족 인구 89.8만 명에서 나오는 수요를 별도로 분리해 재산정할 것을 권합니다.</div>
+
+  <h3><i>5</i>리스크 요인</h3>
+  <ul class="risks">
+    <li><b>계절 편차</b><span>야외 여건이 양호한 5–9월 이탈 가능성이 있습니다.<br>겨울 강세 / 여름 약세를 전제한 매출 모델 및 여름 프로그램(캠프·단체) 별도 설계가 필요합니다.<br>10 캐파 검증에서 확인했듯 단체 채널은 비피크 시간대를 채우는 수단이기도 합니다.</span></li>
+    <li><b>고도 5,280ft</b><span>액티브 어트랙션 이용 시 체력 소모 및 호흡 부하가 증가합니다.<br>공조 용량, 휴게 동선, 안전 안내 기준에 반영이 필요합니다.</span></li>
+    <li><b>광역 접근성</b><span>I-25 정체가 상시적이며 스키 시즌 주말에 심화됩니다.<br>광역 유입보다 1차 상권 반복 방문 중심의 수요 설계가 타당합니다.</span></li>
+    <li><b>대체재 밀도</b><span>트램폴린·클라이밍·아케이드 등 단일 기능형 시설 및 공공 어린이박물관이 다수 분포합니다.<br>다만 6존·15종 어트랙션을 단일 서사로 통합한 포맷의 직접 경쟁 시설은 확인되지 않았습니다.</span></li>
+  </ul>
+
+  <div class="sources">
+    <h5>출처</h5>
+    <ol>
+      <li>Metro Denver Economic Development Corporation, <i>Regional Data: Demographics / Population</i>, 2025.</li>
+      <li>U.S. Census Bureau, American Community Survey 2019–2023 5-Year Estimates (Neilsberg 2025 Edition 재가공).</li>
+      <li>Colorado Parks and Wildlife, <i>2025–2029 Statewide Comprehensive Outdoor Recreation Plan (SCORP)</i>, 2024. 주민 설문 표본 765명.</li>
+      <li>U.S. Census Bureau, ACS 5-Year Estimates, 2023년 달러 기준 (Neilsberg 2025 Update).</li>
+      <li>Outdoor Industry Association &amp; Outdoor Foundation, <i>Outdoor Participation Trends Report</i>, 2025년 데이터 · 2026년 발표. 전국 참여자 1억 8,320만 명(6세 이상 59%).</li>
+      <li>U.S. Bureau of Economic Analysis, <i>Outdoor Recreation Satellite Account, U.S. and States, 2024</i>, 2026년 3월 5일 발표.</li>
+      <li>Colorado State University · Southwick Associates, CPW 위탁 경제영향 조사, 2023년 기준 · 2024년 발표. 총 경제산출 658억 달러, 주 GDP 기여 365억 달러.</li>
+      <li>VISIT DENVER · Longwoods International, <i>2025 Denver Visitor Profile</i>, 2026년 5월 발표.</li>
+      <li>Westword, <i>Bubble Planet Exhibit Is Leaving Denver on March 31</i>, 2025년 3월 · Exhibition Hub / Fever 공식 안내.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 12 ------------------------------------------------------------ -->
+<section id="s12">
+  <p class="eyebrow">12 — Competition</p>
+  <h2>키즈 직접 경쟁</h2>
+  <p class="lede">SouthGlenn 기준 반경 8마일(약 13km) 내 어린이 대상 실내 시설 15개소를 조사했습니다.<br>
+    키즈 시설은 아니지만 체험형 콘텐츠로 수요가 겹치는 광역 문화 시설 5개소를 함께 담았습니다.<br>
+    지도에서 시설을 선택하면 상세가 표시됩니다.</p>
+
+  <div class="planwrap">
+    <div class="planbox">
+      <svg class="cmap" id="cmap" viewBox="0 0 900 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SouthGlenn 주변 경쟁 시설 및 문화 시설 분포도">
+        <circle class="ring" cx="450" cy="390" r="37.5"/>
+        <circle class="ring" cx="450" cy="390" r="75"/>
+        <circle class="ring" cx="450" cy="390" r="188"/>
+        <circle class="ring" cx="450" cy="390" r="300"/>
+        <path class="band" d="M 175 220 A 345 345 0 0 1 725 220"/>
+        <text class="ringlabel" x="454" y="349">1mi</text>
+        <text class="ringlabel" x="454" y="312">2mi</text>
+        <text class="ringlabel" x="454" y="199">5mi</text>
+        <text class="ringlabel" x="454" y="87">8mi</text>
+        <text class="ringlabel" x="600" y="182" fill="#00A7B5">8mi 이상 · 덴버 도심 방향 (축척 압축)</text>
+        <line class="road" x1="450" y1="200" x2="450" y2="712"/>
+        <line class="road" x1="140" y1="390" x2="792" y2="390"/>
+        <text class="roadlabel" x="456" y="726">S UNIVERSITY BLVD</text>
+        <text class="roadlabel" x="704" y="383">E ARAPAHOE RD</text>
+        <g class="site"><circle cx="450" cy="390" r="10"/><text x="466" y="385">SouthGlenn B8-846</text><text x="466" y="401" style="font-family:'LINESeedKR',Pretendard,sans-serif;font-size:9.5px;font-weight:400;fill:#888888">30,512 SF · 5~10세</text></g>
+        <g id="cpins">
+          <g class="cp" data-c="kw"><circle cx="449" cy="422" r="7" fill="#E41E2E"/><text x="438" y="432" text-anchor="end">Kids Wonder</text></g>
+          <g class="cp" data-c="sts"><circle cx="486" cy="453" r="7" fill="#E41E2E"/><text x="497" y="457">Spark the Senses</text></g>
+          <g class="cp" data-c="me"><circle cx="389" cy="469" r="7" fill="#0065B2"/><text x="378" y="473" text-anchor="end">Main Event</text></g>
+          <g class="cp" data-c="psm"><circle cx="483" cy="508" r="7" fill="#E41E2E"/><text x="494" y="512">Play Street Museum</text></g>
+          <g class="cp" data-c="sp"><circle cx="573" cy="377" r="7" fill="#E41E2E"/><text x="584" y="381">SweetPlay</text></g>
+          <g class="cp" data-c="pin"><circle cx="573" cy="354" r="6" fill="#0065B2"/><text x="584" y="351">Pindustry</text></g>
+          <g class="cp" data-c="lie"><circle cx="388" cy="228" r="7" fill="#E41E2E"/><text x="377" y="232" text-anchor="end">Lava Island (Englewood)</text></g>
+          <g class="cp" data-c="lm"><circle cx="364" cy="351" r="6" fill="#353535"/><text x="353" y="347" text-anchor="end">Littleton Museum</text></g>
+          <g class="cp" data-c="kd"><circle cx="175" cy="328" r="7" fill="#E41E2E"/><text x="186" y="332">Kids Dig</text></g>
+          <g class="cp" data-c="fsc"><circle cx="668" cy="390" r="7" fill="#0065B2"/><text x="679" y="408">Family Sports Center</text></g>
+          <g class="cp" data-c="eeg"><circle cx="611" cy="383" r="6" fill="#353535"/><text x="600" y="373" text-anchor="end">Epic Escape</text></g>
+          <g class="cp" data-c="lip"><circle cx="737" cy="326" r="7" fill="#E41E2E"/><text x="726" y="323" text-anchor="end">Lava Island (Parker)</text></g>
+          <g class="cp" data-c="ua"><circle cx="747" cy="386" r="7" fill="#0065B2"/><text x="758" y="390">Urban Air</text></g>
+          <g class="cp" data-c="act"><circle cx="764" cy="366" r="6" fill="#0065B2"/><text x="775" y="362">Activate</text></g>
+          <g class="cp" data-c="sand"><circle cx="769" cy="296" r="6" fill="#E41E2E"/><text x="758" y="292" text-anchor="end">The Sand Place</text></g>
+          <g class="cp" data-c="spectra"><circle cx="393" cy="153" r="7" fill="#00A7B5"/><text x="382" y="149" text-anchor="end">Spectra Art Space</text></g>
+          <g class="cp" data-c="mw"><circle cx="290" cy="86" r="7" fill="#00A7B5"/><text x="290" y="72" text-anchor="middle">Meow Wolf</text></g>
+          <g class="cp" data-c="cmd"><circle cx="392" cy="63" r="7" fill="#00A7B5"/><text x="392" y="49" text-anchor="middle">Children's Museum</text></g>
+          <g class="cp" data-c="moi"><circle cx="500" cy="63" r="6" fill="#00A7B5"/><text x="500" y="49" text-anchor="middle">Museum of Illusions</text></g>
+          <g class="cp" data-c="bp"><circle cx="604" cy="86" r="7" fill="#00A7B5"/><text x="604" y="72" text-anchor="middle">Bubble Planet / Van Gogh</text></g>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <h5>시설 유형</h5>
+      <button class="lgi cf" data-t="direct"><span class="sw" style="background:var(--adventure)"></span><span>직접 경쟁<em>실내 키즈 놀이시설 8</em></span></button>
+      <button class="lgi cf" data-t="indirect"><span class="sw" style="background:var(--quest)"></span><span>간접 경쟁<em>FEC · 트램펄린 5</em></span></button>
+      <button class="lgi cf" data-t="culture"><span class="sw" style="background:var(--experience)"></span><span>문화 시설<em>몰입형 체험 · 뮤지엄 5</em></span></button>
+      <button class="lgi cf" data-t="ref"><span class="sw" style="background:var(--boh)"></span><span>참고<em>박물관 · 방탈출 2</em></span></button>
+      <button class="reset" id="resetC">전체 보기</button>
+      <div id="cinfo"><strong>시설을 선택하세요</strong>거리·평점과 우리 시설과의 관계가 표시됩니다.</div>
+    </div>
+  </div>
+  <div class="srcrow"><button class="src" data-s="web">공개 지도 데이터 · 2026.07.20 조회</button></div>
+
+  <h3><i>1</i>키즈 시설 (반경 8마일)</h3>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>시설</th><th>구분</th><th>거리</th><th>평점</th><th>리뷰</th><th>성격</th></tr></thead>
+      <tbody>
+        <tr><td><b>Kids Wonder</b><br><span style="color:var(--ink3);font-size:11.5px">Centennial</span></td><td><span class="tag t-adventure">직접</span></td><td class="num">0.9 mi</td><td class="num">4.7</td><td class="num">734</td><td>바운스 하우스 4기 + 테마 롤플레이 룸, 2세 이하 전용존.<br>주 이용층은 미취학</td></tr>
+        <tr><td><b>Spark the Senses</b><br><span style="color:var(--ink3);font-size:11.5px">Centennial</span></td><td><span class="tag t-adventure">직접</span></td><td class="num">1.9 mi</td><td class="num">4.8</td><td class="num">235</td><td>소규모·영유아 중심.<br>주말 휴무로 사실상 대관 파티 전용</td></tr>
+        <tr><td><b>Littleton Museum</b><br><span style="color:var(--ink3);font-size:11.5px">Littleton</span></td><td><span class="tag t-boh">참고</span></td><td class="num">2.5 mi</td><td class="num">4.7</td><td class="num">368</td><td>무료 입장 + 농장.<br>저비용 가족 대안으로 주말 수요를 일부 흡수</td></tr>
+        <tr><td><b>Main Event</b><br><span style="color:var(--ink3);font-size:11.5px">Highlands Ranch</span></td><td><span class="tag t-quest">간접</span></td><td class="num">2.7 mi</td><td class="num">4.3</td><td class="num">2,344</td><td>볼링·아케이드·F&amp;B 대형 FEC.<br>초등 고학년~성인</td></tr>
+        <tr><td><b>SweetPlay</b><br><span style="color:var(--ink3);font-size:11.5px">Greenwood Village</span></td><td><span class="tag t-adventure">직접</span></td><td class="num">3.3 mi</td><td class="num">4.6</td><td class="num">926</td><td>중형 실내 놀이터 + 아케이드.<br><b>보호자 정가 미징수</b>가 최대 강점으로 리뷰에 반복</td></tr>
+        <tr><td><b>Play Street Museum</b><br><span style="color:var(--ink3);font-size:11.5px">Highlands Ranch</span></td><td><span class="tag t-adventure">직접</span></td><td class="num">3.3 mi</td><td class="num">4.8</td><td class="num">432</td><td>교육형 소규모 뮤지엄.<br>주말 휴무이며 미취학 중심</td></tr>
+        <tr><td><b>Pindustry</b><br><span style="color:var(--ink3);font-size:11.5px">Greenwood Village</span></td><td><span class="tag t-quest">간접</span></td><td class="num">3.3 mi</td><td class="num">4.1</td><td class="num">1,894</td><td>볼링·핀볼·라이브.<br>20시 이후 21세 이상</td></tr>
+        <tr><td><b>Epic Escape Game</b><br><span style="color:var(--ink3);font-size:11.5px">Greenwood Village</span></td><td><span class="tag t-boh">참고</span></td><td class="num">4.3 mi</td><td class="num">4.8</td><td class="num">653</td><td>방탈출.<br>그룹 프라이빗 운영이 강점이며 Quest 존 벤치마크</td></tr>
+        <tr><td><b>Lava Island (Englewood)</b><br><span style="color:var(--ink3);font-size:11.5px">Englewood</span></td><td><span class="tag t-adventure">직접</span></td><td class="num">4.6 mi</td><td class="num">4.8</td><td class="num">1,556</td><td>대형 정글짐 + 트램펄린 + F&amp;B, 21시까지 운영.<br><b>5~10세를 정면으로 겨냥하는 최대 경쟁자</b></td></tr>
+        <tr><td><b>Family Sports Center</b><br><span style="color:var(--ink3);font-size:11.5px">Centennial</span></td><td><span class="tag t-quest">간접</span></td><td class="num">5.8 mi</td><td class="num">4.4</td><td class="num">1,057</td><td>아이스링크·미니골프·레이저태그 복합.<br>공공성 강한 지역 거점</td></tr>
+        <tr><td><b>Kids Dig</b><br><span style="color:var(--ink3);font-size:11.5px">Littleton</span></td><td><span class="tag t-adventure">직접</span></td><td class="num">7.5 mi</td><td class="num">4.6</td><td class="num">358</td><td>실내 모래놀이 특화.<br>오후 1시 30분 마감의 단일 테마 소형점</td></tr>
+        <tr><td><b>Lava Island (Parker Rd)</b><br><span style="color:var(--ink3);font-size:11.5px">Centennial</span></td><td><span class="tag t-adventure">직접</span></td><td class="num">7.8 mi</td><td class="num">4.7</td><td class="num">1,084</td><td>동일 브랜드 2호점.<br><b>지역 내 다점포 전개 신호</b></td></tr>
+        <tr><td><b>Urban Air</b><br><span style="color:var(--ink3);font-size:11.5px">Aurora</span></td><td><span class="tag t-quest">간접</span></td><td class="num">7.9 mi</td><td class="num">3.9</td><td class="num">750</td><td>트램펄린·어드벤처 프랜차이즈.<br>조사 대상 최하위 평점이며 안전관리 불만이 반복</td></tr>
+        <tr><td><b>Activate</b><br><span style="color:var(--ink3);font-size:11.5px">Aurora</span></td><td><span class="tag t-quest">간접</span></td><td class="num">8.4 mi</td><td class="num">5.0</td><td class="num">817</td><td>체감형 게임룸.<br>조사 대상 최고 평점이며 <b>Quest 존이 겨냥할 포맷</b></td></tr>
+        <tr><td><b>The Sand Place</b><br><span style="color:var(--ink3);font-size:11.5px">Aurora</span></td><td><span class="tag t-adventure">직접</span></td><td class="num">8.7 mi</td><td class="num">4.9</td><td class="num">84</td><td>실내 모래놀이.<br>신규·소형</td></tr>
+      </tbody>
+    </table>
+    <p class="tcap">센터 및 인근의 My Music Skool, Engineering for Kids 등 교육형 소규모 시설은 포맷·체류 구조가 달라 목록에서 제외.</p>
+  </div>
+
+  <h3><i>2</i>문화 시설 (광역)</h3>
+  <p class="lede" style="margin-bottom:12px">키즈 시설로 분류되지는 않지만, <b>몰입형·체험형 콘텐츠</b>라는 점에서 가족 단위 지출과 주말 시간을 두고 경쟁합니다.<br>
+    특히 아르떼 키즈파크의 미디어 기반 콘텐츠는 이쪽과 직접 비교됩니다.</p>
+  <div class="card tablewrap">
+    <table>
+      <thead><tr><th>시설</th><th>거리</th><th>평점</th><th>리뷰</th><th>시사점</th></tr></thead>
+      <tbody>
+        <tr><td><b>Spectra Art Space</b><br><span style="color:var(--ink3);font-size:11.5px">1836 S Broadway, Denver</span></td><td class="num">6.5 mi</td><td class="num">4.9</td><td class="num">2,001</td><td>지역 작가 기반 몰입형 설치입니다.<br>퍼즐·미션형 동선이 강점으로 언급되며 3세 아이도 즐겼다는 리뷰가 있습니다.<br><b>Quest 존 콘텐츠의 직접 참고 사례이자 가장 가까운 문화 시설</b>입니다.</td></tr>
+        <tr><td><b>Meow Wolf Convergence Station</b><br><span style="color:var(--ink3);font-size:11.5px">1338 1st St, Denver</span></td><td class="num">10.7 mi</td><td class="num">4.5</td><td class="num">18,225</td><td>3개 층 대형 몰입형 아트입니다.<br>리뷰 1.8만 건으로 지역 체험형 콘텐츠의 기준점입니다.<br>어린 자녀가 만지고 기어오르며 즐겼다는 후기가 반복되어 <b>실질적으로 가족 콘텐츠로 소비</b>됩니다.<br>벤치마크 1순위입니다.</td></tr>
+        <tr><td><b>Museum of Illusions</b><br><span style="color:var(--ink3);font-size:11.5px">16th St Mall, Denver</span></td><td class="num">10.9 mi</td><td class="num">4.6</td><td class="num">7,312</td><td>포토스팟 중심입니다.<br>체류시간이 짧다는 불만이 가격 대비 만족도를 깎는 요인으로 반복 등장합니다.<br><b>체류시간 설계의 반면교사</b>입니다.</td></tr>
+        <tr><td><b>Children's Museum of Denver</b><br><span style="color:var(--ink3);font-size:11.5px">Marsico Campus, Denver</span></td><td class="num">11.3 mi</td><td class="num">4.5</td><td class="num">1,721</td><td>대형 어린이 박물관입니다.<br>물놀이·집라인·로프 클라이밍 등 신체형 콘텐츠를 갖췄고 16시에 마감합니다.<br><b>포맷상 가장 가까운 공공 시설</b>이며 연령대(3~8세)가 상당 부분 겹칩니다.<br>연 약 50만 명으로 10 수요 예측의 벤치마크이기도 합니다.</td></tr>
+        <tr><td><b>Bubble Planet · Van Gogh Immersive</b><br><span style="color:var(--ink3);font-size:11.5px">3900 Elati St, Denver</span></td><td class="num">12.5 mi</td><td class="num">4.4 / 4.9</td><td class="num">2,445 / 425</td><td>동일 부지 순회형 몰입 전시입니다.<br>Bubble Planet은 성인 $26.90 / 아동 $20.90에 체류 60–90분으로 운영되었고, <b>가격 대비 체류시간이 짧다는 불만</b>과 위생 지적이 반복됩니다.<br>아동 요금 미분리에 대한 불만도 확인됩니다.<br>2024년 5월~2025년 3월 운영 후 예정된 순회 종료로 이전했습니다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><i>3</i>판단</h3>
+  <div class="grid3">
+    <div class="card"><h4>포지션 공백은 실재한다</h4><p>조사 20개소 중 어느 곳도 30,000 SF급 프리미엄 실내 키즈 어트랙션 포맷이 아닙니다.<br>가장 유사한 Lava Island(Englewood)는 4.6마일 밖이고, 반경 2마일 내 두 곳은 <b>소형·영유아·파티 중심</b>입니다.<br>센터 및 인근의 미디어아트 기반 키즈 시설도 확인되지 않아, 내부 스펙시트의 판단과 일치합니다.</p></div>
+    <div class="card"><h4>5~10세 타겟이 경쟁 구도를 바꾼다</h4><p>근거리 직접 경쟁 시설 다수(Kids Wonder, Spark the Senses, Play Street Museum, 모래놀이 2곳)는 <b>미취학 이하가 주력</b>입니다.<br>5~10세를 정면으로 겨냥하는 곳은 4.6마일 밖 Lava Island와 7.9마일 밖 Urban Air 정도입니다.<br>즉 <b>실제 경쟁은 근거리가 아니라 원거리 대형점과 붙습니다.</b><br>상권 반경을 2마일이 아닌 5마일 이상으로 잡아야 합니다.</p></div>
+    <div class="card"><h4>가격 벤치마크가 확보됐다</h4><p>Bubble Planet의 성인 $26.90 / 아동 $20.90은 이 시장에서 실제로 통용된 가격입니다.<br>체류 60–90분에 이 가격이었으므로, 2.5~3시간 체류를 제공하는 아르떼 키즈파크는 <b>더 높은 객단가를 정당화할 근거</b>가 있습니다.<br>09의 역산표와 대조하면, 이 가격대가 형성될 경우 점유비용은 업계 통상 구간 안에 들어옵니다.</p></div>
+  </div>
+  <div class="warn"><span class="lab">조사 한계</span>
+    본 조사는 공개 지도 데이터 기준이며 <b>평점·리뷰 수는 2026.07.20 조회 시점 값</b>입니다.<br>
+    거리는 직선거리이며, 각 시설의 면적·객단가·연간 방문객은 공개되지 않아 포함하지 못했습니다.<br>
+    현지 파트너를 통한 실지 방문 조사(가격표·체류시간·피크 시간대)를 별도 권합니다.</div>
+</section>
+
+<!-- 13 ------------------------------------------------------------ -->
+<section id="s13">
+  <p class="eyebrow">13 — Permitting</p>
+  <h2>인허가 일정</h2>
+  <p class="lede">B8-846은 Centennial 시 경계 내에 있으므로 <b>시 건축과(Community Development) 소관</b>입니다.<br>
+    Arapahoe 카운티 건축과는 비편입 지역만 담당하므로 카운티의 10~12주 심사 기준은 적용되지 않습니다.<br>
+    이 구분을 처음부터 잡아두어야 일정 오차가 생기지 않습니다.</p>
+
+  <div class="card tablewrap">
+    <h4>적용 법규</h4>
+    <table>
+      <thead><tr><th style="width:96px">구분</th><th style="width:180px">적용</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="item">건축</td><td class="num">2021 IBC / IEBC</td><td>Centennial 시 수정조항 포함.<br>용도 변경(Change of Occupancy) 해당 여부 확인 필요</td></tr>
+        <tr><td class="item">기계 · 배관</td><td class="num">2021 IMC / IPC / IFGC</td><td>위생기구 수량 재산정, 그리스 트랩 신설 검토의 근거 규정</td></tr>
+        <tr><td class="item">전기</td><td class="num">2023 NEC</td><td>전기공은 콜로라도 주 전기위원회, 배관공은 주 배관심사위원회 면허</td></tr>
+        <tr><td class="item">에너지</td><td class="num">2018 IECC</td><td>제출 시 에너지 준수 서류 필요</td></tr>
+        <tr><td class="item">소방</td><td class="num">2021 IFC</td><td><b>South Metro Fire Rescue가 별도 심사</b>합니다.<br>건축 심사와 병렬 진행되므로 일정 병목 지점입니다.</td></tr>
+        <tr><td class="item">시공사</td><td class="num">Centennial 시 등록</td><td>콜로라도는 주 단위 종합건설 면허가 없고 시 단위 등록입니다.<br>현지 GC 선정 시 확인 항목입니다.</td></tr>
+      </tbody>
+    </table>
+    <div class="srcrow"><button class="src" data-s="web">공개 인허가 자료 · 2026.07.20 조회</button></div>
+  </div>
+
+  <h3><i>1</i>단계별 일정(계획)</h3>
+  <div class="card">
+    <div class="tl">
+      <div class="step"><b>사전 협의 (Pre-application)</b><div class="dur">2~4주 · 병행 가능</div>
+        <p>용도 변경 해당 여부, 주차 산정, 소방 요구사항을 사전에 확인합니다.<br>이 단계를 건너뛰면 1차 보완 지적으로 되돌아옵니다.<br>현지 설계사 선정과 동시에 착수합니다.</p></div>
+      <div class="step"><b>기본 · 실시설계</b><div class="dur">10~14주</div>
+        <p>구조 하중 판정과 어트랙션 안전 인증 결과가 이 단계 안에 들어와야 합니다.<br>두 항목은 설계 착수와 동시에 병행 의뢰합니다.</p></div>
+      <div class="step"><b>1차 도면 심사</b><div class="dur">15~20영업일 (약 3~4주)</div>
+        <p>Centennial 시 상업 심사 통상 기준입니다.<br>제출 완결성이 떨어지면 30영업일까지 늘어난다는 자료도 있습니다.<br>소방(South Metro)은 별도 트랙이며 병렬 진행되나 회신 시점이 다를 수 있습니다.</p></div>
+      <div class="step"><b>보완 · 재심사</b><div class="dur">3~6주 (1회 기준)</div>
+        <p>해외 브랜드의 첫 인허가는 보완 1회를 기본으로 잡는 것이 현실적입니다.<br>유료 신속 심사 제도가 있어 일정 압박 시 활용 가능합니다.</p></div>
+      <div class="step"><b>허가 발급 · 착공</b><div class="dur">허가 유효 180일</div>
+        <p>발급 후 180일 내 착공하지 않으면 실효됩니다.<br>어트랙션 발주 리드타임과 착공 시점을 맞춰야 합니다.</p></div>
+      <div class="step"><b>시공 · 검사 · 사용승인(CO)</b><div class="dur">16~22주</div>
+        <p>중간 검사가 다수 발생합니다.<br>최종 소방 검사 통과 후 사용승인을 취득합니다.</p></div>
+    </div>
+    <p style="font-size:12.5px;color:var(--ink);border-top:1px solid var(--rule2);padding-top:12px;margin-top:4px"><b>누적 예상 —</b> 설계 착수부터 사용승인까지 <b>약 11~14개월</b>입니다.<br>보완 2회 이상 또는 용도 변경 심의 발생 시 15개월 이상으로 확대됩니다.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card"><h4>비용 참고</h4><p>Centennial 시 상업 임차인 공사(TI) 허가 수수료는 통상 미화 2,000~15,000달러 범위로 알려져 있습니다.<br>도면 심사비·소방 심사비·제3자 검사비는 별도입니다.<br>공사비 규모에 따라 산정되므로 실시설계 완료 후 재산정합니다.</p></div>
+    <div class="card"><h4>임대 조건과의 접점</h4><p>인허가 11~14개월에 비해 <b>Rent Abatement는 120일(4개월)</b>입니다.<br>Abatement 개시 시점이 인도일 기준이면 개장 전에 소진되어 무상 기간의 실효가 사라집니다.<br>09에서 지적했듯 개시 시점을 개장일 또는 CO 취득일 기준으로 협의해야 합니다.</p></div>
+  </div>
+
+  <div class="warn"><span class="lab">수치 검증 필요</span>
+    본 절의 심사 기간·수수료는 공개 자료 기준 일반값입니다.<br>
+    실제 일정은 제출 시점의 담당 부서 업무량에 좌우되므로, <b>현지 설계사 또는 인허가 대행사를 통한 사전 확인</b>을 거쳐 확정 일정으로 대체해야 합니다.</div>
+</section>
+
+<!-- 14 ------------------------------------------------------------ -->
+<section id="s14">
+  <p class="eyebrow">14 — Verification</p>
+  <h2>확인 필요 항목</h2>
+  <p class="lede">회신을 받아야 다음 단계로 넘어갈 수 있는 항목입니다.<br>
+    체크 상태는 이 브라우저에 저장됩니다.</p>
+  <div class="card" id="chklist">
+    <div class="chk"><input type="checkbox" id="c0"><label for="c0"><b>층고 실측 — 9개 지점</b><em>LOD 수치가 전부 ± 표기. Adventure 존 어트랙션 사양의 전제</em></label><span class="who">현지 파트너</span></div>
+    <div class="chk"><input type="checkbox" id="c1"><label for="c1">방위 표기 및 168'-8" 기준선 확인<em>East/North Elevation 표기와 평면 치수가 불일치</em></label><span class="who">임대인</span></div>
+    <div class="chk"><input type="checkbox" id="c2"><label for="c2">구조체 하중 조건 및 원 구조계산서 수령<em>네트·클라이밍 지붕 매달림 하중 가부 판정</em></label><span class="who">임대인</span></div>
+    <div class="chk"><input type="checkbox" id="c3"><label for="c3">현장 실사 — 설비 현황 및 반입 동선<em>RTU·전기·급배수·그리스 트랩·개구부 치수</em></label><span class="who">현지 파트너</span></div>
+    <div class="chk"><input type="checkbox" id="c4"><label for="c4">RTU 현황 대수·용량·잔여 수명<em>피크 동시 재실 500명 이상 전제 시 승계 가능성</em></label><span class="who">설비</span></div>
+    <div class="chk"><input type="checkbox" id="c5"><label for="c5">전기 인입 용량 및 기존 간선 경로<em>미디어 장비 부하 분산 계획 선행 조건</em></label><span class="who">전기</span></div>
+    <div class="chk"><input type="checkbox" id="c6"><label for="c6">스프링클러 헤드 배치도 및 추가 물량 산정<em>플레이 구조물 살수 장애 대응</em></label><span class="who">소방</span></div>
+    <div class="chk"><input type="checkbox" id="c7"><label for="c7">위생기구 수량 현황 및 재산정<em>판매시설 기준 → 키즈파크 기준</em></label><span class="who">설비</span></div>
+    <div class="chk"><input type="checkbox" id="c8"><label for="c8">그리스 트랩 설치 여부 및 신설 시 위치·슬래브 파취 승인<em>F&amp;B 도입 전제 조건</em></label><span class="who">임대인 · 설비</span></div>
+    <div class="chk"><input type="checkbox" id="c9"><label for="c9">파사드 변경 범위 — 사인 계획 사전 승인 절차<em>"MAY BE MODIFIED BY TENANT" 조건의 실제 한계</em></label><span class="who">임대인</span></div>
+    <div class="chk"><input type="checkbox" id="c10"><label for="c10">피난 계산 및 기존 비상구 위치 승계 가부<em>단일 주출입 · 피크 재실 인원 기준</em></label><span class="who">현지 설계</span></div>
+    <div class="chk"><input type="checkbox" id="c11"><label for="c11">유기기구 안전 인증 체계 확인 (ASTM 계열)<em>유기기구 해당 범위 판정이 선행</em></label><span class="who">현지 컨설턴트</span></div>
+    <div class="chk"><input type="checkbox" id="c12"><label for="c12">용도 변경(Change of Occupancy) 해당 여부 사전 협의<em>해당 시 절차 추가로 일정 확대</em></label><span class="who">현지 설계</span></div>
+    <div class="chk"><input type="checkbox" id="c13"><label for="c13">South Metro Fire Rescue 사전 협의<em>건축 심사와 별도 트랙</em></label><span class="who">현지 설계</span></div>
+    <div class="chk"><input type="checkbox" id="c14"><label for="c14">센터 총 임대면적(GLA) 및 CAM 배분 기준<em>NNN($11.31~12.23/SF) 산정 근거 검증</em></label><span class="who">임대인</span></div>
+    <div class="chk"><input type="checkbox" id="c15"><label for="c15">TI 사용 가능 항목 명시<em>어트랙션 장비 취득비 포함 여부가 총 투자비를 좌우</em></label><span class="who">Dstrict · 임대인</span></div>
+    <div class="chk"><input type="checkbox" id="c16"><label for="c16">Rent Abatement 개시 시점 및 적용 범위<em>인도일 vs 개장일 · Base Rent만 vs NNN 포함</em></label><span class="who">Dstrict · 임대인</span></div>
+    <div class="chk"><input type="checkbox" id="c17"><label for="c17">LC(보증금) 금액 및 납입 시점 확정<em>현재 TBD · 초기 현금흐름 직접 영향</em></label><span class="who">Dstrict · 임대인</span></div>
+    <div class="chk"><input type="checkbox" id="c18"><label for="c18">재무 현황 제출 범위·형식 협의<em>한국 법인 자료 인정 여부 사전 확인</em></label><span class="who">Dstrict</span></div>
+    <div class="chk"><input type="checkbox" id="c19"><label for="c19">공용 주차 총 대수 및 피크 시간대 점유율<em>피크일 최대 696대 필요 추정</em></label><span class="who">임대인</span></div>
+    <div class="chk"><input type="checkbox" id="c20"><label for="c20">관광 수요 계상 여부 확정<em>10 예측(관광 62% 포함)과 11 분석(관광 제외) 전제 불일치</em></label><span class="who">Dstrict</span></div>
+    <div class="chk"><input type="checkbox" id="c21"><label for="c21">객단가·요금 체계 확정 후 점유비용 재산정<em>확정 전까지 09는 역산값만 제시 · Bubble Planet 실적가 참고</em></label><span class="who">Dstrict · 운영사</span></div>
+    <div class="chk"><input type="checkbox" id="c22"><label for="c22">시간제 세션 운영 설계<em>피크일 혼잡 대응 · 대기 홀 규모와 공조 용량에 연동</em></label><span class="who">운영사</span></div>
+    <div class="chk"><input type="checkbox" id="c23"><label for="c23">단체(학교) 채널 개발<em>매출 상방이자 비피크 시간대 캐파 해법</em></label><span class="who">운영사</span></div>
+    <div class="chk"><input type="checkbox" id="c24"><label for="c24">경쟁 시설 실지 방문 조사<em>가격표·체류시간·피크 시간대·보호자 요금 정책</em></label><span class="who">현지 파트너</span></div>
+    <div class="chk"><input type="checkbox" id="c25"><label for="c25">문화 시설 벤치마크 방문 (Meow Wolf · Spectra)<em>몰입형 콘텐츠 밀도·체류시간 기준 확인</em></label><span class="who">Dstrict</span></div>
+    <div class="chk"><input type="checkbox" id="c26"><label for="c26">여름 시즌 프로그램 설계<em>5–9월 야외 이탈 대응 · 캠프/단체 상품</em></label><span class="who">운영사</span></div>
+  </div>
+  <p style="font-size:12px;color:var(--ink3)" id="chkcount"></p>
+</section>
+
+<!-- 15 ------------------------------------------------------------ -->
+<section id="s15">
+  <p class="eyebrow">15 — Next</p>
+  <h2>다음 단계</h2>
+  <div class="grid3">
+    <div class="card"><h4>1단계 · 현장 실사</h4><p>층고 9개 지점 실측이 최우선입니다.<br>LOD 수치가 모두 ± 표기여서 Adventure 존 어트랙션 사양의 전제가 확정되지 않기 때문입니다.<br>설비 현황과 반입 동선을 같은 날 확인합니다.</p></div>
+    <div class="card"><h4>2단계 · 계약 조건 정리</h4><p>TI 사용 범위, Abatement 개시 시점, LC 금액, 센터 GLA를 확정합니다.<br>인허가 11~14개월 대비 Abatement 4개월이므로 <b>개시 시점 협의가 실질적 가치가 가장 큰 항목</b>입니다.<br>1단계와 병행합니다.</p></div>
+    <div class="card"><h4>3단계 · 수요 전제 통일 · v6</h4><p>관광 수요 계상 여부와 객단가를 확정해 점유비용 비율을 재산정합니다.<br>실측·구조·인증 결과를 반영해 어트랙션 15종을 고정하고 본 문서를 v6으로 개정합니다.<br>이후 현지 설계사에 기본설계를 발주합니다.</p></div>
+  </div>
+  <div class="note"><span class="lab">순서에 관한 판단</span>
+    국내 사례처럼 조닝을 먼저 확정하고 구조를 맞추는 방식은 이 부지에서 위험합니다.<br>
+    층고 편차, 미국 인증 체계, 별도 소방 심사 트랙이라는 세 제약이 조닝을 역으로 결정하기 때문입니다.<br>
+    <b>제약 확인 → 조닝</b> 순서를 지킬 것을 권합니다.</div>
+  <div class="warn"><span class="lab">현재 시점의 종합 판단</span>
+    입지·상권·경쟁 공백·임대 조건은 모두 우호적입니다.<br>
+    방문객 1인당 점유비용은 안정기 $2.17, 1년차 $2.47로 부담이 크지 않은 수준입니다.<br>
+    반면 <b>객단가와 수요 전제(관광 포함 여부)</b>가 미확정으로 남아 있습니다.<br>
+    두 항목이 사업성 판단의 분자와 분모를 각각 바꾸므로, 정리되기 전의 수치는 잠정으로 다뤄야 합니다.</div>
+</section>
+
+<!-- 16 ------------------------------------------------------------ -->
+<section id="s16">
+  <p class="eyebrow">16 — Comments</p>
+  <h2>팀 코멘트</h2>
+  <p class="lede">검토 의견을 남기면 이 브라우저에 자동 저장되어 다음에 열 때도 유지됩니다.<br>
+    다른 사람과 공유하거나 백업하려면 파일로 저장한 뒤 불러오기로 병합하세요.</p>
+  <div class="card">
+    <div class="cmt-form">
+      <select id="cSec">
+        <option>01 개요</option><option>02 센터 · 입지</option><option>03 공간 실측</option><option>04 구조 · 층고</option>
+        <option>05 출입 · 파사드</option><option>06 존 배분</option><option>07 어트랙션</option><option>08 설비</option>
+        <option>09 임대 조건</option><option>10 수요 예측 · 캐파</option><option>11 지역 분석</option><option>12 키즈 직접 경쟁</option>
+        <option>13 인허가 일정</option><option>14 확인 항목</option><option>기타</option>
+      </select>
+      <input id="cWho" placeholder="작성자">
+      <textarea id="cBody" placeholder="의견을 입력하세요"></textarea>
+      <div class="row">
+        <button class="act" id="cAdd">코멘트 추가</button>
+        <button class="act ghost" id="cCopy">전체 복사</button>
+        <button class="act ghost" id="cSave">파일로 저장</button>
+        <button class="act ghost" id="cLoadBtn">불러오기</button>
+        <input type="file" id="cLoad" accept=".json,application/json" hidden>
+        <span id="cMsg" style="font-family:var(--mono);font-size:11px;color:var(--ok)"></span>
+      </div>
+    </div>
+    <div id="cList"><div class="empty">아직 코멘트가 없습니다.</div></div>
+    <div class="savebar"><span class="dot" id="saveDot"></span><span id="saveState">저장 상태 확인 중</span><button class="act ghost" id="cClear" style="margin-left:auto;padding:5px 12px;font-size:11px">전체 삭제</button></div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <button class="mclose" id="mclose">닫기 ESC</button>
+    <h5 id="mtitle"></h5>
+    <p class="mkind" id="mkind"></p>
+    <div id="mfig"></div>
+    <div class="mcite" id="mcite"></div>
+    <p class="mnote" id="mnote"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* =============== 근거 자료 모달 =============== */
+  var FIG={};
+  FIG.outline='<polygon points="40,436 461,436 461,25 451,25 339,90 40,90" fill="none" stroke="#111111" stroke-width="2.2"/>';
+  FIG.plan='<svg viewBox="0 0 500 470" xmlns="http://www.w3.org/2000/svg">'+FIG.outline+
+    '<g font-family="LINESeedKR, Pretendard, sans-serif" font-size="10" fill="#353535">'+
+    '<line x1="40" y1="76" x2="339" y2="76" stroke="#888888" stroke-width=".7"/><text x="150" y="70">162\'-1"</text>'+
+    '<line x1="40" y1="456" x2="461" y2="456" stroke="#888888" stroke-width=".7"/><text x="215" y="468">191\'-4"</text>'+
+    '<line x1="26" y1="90" x2="26" y2="436" stroke="#888888" stroke-width=".7"/><text x="0" y="268">157\'-4"</text>'+
+    '<line x1="476" y1="25" x2="476" y2="436" stroke="#888888" stroke-width=".7"/><text x="452" y="240">186\'-8"</text>'+
+    '<text x="352" y="60">25\'-8" 챔퍼</text>'+
+    '<text x="170" y="250" font-size="13" font-weight="700" fill="#111111">30,512 SF</text>'+
+    '<text x="170" y="266">2,834.6 m² · 857.5평 · 단층</text></g></svg>';
+  FIG.grid='<svg viewBox="0 0 500 470" xmlns="http://www.w3.org/2000/svg">'+FIG.outline+
+    '<g stroke="#D6D6D6" stroke-width=".8" stroke-dasharray="4 4">'+
+    '<line x1="111" y1="90" x2="111" y2="436"/><line x1="182" y1="90" x2="182" y2="436"/><line x1="253" y1="90" x2="253" y2="436"/><line x1="324" y1="90" x2="324" y2="436"/><line x1="395" y1="62" x2="395" y2="436"/>'+
+    '<line x1="40" y1="172" x2="461" y2="172"/><line x1="40" y1="260" x2="461" y2="260"/><line x1="40" y1="348" x2="461" y2="348"/></g>'+
+    '<g fill="#111111">'+
+    '<circle cx="111" cy="172" r="3.4"/><circle cx="182" cy="172" r="3.4"/><circle cx="253" cy="172" r="3.4"/><circle cx="324" cy="172" r="3.4"/><circle cx="395" cy="172" r="3.4"/>'+
+    '<circle cx="111" cy="260" r="3.4"/><circle cx="182" cy="260" r="3.4"/><circle cx="253" cy="260" r="3.4"/><circle cx="324" cy="260" r="3.4"/><circle cx="395" cy="260" r="3.4"/>'+
+    '<circle cx="111" cy="348" r="3.4"/><circle cx="182" cy="348" r="3.4"/><circle cx="253" cy="348" r="3.4"/><circle cx="324" cy="348" r="3.4"/><circle cx="395" cy="348" r="3.4"/></g>'+
+    '<g font-family="LINESeedKR, Pretendard, sans-serif" font-size="10" fill="#353535">'+
+    '<text x="118" y="86">32\'-3" typ</text><text x="46" y="168">37\'-4"</text><text x="46" y="256">40\'-0" typ</text>'+
+    '<text x="46" y="420" font-size="11" fill="#111111">내부 기둥 15본 · 9.8m × 12.2m 스팬</text></g></svg>';
+  FIG.heights='<svg viewBox="0 0 500 470" xmlns="http://www.w3.org/2000/svg">'+FIG.outline+
+    '<g font-family="LINESeedKR, Pretendard, sans-serif" font-size="9" font-weight="700" text-anchor="middle">'+
+    '<g><circle cx="150" cy="125" r="13" fill="#111111"/><text x="150" y="128" fill="#F5F5F5">21\'0</text></g>'+
+    '<g><circle cx="309" cy="125" r="13" fill="#111111"/><text x="309" y="128" fill="#F5F5F5">23\'2</text></g>'+
+    '<g><circle cx="230" cy="210" r="13" fill="#111111"/><text x="230" y="213" fill="#F5F5F5">19\'11</text></g>'+
+    '<g><circle cx="230" cy="298" r="13" fill="#F5F5F5" stroke="#111111" stroke-width="1.3"/><text x="230" y="301" fill="#111111">18\'11</text></g>'+
+    '<g><circle cx="125" cy="309" r="13" fill="#F5F5F5" stroke="#111111" stroke-width="1.3"/><text x="125" y="312" fill="#111111">18\'8</text></g>'+
+    '<g><circle cx="370" cy="309" r="13" fill="#111111"/><text x="370" y="312" fill="#F5F5F5">20\'11</text></g>'+
+    '<g><circle cx="230" cy="378" r="13" fill="#F5F5F5" stroke="#111111" stroke-width="1.3"/><text x="230" y="381" fill="#111111">18\'3</text></g>'+
+    '<g><circle cx="125" cy="398" r="13" fill="#F5F5F5" stroke="#111111" stroke-width="1.3"/><text x="125" y="401" fill="#111111">19\'3</text></g>'+
+    '<g><circle cx="370" cy="398" r="13" fill="#111111"/><text x="370" y="401" fill="#F5F5F5">21\'10</text></g></g>'+
+    '<g font-family="LINESeedKR, Pretendard, sans-serif" font-size="10" fill="#353535" text-anchor="start">'+
+    '<text x="46" y="440">■ 20\'-0" 이상 (고층고대)　□ 20\'-0" 미만</text>'+
+    '</g></svg>';
+  FIG.entry='<svg viewBox="0 0 500 470" xmlns="http://www.w3.org/2000/svg">'+FIG.outline+
+    '<rect x="40" y="420" width="103" height="16" fill="#E8E8E8" stroke="#888888" stroke-width=".8"/>'+
+    '<rect x="392" y="420" width="69" height="16" fill="#E8E8E8" stroke="#888888" stroke-width=".8"/>'+
+    '<line x1="143" y1="436" x2="247" y2="436" stroke="#00B050" stroke-width="4"/>'+
+    '<g font-family="LINESeedKR, Pretendard, sans-serif" font-size="10" fill="#353535">'+
+    '<text x="150" y="454" fill="#00B050">주출입 47\'-0" (14.3m)</text>'+
+    '<text x="44" y="414" font-size="9">NO ENTRY</text><text x="396" y="414" font-size="9">NO ENTRY</text>'+
+    '<text x="60" y="200" font-size="11" fill="#111111">기존 storefront — 임차인 변경 허용</text>'+
+    '<text x="60" y="218">"MAY BE MODIFIED BY TENANT AS NEEDED"</text>'+
+    '<text x="60" y="236">기존 awning 존치</text></g></svg>';
+  FIG.none='<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">'+
+    '<rect x="10" y="10" width="480" height="180" fill="none" stroke="#D6D6D6" stroke-width="1.4" stroke-dasharray="7 6"/>'+
+    '<g font-family="LINESeedKR, Pretendard, sans-serif" font-size="12" fill="#888888" text-anchor="middle">'+
+    '<text x="250" y="95">도면 이미지 미첨부</text><text x="250" y="118" font-size="10">원본 PDF를 다시 업로드하면 해당 페이지를 삽입합니다</text></g></svg>';
+  FIG.doc='<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">'+
+    '<rect x="10" y="10" width="480" height="180" fill="none" stroke="#BBD6EE" stroke-width="1.4"/>'+
+    '<g font-family="LINESeedKR, Pretendard, sans-serif" font-size="12" fill="#0065B2" text-anchor="middle">'+
+    '<text x="250" y="95">내부 문서 근거</text><text x="250" y="118" font-size="10">원문은 아래 파일명으로 별도 보관</text></g></svg>';
+
+FIG.palette='<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">'+'<g font-family="LINESeedKR, Pretendard, sans-serif" font-size="8.5">'+'<text x="10" y="14" font-size="10" fill="#111111" font-weight="700">META</text>'+'<rect x="10" y="22" width="115" height="34" fill="#FFFFFF" stroke="#D6D6D6"/><text x="16" y="36" fill="#111111">M1 BG</text><text x="16" y="48" fill="#353535">#FFFFFF</text>'+'<rect x="131" y="22" width="115" height="34" fill="#111111"/><text x="137" y="36" fill="#FFFFFF">M2 FG</text><text x="137" y="48" fill="#D6D6D6">#111111</text>'+'<rect x="252" y="22" width="115" height="34" fill="#353535"/><text x="258" y="36" fill="#FFFFFF">M3 SUB</text><text x="258" y="48" fill="#D6D6D6">#353535</text>'+'<rect x="373" y="22" width="115" height="34" fill="#D6D6D6"/><text x="379" y="36" fill="#111111">M4 RULE</text><text x="379" y="48" fill="#353535">#D6D6D6</text>'+'<text x="10" y="80" font-size="10" fill="#111111" font-weight="700">CORE</text>'+'<rect x="10" y="88" width="115" height="34" fill="#0065B2"/><text x="16" y="102" fill="#FFFFFF">C1</text><text x="16" y="114" fill="#FFFFFF">#0065B2</text>'+'<rect x="131" y="88" width="115" height="34" fill="#FFDF00"/><text x="137" y="102" fill="#111111">C2</text><text x="137" y="114" fill="#111111">#FFDF00</text>'+'<rect x="252" y="88" width="115" height="34" fill="#E41E2E"/><text x="258" y="102" fill="#FFFFFF">C3</text><text x="258" y="114" fill="#FFFFFF">#E41E2E</text>'+'<rect x="373" y="88" width="115" height="34" fill="#00913B"/><text x="379" y="102" fill="#FFFFFF">C4</text><text x="379" y="114" fill="#FFFFFF">#00913B</text>'+'<rect x="10" y="126" width="115" height="34" fill="#FF8000"/><text x="16" y="140" fill="#FFFFFF">C5</text><text x="16" y="152" fill="#FFFFFF">#FF8000</text>'+'<rect x="131" y="126" width="115" height="34" fill="#ED92B9"/><text x="137" y="140" fill="#FFFFFF">C6</text><text x="137" y="152" fill="#FFFFFF">#ED92B9</text>'+'<rect x="252" y="126" width="115" height="34" fill="#62B5E5"/><text x="258" y="140" fill="#FFFFFF">C7</text><text x="258" y="152" fill="#FFFFFF">#62B5E5</text>'+'<rect x="373" y="126" width="115" height="34" fill="#00A7B5"/><text x="379" y="140" fill="#FFFFFF">C8</text><text x="379" y="152" fill="#FFFFFF">#00A7B5</text>'+'<text x="10" y="184" font-size="10" fill="#111111" font-weight="700">DATA 5-STEP</text>'+'<rect x="10" y="192" width="95" height="22" fill="#353535"/><rect x="107" y="192" width="95" height="22" fill="#5E5E5E"/>'+'<rect x="204" y="192" width="95" height="22" fill="#888888"/><rect x="301" y="192" width="95" height="22" fill="#B0B0B0"/>'+'<rect x="398" y="192" width="90" height="22" fill="#D6D6D6"/>'+'<text x="10" y="232" fill="#353535">FONT · LINE Seed Family (KR) — seed.line.me/index_kr.html</text>'+'<text x="10" y="244" fill="#353535">Joyful Nature / Dynamic Nature · light · vivid</text>'+'</g></svg>';
+  var SRC={
+    palette:{t:'컬러 시스템 · 26 Arte Kids Park',k:'Brand — Color System',fig:'palette',f:"260511_dstrict_컬러시스템_가이드_IP제작본부_수정.html",p:'SECTION 03 · 팔레트 26 (key: arte_kids_park)',d:'2026.05.11',n:'본 문서의 모든 색은 d\'strict 전사 컬러 시스템 26번 Arte Kids Park 팔레트를 따릅니다. 메타 4슬롯(M1~M4)은 배경·본문·보조·괘선에, 코어 8슬롯(C1~C8)은 존 구분과 카테고리 구분에 배정했습니다. 경고·성공·정보 박스는 시스템 시맨틱 컬러(Success #00B050 / Warning #F59E0B / Danger #FF0000 / Info #185FA5)를 사용했습니다. 서체는 팔레트 지정 LINE Seed Family (KR)이며 미로드 시 Pretendard로 대체됩니다.',},
+    s1p1:{t:'평면 외곽 · 임대면적',k:'Floor Plan',fig:'plan',f:'B8_846_LOD_-Tenant_072423.pdf',p:'p.1 — B8 UNIT 846 FLOOR PLAN',d:'2023.07.24',n:'외곽 치수 191\'-4" / 186\'-8" / 162\'-1" / 157\'-4", 챔퍼 25\'-1"·25\'-8", 임대면적 30,512 SF(ANSI/BOMA Z65.5-2020) 표기. 단층이며 메자닌 표기 없음.'},
+    s1p2:{t:'입면 · 파사드 조건',k:'Elevation',fig:'entry',f:'B8_846_LOD_-Tenant_072423.pdf',p:'p.2 — EAST / NORTH ELEVATION',d:'2023.07.24',n:'기존 storefront에 "MAY BE MODIFIED BY TENANT AS NEEDED", 기존 awning 존치 표기. 정면 양단 NO ENTRY ZONE 해치, 중앙 47\'-0" 출입 구간.'},
+    s2p1:{t:'구조체 하단고 9개소',k:'Floor Plan — Structure',fig:'heights',f:'B8_846_LOD_-Tenant_090523.pdf',p:'p.1 — FLOOR PLAN (구조고 표기 추가판)',d:'2023.09.05',n:'BO Joists / BO Deck / BO Steel 9개 지점의 AFF 값. 전부 ± (approximate) 표기이므로 현장 실측 검증 대상입니다. 본 문서의 층고는 모두 이 도면을 기준으로 합니다.'},
+    s2g:{t:'컬럼 그리드',k:'Floor Plan — Grid',fig:'grid',f:'B8_846_LOD_-Tenant_090523.pdf',p:'p.1 — 기둥 그리드 표기',d:'2023.09.05',n:'32\'-3" / 32\'-0" TYP.(E-W) × 40\'-0" / 37\'-4"(N-S). 내부 기둥 15본.'},
+    s3:{t:'기존 설비 인허가 도서',k:'MEP — 확인 필요',fig:'none',f:'260611_HVAC_관련___CEN0800595_Plans.pdf',p:'2008년 Best Buy 인허가 세트',d:'2008',n:'해당 도서의 개별 장비 스케줄(RTU 대수·용량, 인입 차단기, 스프링클러 헤드, 위생기구 수량)은 아직 본 문서에 반영되지 않았습니다. 설비 파트너 검토 후 실수치로 대체 예정입니다.'},
+    spec:{t:'공간 스펙 · 협의 조건',k:'Internal — Spec Sheet',fig:'doc',f:'내부 스펙시트 (검토 대상 공간 특성 및 협의 사항)',p:'센터 구성 · 앵커 · 재개발 · 임대 조건',d:'2026.07',n:'센터 앵커 구성, 구 Macy\'s 부지 재개발(약 900세대), 주차, Centennial 중위소득 약 $120K(지역 평균 $114K~$131K), 임대 조건(10년+5년, $20→$22/SF, NNN $11.31~12.23/SF, TI $50/SF, Abatement 120일) 근거. '},
+    mkt:{t:'덴버 시장성 및 예상 방문객',k:'Internal — Market Report',fig:'doc',f:'260717_아르떼키즈파크_덴버_시장성리포트.html',p:'AKJJ 실적(2024.04–2026.07) 기반 수요 추정',d:'2026.07.17',n:'제주 실측 계수(관광 캡처율 5.2%, 로컬 가구당 연 0.68회)를 보정 없이 적용. 안정기 연 44.1만 명(41.5만~47.8만), 1년차 38.8만 명. 출처: 제주관광공사(2024), VISIT DENVER(2024), U.S. Census, KOSIS. 공간 수용력 검증(10-3)은 본 검토 문서에서 추가한 항목으로 원 리포트에는 없습니다.'},
+    web:{t:'외부 조사 자료',k:'Research',fig:'none',f:'공개 지도 데이터 · 공개 인허가 자료',p:'2026.07.20 조회',d:'2026.07.20',n:'경쟁 시설의 평점·리뷰 수는 조회 시점 값이며 거리는 직선거리입니다. 인허가 심사 기간·수수료는 공개 자료 기준 일반값으로, 현지 설계사 확인이 필요합니다.'},
+    web2:{t:'지역 통계 자료',k:'Research — Regional',fig:'none',f:'Metro Denver EDC · U.S. Census ACS · CPW SCORP · OIA · BEA · VISIT DENVER',p:'11 지역 분석 하단 출처 1~9 참조',d:'2024–2026 발표분',n:'인구·소득·야외활동 참여 지표는 모두 공개 통계이며 발표 시점이 서로 다릅니다. Centennial 시 중위소득 약 $120K(지역 평균 $114K~$131K)는 확정값입니다.'}
+  };
+
+  var modal=document.getElementById('modal');
+  function openSrc(k){
+    var s=SRC[k]; if(!s) return;
+    document.getElementById('mtitle').textContent=s.t;
+    document.getElementById('mkind').textContent=s.k;
+    document.getElementById('mfig').innerHTML=FIG[s.fig]||FIG.none;
+    document.getElementById('mcite').innerHTML='<b>'+s.f+'</b>'+s.p+'　·　'+s.d;
+    document.getElementById('mnote').textContent=s.n;
+    modal.hidden=false;
+    document.getElementById('mclose').focus();
+  }
+  function closeSrc(){modal.hidden=true}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.src'); if(b){openSrc(b.dataset.s);return}
+    if(e.target===modal||e.target.id==='mclose') closeSrc();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeSrc()});
+
+  /* =============== 저장소 =============== */
+  var mem={},HAS=false;
+  try{var t='__t';window.localStorage.setItem(t,'1');window.localStorage.removeItem(t);HAS=true}catch(e){HAS=false}
+  var store={
+    get:function(k){try{return HAS?window.localStorage.getItem(k):(mem[k]||null)}catch(e){return mem[k]||null}},
+    set:function(k,v){try{HAS?window.localStorage.setItem(k,v):(mem[k]=v)}catch(e){mem[k]=v}},
+    del:function(k){try{HAS?window.localStorage.removeItem(k):delete mem[k]}catch(e){delete mem[k]}}
+  };
+  var KC='sg_comments_v13',KK='sg_checks_v13';
+
+  /* =============== 존 필터 =============== */
+  var plan=document.getElementById('plan'),info=document.getElementById('zoneinfo'),cur=null;
+  var ZDEF='<strong>존을 선택하세요</strong>선택한 구역의 배치 근거와 층고 조건이 여기에 표시됩니다.';
+  var Z={
+    adventure:{n:'어드벤처',t:'606 m² · 183평',d:'구조체 하단고 6.40~7.06m 구간을 전량 점유합니다.<br>3층 네트 정글과 클라이밍 타워가 성립하는 유일한 구역이며, 지붕 하중 판정 결과에 가장 크게 좌우됩니다.<br>도면 수치가 ± 표기이므로 현장 실측으로 최종 확인이 필요합니다.'},
+    quest:{n:'퀘스트',t:'441 m² · 133평',d:'25\'-8" 챔퍼 벽면이 만드는 비정형 평면을 미로형 동선으로 활용합니다.<br>층고 요구가 낮아 배치 제약이 거의 없어, 다른 존의 면적 조정 완충 역할을 겸합니다.'},
+    experience:{n:'익스피리언스',t:'480 m² · 145평',d:'중앙부입니다.<br>창이 없어 암전 제어에 유리해 미디어·인터랙티브 계열을 모았습니다.<br>층고 요구가 낮은 어트랙션으로 구성되어 이 구간에서 문제없이 성립합니다.'},
+    social:{n:'소셜',t:'390 m² · 118평',d:'토들러 가든, 보호자 라운지, 파티룸으로 구성합니다.<br>토들러·라운지는 Public 존에서 직접 시야가 닿아야 하므로 낮은 구획으로 계획하고, 파티룸은 소음 분리를 위해 별도 실 구획이 필요합니다.<br>파티룸 추가로 이 존의 면적 재산정이 필요합니다.'},
+    public:{n:'퍼블릭',t:'505 m² · 153평',d:'주출입 47\'-0" 직결입니다.<br>키오스크 결제 → QR 정보입력 → 데스크 매칭 → 팔찌 발급 동선과 F&B·화장실을 수용합니다.<br>시간제 세션 운영 시 대기 홀 규모를 재산정해야 하는 구역입니다.'},
+    boh:{n:'BOH',t:'411 m² · 124평',d:'후면 코너에 집약합니다.<br>창고·직원공간·기계실·하역을 포함합니다.<br>미국 운영 특성상 15~17%로 상향될 여지가 있어 Quest 존과 경계 조정이 예상됩니다.'}
+  };
+  function selZ(z){
+    cur=(cur===z)?null:z;
+    plan.classList.toggle('dimmed',!!cur);
+    plan.querySelectorAll('.zone').forEach(function(p){p.classList.toggle('active',p.dataset.z===cur)});
+    document.querySelectorAll('.lgi[data-z]').forEach(function(b){b.classList.toggle('on',b.dataset.z===cur)});
+    info.innerHTML=cur?'<strong>'+Z[cur].n+' · '+Z[cur].t+'</strong>'+Z[cur].d:ZDEF;
+  }
+  plan.querySelectorAll('.zone').forEach(function(p){p.addEventListener('click',function(){selZ(p.dataset.z)})});
+  document.querySelectorAll('.lgi[data-z]').forEach(function(b){b.addEventListener('click',function(){selZ(b.dataset.z)})});
+  document.getElementById('resetZone').addEventListener('click',function(){cur='__';selZ('__')});
+
+  /* =============== 경쟁 지도 =============== */
+  var cmap=document.getElementById('cmap'),cinfo=document.getElementById('cinfo'),curC=null,curT=null;
+  var CDEF='<strong>시설을 선택하세요</strong>거리·평점과 우리 시설과의 관계가 표시됩니다.';
+  var C={
+    kw:{n:'Kids Wonder',t:'direct',d:'0.9 mi · 4.7 (734)',x:'같은 University Blvd 축의 최근접 시설입니다.<br>바운스 하우스 4기와 테마 롤플레이 룸, 2세 이하 전용존을 갖췄습니다.<br>주 이용층이 미취학이라 5~10세 타겟과는 정면으로 겹치지 않습니다.'},
+    sts:{n:'Spark the Senses',t:'direct',d:'1.9 mi · 4.8 (235)',x:'영유아 중심 소규모입니다.<br>주말 휴무로 사실상 대관 파티 전용입니다.<br>상시 운영 경쟁자는 아니나 생일파티 상품에서는 겹칩니다.'},
+    psm:{n:'Play Street Museum',t:'direct',d:'3.3 mi · 4.8 (432)',x:'교육형 소규모 뮤지엄입니다.<br>주말 휴무이며 미취학 중심입니다.<br>파티 운영이 강점으로 리뷰에 반복 언급됩니다.'},
+    sp:{n:'SweetPlay',t:'direct',d:'3.3 mi · 4.6 (926)',x:'중형 실내 놀이터 + 아케이드입니다.<br>보호자에게 정가 입장료를 받지 않는 점이 리뷰에서 최대 강점으로 꼽힙니다.<br>가격 정책 벤치마크 대상입니다.'},
+    lie:{n:'Lava Island (Englewood)',t:'direct',d:'4.6 mi · 4.8 (1,556)',x:'대형 정글짐 + 트램펄린 + F&B, 21시까지 운영합니다.<br>5~10세를 정면으로 겨냥하는 조사 범위 내 최대 경쟁자입니다.'},
+    lip:{n:'Lava Island (Parker Rd)',t:'direct',d:'7.8 mi · 4.7 (1,084)',x:'동일 브랜드 2호점입니다.<br>이 지역에서 다점포 전개가 진행 중이라는 신호로 읽어야 합니다.'},
+    kd:{n:'Kids Dig',t:'direct',d:'7.5 mi · 4.6 (358)',x:'실내 모래놀이 특화 소형점입니다.<br>오후 1시 30분 마감으로 오전 시간대만 운영합니다.'},
+    sand:{n:'The Sand Place',t:'direct',d:'8.7 mi · 4.9 (84)',x:'실내 모래놀이입니다.<br>신규·소형이며 리뷰 수가 아직 적습니다.'},
+    me:{n:'Main Event',t:'indirect',d:'2.7 mi · 4.3 (2,344)',x:'볼링·아케이드·F&B 대형 FEC입니다.<br>초등 고학년~성인 대상으로 연령대가 위쪽으로 갈립니다.<br>리뷰 2,344건으로 지역 인지도는 최상위입니다.'},
+    fsc:{n:'Family Sports Center',t:'indirect',d:'5.8 mi · 4.4 (1,057)',x:'아이스링크·미니골프·레이저태그 복합 시설입니다.<br>공공성이 강한 지역 거점입니다.'},
+    ua:{n:'Urban Air',t:'indirect',d:'7.9 mi · 3.9 (750)',x:'트램펄린·어드벤처 프랜차이즈입니다.<br>5~10세를 겨냥하나 평점 3.9로 조사 대상 중 최하위이며 안전관리·응대 불만이 리뷰에 반복됩니다.<br>피해야 할 운영 실패 사례입니다.'},
+    act:{n:'Activate',t:'indirect',d:'8.4 mi · 5.0 (817)',x:'체감형 게임룸입니다.<br>평점 5.0으로 조사 대상 중 최고입니다.<br>Quest 존이 직접 겨냥해야 할 포맷입니다.'},
+    pin:{n:'Pindustry',t:'indirect',d:'3.3 mi · 4.1 (1,894)',x:'볼링·핀볼·라이브 음악입니다.<br>20시 이후 21세 이상 운영으로 가족 시간대만 부분적으로 겹칩니다.'},
+    lm:{n:'Littleton Museum',t:'ref',d:'2.5 mi · 4.7 (368)',x:'무료 입장 + 농장입니다.<br>저비용 가족 대안으로 주말 수요를 일부 흡수합니다.'},
+    eeg:{n:'Epic Escape Game',t:'ref',d:'4.3 mi · 4.8 (653)',x:'방탈출입니다.<br>그룹 단위 프라이빗 운영이 강점으로 언급됩니다.<br>Quest 존 콘텐츠 기획 시 벤치마크입니다.'},
+    spectra:{n:'Spectra Art Space',t:'culture',d:'6.5 mi · 4.9 (2,001)',x:'지역 작가 기반 몰입형 설치입니다.<br>퍼즐·미션형 동선과 "예상보다 오래 머물렀다"는 후기가 반복됩니다.<br>가장 가까운 문화 시설이며 Quest 존 콘텐츠의 직접 참고 사례입니다.'},
+    mw:{n:'Meow Wolf Convergence Station',t:'culture',d:'10.7 mi · 4.5 (18,225)',x:'3개 층 대형 몰입형 아트입니다.<br>리뷰 1.8만 건으로 지역 체험형 콘텐츠의 기준점입니다.<br>어린 자녀가 만지고 기어오르며 즐겼다는 후기가 반복되어 실질적으로 가족 콘텐츠로 소비됩니다.<br>벤치마크 1순위입니다.'},
+    moi:{n:'Museum of Illusions',t:'culture',d:'10.9 mi · 4.6 (7,312)',x:'포토스팟 중심입니다.<br>30분이면 다 본다는 불만이 가격 대비 만족도를 깎는 요인으로 반복 등장합니다.<br>체류시간 설계의 반면교사입니다.'},
+    cmd:{n:"Children's Museum of Denver",t:'culture',d:'11.3 mi · 4.5 (1,721)',x:'대형 어린이 박물관입니다.<br>물놀이·집라인·로프 클라이밍 등 신체형 콘텐츠를 갖췄고 16시에 마감합니다.<br>연 약 50만 명으로 수요 예측의 벤치마크이며, 연령대(3~8세)가 상당 부분 겹칩니다.'},
+    bp:{n:'Bubble Planet · Van Gogh Immersive',t:'culture',d:'12.5 mi · 4.4 / 4.9',x:'동일 부지 순회형 몰입 전시입니다.<br>Bubble Planet은 성인 $26.90 / 아동 $20.90, 체류 60–90분으로 운영되었습니다.<br>가격 대비 체류시간이 짧다는 불만과 위생 지적, 아동 요금 미분리 불만이 반복됩니다.<br>이 시장의 실제 통용 가격을 보여주는 참고 지표입니다.'}
+  };
+  var TN={direct:'직접 경쟁 — 실내 키즈 놀이시설',indirect:'간접 경쟁 — FEC · 트램펄린 · 어드벤처',culture:'문화 시설 — 몰입형 체험 · 뮤지엄',ref:'참고 — 박물관 · 방탈출'};
+  function paint(){
+    cmap.classList.toggle('dimmed',!!(curC||curT));
+    cmap.querySelectorAll('.cp').forEach(function(g){
+      var k=g.dataset.c;
+      g.classList.toggle('active', curC?(k===curC):(curT?(C[k].t===curT):false));
+    });
+    document.querySelectorAll('.lgi.cf').forEach(function(b){b.classList.toggle('on',b.dataset.t===curT)});
+  }
+  cmap.querySelectorAll('.cp').forEach(function(g){
+    g.addEventListener('click',function(){
+      var k=g.dataset.c;
+      curC=(curC===k)?null:k;curT=null;paint();
+      cinfo.innerHTML=curC?'<strong>'+C[k].n+'</strong><span style="font-family:\'LINESeedKR\',Pretendard,sans-serif;font-size:11px;color:#888888;display:block;margin-bottom:6px">'+C[k].d+'</span>'+C[k].x:CDEF;
+    });
+  });
+  document.querySelectorAll('.lgi.cf').forEach(function(b){
+    b.addEventListener('click',function(){
+      curT=(curT===b.dataset.t)?null:b.dataset.t;curC=null;paint();
+      if(curT){
+        var ns=Object.keys(C).filter(function(k){return C[k].t===curT}).map(function(k){return C[k].n});
+        cinfo.innerHTML='<strong>'+TN[curT]+'</strong>'+ns.length+'개소 — '+ns.join(', ');
+      } else cinfo.innerHTML=CDEF;
+    });
+  });
+  document.getElementById('resetC').addEventListener('click',function(){curC=null;curT=null;paint();cinfo.innerHTML=CDEF});
+
+  /* =============== 네비 =============== */
+  var links=[].slice.call(document.querySelectorAll('#nav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){
+    var y=window.scrollY+140,i=0;
+    secs.forEach(function(s,n){if(s&&s.offsetTop<=y)i=n});
+    links.forEach(function(a,n){a.classList.toggle('on',n===i)});
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+
+  /* =============== 체크리스트 =============== */
+  var boxes=[].slice.call(document.querySelectorAll('#chklist input'));
+  var cnt=document.getElementById('chkcount');
+  try{
+    var saved=JSON.parse(store.get(KK)||'[]');
+    boxes.forEach(function(b){if(saved.indexOf(b.id)>-1)b.checked=true});
+  }catch(e){}
+  function upd(){
+    cnt.textContent=boxes.filter(function(b){return b.checked}).length+' / '+boxes.length+' 확인 완료';
+    store.set(KK,JSON.stringify(boxes.filter(function(b){return b.checked}).map(function(b){return b.id})));
+  }
+  boxes.forEach(function(b){b.addEventListener('change',upd)});upd();
+
+  /* =============== 코멘트 =============== */
+  var list=[],el=document.getElementById('cList'),msg=document.getElementById('cMsg');
+  var dot=document.getElementById('saveDot'),stateEl=document.getElementById('saveState');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+  function flash(t){msg.textContent=t;setTimeout(function(){msg.textContent=''},2400)}
+  function stamp(){
+    if(!HAS){dot.classList.add('off');stateEl.textContent='이 브라우저에 저장할 수 없는 환경입니다 — 파일로 저장을 사용하세요';return}
+    stateEl.textContent=list.length?('이 브라우저에 저장됨 · '+list.length+'건 · '+new Date().toLocaleString('ko-KR')):'이 브라우저에 저장됨 · 0건';
+    dot.classList.remove('off');
+  }
+  function persist(){store.set(KC,JSON.stringify(list));stamp()}
+  function render(){
+    if(!list.length){el.innerHTML='<div class="empty">아직 코멘트가 없습니다.</div>';stamp();return}
+    el.innerHTML=list.map(function(c,i){
+      return '<div class="cmt"><div class="meta"><b>'+esc(c.who)+'</b><span>'+esc(c.sec)+'</span><span>'+esc(c.at)+'</span><button class="del" data-i="'+i+'">삭제</button></div><div class="body">'+esc(c.body)+'</div></div>';
+    }).join('');
+    el.querySelectorAll('.del').forEach(function(b){b.addEventListener('click',function(){list.splice(+b.dataset.i,1);persist();render()})});
+    stamp();
+  }
+  try{var raw=store.get(KC);if(raw)list=JSON.parse(raw)||[]}catch(e){list=[]}
+  render();
+
+  document.getElementById('cAdd').addEventListener('click',function(){
+    var b=document.getElementById('cBody').value.trim();
+    if(!b){flash('내용을 입력하세요');return}
+    var d=new Date();
+    list.push({sec:document.getElementById('cSec').value,who:document.getElementById('cWho').value.trim()||'익명',body:b,
+      at:d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')});
+    document.getElementById('cBody').value='';persist();render();flash('저장됨');
+  });
+  document.getElementById('cCopy').addEventListener('click',function(){
+    if(!list.length){flash('복사할 코멘트가 없습니다');return}
+    var t='[SouthGlenn B8-846 검토 코멘트]\n\n'+list.map(function(c){return'· '+c.sec+' / '+c.who+' ('+c.at+')\n  '+c.body}).join('\n\n');
+    navigator.clipboard.writeText(t).then(function(){flash('복사됨')},function(){flash('복사 실패 — 직접 선택해 복사하세요')});
+  });
+  document.getElementById('cSave').addEventListener('click',function(){
+    if(!list.length){flash('저장할 코멘트가 없습니다');return}
+    var blob=new Blob([JSON.stringify({doc:'SouthGlenn B8-846',v:13,saved:new Date().toISOString(),comments:list},null,2)],{type:'application/json'});
+    var a=document.createElement('a'),u=URL.createObjectURL(blob);
+    a.href=u;a.download='SouthGlenn_comments_'+new Date().toISOString().slice(0,10).replace(/-/g,'')+'.json';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(u);
+    flash('파일로 저장됨');
+  });
+  document.getElementById('cLoadBtn').addEventListener('click',function(){document.getElementById('cLoad').click()});
+  document.getElementById('cLoad').addEventListener('change',function(e){
+    var f=e.target.files&&e.target.files[0]; if(!f) return;
+    var r=new FileReader();
+    r.onload=function(){
+      try{
+        var o=JSON.parse(r.result),inc=o.comments||o;
+        if(!Array.isArray(inc)) throw 0;
+        var seen={},merged=[];
+        list.concat(inc).forEach(function(c){
+          if(!c||!c.body) return;
+          var k=(c.who||'')+'|'+(c.at||'')+'|'+c.body;
+          if(!seen[k]){seen[k]=1;merged.push({sec:c.sec||'기타',who:c.who||'익명',body:c.body,at:c.at||''})}
+        });
+        var added=merged.length-list.length;
+        list=merged;persist();render();flash(added+'건 추가 · 총 '+list.length+'건');
+      }catch(err){flash('파일 형식이 올바르지 않습니다')}
+      e.target.value='';
+    };
+    r.readAsText(f);
+  });
+  document.getElementById('cClear').addEventListener('click',function(){
+    if(!list.length){flash('삭제할 코멘트가 없습니다');return}
+    if(!window.confirm('코멘트 '+list.length+'건을 모두 삭제합니다. 되돌릴 수 없습니다.')) return;
+    list=[];store.del(KC);render();flash('전체 삭제됨');
+  });
+})();
+</script>
+</body>
+</html>
