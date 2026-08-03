@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SouthGlenn v18 · 통합 마스터</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<style>
+:root{
+  --c1:#0065B2;--c3:#E41E2E;--c4:#00913B;--c5:#FF8000;--c8:#00A7B5;--c6:#ED92B9;
+  --ok:#00B050;--ok-bg:#E6F1ED;--mid:#F59E0B;--mid-bg:#FEF3C7;--no:#FF0000;--no-bg:#FCEBEB;
+  --paper:#FFFFFF;--paper2:#F5F5F5;--card:#FFFFFF;
+  --ink:#111111;--ink2:#353535;--ink3:#888888;--rule:#D6D6D6;--rule2:#E8E8E8;
+  --pine:#0065B2;--pine-soft:#E6F1FB;--accent:#FF8000;
+  --sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  --disp:"LINESeedKR","LINE Seed KR",Pretendard,sans-serif;--mono:"LINESeedKR","LINE Seed KR",Pretendard,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75}
+.shell{display:flex;align-items:flex-start}
+.side{position:sticky;top:0;height:100vh;width:256px;flex:none;border-right:1px solid var(--rule);background:var(--paper2);padding:22px 18px;display:flex;flex-direction:column;gap:10px}
+.brand{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.025em;line-height:1.1}
+.brand span{color:var(--accent)}
+.brand small{display:block;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ink3);letter-spacing:.05em;margin-top:8px;line-height:1.6}
+nav{display:flex;flex-direction:column;gap:1px;overflow-y:auto}
+nav a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:var(--ink2);font-size:12.5px;padding:5px 9px;border-radius:6px}
+nav a span{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+nav a:hover{background:#EFEFEF;color:var(--ink)}
+nav a.grp{margin-top:9px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);pointer-events:none}
+.side footer{margin-top:auto;font-family:var(--mono);font-size:9.5px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--rule2);padding-top:10px}
+main{flex:1;min-width:0;padding:0 44px 120px;max-width:1000px}
+section{padding-top:50px}
+h2{font-family:var(--disp);font-size:24px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin:0 0 8px;font-weight:700}
+.lede{color:var(--ink2);max-width:78ch;margin:0 0 22px;font-size:14.5px}
+h3{font-size:15.5px;font-weight:700;margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--rule2)}
+h3 i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--pine);margin-right:9px;font-weight:700}
+h4{font-size:13.5px;font-weight:700;margin:16px 0 8px}
+p{margin:0 0 12px}
+.hero{padding:44px 0 8px;border-top:4px solid var(--accent);border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--disp);font-size:clamp(20px,2.2vw,28px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:0 0 10px}
+.hero p{color:var(--ink2);max-width:82ch}
+.keyrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 0}
+.key{background:var(--paper2);padding:13px 14px}
+.key b{display:block;font-family:var(--disp);font-size:15px;font-weight:800;line-height:1.15}
+.key span{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.03em;color:var(--ink3);text-transform:uppercase;margin-top:7px;line-height:1.4}
+.card{background:var(--card);border:1px solid var(--rule2);border-radius:3px;padding:15px 17px;margin-bottom:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card h4{margin:0 0 8px}.card p{font-size:13px;color:var(--ink2);margin:0 0 8px}.card p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:7px 8px;border-bottom:1px solid var(--rule)}
+td{padding:8px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.55}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.rnum{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr.total td{background:#E6F1FB;font-weight:700;border-top:1px solid var(--rule)}
+td.item{font-weight:600}
+.tcap{font-size:11px;color:var(--ink3);margin:6px 0 0;font-family:var(--mono);line-height:1.55}
+.tablewrap{overflow-x:auto}
+.st{display:inline-block;font-family:var(--mono);font-size:9.5px;padding:2px 6px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:var(--ok);border-color:#B9DEC7;background:#E6F1ED}.st-mid{color:#B45309;border-color:#F5DFA0;background:#FEF3C7}.st-no{color:var(--no);border-color:#F5C2C2;background:#FCEBEB}
+.tag{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:600;padding:2px 6px;border-radius:2px;color:#fff;white-space:nowrap}
+.t-keep{background:var(--c4)}.t-change{background:var(--c3)}.t-open{background:var(--c5)}
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:12px 15px;font-size:13px;color:#10466E;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.warn{border-left:2px solid var(--mid);background:var(--mid-bg);padding:12px 15px;font-size:13px;color:#7C4A03;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.danger{border-left:3px solid var(--no);background:var(--no-bg);padding:12px 15px;font-size:13px;color:#8A0A0A;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.ok-box{border-left:3px solid var(--ok);background:var(--ok-bg);padding:12px 15px;font-size:13px;color:#0A5B33;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.note .lab,.warn .lab,.danger .lab,.ok-box .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.note .lab{color:var(--pine)}.warn .lab{color:#B45309}.danger .lab{color:var(--no)}.ok-box .lab{color:var(--ok)}
+.verdict{border:1px solid var(--rule);border-left:3px solid var(--pine);background:var(--paper2);border-radius:3px;padding:15px 17px;margin:0 0 18px}
+.verdict b{display:block;font-family:var(--disp);font-size:15.5px;font-weight:800;margin-bottom:6px}
+.verdict span{color:var(--ink2);font-size:13.5px;line-height:1.72}
+ul.tight{margin:6px 0 12px;padding-left:20px}ul.tight li{margin-bottom:5px;font-size:13px}
+.planbox{border:1px solid var(--rule);background:#fff;border-radius:4px;padding:14px;margin:14px 0}
+.planbox svg{width:100%;height:auto;display:block}
+.lgd{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-family:var(--mono);font-size:10.5px}
+.lgd span{display:inline-flex;align-items:center;gap:5px}.lgd i{width:11px;height:11px;border-radius:2px;display:inline-block}
+.foot{margin-top:54px;border-top:1px solid var(--rule);padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--ink3);line-height:1.7}
+@media (max-width:1000px){
+  .shell{display:block}
+  .side{position:static;height:auto;width:auto;border-right:none;border-bottom:1px solid var(--rule);flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:14px 18px}
+  .side footer,.brand small,nav a span,nav a.grp{display:none}
+  nav{flex-direction:row;gap:2px}nav a{white-space:nowrap}
+  main{padding:0 20px 90px}
+  .keyrow,.grid2,.grid3{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand">SouthGlenn <span>v18</span>
+    <small>통합 마스터 · Arte Kids Park USA<br>B8-846 · 30,512 SF · Centennial, CO<br>2026.08.03</small>
+  </div>
+  <nav>
+    <a href="#s0"><span>00</span>Executive Summary</a>
+    <a class="grp">PART 1 · 전략</a>
+    <a href="#p11"><span>1.1</span>타겟 연령</a>
+    <a href="#p12"><span>1.2</span>가격 · 점유비용</a>
+    <a href="#p13"><span>1.3</span>운영 · 캐파</a>
+    <a href="#p14"><span>1.4</span>리서치 개정</a>
+    <a class="grp">PART 2 · 공간(도면 확정)</a>
+    <a href="#p21"><span>2.1</span>확정 앵커 · 스키매틱</a>
+    <a href="#p22"><span>2.2</span>조닝 배분</a>
+    <a href="#p23"><span>2.3</span>주방·화장실·동선</a>
+    <a class="grp">PART 3 · 설비(MEP)</a>
+    <a href="#p31"><span>3.1</span>공조·급배수·전기</a>
+    <a href="#p32"><span>3.2</span>용도변경 리스크</a>
+    <a class="grp">PART 4 · 검증·거버넌스</a>
+    <a href="#p41"><span>4.1</span>도면 재검증</a>
+    <a href="#p42"><span>4.2</span>미해결 전제</a>
+    <a href="#p43"><span>4.3</span>확인 필요·로드맵</a>
+    <a href="#p44"><span>4.4</span>문서 이력</a>
+  </nav>
+  <footer>
+    입력: 리서치 260803 · Direction 260731<br>
+    CEN0800595 Binder 1–10 (전세트)<br>
+    LOD 도면 · 내부 스펙시트<br>
+    통합: v13~v17 → v18
+  </footer>
+</aside>
+
+<main>
+<section id="s0" class="hero">
+  <p class="eyebrow">Master · 통합본 v18</p>
+  <h1>SouthGlenn 아르떼 키즈파크 — 전략·공간·설비 통합 판단</h1>
+  <p>구 Best Buy(30,512 SF·857.5평)를 아르떼 키즈파크로 전환하는 사업의 <b>단일 마스터</b>입니다. 리서치(260803)·Direction(260731)·CEN0800595 전 도면 세트(Binder 1–10)를 대조해, <b>사업 방향(전략) → 물리 배치(공간) → 인프라(설비)</b>를 하나의 전제 위에 정합시켰습니다. 원칙: <b>방향은 리서치·Direction, 물리·재무·코드 규율은 도면.</b></p>
+  <div class="keyrow">
+    <div class="key"><b>3–8세 + 이중설계</b><span>공식 타겟 · 실질 0–10 흡수</span></div>
+    <div class="key"><b>종일권 + 예약캡</b><span>피크일 동시 ≤658 · 1인 ≥2.5 m²</span></div>
+    <div class="key"><b>동측 급배수</b><span>주방·화장실 확정 (A-1·B7·B72)</span></div>
+    <div class="key"><b>용도변경 A-3</b><span>화장실 증설·피난·설비 재산정</span></div>
+  </div>
+  <div class="verdict" style="margin-top:24px">
+    <b>종합 판단 — 조건부 추진 가능</b>
+    <span>입지·상권·경쟁 공백·임대 조건은 우호적이고, 공간(단층 앵커)·설비(기존 인프라 위치)는 전환에 적합합니다. <b>추진의 관문은 2가지 미해결 전제</b> — ① <b>관광 수요 계상 여부</b>(가격 성립의 분모), ② <b>객단가 확정</b>(WTP) — 이며, 여기에 <b>용도변경(Mercantile→A-3)</b>이 화장실·피난·공조 재산정과 인허가 일정을 좌우합니다. 이 셋이 정리되면 사업성 수치가 잠정에서 확정으로 넘어갑니다.</span>
+  </div>
+</section>
+
+<!-- PART 1 -->
+<section id="p11">
+  <p class="eyebrow">Part 1 — 전략 (리서치·Direction 결론)</p>
+  <h2>1.1 · 타겟 연령 — 3–8세 + 이중 설계</h2>
+  <p class="lede">리서치의 "저연령 중심"을 채택하되, 리서치가 스스로 경고한 "넓게 걸면 위가 빔"을 <b>이중 설계로 상쇄</b>합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>층위</th><th>연령</th><th>설계 원리</th></tr></thead>
+    <tbody>
+      <tr><td class="item">크롤러존 (신설)</td><td class="num">0–2세</td><td>펜스·게이트 완전 분리 · 테이블 인터랙션(산리오 가든 톤)</td></tr>
+      <tr><td class="item">감각 레이어</td><td class="num">3–6세</td><td>서사 몰라도 빛·소리·촉각만으로 완결 (미디어월·가든스텝핑·샌드비치)</td></tr>
+      <tr><td class="item">서사·미션 레이어</td><td class="num">7–10세</td><td>퍼즐·수집·랭킹으로 상단 체류 연장 (Quest존·태깅 밴드)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lab">확정 표기</span>공식 타깃 <b>3–8세</b> · 0–2 크롤러존 신설 · 이중 설계로 <b>실질 0–10세</b>. 리서치 파일의 "3–10세" 헤드라인은 근거(9–10세 미방문)와 모순이라 <b>수정 대상</b>. "미디어 핵심 × 저연령 = 0곳"의 0을 <b>Spectra식 이중 설계로 우리가 1로 만드는</b> 포지셔닝.</div>
+</section>
+
+<section id="p12">
+  <h2>1.2 · 가격 — A/B 점유비용 검증</h2>
+  <p class="lede">리서치의 A/B 가격을 <b>SouthGlenn 임대료($960K/년)</b>로 재계산했습니다. 시장 비교만으론 부지 임대료 커버를 담보 못 합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>안</th><th>아동/성인</th><th class="rnum">per-cap</th><th class="rnum">점유비용 안정기</th><th class="rnum">1년차</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">A 시장상단</td><td class="num">$24–26 / $5–8</td><td class="rnum">$16–19</td><td class="rnum">12–14%</td><td class="rnum">13–16%</td><td><span class="st st-no">상한 초과</span></td></tr>
+      <tr><td class="item">B 프리미엄</td><td class="num">$36–42 / $8–10</td><td class="rnum">$24–29</td><td class="rnum">8–9%</td><td class="rnum">9–10%</td><td><span class="st st-mid">적정·WTP 리스크</span></td></tr>
+      <tr class="total"><td class="item">권장 절충</td><td class="num">$28–32 / 1인포함</td><td class="rnum">~$22</td><td class="rnum">~10%</td><td class="rnum">~11%</td><td><span class="st st-ok">통상 구간</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">점유비용 = $960K ÷ (연 방문객 × per-cap), 업계 통상 8–12%. 안정기 44.1만 / 1년차 38.8만 기준. 성인은 1인 포함 + 2인째 유료(저연령 성인 동반 마찰 완화).</p>
+  <div class="danger"><span class="lab">전제 — 관광 수요</span>위 %는 <b>관광 포함(44.1만)</b> 기준. 관광 제외 시 로컬 16.8만만 남아 필요 객단가가 <b>$57</b>로 튀어 A·B 모두 붕괴. <b>가격은 관광 수요 계상 여부가 정해지기 전엔 확정 불가.</b></div>
+</section>
+
+<section id="p13">
+  <h2>1.3 · 운영·캐파 — 종일권 + 피크일 예약 캡</h2>
+  <p class="lede">미국 관행(종일권·재입장)은 유지하되, <b>피크일 캐파 붕괴</b>를 예약 캡으로 방어합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>시나리오</th><th class="rnum">메인 순면적</th><th>회전</th><th class="rnum">피크일 동시</th><th class="rnum">1인</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">Direction 55% + 종일권</td><td class="rnum">1,559 m²</td><td class="num">3.33</td><td class="rnum">836</td><td class="rnum">1.86 m²</td><td><span class="st st-no">붕괴</span></td></tr>
+      <tr class="total"><td class="item">v18 58% + 예약 캡</td><td class="rnum">1,644 m²</td><td class="num">3.33</td><td class="rnum">≤ 658</td><td class="rnum">≥ 2.5 m²</td><td><span class="st st-ok">적정</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">피크일 2,784명(v13). 초과분(≈178명/일)은 비피크·단체(평일 오전)로 분산 — 단체 채널이 매출이자 캐파 해법. 공조 재실 전제도 658명 캡으로 고정.</p>
+</section>
+
+<section id="p14">
+  <h2>1.4 · 리서치 260803 개정 — 핵심 지시</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>페이지</th><th>현재</th><th>지시</th></tr></thead>
+    <tbody>
+      <tr><td class="item">p16·p17 타겟</td><td>3–10세 / 3–8 / 이중설계 3중 표기</td><td><b>공식 3–8 + 크롤러 + 실질 0–10</b>으로 통일</td></tr>
+      <tr><td class="item">p18 조닝</td><td>메인55·BOH10 (p14 캐파문단과 모순)</td><td><b>메인58·BOH12·파티8</b> + 샌드비치·소형게임·F&B결합 편입</td></tr>
+      <tr><td class="item">p21 가격</td><td>A/B 시장비교만</td><td><b>점유비용 축 추가</b> (A 초과·B 적정·관광 전제)</td></tr>
+      <tr><td class="item">p35 footer</td><td>"2025.11.26"</td><td>260803로 통일, 평점·가격 조회시점 갱신</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- PART 2 -->
+<section id="p21">
+  <p class="eyebrow">Part 2 — 공간 (CEN0800595 도면 확정)</p>
+  <h2>2.1 · 도면 확정 앵커</h2>
+  <p class="lede">A-1(Floor Plan)·CS-2(Code)에서 읽은 고정 좌표. 조닝·동선의 제약입니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>앵커</th><th>위치</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td class="item">주출입 Vestibule 101</td><td class="num">남측 · storefront 47' / 도어 32'</td><td>A-1</td></tr>
+      <tr><td class="item">급배수·화장실 (Mens103/Womens102)</td><td class="num">동측 밴드 · 그리드 5-D</td><td>A-1</td></tr>
+      <tr><td class="item">온수기 WH-1 · Janitor 107</td><td class="num">동측 상부 (Janitor 싱크 상부 9')</td><td>B7·B72</td></tr>
+      <tr><td class="item">Receiving·하역(대형 부재 반입)</td><td class="num">북측 + 우상단 하역문</td><td>A-1</td></tr>
+      <tr><td class="item">전기실 600A</td><td class="num">남서측 BOH</td><td>B9</td></tr>
+      <tr><td class="item">기존 용도·재실</td><td class="num">Mercantile · 853 occ · 화장실 2 WC</td><td>CS-2</td></tr>
+    </tbody>
+  </table></div>
+  <div class="planbox">
+    <svg viewBox="0 0 960 560" role="img" aria-label="조닝 스키매틱">
+      <rect x="40" y="36" width="880" height="470" fill="#fff" stroke="#111" stroke-width="3"/>
+      <text x="480" y="26" text-anchor="middle" font-family="var(--mono)" font-size="12" font-weight="700" fill="#888">N · 북측 — Receiving / 하역</text>
+      <text x="480" y="545" text-anchor="middle" font-family="var(--mono)" font-size="12" font-weight="700" fill="#888">S · 남측 — 주출입 파사드</text>
+      <text x="30" y="275" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#888" transform="rotate(-90 30 275)">W · 서측</text>
+      <text x="934" y="275" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#888" transform="rotate(90 934 275)">E · 동측 급배수</text>
+      <rect x="40" y="36" width="880" height="60" fill="#EDEDED" stroke="#bbb"/>
+      <rect x="740" y="36" width="180" height="60" fill="#DcDcDc" stroke="#999"/>
+      <text x="380" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#555">BOH · 창고 · 기계 (북측)</text>
+      <text x="830" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#333">Receiving</text>
+      <text x="830" y="80" text-anchor="middle" font-size="9" fill="#555">대형 부재 반입</text>
+      <rect x="120" y="96" width="440" height="130" fill="#F7D3D6" stroke="#E41E2E" stroke-opacity=".5"/>
+      <text x="340" y="156" text-anchor="middle" font-size="13" font-weight="800" fill="#B01722">ADVENTURE</text>
+      <text x="340" y="174" text-anchor="middle" font-size="9.5" fill="#7a1016">최고 층고대 · 3층 네트·클라이밍</text>
+      <rect x="40" y="226" width="150" height="210" fill="#D6E4F2" stroke="#0065B2" stroke-opacity=".5"/>
+      <text x="115" y="326" text-anchor="middle" font-size="12" font-weight="800" fill="#0a4a86">QUEST</text>
+      <text x="115" y="343" text-anchor="middle" font-size="9" fill="#0a4a86">챔퍼·미로 / 소형게임</text>
+      <circle cx="360" cy="330" r="82" fill="#FCEFC7" stroke="#E0A100" stroke-width="1.5"/>
+      <text x="360" y="326" text-anchor="middle" font-size="13" font-weight="800" fill="#8a6400">샌드비치</text>
+      <text x="360" y="343" text-anchor="middle" font-size="9.5" fill="#8a6400">중앙 코어 · 모이는 곳</text>
+      <rect x="120" y="436" width="440" height="70" fill="#D7EEF0" stroke="#00A7B5" stroke-opacity=".5"/>
+      <text x="300" y="465" text-anchor="middle" font-size="12" font-weight="800" fill="#0a6b74">SOCIAL · OASIS (부모 + F&B 좌석)</text>
+      <text x="300" y="483" text-anchor="middle" font-size="9" fill="#0a6b74">샌드비치 감싸는 중앙 · 전 구역 시야선</text>
+      <rect x="470" y="226" width="130" height="145" fill="#FCE3EF" stroke="#ED92B9"/>
+      <text x="535" y="295" text-anchor="middle" font-size="11" font-weight="800" fill="#a63a72">EXPERIENCE</text>
+      <text x="535" y="311" text-anchor="middle" font-size="8.5" fill="#a63a72">미디어·인터랙티브</text>
+      <rect x="40" y="436" width="80" height="70" fill="#E6F1D5" stroke="#00913B"/>
+      <text x="80" y="465" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0a6b2e">토들러</text>
+      <text x="80" y="481" text-anchor="middle" font-size="8" fill="#0a6b2e">0–2 분리</text>
+      <rect x="600" y="96" width="320" height="410" fill="#EAF0F6" stroke="#0065B2" stroke-dasharray="4 3"/>
+      <text x="760" y="113" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0065B2">동측 급배수 밴드 (습식 집약)</text>
+      <rect x="612" y="128" width="300" height="86" fill="#FFE2C2" stroke="#FF8000"/>
+      <text x="762" y="163" text-anchor="middle" font-size="12" font-weight="800" fill="#a35200">주방 (기존 ISC 베이)</text>
+      <text x="762" y="180" text-anchor="middle" font-size="9" fill="#a35200">급배수 인접 · 그리스트랩 신설</text>
+      <rect x="612" y="222" width="300" height="78" fill="#DfeAf5" stroke="#0065B2"/>
+      <text x="762" y="253" text-anchor="middle" font-size="12" font-weight="800" fill="#0a4a86">화장실 (기존 확장 + 증설)</text>
+      <text x="762" y="270" text-anchor="middle" font-size="9" fill="#0a4a86">수유·기저귀·유아기구 신설</text>
+      <rect x="612" y="308" width="300" height="86" fill="#F3DcEC" stroke="#ED92B9"/>
+      <text x="762" y="343" text-anchor="middle" font-size="12" font-weight="800" fill="#8a3a68">파티룸 3실</text>
+      <text x="762" y="360" text-anchor="middle" font-size="9" fill="#8a3a68">월 프로젝션 · 주방 근접</text>
+      <rect x="612" y="402" width="300" height="52" fill="#FFF2E0" stroke="#FF8000" stroke-dasharray="3 2"/>
+      <text x="762" y="426" text-anchor="middle" font-size="10" font-weight="700" fill="#a35200">↔ 상부 정글짐 통로로 중앙 F&B 결합</text>
+      <rect x="300" y="499" width="120" height="12" fill="#00B050"/>
+      <text x="360" y="509" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">주출입 32'</text>
+    </svg>
+    <div class="lgd">
+      <span><i style="background:#F7D3D6"></i>Adventure</span><span><i style="background:#D6E4F2"></i>Quest</span>
+      <span><i style="background:#FCE3EF"></i>Experience</span><span><i style="background:#FCEFC7"></i>샌드비치</span>
+      <span><i style="background:#D7EEF0"></i>Social·Oasis</span><span><i style="background:#E6F1D5"></i>토들러</span>
+      <span><i style="background:#FFE2C2"></i>주방</span><span><i style="background:#DfeAf5"></i>화장실</span><span><i style="background:#F3DcEC"></i>파티룸</span>
+    </div>
+  </div>
+  <p class="tcap">개념 스키매틱(축척 아님) · 방위는 A-1의 vestibule(남)·서비스밴드(동) 판독 근거. 실 그리드·치수는 실시설계에서 확정.</p>
+</section>
+
+<section id="p22">
+  <h2>2.2 · 조닝 배분 (857.5평)</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>존</th><th class="rnum">비중</th><th class="rnum">평</th><th>실 쉘 배치</th></tr></thead>
+    <tbody>
+      <tr><td class="item">메인 어트랙션(13종)+샌드비치+소형게임</td><td class="rnum">58%</td><td class="rnum">497</td><td>Adventure=북 고층고, Quest=서/챔퍼, Experience=중앙우, 샌드비치=중앙코어</td></tr>
+      <tr><td class="item">Social·Oasis (부모+F&B 좌석)</td><td class="rnum">9%</td><td class="rnum">77</td><td>중앙 (샌드비치 감쌈, 남측 대기홀 위)</td></tr>
+      <tr><td class="item">파티룸 3실</td><td class="rnum">8%</td><td class="rnum">69</td><td>동측 밴드 (주방 근접 케이터링)</td></tr>
+      <tr><td class="item">토들러·크롤러 0–2</td><td class="rnum">7%</td><td class="rnum">60</td><td>서남 보호 코너</td></tr>
+      <tr><td class="item">Public (대기홀·락커·리테일)</td><td class="rnum">6%</td><td class="rnum">51</td><td>남측 vestibule 직결</td></tr>
+      <tr class="total"><td class="item">BOH + 주방</td><td class="rnum">12%</td><td class="rnum">103</td><td>북측 Receiving + 동측 습식 (v13 15–17% 경고 반영 10→12%)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="p23">
+  <h2>2.3 · 주방·화장실·입퇴장 확정</h2>
+  <div class="grid3">
+    <div class="card"><h4>🍳 주방 <span class="st st-ok">확정</span></h4><p>동측 기존 <b>ISC 설치 베이</b>. 급배수·바닥배수 인접, Receiving 식자재 동선 짧음. 좌석은 중앙(Social)+정글짐 통로 결합. 그리스트랩·후드배기·MUA 신규.</p></div>
+    <div class="card"><h4>🚻 화장실 <span class="st st-no">증설</span></h4><p>동측 기존 자리 확장. <b>기존 2 WC(판매 853 기준) → A-3는 5–9 WC/성 개략</b> → 대폭 증설 + 수유·기저귀·유아기구 신설. 중앙에서 보이는 입구.</p></div>
+    <div class="card"><h4>🚪 입·퇴장 <span class="st st-ok">확정</span></h4><p>남측 <b>Vestibule 101</b> 단일. 대기홀 6×8m. 재입장=손목 스탬프. <b>피난은 A-3 재계산</b>(후면 비상구 승계).</p></div>
+  </div>
+</section>
+
+<!-- PART 3 -->
+<section id="p31">
+  <p class="eyebrow">Part 3 — 설비 (MEP 스케줄 확정)</p>
+  <h2>3.1 · 공조·급배수·전기</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>계통</th><th>기존 (CEN0800595)</th><th>AKP 판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">공조 RTU</td><td class="num">10대 111.5T (2008 Trane, EMS), sales OA 7,290 CFM</td><td><span class="st st-no">부분 교체</span> 18년 노후·활동 발열, OA는 A-3의 82–111%</td></tr>
+      <tr><td class="item">급수</td><td class="num">Denver Water 계량·백플로우·PRV</td><td><span class="st st-ok">위치 확정</span> 동측, 관경 M-2</td></tr>
+      <tr><td class="item">온수</td><td class="num">WH-1 Janitor 상부(소형)</td><td>주방·F&B용 <b>신규 WH</b></td></tr>
+      <tr><td class="item">가스</td><td class="num">Xcel 기존 (RTU 가스난방)</td><td><span class="st st-ok">주방 활용 가능</span></td></tr>
+      <tr><td class="item">그리스트랩</td><td class="num">없음</td><td><span class="st st-no">신설</span></td></tr>
+      <tr><td class="item">전기</td><td class="num">600A 208/120V 3φ, 전기실 남서</td><td><span class="st st-mid">부하 재계산</span> 미디어+주방</td></tr>
+      <tr><td class="item">스프링클러</td><td class="num">완비(IIIB) · 헤드도 deferred submittal</td><td>네트 살수장애 → 설계 시 헤드 산정</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="p32">
+  <h2>3.2 · 용도변경(Mercantile → Assembly A-3) — 핵심 리스크</h2>
+  <div class="danger"><span class="lab">확정된 리스크</span>CS-2가 기존 용도를 <b>Mercantile 853 occ</b>로 명시. 키즈파크는 <b>집회(A-3)</b>라, ① 화장실 위생기구 <b>대폭 증설</b>(2 → 5–9 WC/성), ② 피난 폭·출구 수 <b>재계산</b>, ③ 공조 외기·부하 <b>재산정</b>, ④ <b>용도변경 심의</b>가 인허가(누적 11–14개월)에 포함. 이 넷은 서로 연동되며 <b>면적 배분·일정·투자비</b>를 함께 움직입니다.</div>
+</section>
+
+<!-- PART 4 -->
+<section id="p41">
+  <p class="eyebrow">Part 4 — 검증 · 거버넌스</p>
+  <h2>4.1 · 도면 분석(v13) 재검증</h2>
+  <p class="lede">v13의 도면 파생 수치는 <b>거의 전부 정합</b>. 오류 1건만 정정.</p>
+  <ul class="tight">
+    <li><b>정정</b> — "어트랙션 순면적 <b>62.0% → 67.6%</b>" (1,917÷2,834.7). 캐파 계산은 올바른 1,917 m²를 써서 <b>파생 수치엔 전파 안 됨</b>, 표기만 교체.</li>
+    <li><b>검증 통과</b> — 면적(30,512 SF=857.5평)·층고(Δ1.5m)·컬럼(9.8×12.2m·15본)·임대($610K/$671K·TI $1.53M)·수요(44.1만)·캐파 산식 전부 재현.</li>
+    <li><b>유지 플래그</b> — 방위·168'-8" 치수 불일치(임대인 확인), ± 층고 실측.</li>
+  </ul>
+</section>
+
+<section id="p42">
+  <h2>4.2 · 미해결 전제 (2건 · 서로 묶임)</h2>
+  <div class="danger"><span class="lab">추진 전 정리 필요</span>① <b>관광 수요 계상 여부</b> — 10 예측(관광 62% 포함)과 11 분석(관광 제외)이 상충. 제외 시 필요 객단가 $57로 비현실. ② <b>객단가 확정</b> — A/B 선택은 ①과 WTP 조사에 종속. <b>두 전제는 가격의 분자·분모를 각각 바꾸므로 함께 확정</b>해야 하며, 그 전까지 사업성 수치는 잠정입니다.</div>
+</section>
+
+<section id="p43">
+  <h2>4.3 · 확인 필요 · 로드맵</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>선행 항목</th><th>왜</th><th>주체</th></tr></thead>
+    <tbody>
+      <tr><td class="item">관광 수요 계상 확정</td><td>가격 성립 전제</td><td>Dstrict</td></tr>
+      <tr><td class="item">아동/성인 WTP 조사</td><td>$28–32 상단 수용선</td><td>Dstrict</td></tr>
+      <tr><td class="item">경쟁사 실지 연령 audit</td><td>59% 가설 → 관측값</td><td>현지 파트너</td></tr>
+      <tr><td class="item">용도변경 심의·화장실 기구 재산정</td><td>A-3 전환 (인허가 일정)</td><td>현지 설계</td></tr>
+      <tr><td class="item">RTU 부분 교체·전기 부하 계산</td><td>공조·전기 승계 규모</td><td>설비 파트너</td></tr>
+      <tr><td class="item">피난·스프링클러 헤드 산정</td><td>A-3 피난 · 네트 살수장애</td><td>현지 설계·소방</td></tr>
+      <tr><td class="item">그리스트랩 위치·슬래브 파취 승인</td><td>F&B 전제</td><td>임대인·설비</td></tr>
+      <tr><td class="item">방위·168'-8" 기준선</td><td>평면 치수 불일치</td><td>임대인</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="p44">
+  <h2>4.4 · 문서 이력</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>버전</th><th>내용</th><th>상태</th></tr></thead>
+    <tbody>
+      <tr><td class="item">v13 (07.20)</td><td>SouthGlenn 도면 분석 (입력 자료)</td><td><span class="tag t-keep">재검증됨</span></td></tr>
+      <tr><td class="item">v14</td><td>키즈 분석 반박 6건 + 보강 + 정합</td><td><span class="tag t-keep">반영</span></td></tr>
+      <tr><td class="item">v15</td><td>리서치 260803 개정 + 조닝·동선(잠정)</td><td><span class="tag t-change">v16서 확정</span></td></tr>
+      <tr><td class="item">v16</td><td>A-1·CS-2 판독 → 조닝·주방·동선 확정</td><td><span class="tag t-keep">반영</span></td></tr>
+      <tr><td class="item">v17</td><td>MEP 스케줄(RTU·급배수·전기·피난) 확정</td><td><span class="tag t-keep">반영</span></td></tr>
+      <tr><td class="item">v18 (본 문서)</td><td>전략·공간·설비 통합 마스터</td><td><span class="tag t-keep">현행</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<div class="foot">
+  본 문서(v18)는 리서치 260803·Direction 260731·CEN0800595 Binder 1–10(전 세트)·LOD 도면·내부 스펙시트를 대조한 통합 마스터입니다.<br>
+  도면 판독값(A-1·CS-2·M/P/E 스케줄)은 원 도면 표기 기준. A-3 외기·부하·피난·기구 수량은 개략이며 현지 엔지니어 정산이 필요합니다.<br>
+  스프링클러 헤드 레이아웃은 deferred submittal로 본 세트에 없어 설계 단계 산정 대상입니다. · d'strict · Arte Kids Park USA · 2026.08.03
+</div>
+</main>
+</div>
+</body>
+</html>
