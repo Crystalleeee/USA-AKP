@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SouthGlenn v15 · 리서치 개정 · 조닝 · 동선</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<style>
+:root{
+  --c1:#0065B2;--c3:#E41E2E;--c4:#00913B;--c5:#FF8000;--c8:#00A7B5;
+  --ok:#00B050;--ok-bg:#E6F1ED;--mid:#F59E0B;--mid-bg:#FEF3C7;--no:#FF0000;--no-bg:#FCEBEB;
+  --paper:#FFFFFF;--paper2:#F5F5F5;--card:#FFFFFF;
+  --ink:#111111;--ink2:#353535;--ink3:#888888;--rule:#D6D6D6;--rule2:#E8E8E8;
+  --pine:#0065B2;--pine-soft:#E6F1FB;--accent:#FF8000;
+  --sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  --disp:"LINESeedKR","LINE Seed KR",Pretendard,sans-serif;
+  --mono:"LINESeedKR","LINE Seed KR",Pretendard,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75}
+.shell{display:flex;align-items:flex-start}
+.side{position:sticky;top:0;height:100vh;width:262px;flex:none;border-right:1px solid var(--rule);background:var(--paper2);padding:24px 20px;display:flex;flex-direction:column;gap:12px}
+.brand{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.025em;line-height:1.1}
+.brand span{color:var(--accent)}
+.brand small{display:block;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ink3);letter-spacing:.05em;margin-top:8px;line-height:1.6}
+nav{display:flex;flex-direction:column;gap:1px;overflow-y:auto}
+nav a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:var(--ink2);font-size:13px;padding:5px 9px;border-radius:6px}
+nav a span{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+nav a:hover{background:#EFEFEF;color:var(--ink)}
+nav a.grp{margin-top:9px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);pointer-events:none}
+.side footer{margin-top:auto;font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--rule2);padding-top:12px}
+main{flex:1;min-width:0;padding:0 46px 120px;max-width:1000px}
+section{padding-top:52px}
+h2{font-family:var(--disp);font-size:25px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin:0 0 8px;font-weight:700}
+.lede{color:var(--ink2);max-width:76ch;margin:0 0 22px;font-size:14.5px}
+h3{font-size:15.5px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--rule2)}
+h3 i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--pine);margin-right:9px;font-weight:700}
+h4{font-size:14px;font-weight:700;margin:18px 0 8px}
+p{margin:0 0 12px}
+.hero{padding:46px 0 8px;border-top:4px solid var(--accent);border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--disp);font-size:clamp(20px,2.3vw,29px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:0 0 10px}
+.hero p{color:var(--ink2);max-width:80ch}
+.keyrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 0}
+.key{background:var(--paper2);padding:14px 16px}
+.key b{display:block;font-family:var(--disp);font-size:18px;font-weight:800;line-height:1.15}
+.key span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;color:var(--ink3);text-transform:uppercase;margin-top:7px;line-height:1.4}
+.card{background:var(--card);border:1px solid var(--rule2);border-radius:3px;padding:16px 18px;margin-bottom:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card h4{margin:0 0 8px;font-size:13.5px}
+.card p{font-size:13px;color:var(--ink2);margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:8px 9px;border-bottom:1px solid var(--rule)}
+td{padding:9px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.6}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.rnum{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr.total td{background:#E6F1FB;font-weight:700;border-top:1px solid var(--rule)}
+td.item{font-weight:600}
+.tcap{font-size:11.5px;color:var(--ink3);margin:6px 0 0;font-family:var(--mono);line-height:1.6}
+.tablewrap{overflow-x:auto}
+.st{display:inline-block;font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:var(--ok);border-color:#B9DEC7;background:#E6F1ED}
+.st-mid{color:#B45309;border-color:#F5DFA0;background:#FEF3C7}
+.st-no{color:var(--no);border-color:#F5C2C2;background:#FCEBEB}
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:12px 15px;font-size:13px;color:#10466E;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.warn{border-left:2px solid var(--mid);background:var(--mid-bg);padding:12px 15px;font-size:13px;color:#7C4A03;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.danger{border-left:3px solid var(--no);background:var(--no-bg);padding:12px 15px;font-size:13px;color:#8A0A0A;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.note .lab,.warn .lab,.danger .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.note .lab{color:var(--pine)}.warn .lab{color:#B45309}.danger .lab{color:var(--no)}
+.verdict{border:1px solid var(--rule);border-left:3px solid var(--pine);background:var(--paper2);border-radius:3px;padding:15px 17px;margin:0 0 18px}
+.verdict b{display:block;font-family:var(--disp);font-size:15.5px;font-weight:800;margin-bottom:6px}
+.verdict span{color:var(--ink2);font-size:13.5px;line-height:1.72}
+.chg{font-family:var(--mono);font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:2px;white-space:nowrap;color:#fff}
+.chg-fix{background:var(--c3)}.chg-add{background:var(--c4)}.chg-keep{background:var(--ink3)}.chg-block{background:var(--c5)}
+ul.tight{margin:6px 0 12px;padding-left:20px}ul.tight li{margin-bottom:5px;font-size:13.5px}
+.plan{border:1px solid var(--rule);background:#FafafA;border-radius:4px;padding:14px;margin:12px 0}
+.plan svg{width:100%;height:auto;display:block}
+.foot{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--ink3);line-height:1.7}
+@media (max-width:1000px){
+  .shell{display:block}
+  .side{position:static;height:auto;width:auto;border-right:none;border-bottom:1px solid var(--rule);flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:14px 18px}
+  .side footer,.brand small,nav a span,nav a.grp{display:none}
+  nav{flex-direction:row;gap:2px}
+  nav a{white-space:nowrap}
+  main{padding:0 20px 90px}
+  .keyrow,.grid2,.grid3{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand">SouthGlenn <span>v15</span>
+    <small>리서치 개정 · 조닝 · 동선<br>회의(지난주) + 리서치 260803 + 도면<br>2026.08.03</small>
+  </div>
+  <nav>
+    <a href="#s0"><span>00</span>요약 · 3개 지시</a>
+    <a class="grp">지시 1 · 리서치 개정</a>
+    <a href="#p1"><span>1A</span>개정 지시표</a>
+    <a href="#p1b"><span>1B</span>타겟 3중 표기 충돌</a>
+    <a href="#p1c"><span>1C</span>조닝 p18 미수정</a>
+    <a href="#p1d"><span>1D</span>가격 A/B 점유비용</a>
+    <a href="#p1e"><span>1E</span>기타 정합</a>
+    <a class="grp">지시 2 · 조닝 재계획</a>
+    <a href="#p2a"><span>2A</span>도면 전제 · 블로커</a>
+    <a href="#p2b"><span>2B</span>중앙 자리 결정</a>
+    <a href="#p2c"><span>2C</span>v15 존 배분</a>
+    <a href="#p2d"><span>2D</span>파사드 vs 놀이기구</a>
+    <a class="grp">지시 3 · 주방·동선</a>
+    <a href="#p3a"><span>3A</span>급배수 의존성</a>
+    <a href="#p3b"><span>3B</span>주방 위치</a>
+    <a href="#p3c"><span>3C</span>입·퇴장 동선</a>
+    <a href="#p3d"><span>3D</span>화장실 동선</a>
+    <a href="#s9"><span>★</span>확인 필요 · 다음</a>
+  </nav>
+  <footer>
+    입력<br>① 회의록·업무리스트 (지난주)<br>② 리서치 260803 (35p, 작성중)<br>③ 도면 CEN0800595 — <b style="color:var(--c5)">미업로드</b><br>참조: v13 도면분석 · v14 정합
+  </footer>
+</aside>
+
+<main>
+<section id="s0" class="hero">
+  <p class="eyebrow">Working Memo · v15</p>
+  <h1>리서치 파일은 개정 지점을 표시하고,<br>도면 기반 조닝·동선은 확정 가능한 데까지 진행합니다.</h1>
+  <p>세 지시를 각각 <b>PART 1·2·3</b>으로 처리했습니다. 먼저 짚을 점 — 리서치 260803 파일은 <b>이미 v14 반박의 일부를 본문에 붙여넣기</b> 시작했으나(예: p14 하이브리드 문단, p17 "분모의 오독"·"C1"), <b>표지 요약·조닝·가격 수치는 옛 값 그대로</b>라 문서 안에서 서로 충돌합니다. 그리고 <b>도면(CEN0800595 HVAC/급배수 plan)은 이번에도 업로드되지 않았습니다</b> — 경로(C:\…)만 전달됨. 조닝·주방·화장실은 <b>급배수 위치가 확정의 전제</b>이므로, 도면으로 확인 가능한 부분(v13 실측 기하)까지 진행하고 급배수 의존 항목은 <b>확정 대신 시나리오</b>로 남깁니다.</p>
+  <div class="keyrow">
+    <div class="key"><b>3중 충돌</b><span>타겟 연령 표기 (3–10 / 3–8 / 이중설계)</span></div>
+    <div class="key"><b>A안 12–16%</b><span>점유비용 초과 — 신규 계산으로 확인</span></div>
+    <div class="key"><b>CEN0800595</b><span>급배수 도면 미업로드 — 주방 확정 불가</span></div>
+  </div>
+</section>
+
+<!-- ============ PART 1 ============ -->
+<section id="p1">
+  <p class="eyebrow">지시 1 — 리서치 파일 바뀌어야 할 내용</p>
+  <h2>리서치 260803 개정 지시표</h2>
+  <p class="lede">파일의 슬라이드(페이지) 순서에 맞춰, <b>바꿀 것 / 더할 것 / 유지할 것</b>을 표시했습니다. 근거는 ① 지난주 회의록, ② 파일 내부 모순, ③ v14 정합 결론입니다. <span class="chg chg-fix">수정</span> <span class="chg chg-add">추가</span> <span class="chg chg-keep">유지</span> <span class="chg chg-block">보류</span></p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>페이지 · 섹션</th><th>현재 파일</th><th>지시</th><th>바꿀 내용</th></tr></thead>
+    <tbody>
+      <tr><td class="item">p16 Summary · Target</td><td>"3–10세 + 0–2 토들러"</td><td><span class="chg chg-fix">수정</span></td><td>공식 <b>3–8세</b> + 0–2 크롤러 → 실질 0–10 (1B 참조). "3–10" 헤드라인은 파일 자체 경고("위가 빔")와 모순</td></tr>
+      <tr><td class="item">p16·p18 Zoning</td><td>메인55·토들러7·파티11·Social10·Public7·BOH10</td><td><span class="chg chg-fix">수정</span></td><td>BOH 10→<b>12%</b>, 파티 11→8%, 메인 55→<b>58%</b> (1C·2C). 회의 반영: 샌드비치 중앙·소형게임존·F&B결합 미표기</td></tr>
+      <tr><td class="item">p21 Ticketing A/B</td><td>A 아동$24–26 / B $36–42</td><td><span class="chg chg-add">추가</span></td><td><b>점유비용 축 누락.</b> A안은 SouthGlenn 임대료 기준 12–16%로 통상 상한 초과, B안 8–10% 적합 (1D)</td></tr>
+      <tr><td class="item">p11·p12 Key findings</td><td>영유아·저학년 중심 / 59%</td><td><span class="chg chg-add">추가</span></td><td>"59%=시설 수(레드오션 신호)" 단서 명기 — p17에 이미 붙인 반박을 findings에도 반영</td></tr>
+      <tr><td class="item">p14 운영정책</td><td>하이브리드 문단(v14) 붙임</td><td><span class="chg chg-fix">수정</span></td><td>문단은 있으나 <b>캐파 표·수치가 빠짐.</b> 2C 표(피크일 1.86→≥2.5) 삽입</td></tr>
+      <tr><td class="item">p10 Party</td><td>엔트리$300·상위$500·프리미엄$949–1,200</td><td><span class="chg chg-add">추가</span></td><td>회의 "생일파티룸 월 활용+콘텐츠화" 연결: 프로젝션 파티 = 원가 없는 무한 변형(파일 시사점과 일치) → 파티룸 3실 사양에 반영</td></tr>
+      <tr><td class="item">p9 ⑤전시/관람</td><td>Meow Wolf "아동 부적절 리뷰"</td><td><span class="chg chg-keep">유지</span></td><td>정확. 미디어 시설의 성인 편향(반박1 교란변수)을 뒷받침 — 유지</td></tr>
+      <tr><td class="item">p35 Footer</td><td>"2025.11.26"</td><td><span class="chg chg-fix">수정</span></td><td>표지 2026.07.31 / 최종장 2025.11.26 불일치 → 260803로 통일. 평점·가격 조회 시점 갱신</td></tr>
+      <tr><td class="item">p24–33 Facility</td><td>일부 시설만 수록</td><td><span class="chg chg-block">보류</span></td><td>5개 업태 분류(p3–4)와 개별 프로파일 수 정합 확인 필요(38 vs 수록 수)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="p1b">
+  <h3><i>1B</i>치명 1 — 타겟 연령이 한 파일 안에서 3가지로 표기됨</h3>
+  <p>같은 파일이 세 곳에서 다른 연령을 말합니다. 대외 인용 시 혼선이 나므로 <b>가장 먼저 통일</b>해야 합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>위치</th><th>표기</th><th>문제</th></tr></thead>
+    <tbody>
+      <tr><td class="item">p16 Summary / p17 결론</td><td class="num">3–10세 + 0–2 토들러</td><td>상단 9–10세는 파일 스스로 "실제로 오지 않는다"고 함 → 헤드라인이 근거와 반대</td></tr>
+      <tr><td class="item">p17 부제</td><td class="num">실질 커버리지 3–8세</td><td>공식과 실질이 뒤섞임</td></tr>
+      <tr><td class="item">p17 하단(v14 붙임)</td><td class="num">공식 3–8세 + 이중설계 8–10 흡수</td><td>가장 정합적이나 위 두 줄과 병존</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lab">권장 표기 (통일안)</span><b>공식 타깃 3–8세</b> · <b>0–2세 크롤러존 신설</b> · <b>이중 설계(감각 레이어 + 서사 레이어)로 실질 0–10세 흡수.</b> "3–10세"라는 상단 확장 헤드라인은 삭제 — 조치(이중 설계) 없이 상단을 걸면 파일 p12·p17이 경고한 "위가 비어버리는" 구조가 됩니다.</div>
+</section>
+
+<section id="p1c">
+  <h3><i>1C</i>치명 2 — 조닝(p18)이 파일 자신의 캐파 문단(p14)과 모순</h3>
+  <p>p14는 v14 하이브리드 문단("피크일 캐파가 문제…예약 슬롯으로 캡")을 붙였는데, <b>p18 조닝은 그 문제를 만든 옛 수치(메인 55%·BOH 10%)를 그대로</b> 둡니다. 메인 55%로는 종일권 적용 시 피크일 1인 순면적이 <b>1.86&nbsp;m²</b>로 붕괴합니다(2C 재현). 또 BOH 10%는 도면분석(v13)이 "미국 운영은 15–17% 필요"라 경고한 값을 어깁니다.</p>
+  <div class="danger"><span class="lab">필수 수정</span>p18을 <b>메인 58% · BOH 12% · 파티 8%</b>로 갱신하고, 회의에서 추가된 <b>샌드비치(중앙·대형)·소형 인터랙션 게임존·F&B–놀이 결합</b>을 존 목록에 편입해야 합니다. 상세는 PART 2.</div>
+</section>
+
+<section id="p1d">
+  <h3><i>1D</i>보강 — 가격 A/B에 "점유비용" 축을 더해야 함 (신규 계산)</h3>
+  <p>p21은 A/B 가격을 <b>시장 비교</b>로만 잡았습니다. 그러나 SouthGlenn은 <b>연 점유비용 $960K(중간값)</b>라는 고정 제약이 있어, 가격은 시장뿐 아니라 <b>임대료 커버</b> 기준으로도 검증해야 합니다. 아래는 파일의 A/B를 점유비용으로 재계산한 결과입니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>안</th><th>가족 구성</th><th class="rnum">per-cap</th><th class="rnum">안정기 44.1만</th><th class="rnum">1년차 38.8만</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">A 아동$24–26<br>성인$5–8</td><td>1성+2아</td><td class="rnum">$18.8</td><td class="rnum">12%</td><td class="rnum">13%</td><td><span class="st st-mid">상한 근접·초과</span></td></tr>
+      <tr><td class="item">A</td><td>2성+2아</td><td class="rnum">$15.8</td><td class="rnum">14%</td><td class="rnum">16%</td><td><span class="st st-no">초과</span></td></tr>
+      <tr><td class="item">B 아동$36–42<br>성인$8–10</td><td>1성+2아</td><td class="rnum">$29.0</td><td class="rnum">8%</td><td class="rnum">9%</td><td><span class="st st-ok">적정</span></td></tr>
+      <tr><td class="item">B</td><td>2성+2아</td><td class="rnum">$24.0</td><td class="rnum">9%</td><td class="rnum">10%</td><td><span class="st st-ok">적정</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">점유비용 = $960K ÷ (연 방문객 × per-cap). 업계 통상 8–12%. A안 성인 $5–8은 v14 "성인 요금 낮춰라"를 이미 반영(개선). 그러나 낮은 아동가($24–26)가 임대료 커버를 못 맞춤.</p>
+  <div class="warn"><span class="lab">해석</span>① <b>A안은 이 부지에는 낮다</b> — 시장 median($18.50)에 붙였으나, SouthGlenn 임대료를 8–12%로 덮으려면 부족(2성인 구성 16%). ② <b>B안은 임대료는 맞으나 WTP 리스크</b> — 4인 $96은 시장 median 실지불 $39의 2.5배·Van Gogh 프리미엄 수준. <b>권장: A와 B 사이(아동 $28–32) + 부가매출(태깅·F&B·프로젝션 파티)로 per-cap 방어</b>, 그리고 WTP 조사로 상단 확인.</div>
+  <div class="danger"><span class="lab">가격을 못 정하는 진짜 이유 — 미해결 전제</span>표의 모든 %는 <b>관광 수요를 포함한 44.1만/38.8만</b> 기준입니다. 관광을 빼면 로컬 16.8만만 남아 A·B 모두 <b>20–36%</b>로 붕괴합니다(v14 지적). <b>가격은 "관광 수요 계상 여부"가 정해지기 전엔 확정 불가</b> — 이 전제부터 정리해야 A/B 선택이 의미를 갖습니다.</div>
+</section>
+
+<section id="p1e">
+  <h3><i>1E</i>기타 정합 — 파티·멤버십·업태 분류</h3>
+  <ul class="tight">
+    <li><b>파티(p10) ↔ 조닝(p18) 연결</b> — 파티가 저연령 수익 본체라면 파티룸 3실은 유지하되, BOH 복원 때문에 면적을 11%→8%로 줄이는 대신 <b>프로젝션(월 콘텐츠화)로 객단가·회전을 올려</b> 매출을 보전. 회의 "월 활용+콘텐츠화"와 일치.</li>
+    <li><b>멤버십(p22)</b> — 월 $75–95·형제 추가·"강매하지 않을 것"(Sky Zone 교훈)은 타당. <b>유지.</b> 단 데이패스 3–4회 회수 구조는 <b>가격안 확정 후 재계산</b>(A/B에 따라 회수 회수가 달라짐).</li>
+    <li><b>5개 업태 분류(p3–4)</b> — 좋은 프레임. ③ 몸으로 노는·대규모($24–36)를 "실제 최대 경쟁군"으로 명시한 점, ⑤ 전시/관람을 "콘텐츠 직접 비교군·가격 벤치마크"로 둔 점 <b>유지.</b> 아르떼 좌표는 ③과 ⑤ 사이임을 한 줄로 못박기.</li>
+  </ul>
+</section>
+
+<!-- ============ PART 2 ============ -->
+<section id="p2a">
+  <p class="eyebrow">지시 2 — 도면 보고 조닝 재계획</p>
+  <h2>조닝 재계획</h2>
+  <p class="lede">확정 가능한 <b>도면 기하는 v13 LOD 실측</b>에서 가져왔습니다(외곽 치수·단일 주출입·NO ENTRY 2개소·챔퍼·컬럼 15본·9개 층고점). 회의에서 나온 <b>배치 요구·제약</b>을 이 기하 위에 얹어 조닝을 다시 짰습니다.</p>
+  <div class="danger"><span class="lab">블로커 — 도면 미업로드</span>회의가 <b>1순위</b>로 지목한 "주방 위치 확정: 급배수 인프라 위치 확인이 선행"은 <b>CEN0800595 HVAC/급배수 도면</b>에 있습니다. 이 파일은 이번에도 <b>업로드되지 않았습니다</b>(경로만 전달). 따라서 조닝의 <b>습식 구역(주방·화장실·그리스트랩) 정확 좌표</b>는 확정 불가 — 아래는 v13 기하 + 회의 제약으로 세운 <b>목표 프로그램</b>이며, 습식 위치는 3B에서 시나리오로 다룹니다.</div>
+  <h4>도면에서 확정된 전제 (v13 LOD)</h4>
+  <ul class="tight">
+    <li><b>단일 주출입</b> 47'-0"(14.3m) 하부(주출입면) 중앙 · 정면 양단 <b>NO ENTRY 2개소</b> → 출입구 증설 불가</li>
+    <li><b>챔퍼</b> 25'-8" 전면 한쪽 코너 → 비정형 평면 (Quest 미로형에 활용)</li>
+    <li><b>층고 밴드</b> 상부 7.06m(최고) → 하부 5.56m(최저), 편차 1.5m → 부피 큰 것은 상부</li>
+    <li><b>컬럼 15본</b> 9.8×12.2m 그리드 → 존 경계로 활용(가벽 절감)</li>
+  </ul>
+</section>
+
+<section id="p2b">
+  <h3><i>2B</i>중앙 자리 우선순위 결정 (업무리스트 #4)</h3>
+  <p>회의의 핵심 갈등: <b>F&B</b>도 <b>샌드비치</b>도 중앙을 원하지만, F&B는 급배수 때문에 화장실 쪽에 묶여 있습니다. 세 후보(F&B/샌드비치/놀이기구)의 중앙 우선순위를 아래처럼 정리합니다.</p>
+  <div class="grid3">
+    <div class="card"><h4>🏖 샌드비치 → 중앙 <span class="st st-ok">1순위</span></h4><p>"어차피 모이는 공간"이자 저자극 감각형(층고 요구 낮음). <b>dynamic nature 테마의 시각적 심장.</b> 급배수 불필요 → 중앙 배치에 제약 없음.</p></div>
+    <div class="card"><h4>🍔 F&B → 중앙 인접 <span class="st st-mid">조건부</span></h4><p>급배수가 묶으므로 <b>주방(습식)은 급배수 벽</b>에, <b>좌석·라운지는 중앙</b>(Social·Oasis)으로 분리. "F&B 위 정글짐 통로" 결합으로 중앙과 물리 연결 → 회의의 "중앙 희망"을 이전 없이 충족.</p></div>
+    <div class="card"><h4>🧗 놀이기구 → 상부·외곽 <span class="st st-ok">확정</span></h4><p>부피 큰 수직 기구는 <b>상부 층고대</b>. 정면(파사드 영상면) 앞은 비움(2D). 중앙 경합에서 빠지는 대신 시야선 확보.</p></div>
+  </div>
+  <div class="note"><span class="lab">결정</span>중앙 = <b>샌드비치(코어) + 이를 감싸는 Social·Oasis(부모 베이스캠프·F&B 좌석)</b>. 주방은 급배수 벽으로 보내되 상부 통로 결합으로 중앙과 잇는다. → "어디서나 아이가 보인다"(파일 최다 호평 요소)와 "F&B 중앙"을 동시에 만족.</div>
+</section>
+
+<section id="p2c">
+  <h3><i>2C</i>v15 존 배분안 (857.5평 / 2,834.7 m²)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>존</th><th class="rnum">비중</th><th class="rnum">평</th><th>배치 · 회의 반영</th></tr></thead>
+    <tbody>
+      <tr><td class="item">메인 어트랙션 (13종)<br>+ 샌드비치 + 소형 게임존</td><td class="rnum">58%</td><td class="rnum">497</td><td>상부 층고대. 샌드비치 중앙 코어. <b>소형 인터랙션 게임존(초등 저학년)</b> 신설 편입</td></tr>
+      <tr><td class="item">Social·Oasis (부모+F&B 좌석)</td><td class="rnum">9%</td><td class="rnum">77</td><td>샌드비치 감싸는 중앙 베이스캠프. 전 구역 시야선</td></tr>
+      <tr><td class="item">파티룸 3실</td><td class="rnum">8%</td><td class="rnum">69</td><td>월 프로젝션 콘텐츠화(차별화). 급배수 벽 근접(케이터링)</td></tr>
+      <tr><td class="item">토들러·크롤러 (0–2세)</td><td class="rnum">7%</td><td class="rnum">60</td><td>펜스·게이트 완전 분리. <b>테이블 인터랙션(산리오 가든 톤)</b> 신설</td></tr>
+      <tr><td class="item">Public (대기홀·락커·리테일)</td><td class="rnum">6%</td><td class="rnum">51</td><td>주출입 직결. 대기홀 6×8m 확보</td></tr>
+      <tr class="total"><td class="item">BOH (+ 주방 습식)</td><td class="rnum">12%</td><td class="rnum">103</td><td>급배수 벽·후면. v13 경고(15–17%) 반영해 10→12% 복원</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">합 100%. 메인 58% = 1,644 m². Direction 55%(1,559)에서 상향해 캐파 하한을 방어. 주방(습식)은 BOH·F&B 접점에 편입(3B).</p>
+  <h4>캐파 재확인 — 왜 58% + 예약 캡인가</h4>
+  <div class="tablewrap"><table>
+    <thead><tr><th>시나리오</th><th class="rnum">메인 순면적</th><th>회전</th><th class="rnum">피크일 동시</th><th class="rnum">1인 순면적</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">Direction 55% + 종일권</td><td class="rnum">1,559 m²</td><td class="num">3.33</td><td class="rnum">836</td><td class="rnum">1.86 m²</td><td><span class="st st-no">붕괴</span></td></tr>
+      <tr><td class="item">v15 58% + 종일권</td><td class="rnum">1,644 m²</td><td class="num">3.33</td><td class="rnum">836</td><td class="rnum">1.97 m²</td><td><span class="st st-no">여전히 부족</span></td></tr>
+      <tr class="total"><td class="item">v15 58% + 피크일 예약 캡</td><td class="rnum">1,644 m²</td><td class="num">3.33</td><td class="rnum">≤ 658</td><td class="rnum">≥ 2.5 m²</td><td><span class="st st-ok">적정</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">피크일 수요 2,784명(v13). 면적만으로는 종일권 피크를 못 버팀 → <b>피크일 동시 인원 ≤658명 캡</b> + 초과분(≈178명/일)을 비피크·단체(평일 오전)로 분산. 단체 채널이 캐파 해법인 이유.</p>
+</section>
+
+<section id="p2d">
+  <h3><i>2D</i>파사드 영상면 vs 놀이기구 (업무리스트 #6)</h3>
+  <p>파사드(정면 storefront)는 <b>영상 연출면</b>이자 브랜드 사인면입니다(v13: "MAY BE MODIFIED BY TENANT"). 정면 앞에 부피 큰 놀이기구를 두면 <b>영상면을 가립니다.</b> 택일안:</p>
+  <div class="grid2">
+    <div class="card"><h4>안 1 — 영상면 우선 (권장)</h4><p>정면 전면을 <b>미디어 파사드로 비우고</b>, 진입 시 영상이 첫 인상이 되게. 놀이기구는 상부·측벽·후면. 대기홀에서 영상면을 정면으로 감상 → "아트 프리미엄"(파일 p11) 강화.</p></div>
+    <div class="card"><h4>안 2 — 저층 기구 혼합</h4><p>영상면 하단부만 <b>층고 낮은 기구(가든 스텝핑·바닥 인터랙티브)</b>로 채우고 상단 영상 유지. 시야 간섭 최소. 샌드비치·소형 게임과 톤 일치.</p></div>
+  </div>
+  <div class="note"><span class="lab">권장</span>안 1 기본 + 영상면 <b>하단 1.2m 이하</b>만 저자극 바닥형 인터랙션 허용(안 2 절충). 진입 축(주출입→대기홀→샌드비치 코어)에서 영상면이 <b>정면으로 보이는 시야선</b>을 설계 고정값으로.</div>
+</section>
+
+<!-- ============ PART 3 ============ -->
+<section id="p3a">
+  <p class="eyebrow">지시 3 — 도면 보고 주방·입퇴장·화장실 동선</p>
+  <h2>주방 위치 · 입·퇴장 · 화장실 동선</h2>
+  <div class="danger"><span class="lab">전제 — 급배수 도면(CEN0800595) 필요</span>회의가 이미 파악한 대로 <b>F&B는 급배수 때문에 화장실 쪽에 묶여 있습니다.</b> 즉 급배수 = 기존 화장실 벽. 따라서 <b>주방은 그 벽에 클러스터</b>됩니다. 다만 <b>정확 좌표·관경·그리스트랩 신설 위치·위생기구 수량</b>은 CEN0800595 도면 없이는 확정할 수 없습니다. 아래는 그 위에서 가능한 <b>동선 확정 + 주방 시나리오</b>입니다.</div>
+</section>
+
+<section id="p3b">
+  <h3><i>3B</i>주방 위치 (업무리스트 #1 — 최우선)</h3>
+  <p>주방은 습식(급배수·그리스트랩)이므로 <b>기존 급배수 벽 = 화장실 벽에 co-locate</b>가 원칙입니다. 회의의 "F&B 중앙 희망"은 주방을 옮기지 않고 <b>좌석을 중앙(Social·Oasis)으로 분리</b>해 충족합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>급배수 위치 (CEN 확인 대상)</th><th>주방 배치</th><th>중앙 F&B 연결법</th></tr></thead>
+    <tbody>
+      <tr><td class="item">시나리오 A · 후면 벽<br>(Best Buy 통상)</td><td>후면 중앙, BOH 인접. 화장실 동측 클러스터</td><td>후면 주방 → 중앙 좌석까지 <b>서빙 통로 + 상부 정글짐 통로</b> 결합</td></tr>
+      <tr><td class="item">시나리오 B · 측벽</td><td>측벽 중앙. 화장실 동일 벽</td><td>측면 주방 → 중앙 샌드비치 코어 옆 좌석. 최단 서빙</td></tr>
+      <tr><td class="item">시나리오 C · 전면(기존 화장실)</td><td>전면부 — 대기홀과 경합</td><td><span class="st st-no">비권장</span> 슬래브 파취·동선 간섭. 이전 검토</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lab">권장(도면 확인 전 잠정)</span>회의 진술("화장실 쪽에 묶임")상 <b>시나리오 A/B가 유력</b>. 주방을 급배수 벽에 두고 <b>"F&B 위 정글짐 통로"</b>로 중앙과 결합 → 회의의 결합 아이디어가 곧 주방-중앙 거리 문제의 해법이 됩니다. <b>상부 통로는 하중·안전 확인 필요(업무 #10).</b> CEN0800595 수령 시 A/B 확정.</div>
+</section>
+
+<section id="p3c">
+  <h3><i>3C</i>입·퇴장 동선 (업무리스트 #2)</h3>
+  <ul class="tight">
+    <li><b>입장</b> — 단일 주출입(47'-0" 중앙). 키오스크 → QR 정보입력 → 데스크 매칭 → 팔찌 발급. <b>대기홀 6×8m</b>를 Public(하부·최저 층고 4.8m)에 확보.</li>
+    <li><b>재입장(종일권)</b> — 손목 스탬프. 몰 식사 후 복귀 레인을 데스크에 별도. 미국 종일권 표준(파일 p14) 반영.</li>
+    <li><b>퇴장</b> — 통상 퇴장은 주출입 동일. 회의의 "퇴장 스낵 토큰"(Play Street 사례) 같은 마무리 동선 검토.</li>
+    <li><b>피난(필수 별도)</b> — 단일 출입은 티켓 검수엔 유리하나 <b>피난 동선은 불충분.</b> Best Buy 기존 후면 비상구를 CEN0800595에서 확인해 승계. 정면 NO ENTRY 2개소는 출입 불가.</li>
+  </ul>
+</section>
+
+<section id="p3d">
+  <h3><i>3D</i>화장실 동선 (업무리스트 #3 — 주방과 인프라 공유)</h3>
+  <ul class="tight">
+    <li><b>위치</b> — 급배수 벽(= 주방과 동일 벽)에 co-locate. <b>중앙 베이스캠프에서 접근 가능</b>하게 배치해 부모가 아이 시야를 잃지 않도록(시야선 = 파일 최다 호평).</li>
+    <li><b>신설 필수</b> — 유아용 기구 · 수유실 · 기저귀 교환대(v13 지적). 토들러존 인접에 별도 기저귀·수유 포인트.</li>
+    <li><b>수량 재산정</b> — 기존은 판매시설 기준이라 키즈파크 재실 인원엔 부족(v13). 피크 동시 재실 <b>≤658명 캡 기준</b>으로 위생기구 수량 재계산(2C 캡과 연동).</li>
+    <li><b>그리스트랩</b> — F&B 도입 시 신설. 바닥 매립형은 슬래브 파취 → 임대인 승인. 위치를 Public/주방 계획 초기에 고정.</li>
+  </ul>
+  <div class="warn"><span class="lab">1·3번 묶음</span>업무 #1(주방)·#3(화장실)은 <b>같은 급배수 인프라를 공유</b>하므로 함께 확정해야 합니다. CEN0800595의 급배수 인입 위치·관경·기존 화장실 배치가 두 업무의 공통 입력값입니다.</div>
+</section>
+
+<section id="s9">
+  <h3><i>★</i>확인 필요 · 다음 단계</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th>이유</th><th>주체</th></tr></thead>
+    <tbody>
+      <tr><td class="item">CEN0800595 도면 업로드</td><td>급배수 위치 → 주방·화장실·조닝 습식 확정의 전제 (미업로드)</td><td>Dstrict</td></tr>
+      <tr><td class="item">관광 수요 계상 여부</td><td>A/B 가격 선택의 전제. 로컬 only면 A·B 모두 붕괴</td><td>Dstrict</td></tr>
+      <tr><td class="item">리서치 p16·p18·p21 수정</td><td>타겟 3중 표기·조닝·가격 점유비용 (1B·1C·1D)</td><td>Dstrict</td></tr>
+      <tr><td class="item">상부 통로 하중·안전</td><td>F&B 위 정글짐 통로 결합 구조 (업무 #10)</td><td>설계·구조</td></tr>
+      <tr><td class="item">본부장 자료 → 파티룸</td><td>파티룸 콘텐츠화 구체화 (업무 #7)</td><td>Dstrict</td></tr>
+      <tr><td class="item">WTP 조사</td><td>아동 $28–32 상단 수용선 확인</td><td>Dstrict</td></tr>
+    </tbody>
+  </table></div>
+  <div class="verdict" style="margin-top:22px">
+    <b>요약 — 지시 1은 완료, 지시 2·3은 도면 대기</b>
+    <span><b>지시 1(리서치 개정)</b>은 페이지별 개정표로 완료했습니다 — 핵심은 타겟 3중 표기 통일, 조닝 p18 미수정, 가격 A/B의 점유비용 검증(A안 초과·B안 적정·둘 다 관광 전제 의존). <b>지시 2·3(조닝·주방·동선)</b>은 v13 실측 기하 위에서 <b>결정 가능한 부분(중앙=샌드비치, 놀이=상부, 파사드 비움, 단일 출입·피난 별도, 화장실=급배수 벽)까지 확정</b>했고, <b>주방 정확 좌표·그리스트랩·위생기구 수량은 CEN0800595 급배수 도면이 있어야 확정</b>됩니다. 도면 업로드 시 3B 시나리오를 단일안으로 좁히겠습니다.</span>
+  </div>
+</section>
+
+<div class="foot">
+  본 문서(v15)는 ① 지난주 회의록·업무리스트 ② 리서치 260803(작성중) ③ 도면(CEN0800595, 미업로드)을 대조한 작업 메모입니다.<br>
+  조닝·동선의 습식(주방·화장실·그리스트랩) 항목은 급배수 도면 수령 후 확정됩니다. 모든 캐파·가격 수치는 원자료 명시 입력값 기준.<br>
+  d'strict · Arte Kids Park USA · 2026.08.03
+</div>
+</main>
+</div>
+</body>
+</html>
