@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SouthGlenn v17 · MEP 확인 (RTU·급배수·전기·피난)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<style>
+:root{
+  --c1:#0065B2;--c3:#E41E2E;--c4:#00913B;--c5:#FF8000;--c8:#00A7B5;
+  --ok:#00B050;--ok-bg:#E6F1ED;--mid:#F59E0B;--mid-bg:#FEF3C7;--no:#FF0000;--no-bg:#FCEBEB;
+  --paper:#FFFFFF;--paper2:#F5F5F5;--card:#FFFFFF;
+  --ink:#111111;--ink2:#353535;--ink3:#888888;--rule:#D6D6D6;--rule2:#E8E8E8;
+  --pine:#0065B2;--pine-soft:#E6F1FB;--accent:#FF8000;
+  --sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  --disp:"LINESeedKR","LINE Seed KR",Pretendard,sans-serif;
+  --mono:"LINESeedKR","LINE Seed KR",Pretendard,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75}
+.shell{display:flex;align-items:flex-start}
+.side{position:sticky;top:0;height:100vh;width:250px;flex:none;border-right:1px solid var(--rule);background:var(--paper2);padding:24px 20px;display:flex;flex-direction:column;gap:12px}
+.brand{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.025em;line-height:1.1}
+.brand span{color:var(--accent)}
+.brand small{display:block;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ink3);letter-spacing:.05em;margin-top:8px;line-height:1.6}
+nav{display:flex;flex-direction:column;gap:1px;overflow-y:auto}
+nav a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:var(--ink2);font-size:13px;padding:5px 9px;border-radius:6px}
+nav a span{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+nav a:hover{background:#EFEFEF;color:var(--ink)}
+.side footer{margin-top:auto;font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--rule2);padding-top:12px}
+main{flex:1;min-width:0;padding:0 46px 120px;max-width:1000px}
+section{padding-top:52px}
+h2{font-family:var(--disp);font-size:24px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin:0 0 8px;font-weight:700}
+.lede{color:var(--ink2);max-width:78ch;margin:0 0 22px;font-size:14.5px}
+h3{font-size:15.5px;font-weight:700;margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--rule2)}
+h3 i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--pine);margin-right:9px;font-weight:700}
+p{margin:0 0 12px}
+.hero{padding:46px 0 8px;border-top:4px solid var(--accent);border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--disp);font-size:clamp(20px,2.2vw,28px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:0 0 10px}
+.hero p{color:var(--ink2);max-width:80ch}
+.keyrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 0}
+.key{background:var(--paper2);padding:13px 15px}
+.key b{display:block;font-family:var(--disp);font-size:16px;font-weight:800;line-height:1.15}
+.key span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.04em;color:var(--ink3);text-transform:uppercase;margin-top:7px;line-height:1.4}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:8px 9px;border-bottom:1px solid var(--rule)}
+td{padding:9px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.6}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.rnum{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr.total td{background:#E6F1FB;font-weight:700;border-top:1px solid var(--rule)}
+td.item{font-weight:600}
+.tcap{font-size:11.5px;color:var(--ink3);margin:6px 0 0;font-family:var(--mono);line-height:1.6}
+.tablewrap{overflow-x:auto}
+.st{display:inline-block;font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:var(--ok);border-color:#B9DEC7;background:#E6F1ED}
+.st-mid{color:#B45309;border-color:#F5DFA0;background:#FEF3C7}
+.st-no{color:var(--no);border-color:#F5C2C2;background:#FCEBEB}
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:12px 15px;font-size:13px;color:#10466E;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.warn{border-left:2px solid var(--mid);background:var(--mid-bg);padding:12px 15px;font-size:13px;color:#7C4A03;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.danger{border-left:3px solid var(--no);background:var(--no-bg);padding:12px 15px;font-size:13px;color:#8A0A0A;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.note .lab,.warn .lab,.danger .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.note .lab{color:var(--pine)}.warn .lab{color:#B45309}.danger .lab{color:var(--no)}
+.verdict{border:1px solid var(--rule);border-left:3px solid var(--pine);background:var(--paper2);border-radius:3px;padding:15px 17px;margin:0 0 18px}
+.verdict b{display:block;font-family:var(--disp);font-size:15.5px;font-weight:800;margin-bottom:6px}
+.verdict span{color:var(--ink2);font-size:13.5px;line-height:1.72}
+ul.tight{margin:6px 0 12px;padding-left:20px}ul.tight li{margin-bottom:5px;font-size:13.5px}
+.foot{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--ink3);line-height:1.7}
+@media (max-width:1000px){
+  .shell{display:block}
+  .side{position:static;height:auto;width:auto;border-right:none;border-bottom:1px solid var(--rule);flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:14px 18px}
+  .side footer,.brand small,nav a span{display:none}
+  nav{flex-direction:row;gap:2px}nav a{white-space:nowrap}
+  main{padding:0 20px 90px}
+  .keyrow{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand">SouthGlenn <span>v17</span>
+    <small>MEP 확인 (RTU·급배수·전기·피난)<br>Binder 7·8·9·72 판독<br>2026.08.03</small>
+  </div>
+  <nav>
+    <a href="#s0"><span>00</span>MEP 확인 요약</a>
+    <a href="#m1"><span>01</span>공조 RTU · 외기</a>
+    <a href="#m2"><span>02</span>급배수 · 가스</a>
+    <a href="#m3"><span>03</span>전기 인입</a>
+    <a href="#m4"><span>04</span>피난 · 소방</a>
+    <a href="#m5"><span>05</span>v16 미결 항목 종결</a>
+  </nav>
+  <footer>
+    판독 시트<br>B72 p3 · RTU/급배수 스케줄<br>B7 p3 · 급수/가스/WH<br>B9 p1 · 전기 패널/인입<br>CS-2 · 용도/피난<br>대기: 마지막 1개 파일
+  </footer>
+</aside>
+
+<main>
+<section id="s0" class="hero">
+  <p class="eyebrow">MEP-Confirmed Update · v17</p>
+  <h1>추가 도면(M/P/E 스케줄)으로<br>v16의 정량 미결 항목을 확정했습니다.</h1>
+  <p>Binder 7·8·9·72의 <b>기계(RTU)·배관(급배수)·전기 스케줄 시트</b>를 판독해, v16에서 "추가 파일 대기"로 남긴 <b>관경·RTU 용량·전기 인입·피난</b>을 실수치로 채웠습니다. 핵심: 기존 설비는 <b>2008년 판매시설용</b>이라, 키즈파크(집회) 전환 시 <b>공조는 노후·부하 상승으로 부분 교체, 화장실·주방은 신규 인프라</b>가 확정 사항입니다.</p>
+  <div class="keyrow">
+    <div class="key"><b>111.5 T</b><span>RTU 10대 총 냉방 · 2008 Trane(18년)</span></div>
+    <div class="key"><b>7,290 CFM</b><span>기존 sales 외기 = A-3 필요의 82–111%</span></div>
+    <div class="key"><b>600 A</b><span>전기 인입 208/120V 3φ (부하 재계산)</span></div>
+    <div class="key"><b>가스 有</b><span>Xcel 기존 (주방 가스 활용 가능)</span></div>
+  </div>
+</section>
+
+<section id="m1">
+  <h2>01 · 공조(RTU) · 외기 — 부분 교체 유력</h2>
+  <p class="lede">기존 옥상 유닛 10대(TRANE, 2008)의 실제 스케줄입니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mark</th><th>담당 구역</th><th class="rnum">톤</th><th class="rnum">CFM</th><th class="rnum">외기 OA</th></tr></thead>
+    <tbody>
+      <tr><td class="item">RTU 1–6</td><td>Sales Floor</td><td class="rnum">15 ×6 = 90</td><td class="rnum">6,000 ×6</td><td class="rnum">1,215 ×6 = 7,290</td></tr>
+      <tr><td class="item">RTU-7</td><td>Receiving</td><td class="rnum">10</td><td class="rnum">4,000</td><td class="rnum">720</td></tr>
+      <tr><td class="item">RTU-8</td><td>Install Bay(ISC)</td><td class="rnum">5</td><td class="rnum">1,950</td><td class="rnum">370</td></tr>
+      <tr><td class="item">RTU-9</td><td>Hub / Sales Dev / <b>Restrooms</b></td><td class="rnum">4</td><td class="rnum">1,600</td><td class="rnum">—</td></tr>
+      <tr><td class="item">RTU-10</td><td>Comm / Admin</td><td class="rnum">2.5</td><td class="rnum">800</td><td class="rnum">120</td></tr>
+      <tr class="total"><td class="item">합계</td><td>10대</td><td class="rnum">111.5 T</td><td class="rnum">~38,350</td><td class="rnum">~8,600</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">Trane YCD181(15T)·YHC 시리즈, 가스 난방(250 MBH 입력/유닛), 460/3/60. 냉방 189 MBH·11.5 EER/유닛.</p>
+  <h3><i>판정</i>외기(OA)는 경계, 유닛은 노후 — 부분 교체 + 재커미셔닝</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>검토</th><th>기존</th><th>A-3(피크 658인)</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">외기량 OA</td><td class="num">7,290 CFM</td><td class="num">약 6,000–8,100 CFM</td><td><span class="st st-mid">82–111% · 경계</span></td></tr>
+      <tr><td class="item">냉방 부하</td><td class="num">90 T / sales (≈269 SF/T)</td><td class="num">활동·미디어 발열 ↑</td><td><span class="st st-no">부족 우려</span></td></tr>
+      <tr><td class="item">유닛 잔여 수명</td><td class="num">2008 설치 · 18년</td><td class="num">통상 15–20년</td><td><span class="st st-no">교체 시점</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="lab">결론</span>① 외기량은 <b>양적으로는 경계선</b>(체육류 기준이면 부족). ② 키즈파크는 <b>인체·활동·프로젝션 발열</b>로 sensible/latent 부하가 커 90T가 빠듯. ③ 무엇보다 <b>18년 노후</b>라 승계보다 <b>부분 교체가 현실적</b>. + <b>주방 후드 배기·MUA(급기)는 기존에 없어 신규</b>. v13이 지목한 "RTU 용량 승계 가부"는 → <b>부분 교체 + OA 댐퍼·이코노마이저 재커미셔닝</b>으로 정리.</div>
+</section>
+
+<section id="m2">
+  <h2>02 · 급배수 · 가스 — 위치 확정, 신규 인프라 필요</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th>도면 확인값 (B7 p3 · B72 p3)</th><th>AKP 영향</th></tr></thead>
+    <tbody>
+      <tr><td class="item">급수 인입</td><td>Denver Water · 계량기 · 백플로우 · PRV(>65psi)</td><td>동측 밴드 인입. 정확 지점 M-2 평면</td></tr>
+      <tr><td class="item">온수기 WH-1</td><td><b>Janitor 싱크 상부 9' AFF</b> (동측)</td><td>소형(화장실용). <b>주방·F&B용 신규 WH</b> 필요</td></tr>
+      <tr><td class="item">배수</td><td>플로어드레인 · 청소구 · RTU 응축수 배수</td><td>주방 바닥배수·그리스트랩 신설 경로 근접</td></tr>
+      <tr><td class="item">그리스트랩</td><td><b>없음</b> (판매시설)</td><td>주방 도입 시 <b>신설</b> · 슬래브 파취 시 임대인 승인</td></tr>
+      <tr><td class="item">가스</td><td>Xcel Energy · RTU 가스난방 기존</td><td><b>주방 가스 인입 활용 가능</b> (분기·용량 확인)</td></tr>
+      <tr><td class="item">화장실 배기</td><td>EF-1 · 500 CFM/실</td><td>기구 증설 시 <b>배기량 상향</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lab">종결</span>급배수 위치는 <b>동측 밴드로 확정</b>(온수기가 Janitor 싱크 위 = 동측 재확인). 주방은 그 옆 ISC 자리(v16)라 <b>신규 배관 최소</b>. 다만 <b>그리스트랩·주방 온수기·후드 배기·MUA</b>는 모두 신규 — 주방은 "위치는 유리, 설비는 신설" 구도.</div>
+</section>
+
+<section id="m3">
+  <h2>03 · 전기 인입 — 600A, 부하 재계산 필요</h2>
+  <ul class="tight">
+    <li><b>인입 [확인]</b> — <b>600A MCB · 208/120V 3상 4선</b>, Electrical Rm(BOH 남서측). 225A 서브패널 다수, 10kAIC.</li>
+    <li><b>AKP 영향</b> — Best Buy는 진열 조명·전시 부하가 커 <b>여유 가능성</b>은 있으나, 키즈파크는 <b>미디어·프로젝션·인터랙티브 + 상업 주방(전기 조리·환기)</b> 부하가 다름. <b>600A로 충분한지 부하 계산</b> 필요. 미디어 장비는 <b>분전반 분산 배치</b> 전제.</li>
+    <li><b>가스 병용</b> — 주방을 가스 기반(기존 Xcel)으로 하면 전기 부하 압박이 줄어듦 → 600A 승계 가능성↑.</li>
+  </ul>
+</section>
+
+<section id="m4">
+  <h2>04 · 피난 · 소방</h2>
+  <ul class="tight">
+    <li><b>기존(CS-2)</b> — Mercantile 853 occ 기준, <b>출구 4개소</b>, 스프링클러 완비(IIIB).</li>
+    <li><b>A-3 전환</b> — 집회 용도는 <b>재실 밀도·피난 요구가 달라</b> 피난 폭·출구 수를 <b>재계산</b>. 단일 주출입(남측) 외 <b>후면/측면 비상구 승계·신설</b> 필요.</li>
+    <li><b>스프링클러</b> — 완비돼 있으나 <b>3층 네트·플레이 구조물은 살수 장애</b> → 구조물 내부 헤드 추가/재배치 물량 선산정(마지막 파일의 FP 시트로 확정).</li>
+  </ul>
+</section>
+
+<section id="m5">
+  <h2>05 · v16 미결 항목 종결표</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>v16 미결</th><th>확인값</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">급배수 인입·관경</td><td>Denver Water 계량·백플로우·PRV, 온수기 Janitor 상부(동측)</td><td><span class="st st-ok">위치 확정</span> 관경 M-2 평면</td></tr>
+      <tr><td class="item">RTU 대수·용량</td><td>10대 111.5T, sales 90T/OA 7,290, 18년</td><td><span class="st st-no">부분 교체</span></td></tr>
+      <tr><td class="item">전기 인입·간선</td><td>600A 208/120V 3φ, Electrical Rm</td><td><span class="st st-mid">부하 재계산</span></td></tr>
+      <tr><td class="item">피난·비상구</td><td>기존 Mercantile 853·출구 4</td><td><span class="st st-mid">A-3 재계산</span></td></tr>
+      <tr><td class="item">스프링클러 헤드</td><td>완비(IIIB) · 네트 살수 장애</td><td><span class="st st-mid">헤드 추가 산정</span></td></tr>
+      <tr><td class="item">그리스트랩</td><td>없음 → 주방 신설</td><td><span class="st st-no">신설</span></td></tr>
+      <tr><td class="item">가스</td><td>Xcel 기존</td><td><span class="st st-ok">활용 가능</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="verdict" style="margin-top:20px">
+    <b>요약 — 위치·인프라 유무는 확정, 정량 재계산 3건 남음</b>
+    <span>기계·배관·전기 스케줄로 <b>설비 위치와 유무는 모두 확정</b>했습니다. 남은 것은 <b>정량 재계산 3건</b> — ① RTU 부분 교체 규모(부하 계산), ② 전기 600A 충분성(부하 계산), ③ 집회 피난 폭·출구 수 — 로, 모두 <b>용도변경(Mercantile→A-3)</b>에서 파생됩니다. <b>스프링클러 헤드 물량과 배관 관경 상세</b>는 <b>마지막 1개 파일(FP/배관 상세)</b>로 마무리하겠습니다.</span>
+  </div>
+</section>
+
+<div class="foot">
+  본 문서(v17)는 CEN0800595 Binder 7·8·9·72의 기계(RTU)·배관·전기 스케줄 시트 판독 결과입니다.<br>
+  RTU 톤수·CFM·외기, 온수기 위치, 전기 600A는 원 스케줄 표기값. A-3 외기·부하·피난은 개략 검토이며 현지 엔지니어 정산이 필요합니다.<br>
+  d'strict · Arte Kids Park USA · 2026.08.03
+</div>
+</main>
+</div>
+</body>
+</html>
