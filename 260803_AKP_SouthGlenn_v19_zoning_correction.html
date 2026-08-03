@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SouthGlenn v19 · 조닝 정정 (중앙 F&B · 배수 근거)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<style>
+:root{
+  --c1:#0065B2;--c3:#E41E2E;--c4:#00913B;--c5:#FF8000;--c8:#00A7B5;--c6:#ED92B9;
+  --ok:#00B050;--ok-bg:#E6F1ED;--mid:#F59E0B;--mid-bg:#FEF3C7;--no:#FF0000;--no-bg:#FCEBEB;
+  --paper:#FFFFFF;--paper2:#F5F5F5;--card:#FFFFFF;
+  --ink:#111111;--ink2:#353535;--ink3:#888888;--rule:#D6D6D6;--rule2:#E8E8E8;
+  --pine:#0065B2;--pine-soft:#E6F1FB;--accent:#FF8000;
+  --sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  --disp:"LINESeedKR","LINE Seed KR",Pretendard,sans-serif;--mono:"LINESeedKR","LINE Seed KR",Pretendard,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75}
+.shell{display:flex;align-items:flex-start}
+.side{position:sticky;top:0;height:100vh;width:250px;flex:none;border-right:1px solid var(--rule);background:var(--paper2);padding:22px 18px;display:flex;flex-direction:column;gap:10px}
+.brand{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.025em;line-height:1.1}
+.brand span{color:var(--accent)}
+.brand small{display:block;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ink3);letter-spacing:.05em;margin-top:8px;line-height:1.6}
+nav{display:flex;flex-direction:column;gap:1px;overflow-y:auto}
+nav a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:var(--ink2);font-size:13px;padding:5px 9px;border-radius:6px}
+nav a span{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+nav a:hover{background:#EFEFEF;color:var(--ink)}
+.side footer{margin-top:auto;font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--rule2);padding-top:10px}
+main{flex:1;min-width:0;padding:0 44px 120px;max-width:1000px}
+section{padding-top:50px}
+h2{font-family:var(--disp);font-size:24px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin:0 0 8px;font-weight:700}
+.lede{color:var(--ink2);max-width:78ch;margin:0 0 22px;font-size:14.5px}
+h3{font-size:15.5px;font-weight:700;margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--rule2)}
+h3 i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--pine);margin-right:9px;font-weight:700}
+h4{font-size:13.5px;font-weight:700;margin:16px 0 8px}
+p{margin:0 0 12px}
+.hero{padding:44px 0 8px;border-top:4px solid var(--accent);border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--disp);font-size:clamp(20px,2.2vw,28px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:0 0 10px}
+.hero p{color:var(--ink2);max-width:82ch}
+.keyrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:24px 0 0}
+.key{background:var(--paper2);padding:13px 15px}
+.key b{display:block;font-family:var(--disp);font-size:15px;font-weight:800;line-height:1.15}
+.key span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.03em;color:var(--ink3);text-transform:uppercase;margin-top:7px;line-height:1.4}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:7px 8px;border-bottom:1px solid var(--rule)}
+td{padding:8px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.55}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr.total td{background:#E6F1FB;font-weight:700;border-top:1px solid var(--rule)}
+td.item{font-weight:600}
+.tcap{font-size:11px;color:var(--ink3);margin:6px 0 0;font-family:var(--mono);line-height:1.55}
+.tablewrap{overflow-x:auto}
+.st{display:inline-block;font-family:var(--mono);font-size:9.5px;padding:2px 6px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:var(--ok);border-color:#B9DEC7;background:#E6F1ED}.st-mid{color:#B45309;border-color:#F5DFA0;background:#FEF3C7}.st-no{color:var(--no);border-color:#F5C2C2;background:#FCEBEB}
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:12px 15px;font-size:13px;color:#10466E;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.warn{border-left:2px solid var(--mid);background:var(--mid-bg);padding:12px 15px;font-size:13px;color:#7C4A03;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.danger{border-left:3px solid var(--no);background:var(--no-bg);padding:12px 15px;font-size:13px;color:#8A0A0A;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.ok-box{border-left:3px solid var(--ok);background:var(--ok-bg);padding:12px 15px;font-size:13px;color:#0A5B33;margin:13px 0;border-radius:0 3px 3px 0;line-height:1.72}
+.note .lab,.warn .lab,.danger .lab,.ok-box .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.note .lab{color:var(--pine)}.warn .lab{color:#B45309}.danger .lab{color:var(--no)}.ok-box .lab{color:var(--ok)}
+.verdict{border:1px solid var(--rule);border-left:3px solid var(--pine);background:var(--paper2);border-radius:3px;padding:15px 17px;margin:0 0 18px}
+.verdict b{display:block;font-family:var(--disp);font-size:15.5px;font-weight:800;margin-bottom:6px}
+.verdict span{color:var(--ink2);font-size:13.5px;line-height:1.72}
+ul.tight{margin:6px 0 12px;padding-left:20px}ul.tight li{margin-bottom:5px;font-size:13px}
+.planbox{border:1px solid var(--rule);background:#fff;border-radius:4px;padding:14px;margin:14px 0}
+.planbox svg{width:100%;height:auto;display:block}
+.lgd{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-family:var(--mono);font-size:10.5px}
+.lgd span{display:inline-flex;align-items:center;gap:5px}.lgd i{width:11px;height:11px;border-radius:2px;display:inline-block}
+.foot{margin-top:54px;border-top:1px solid var(--rule);padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--ink3);line-height:1.7}
+@media (max-width:1000px){
+  .shell{display:block}
+  .side{position:static;height:auto;width:auto;border-right:none;border-bottom:1px solid var(--rule);flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:14px 18px}
+  .side footer,.brand small,nav a span{display:none}
+  nav{flex-direction:row;gap:2px}nav a{white-space:nowrap}
+  main{padding:0 20px 90px}.keyrow{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand">SouthGlenn <span>v19</span>
+    <small>조닝 정정 · 중앙 F&B · 배수 근거<br>v16/v18 수정본<br>2026.08.03</small>
+  </div>
+  <nav>
+    <a href="#s0"><span>00</span>정정 요지</a>
+    <a href="#c1"><span>01</span>배수 — 무엇을 봤나</a>
+    <a href="#c2"><span>02</span>주방 — 스택 밀착</a>
+    <a href="#c3"><span>03</span>중앙 — F&B/부모석</a>
+    <a href="#c4"><span>04</span>정정 스키매틱</a>
+    <a href="#c5"><span>05</span>요청 · M-2/M-3</a>
+  </nav>
+  <footer>
+    정정 대상<br>v16 §02·§05 (동측 밴드·중앙 샌드비치)<br>v18 §2.1·2.2 (동일)<br>근거: CS-1 Sheet Index · A-1.1
+  </footer>
+</aside>
+
+<main>
+<section id="s0" class="hero">
+  <p class="eyebrow">Correction · v19</p>
+  <h1>두 가지를 정정합니다 — 배수 근거와 중앙 자리.</h1>
+  <p>피드백대로, ① <b>"동측 전체가 급배수 밴드"는 과잉 일반화</b>였고(확실한 배수점은 화장실+Janitor 스택 한 곳), ② <b>중앙은 샌드비치가 아니라 F&B/부모석</b>이 맞습니다(샌드비치는 대형 프로젝터 이머시브 = 벽·암전 필요한 경계 존). 이 문서는 v16/v18의 해당 배치를 <b>수정</b>합니다.</p>
+  <div class="keyrow">
+    <div class="key"><b>스택 1곳</b><span>확실한 배수 = 화장실+Janitor (5-D 부근)</span></div>
+    <div class="key"><b>중앙 = F&B</b><span>부모 베이스캠프 · 샌드비치는 이머시브 존으로</span></div>
+    <div class="key"><b>M-2 / M-3 필요</b><span>배관 평면 — 세트에 없음, 요청</span></div>
+  </div>
+</section>
+
+<section id="c1">
+  <h2>01 · 배수 — 제가 본 도면과 안 본 도면</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>도면</th><th>본 것</th><th>알 수 있는 것 / 없는 것</th></tr></thead>
+    <tbody>
+      <tr><td class="item">A-1 Floor Plan</td><td>방·기구 위치</td><td>화장실 위생기구·Janitor 위치 <span class="st st-ok">확인</span> / 배관 라우팅 ✗</td></tr>
+      <tr><td class="item">A-1.1 Enlarged</td><td>Janitor floor sink·FD·온수기, 화장실 기구</td><td>습식점 존재 <span class="st st-ok">확인</span> / 하수 본관·인버트 ✗</td></tr>
+      <tr><td class="item">배관 상세(M-6~9류)</td><td>WH 배관·청소구·응축수 상세</td><td>기구 개념 <span class="st st-ok">확인</span> / 실제 경로 ✗</td></tr>
+      <tr><td class="item"><b>M-2 Plumbing Floor Plan</b></td><td><b>세트에 없음</b></td><td>하수 본관·인버트·FD 위치 → <span class="st st-no">미확인</span></td></tr>
+      <tr><td class="item"><b>M-3 Enlarged Plumbing</b></td><td><b>세트에 없음</b></td><td>화장실 스택 상세 → <span class="st st-no">미확인</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="lab">확인된 사실</span>CS-1 Sheet Index에 <b>M-2 PLUMBING FLOOR PLAN · M-3 ENLARGED PLUMBING</b>이 목록엔 있으나, <b>Binder 1–10 어디에도 실제 시트가 없습니다</b>(제목은 인덱스에만 1회 등장). 즉 <b>배수 라우팅 평면은 본 세트에 미포함</b>입니다.</div>
+  <div class="ok-box"><span class="lab">그래도 확실한 것</span>A-1.1이 <b>Janitor 107에 floor sink + 바닥배수(FD) + 온수기</b>, 화장실에 위생기구를 명시 → <b>기존 하수 스택은 화장실+Janitor 클러스터(동측 5-D 부근)에 실재.</b> 이 한 지점은 근거가 있습니다. "동측 전체"가 아니라 <b>이 스택</b>이 기준.</div>
+</section>
+
+<section id="c2">
+  <h2>02 · 주방 — 배수 스택에 "밀착" (동측 전체 아님)</h2>
+  <p class="lede">공사비의 핵심은 <b>신규 하수관 길이</b>입니다. 슬래브 파취·트렌치는 길수록 비쌉니다. 따라서 주방은 <b>기존 스택(화장실+Janitor)에서 가장 가까운 자리</b>에 붙여야 합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>후보</th><th>스택까지 거리</th><th>배수 신설</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">화장실·Janitor 벽에 밀착 (동측 4–5D)</td><td class="num">최단</td><td class="num">최소</td><td><span class="st st-ok">권장</span></td></tr>
+      <tr><td class="item">ISC 베이 (동측, 스택 인접)</td><td class="num">근접</td><td class="num">ISC 배수 有 시 최소 / 無 시 신설</td><td><span class="st st-mid">M-2 확인 필요</span></td></tr>
+      <tr><td class="item">중앙·서측</td><td class="num">원거리</td><td class="num">장거리 슬래브 파취</td><td><span class="st st-no">비권장</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lab">정정</span>주방 = <b>화장실·Janitor 스택에 밀착</b>(동측 상부 4–5D). ISC 자리 활용 여부는 <b>M-2에서 ISC 바닥배수 유무</b> 확인 후 결정(있으면 주방 확장, 없으면 스택 벽에 압축). 그리스트랩은 <b>하수 본관 인출점(M-2)</b>을 보고 중력식 경로가 나오는 자리에 신설.</div>
+</section>
+
+<section id="c3">
+  <h2>03 · 중앙 — F&B/부모석 (샌드비치는 이머시브 존으로 이동)</h2>
+  <p class="lede">정정 채택: 중앙 코어는 <b>부모 베이스캠프 + F&B 좌석</b>. 샌드비치는 <b>대형 프로젝터 이머시브</b>라 벽·암전·투사면이 필요한 <b>경계(bounded) destination</b>으로, 열린 중앙이 아니라 미디어 인프라 쪽에 둡니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>요소</th><th>v16/v18 (수정 전)</th><th>v19 (수정 후)</th><th>이유</th></tr></thead>
+    <tbody>
+      <tr><td class="item">중앙 코어</td><td>샌드비치</td><td><b>F&B + 부모 베이스캠프</b></td><td>전 구역 시야선·매출·체류 (리뷰 최다 호평)</td></tr>
+      <tr><td class="item">샌드비치</td><td>중앙 개방</td><td><b>이머시브 프로젝션 존(경계·암전)</b></td><td>대형 프로젝터 = 투사 벽·조도 제어 필요</td></tr>
+      <tr><td class="item">위치</td><td>중앙</td><td>서측/중앙-서 (Experience 미디어 인접)</td><td>미디어·전기 인프라 공유, 외벽 투사면 활용</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok-box"><span class="lab">시너지</span>중앙이 F&B가 되면 주방(동측 스택)과의 관계도 자연스럽습니다 — <b>주방=동측 스택, 좌석=중앙</b>, 그 사이를 "F&B 위 정글짐 통로"로 연결. 부모는 중앙에서 <b>이머시브 존을 포함한 전 구역</b>을 조망.</div>
+</section>
+
+<section id="c4">
+  <h2>04 · 정정 스키매틱</h2>
+  <div class="planbox">
+    <svg viewBox="0 0 960 560" role="img" aria-label="v19 정정 조닝">
+      <rect x="40" y="36" width="880" height="470" fill="#fff" stroke="#111" stroke-width="3"/>
+      <text x="480" y="26" text-anchor="middle" font-family="var(--mono)" font-size="12" font-weight="700" fill="#888">N · 북측 — Receiving / 하역</text>
+      <text x="480" y="545" text-anchor="middle" font-family="var(--mono)" font-size="12" font-weight="700" fill="#888">S · 남측 — 주출입</text>
+      <text x="30" y="275" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#888" transform="rotate(-90 30 275)">W · 서측</text>
+      <text x="934" y="275" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#888" transform="rotate(90 934 275)">E · 동측 배수 스택</text>
+      <!-- north BOH -->
+      <rect x="40" y="36" width="880" height="56" fill="#EDEDED" stroke="#bbb"/>
+      <rect x="740" y="36" width="180" height="56" fill="#DcDcDc" stroke="#999"/>
+      <text x="380" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#555">BOH · 창고 · 기계 (북측)</text>
+      <text x="830" y="60" text-anchor="middle" font-size="10.5" font-weight="700" fill="#333">Receiving</text><text x="830" y="77" text-anchor="middle" font-size="8.5" fill="#555">대형 부재 반입</text>
+      <!-- Adventure north-center -->
+      <rect x="230" y="92" width="360" height="120" fill="#F7D3D6" stroke="#E41E2E" stroke-opacity=".5"/>
+      <text x="410" y="146" text-anchor="middle" font-size="13" font-weight="800" fill="#B01722">ADVENTURE</text>
+      <text x="410" y="164" text-anchor="middle" font-size="9" fill="#7a1016">최고 층고 · 네트·클라이밍</text>
+      <!-- Immersive sand-beach (bounded, west) -->
+      <rect x="40" y="92" width="185" height="200" fill="#2b2b3a" stroke="#111"/>
+      <text x="132" y="180" text-anchor="middle" font-size="12.5" font-weight="800" fill="#FCD34D">샌드비치</text>
+      <text x="132" y="198" text-anchor="middle" font-size="9" fill="#e5c98a">이머시브 프로젝션</text>
+      <text x="132" y="214" text-anchor="middle" font-size="8" fill="#bdb090">경계·암전·투사벽</text>
+      <!-- Experience/media adjacent -->
+      <rect x="40" y="296" width="185" height="140" fill="#FCE3EF" stroke="#ED92B9"/>
+      <text x="132" y="360" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a63a72">EXPERIENCE</text>
+      <text x="132" y="377" text-anchor="middle" font-size="8.5" fill="#a63a72">미디어·인터랙티브</text>
+      <!-- CENTER: F&B + parent basecamp -->
+      <rect x="235" y="220" width="355" height="216" fill="#D7EEF0" stroke="#00A7B5" stroke-width="2"/>
+      <text x="412" y="312" text-anchor="middle" font-size="15" font-weight="800" fill="#0a6b74">중앙 코어</text>
+      <text x="412" y="335" text-anchor="middle" font-size="13" font-weight="800" fill="#0a6b74">F&B + 부모 베이스캠프</text>
+      <text x="412" y="356" text-anchor="middle" font-size="9.5" fill="#0a6b74">전 구역 시야선 · 좌석 · 라운지</text>
+      <!-- Quest small -->
+      <rect x="235" y="440" width="180" height="66" fill="#D6E4F2" stroke="#0065B2" stroke-opacity=".5"/>
+      <text x="325" y="470" text-anchor="middle" font-size="11" font-weight="800" fill="#0a4a86">QUEST · 소형게임</text>
+      <text x="325" y="486" text-anchor="middle" font-size="8.5" fill="#0a4a86">챔퍼·미로</text>
+      <!-- Toddler SW corner -->
+      <rect x="40" y="440" width="185" height="66" fill="#E6F1D5" stroke="#00913B"/>
+      <text x="132" y="470" text-anchor="middle" font-size="11" font-weight="800" fill="#0a6b2e">토들러 0–2</text>
+      <text x="132" y="486" text-anchor="middle" font-size="8.5" fill="#0a6b2e">분리·기저귀·수유</text>
+      <!-- Public entry -->
+      <rect x="420" y="440" width="170" height="66" fill="#F3F3F3" stroke="#999"/>
+      <text x="505" y="470" text-anchor="middle" font-size="11" font-weight="800" fill="#555">Public · 대기홀</text>
+      <text x="505" y="486" text-anchor="middle" font-size="8.5" fill="#777">남측 주출입 직결</text>
+      <rect x="445" y="499" width="120" height="12" fill="#00B050"/><text x="505" y="509" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">주출입 32'</text>
+      <!-- EAST stack band: Kitchen(top)/Restroom(mid)/Party(low) -->
+      <rect x="600" y="92" width="320" height="414" fill="#EAF0F6" stroke="#0065B2" stroke-dasharray="4 3"/>
+      <text x="760" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="#0065B2">동측 배수 스택 (화장실+Janitor)</text>
+      <rect x="612" y="120" width="300" height="96" fill="#FFE2C2" stroke="#FF8000"/>
+      <text x="762" y="160" text-anchor="middle" font-size="12" font-weight="800" fill="#a35200">주방 (스택 밀착)</text>
+      <text x="762" y="178" text-anchor="middle" font-size="8.5" fill="#a35200">Janitor·화장실 스택 옆 · 그리스트랩</text>
+      <text x="762" y="194" text-anchor="middle" font-size="8" fill="#a35200">ISC 배수 유무 = M-2 확인</text>
+      <rect x="612" y="224" width="300" height="86" fill="#DfeAf5" stroke="#0065B2"/>
+      <text x="762" y="260" text-anchor="middle" font-size="12" font-weight="800" fill="#0a4a86">화장실 (기존 확장·증설)</text>
+      <text x="762" y="277" text-anchor="middle" font-size="8.5" fill="#0a4a86">수유·기저귀·유아기구</text>
+      <rect x="612" y="318" width="300" height="86" fill="#F3DcEC" stroke="#ED92B9"/>
+      <text x="762" y="354" text-anchor="middle" font-size="12" font-weight="800" fill="#8a3a68">파티룸 3실</text>
+      <text x="762" y="371" text-anchor="middle" font-size="8.5" fill="#8a3a68">월 프로젝션 · 주방 근접</text>
+      <rect x="612" y="412" width="300" height="46" fill="#FFF2E0" stroke="#FF8000" stroke-dasharray="3 2"/>
+      <text x="762" y="432" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a35200">↔ 상부 통로로 중앙 F&B 좌석 연결</text>
+    </svg>
+    <div class="lgd">
+      <span><i style="background:#2b2b3a"></i>샌드비치(이머시브)</span><span><i style="background:#F7D3D6"></i>Adventure</span>
+      <span><i style="background:#FCE3EF"></i>Experience</span><span><i style="background:#D7EEF0"></i>중앙 F&B/부모석</span>
+      <span><i style="background:#D6E4F2"></i>Quest</span><span><i style="background:#E6F1D5"></i>토들러</span>
+      <span><i style="background:#FFE2C2"></i>주방</span><span><i style="background:#DfeAf5"></i>화장실</span><span><i style="background:#F3DcEC"></i>파티</span>
+    </div>
+  </div>
+  <p class="tcap">수정 요점: 중앙=F&B/부모석(청록), 샌드비치=서측 경계 이머시브(암전), 주방=동측 스택 밀착. 비중(58/9/8/7/6/12)은 v18 유지. 방위·좌표는 A-1 판독, 배관 정밀 위치는 M-2/M-3 대기.</p>
+</section>
+
+<section id="c5">
+  <h2>05 · 요청 — M-2 / M-3</h2>
+  <p class="lede">주방·화장실·그리스트랩을 <b>공사비 최적으로 확정</b>하려면 배관 평면 2장이 필요합니다. 있으시면 올려주세요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>시트</th><th>확정될 값</th></tr></thead>
+    <tbody>
+      <tr><td class="item">M-2 Plumbing Floor Plan</td><td>하수 본관 경로·인버트, 건물 밖 하수 인출점, 기존 floor drain 위치, <b>ISC 바닥배수 유무</b> → 주방 정확 자리·그리스트랩 위치</td></tr>
+      <tr><td class="item">M-3 Enlarged Plumbing Plans</td><td>화장실 스택 상세·기구 배관 → 화장실 증설 시 스택 재사용 범위</td></tr>
+    </tbody>
+  </table></div>
+  <div class="verdict" style="margin-top:20px">
+    <b>정정 요약</b>
+    <span>① 배수 근거 = <b>화장실+Janitor 스택 한 곳</b>(A-1.1 확인), "동측 전체 밴드" 아님 — 주방은 이 스택에 <b>밀착</b>. ② 중앙 = <b>F&B/부모 베이스캠프</b>, 샌드비치는 <b>서측 이머시브 프로젝션 존</b>으로 이동. ③ 배수 라우팅 평면 <b>M-2·M-3은 본 세트에 없음</b> → 정밀 확정을 위해 요청. 두 장 받으면 주방·그리스트랩을 단일 좌표로 확정하겠습니다.</span>
+  </div>
+</section>
+
+<div class="foot">
+  본 문서(v19)는 v16/v18의 ① 급배수 범위(동측 밴드→스택 1곳) ② 중앙 자리(샌드비치→F&B) 정정본입니다.<br>
+  배수 근거는 A-1.1(Janitor floor sink·화장실 기구). 라우팅·인버트·그리스트랩 경로는 M-2/M-3 수령 후 확정. · d'strict · Arte Kids Park USA · 2026.08.03
+</div>
+</main>
+</div>
+</body>
+</html>
