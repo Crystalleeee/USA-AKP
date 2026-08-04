@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARTE KIDS PARK SOUTHGLENN — 입지·시장 스크리닝 v1</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<style>
+:root{
+  --ink:#141414;--ink2:#3a3a3a;--ink3:#8a8a8a;--rule:#E2E2E2;--rule2:#EEE;--bg:#fff;--bg2:#F6F6F4;
+  --pine:#0065B2;--pine-soft:#E9F1FA;--accent:#FF6B00;--gold:#C08A2B;
+  --ok:#12833C;--ok-bg:#E7F3EC;--warn:#B45309;--warn-bg:#FBF0DC;--no:#C0341E;--no-bg:#FBEAE7;
+  --sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  --mono:"LINESeedKR","LINE Seed KR",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg2);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.72;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;background:var(--bg);min-height:100vh;padding:0 0 90px;box-shadow:0 0 0 1px var(--rule)}
+header{padding:34px 40px 22px;border-bottom:1px solid var(--rule);border-top:5px solid var(--accent)}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 10px}
+h1{font-size:clamp(20px,2.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.16;margin:0 0 6px}
+.sub{color:var(--ink3);font-family:var(--mono);font-size:11.5px;letter-spacing:.02em}
+.guide{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0 0}
+.gi{background:var(--bg2);padding:13px 15px}
+.gi b{display:block;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.gi b em{font-style:normal;font-size:12px;color:var(--ink2);font-weight:700;margin-left:2px}
+.gi span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.05em;color:var(--ink3);text-transform:uppercase;margin-top:7px;line-height:1.45}
+.tabs{position:sticky;top:0;z-index:20;display:flex;gap:2px;background:var(--bg);border-bottom:1px solid var(--rule);padding:0 40px;overflow-x:auto}
+.tb{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink3);background:none;border:none;border-bottom:2px solid transparent;padding:14px 12px;cursor:pointer;white-space:nowrap}
+.tb:hover{color:var(--ink)}
+.tb.on{color:var(--pine);border-bottom-color:var(--pine)}
+main{padding:0 40px}
+.tab{display:none;padding:28px 0}
+.tab.on{display:block}
+h2{font-size:20px;font-weight:800;letter-spacing:-.02em;margin:30px 0 4px}
+.secnum{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--pine);font-weight:700;text-transform:uppercase}
+.secdesc{color:var(--ink2);max-width:74ch;margin:6px 0 18px;font-size:14px}
+h3{font-size:15px;font-weight:700;margin:26px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--rule2)}
+p{margin:0 0 12px}
+.premise{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.pi{border:1px solid var(--rule2);border-radius:4px;padding:14px 15px;background:var(--bg)}
+.pi .sl{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:7px}
+.pi .sv{font-size:13px;color:var(--ink2);line-height:1.62}
+.pi.go{border-left:3px solid var(--ok)}.pi.no{border-left:3px solid var(--no)}.pi.mid{border-left:3px solid var(--warn)}
+.keyfind{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.kf{border:1px solid var(--rule2);border-radius:4px;padding:14px;background:var(--bg2)}
+.kf .kfn{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--accent);font-weight:700}
+.kf .kft{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:6px 0 4px;line-height:1.12}
+.kf .kfd{font-size:11.5px;color:var(--ink2);line-height:1.5}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:8px;border-bottom:1px solid var(--rule)}
+td{padding:8px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.5}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.rnum{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr.total td{background:var(--pine-soft);font-weight:700;border-top:1px solid var(--rule)}
+tbody tr:hover{background:#FAFAFA}
+td.item{font-weight:600}
+.rk{font-family:var(--mono);font-weight:700}
+.rk.hi{color:var(--ok)}.rk.lo{color:var(--no)}
+.tag{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 6px;border-radius:2px;white-space:nowrap;color:#fff}
+.t1{background:#12833C}.t2{background:#0065B2}.t3{background:#C0341E}.t4{background:#7a5cbf}.t5{background:#C08A2B}.tn{background:#8a8a8a}
+.st{display:inline-block;font-family:var(--mono);font-size:9.5px;padding:2px 6px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:var(--ok);border-color:#BEE0C8;background:var(--ok-bg)}.st-mid{color:var(--warn);border-color:#EAD9AE;background:var(--warn-bg)}.st-no{color:var(--no);border-color:#EEC7BF;background:var(--no-bg)}
+.tcap{font-size:11px;color:var(--ink3);font-family:var(--mono);margin:6px 0 0;line-height:1.55}
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:12px 15px;font-size:12.5px;color:#0d3f66;margin:12px 0;border-radius:0 3px 3px 0;line-height:1.68}
+.warn{border-left:2px solid var(--warn);background:var(--warn-bg);padding:12px 15px;font-size:12.5px;color:#6b4308;margin:12px 0;border-radius:0 3px 3px 0;line-height:1.68}
+.note .lb,.warn .lb{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.note .lb{color:var(--pine)}.warn .lb{color:var(--warn)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bar{height:8px;border-radius:2px;display:inline-block;vertical-align:middle}
+.tablewrap{overflow-x:auto}
+ul.tl{margin:6px 0 12px;padding-left:18px}ul.tl li{margin-bottom:5px;font-size:13px}
+.foot{margin:34px 40px 0;border-top:1px solid var(--rule);padding-top:14px;font-family:var(--mono);font-size:10.5px;color:var(--ink3);line-height:1.65}
+.planbox{border:1px solid var(--rule);border-radius:4px;padding:14px;margin:12px 0}
+.planbox svg{width:100%;height:auto;display:block}
+@media(max-width:820px){
+  header,main,.tabs{padding-left:18px;padding-right:18px}.foot{margin-left:18px;margin-right:18px}
+  .guide,.keyfind{grid-template-columns:1fr 1fr}.premise,.grid2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="eyebrow">ARTE KIDS PARK · USA — 입지·시장 스크리닝 v1</p>
+  <h1>사우스글렌 구 Best Buy 1층 입지 적합성 검토</h1>
+  <div class="sub">The Streets at SouthGlenn · B8-846 · 30,512 SF (857.5평) · Centennial, Colorado 80122 · 2026.08.04</div>
+  <div class="guide">
+    <div class="gi"><b>30,512<em>SF</em></b><span>단층 앵커 · 857.5평 (별내 대비 ~1.4배)</span></div>
+    <div class="gi"><b>$120K</b><span>Centennial 중위 가구소득 · 전국 1.5배</span></div>
+    <div class="gi"><b>38<em>개소</em></b><span>콜로라도 경쟁 조사 · 8세↓ 59%</span></div>
+    <div class="gi"><b>$24–30</b><span>제안 아동 단가 (놀이 상단 좌표)</span></div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tb on" data-t="loc">입지 · 상권 요약</button>
+  <button class="tb" data-t="area">상권 분석</button>
+  <button class="tb" data-t="price">티켓 전략</button>
+  <button class="tb" data-t="comp">경쟁 시설</button>
+  <button class="tb" data-t="dir">방향성 · 존 구성</button>
+</nav>
+
+<main>
+<!-- ============ TAB: LOCATION ============ -->
+<div class="tab on" id="loc">
+  <div class="secnum">L · Location</div>
+  <h2>입지 · 상권 요약</h2>
+  <p class="secdesc">The Streets at SouthGlenn 센터 북측 구 Best Buy(B-1171) 자리입니다. 별내(생활권 도심형)를 방향성 기준으로 두고, 덴버 시장 조건과 대조했습니다.</p>
+
+  <div class="keyfind">
+    <div class="kf"><div class="kfn">앵커 입지</div><div class="kft">단층 30,512 SF</div><div class="kfd">Whole Foods·Regal 14관·Dick's 앵커. 구 Macy's 부지 900세대 주거 재개발 진행</div></div>
+    <div class="kf"><div class="kfn">소득</div><div class="kft">$120K 시(市)</div><div class="kfd">Douglas $145K·파커 $129K 인접 — 콜로라도 최상위 소득대 흡수</div></div>
+    <div class="kf"><div class="kfn">경쟁 공백</div><div class="kft">30,000 SF급 없음</div><div class="kfd">반경 8mi 내 프리미엄 미디어 키즈 포맷 부재. 최대 경쟁 Lava Island 4.6mi</div></div>
+    <div class="kf"><div class="kfn">핵심 변수</div><div class="kft">용도변경 A-3</div><div class="kfd">판매→집회 전환: 화장실 증설·피난·공조 재산정 (인허가 11–14개월)</div></div>
+  </div>
+
+  <h3>이 입지의 성격</h3>
+  <p>별내는 생활권 주거지에 들어간 <b>도심형 모델</b>입니다 — 같은 동네 가족이 반복 방문하고, 타깃을 초등까지 넓혀 미션 플레이로 재방문을 만듭니다. 사우스글렌도 관광 동선이 아닌 <b>교외 생활권(가족 중심 상권)</b>이라 별내가 출발점이 됩니다. 규모는 별내 약 600평 대비 <b>857.5평으로 1.4배</b> — 별내에서 검증된 존 구성 밀도를 그대로 옮기고 여유 면적에 대형 이머시브를 더할 수 있는 크기입니다.</p>
+  <p>다만 <b>단일 층</b>이라 놀이·체험·보호자 공간·F&B를 한 평면에 배치해야 하고(층 분산 불가), <b>구 판매시설의 용도변경</b>이라는 미국 특유의 인허가 관문이 있습니다.</p>
+
+  <h3>조건 정리 — 유리한 것과 제한되는 것</h3>
+  <div class="premise">
+    <div class="pi go"><div class="sl">유리 · 상권</div><div class="sv">인구 성장·가구소득·5–10세 코호트 3축이 모두 우호적. 30–44세(자녀 코호트)가 최대 밀집대</div></div>
+    <div class="pi go"><div class="sl">유리 · 경쟁</div><div class="sv">근거리는 소형·영유아·파티 중심. 30,000 SF급 프리미엄 미디어 포맷은 조사 범위 내 부재</div></div>
+    <div class="pi go"><div class="sl">유리 · 앵커</div><div class="sv">식료품·영화관 앵커가 가족 체류·빈도를 만들어 인지 획득 비용을 낮춤</div></div>
+    <div class="pi mid"><div class="sl">제한 · 단층</div><div class="sv">수직 적층 이득 없음. 밀도는 어트랙션 구조물 높이(층고 5.56–7.06m)로만 확보</div></div>
+    <div class="pi no"><div class="sl">제한 · 용도변경</div><div class="sv">판매(Mercantile)→집회(A-3): 화장실 기구 2→5–9/성 증설, 피난·공조 재산정</div></div>
+    <div class="pi no"><div class="sl">제한 · 수요 전제</div><div class="sv">관광 수요 계상 여부 미확정 — 가격 성립의 분모. 로컬 only면 필요 객단가 $57</div></div>
+  </div>
+
+  <h3>현재까지 도출된 범위 / 미확보 항목</h3>
+  <div class="grid2">
+    <div class="pi go"><div class="sl">확보 (도면·리서치)</div><div class="sv">면적·층고·컬럼·임대 조건 / 급배수·화장실·하역 위치(A-1) / RTU·전기·가스(스케줄) / 38개소 경쟁·가격 / 존 배분안</div></div>
+    <div class="pi no"><div class="sl">미확보</div><div class="sv">M-2/M-3 배관 라우팅 평면(주방 정확 좌표) / 관광 수요 계상 확정 / 객단가 WTP / 방위·168'-8" 기준선 / 스프링클러 헤드(deferred)</div></div>
+  </div>
+</div>
+
+<!-- ============ TAB: AREA ============ -->
+<div class="tab" id="area">
+  <div class="secnum">A · Trade Area</div>
+  <h2>상권 분석 — 누가 어디에 살고, 얼마를 버는가</h2>
+  <p class="secdesc">Denver–Aurora–Centennial 광역권과 사우스글렌 1차 상권(반경 약 10mi)의 시장 적합성입니다. 수치는 2023–2026 발표 자료 기준.</p>
+
+  <div class="keyfind">
+    <div class="kf"><div class="kfn">광역 인구</div><div class="kft">300만+</div><div class="kfd">2030년 360만 전망 · 프론트레인지 축 집중</div></div>
+    <div class="kf"><div class="kfn">최대 코호트</div><div class="kft">30–44세 22.5%</div><div class="kfd">5–10세 자녀 부모 코호트와 일치</div></div>
+    <div class="kf"><div class="kfn">밀도</div><div class="kft">3,746/sq mi</div><div class="kfd">Centennial 가족 중심 교외 상권</div></div>
+    <div class="kf"><div class="kfn">야외활동</div><div class="kft">저강도·캐주얼</div><div class="kfd">실질 경쟁은 로키산맥 아닌 동네 공원·커뮤니티 센터</div></div>
+  </div>
+
+  <h3>1 — 소득 구조 · 사우스글렌 상권 특성</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>지역</th><th>구분</th><th class="rnum">중위 가구소득</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td class="item">더글러스 카운티</td><td>카운티</td><td class="rnum">$145,737</td><td>콜로라도 64개 카운티 중 1위</td></tr>
+      <tr><td class="item">파커</td><td>도시</td><td class="rnum">$129,342</td><td>1차 상권 인접</td></tr>
+      <tr><td class="item">론트리</td><td>도시</td><td class="rnum">$125,699</td><td>1차 상권 인접</td></tr>
+      <tr class="total"><td class="item">Centennial</td><td>사이트 소재 도시</td><td class="rnum">≈ $120,000</td><td>지역 평균 $114K~$131K</td></tr>
+      <tr><td class="item">애러파호 카운티</td><td>사이트 소재 카운티</td><td class="rnum">$97,215</td><td>시(市)가 카운티 평균 크게 상회</td></tr>
+      <tr><td class="item">미국 전체</td><td>국가</td><td class="rnum">$78,538</td><td>기준선</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lb">시사점 — 가격 정책</span>1차 상권 가구소득이 전국 중위값 대비 <b>약 1.2–1.9배</b>. 프리미엄 티켓·연간권에 대한 시장 저항이 낮아 <b>필요 객단가($24–30) 달성 가능성을 뒷받침</b>합니다. 연소득 $100K+ 가구의 유료 레저 참여가 전년 대비 +3.2%로 가장 견조.</div>
+
+  <h3>2 — 지역 문화 · 야외활동의 실제 성격</h3>
+  <div class="grid2">
+    <div class="pi"><div class="sl">참여 기반</div><div class="sv">6–12세 야외활동 참여율 75.5%(역대 최고). 유자녀 가구 66% vs 무자녀 52.5%</div></div>
+    <div class="pi mid"><div class="sl">1인당 빈도</div><div class="sv">참여자 1인당 연 65.2회 — 2012년 87회↑에서 지속 하락. 다수는 캐주얼형</div></div>
+  </div>
+  <div class="note"><span class="lb">경쟁 상대의 재정의</span>참여 인구는 확대되나 빈도는 하락 → 본 시설의 실질 경쟁은 로키산맥 레저가 아니라 <b>동네 공원·커뮤니티 레크리에이션 센터</b>. 차별화 축은 옥외에서 구현 불가능한 <b>연출·IP 기반 몰입</b>. 신체활동형 수용도가 높은 대신 정적 관람형의 체감 가치는 낮음.</div>
+
+  <h3>3 — 주차 · 관광 수요</h3>
+  <ul class="tl">
+    <li><b>주차</b> — 공용 주차 넉넉(스펙시트). 단 피크일 가족(대당 3.3명) 환산 <b>일 366–527대</b>, 앵커 피크와 중첩 → 총 대수·배정·점유율 임대인 확인 필요.</li>
+    <li><b>관광 수요</b> — 덴버 2025년 방문 3,760만·지출 105억$. 그러나 이벤트는 다운타운 집중, 사우스글렌은 남측 20km 교외 → <b>매출 근거에서 제외</b>가 보수적. 관광 계상 여부가 수요·가격의 핵심 미결.</li>
+  </ul>
+</div>
+
+<!-- ============ TAB: PRICE ============ -->
+<div class="tab" id="price">
+  <div class="secnum">T · Ticketing</div>
+  <h2>티켓 전략 — 시장이 받아주는 가격대</h2>
+  <p class="secdesc">별내(방향성 기준)와 덴버 시장 실측가를 대조하고, 사우스글렌 임대료($960K/년)를 커버하는지까지 점유비용으로 검증했습니다.</p>
+
+  <h3>기준 — 아르떼 키즈파크 별내 (2026.07 개장 · 수도권 첫 거점)</h3>
+  <p>별내는 주말 2시간 어린이 <b>29,500원(≈$22)</b>, 보호자 요금이 어린이의 <b>20.4%(주중)·16.9%(주말)</b>로 조사한 전 시설 중 가장 낮습니다 — 어린이 중심 유료화를 가장 강하게 구현한 구조. 60개 태그 포인트 미션 플레이로 재방문 동기를 만듭니다. <b>승계 대상</b>: 초등까지 확대·태깅 밴드 미션·보호자 상품화·교습 연계. <b>요금만</b> 덴버 시장 기준으로 재설정합니다.</p>
+
+  <h3>덴버 시장 실측가 — 카테고리별 아동 단가</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>카테고리</th><th class="rnum">아동 단가</th><th class="rnum">성인 단가</th><th>대표 시설</th></tr></thead>
+    <tbody>
+      <tr><td class="item">① 역할놀이·소규모</td><td class="rnum">$10–17</td><td class="rnum">$0–3</td><td>Pikes Peak $10 · Kids Wonder $18</td></tr>
+      <tr><td class="item">② 몸으로 노는·소규모</td><td class="rnum">$14–26</td><td class="rnum">$0–3</td><td>SweetPlay $26 · Kids Empire $19.90</td></tr>
+      <tr><td class="item">③ 몸으로 노는·대규모</td><td class="rnum">$24–36</td><td class="rnum">$10–15</td><td>Lava Island $24 · Sky Zone $26.99 · Bounce Empire $36</td></tr>
+      <tr><td class="item">⑤ 아트·미디어</td><td class="rnum">$12–39</td><td class="rnum">$20–46</td><td>Spectra $12 · Van Gogh $26.90 · Meow Wolf $39</td></tr>
+      <tr class="total"><td class="item">AKP 제안 좌표</td><td class="rnum">$24–30</td><td class="rnum">$12–20</td><td>놀이 상단 ∩ 미디어 하단의 빈 구간</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">별내 환산 9.13원/엔 · 덴버 xlsx/PDF 리서치(2026.08 조회). AKP는 미디어를 핵심으로 쓰므로 ③과 ⑤ 사이에 좌표.</p>
+
+  <h3>얼마를 받을 수 있는가 — A/B안 점유비용 검증</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>안</th><th>아동/성인</th><th class="rnum">per-cap</th><th class="rnum">점유비용 안정기</th><th class="rnum">1년차</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">A 시장상단</td><td class="num">$24–26 / $5–8</td><td class="rnum">$16–19</td><td class="rnum">12–14%</td><td class="rnum">13–16%</td><td><span class="st st-no">상한 초과</span></td></tr>
+      <tr><td class="item">B 프리미엄</td><td class="num">$36–42 / $8–10</td><td class="rnum">$24–29</td><td class="rnum">8–9%</td><td class="rnum">9–10%</td><td><span class="st st-mid">적정·WTP 리스크</span></td></tr>
+      <tr class="total"><td class="item">권장 절충</td><td class="num">$28–32 / 1인 포함</td><td class="rnum">~$22</td><td class="rnum">~10%</td><td class="rnum">~11%</td><td><span class="st st-ok">통상 구간</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="lb">사우스글렌 고유 제약</span>점유비용 = $960K ÷ (연 방문객 × per-cap), 업계 통상 8–12%. <b>A안(아동 $24–26)은 임대료 커버 초과</b>, B안은 적정하나 4인 $96로 WTP 리스크. 그리고 <b>위 % 전부 "관광 수요 포함(44.1만)" 전제</b> — 관광 제외 시 로컬 16.8만만 남아 필요 객단가 $57로 붕괴. 가격은 관광 전제 확정 후에만 성립.</div>
+
+  <h3>프리미엄 구조 — 객단가를 올리는 4장치</h3>
+  <div class="grid2">
+    <div class="pi"><div class="sl">VIP · 상위 티어 (×1.5)</div><div class="sv">Van Gogh 일반 $26.90 → VIP $40.90. 같은 콘텐츠를 두 가격으로</div></div>
+    <div class="pi"><div class="sl">시간 지정 차등 (×1.3–5)</div><div class="sv">Meow Wolf 지정 $39 → Anytime $52. 편의 유료화로 회전 통제</div></div>
+    <div class="pi"><div class="sl">요일 다이내믹 (±20%)</div><div class="sv">비수요일 채우고 성수기 단가 상향</div></div>
+    <div class="pi"><div class="sl">체험 애드온 (별매)</div><div class="sv">태깅 밴드·사진·굿즈 — 방문당 부가 매출로 per-cap 방어</div></div>
+  </div>
+
+  <h3>멤버십 · 재방문</h3>
+  <ul class="tl">
+    <li><b>월 멤버십 $75–95</b> (1인·4주 자동갱신) — 데이패스 3–4회면 회수. 시장 참조 $85. 저연령 고재방문에서만 성립.</li>
+    <li><b>형제 추가 +$40–55</b> (2인 $115–145) · <b>10회 펀치 $200–240</b>(6개월) · 형제 할인 2단(둘째 15%·셋째 20%).</li>
+    <li><b>강매 금지</b> — Sky Zone 4.0은 멤버십 압박이 리뷰 불만으로 직결. 재입장(손목 스탬프)로 몰 식사 후 복귀.</li>
+  </ul>
+</div>
+
+<!-- ============ TAB: COMPETITION ============ -->
+<div class="tab" id="comp">
+  <div class="secnum">C · Competition</div>
+  <h2>경쟁 시설 — 콜로라도 38개소 스크리닝</h2>
+  <p class="secdesc">사우스글렌 인근 22 + 덴버·콜로라도 확장 16. 5개 업태로 분류. 실질 타깃 8세 이하가 59%, 초등 고학년+ 주타깃은 10%뿐입니다.</p>
+
+  <div class="keyfind">
+    <div class="kf"><div class="kfn">시장 무게중심</div><div class="kft">8세↓ 59%</div><div class="kfd">단, 시설 수 비중(≠수요) — 저가 소형 난립 = 레드오션 신호</div></div>
+    <div class="kf"><div class="kfn">미디어×저연령</div><div class="kft">0곳</div><div class="kfd">공백이자 리스크 — Spectra식 이중설계로 성립</div></div>
+    <div class="kf"><div class="kfn">최대 경쟁</div><div class="kft">Lava Island</div><div class="kfd">4.6mi · 2–11세 · $24 종일 · ★4.8(1,556)</div></div>
+    <div class="kf"><div class="kfn">벤치마크</div><div class="kft">Meow Wolf</div><div class="kfd">몰입 아트 기준점 ★4.5(18,225) · 단 어린이엔 성인향</div></div>
+  </div>
+
+  <h3>업태 분류 <span class="tag t1">①역할놀이</span> <span class="tag t2">②몸·소규모</span> <span class="tag t3">③몸·대규모</span> <span class="tag t4">④가족/어른</span> <span class="tag t5">⑤전시/관람</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>시설</th><th>지역</th><th class="rnum">거리</th><th>유형</th><th class="rnum">타깃</th><th class="rnum">아동가</th><th class="rnum">평점</th></tr></thead>
+    <tbody>
+      <tr><td class="item">Kids Wonder</td><td>Centennial</td><td class="rnum">0.9mi</td><td><span class="tag t2">②</span></td><td class="rnum">6mo–6</td><td class="rnum">$18</td><td class="rnum rk hi">4.7</td></tr>
+      <tr><td class="item">Spark the Senses</td><td>Centennial</td><td class="rnum">1.9mi</td><td><span class="tag t2">②</span></td><td class="rnum">0–5</td><td class="rnum">$18</td><td class="rnum rk hi">4.8</td></tr>
+      <tr><td class="item">Main Event</td><td>Highlands R.</td><td class="rnum">2.7mi</td><td><span class="tag t4">④</span></td><td class="rnum">9–13+</td><td class="rnum">$12–30</td><td class="rnum rk hi">4.3</td></tr>
+      <tr><td class="item">Play Street Museum</td><td>Highlands R.</td><td class="rnum">3.3mi</td><td><span class="tag t1">①</span></td><td class="rnum">1–5</td><td class="rnum">$17</td><td class="rnum rk hi">4.8</td></tr>
+      <tr><td class="item">SweetPlay</td><td>Greenwood V.</td><td class="rnum">3.3mi</td><td><span class="tag t2">②</span></td><td class="rnum">1–8</td><td class="rnum">$26</td><td class="rnum rk hi">4.6</td></tr>
+      <tr><td class="item">Pindustry</td><td>Greenwood V.</td><td class="rnum">3.3mi</td><td><span class="tag t4">④</span></td><td class="rnum">9–13+</td><td class="rnum">—</td><td class="rnum rk">4.1</td></tr>
+      <tr><td class="item">Epic Escape</td><td>Greenwood V.</td><td class="rnum">4.3mi</td><td><span class="tag tn">참고</span></td><td class="rnum">그룹</td><td class="rnum">—</td><td class="rnum rk hi">4.8</td></tr>
+      <tr><td class="item">Lava Island (Englewood)</td><td>Englewood</td><td class="rnum">4.6mi</td><td><span class="tag t3">③</span></td><td class="rnum">2–11</td><td class="rnum">$24</td><td class="rnum rk hi">4.8</td></tr>
+      <tr><td class="item">Family Sports Center</td><td>Centennial</td><td class="rnum">5.8mi</td><td><span class="tag t4">④</span></td><td class="rnum">3–13</td><td class="rnum">—</td><td class="rnum rk hi">4.4</td></tr>
+      <tr><td class="item">Spectra Art Space</td><td>Denver</td><td class="rnum">6.5mi</td><td><span class="tag t5">⑤</span></td><td class="rnum">3–13+</td><td class="rnum">$12</td><td class="rnum rk hi">4.9</td></tr>
+      <tr><td class="item">Kids Dig</td><td>Littleton</td><td class="rnum">7.5mi</td><td><span class="tag t2">②</span></td><td class="rnum">1–6</td><td class="rnum">$17–30</td><td class="rnum rk hi">4.6</td></tr>
+      <tr><td class="item">Lava Island (Parker Rd)</td><td>Centennial</td><td class="rnum">7.8mi</td><td><span class="tag t3">③</span></td><td class="rnum">2–11</td><td class="rnum">$24</td><td class="rnum rk hi">4.7</td></tr>
+      <tr><td class="item">Urban Air</td><td>Aurora</td><td class="rnum">7.9mi</td><td><span class="tag t3">③</span></td><td class="rnum">3–12</td><td class="rnum">$20–47</td><td class="rnum rk lo">3.9</td></tr>
+      <tr><td class="item">Activate</td><td>Aurora</td><td class="rnum">8.4mi</td><td><span class="tag t4">④</span></td><td class="rnum">10–13+</td><td class="rnum">—</td><td class="rnum rk hi">5.0</td></tr>
+      <tr><td class="item">The Sand Place</td><td>Aurora</td><td class="rnum">8.7mi</td><td><span class="tag t2">②</span></td><td class="rnum">1–6</td><td class="rnum">$20</td><td class="rnum rk hi">4.9</td></tr>
+      <tr><td class="item">Meow Wolf</td><td>Denver</td><td class="rnum">10.7mi</td><td><span class="tag t5">⑤</span></td><td class="rnum">8–13+</td><td class="rnum">$30–46</td><td class="rnum rk hi">4.5</td></tr>
+      <tr><td class="item">Museum of Illusions</td><td>Denver</td><td class="rnum">10.9mi</td><td><span class="tag t5">⑤</span></td><td class="rnum">6–13+</td><td class="rnum">$30</td><td class="rnum rk hi">4.6</td></tr>
+      <tr><td class="item">Children's Museum of Denver</td><td>Denver</td><td class="rnum">11.3mi</td><td><span class="tag t5">⑤</span></td><td class="rnum">0–8</td><td class="rnum">$19.75</td><td class="rnum rk hi">4.5</td></tr>
+      <tr><td class="item">Van Gogh Immersive</td><td>Denver</td><td class="rnum">12.5mi</td><td><span class="tag t5">⑤</span></td><td class="rnum">8–13+</td><td class="rnum">$29.99+</td><td class="rnum rk hi">4.9</td></tr>
+      <tr><td class="item">Bounce Empire</td><td>Lafayette</td><td class="rnum">≈20mi</td><td><span class="tag t3">③</span></td><td class="rnum">2–10</td><td class="rnum">$50</td><td class="rnum rk hi">4.7</td></tr>
+      <tr><td class="item">Sky Zone</td><td>Arvada·Aurora</td><td class="rnum">≈12mi</td><td><span class="tag t3">③</span></td><td class="rnum">6–13+</td><td class="rnum">$26.99</td><td class="rnum rk lo">4.0</td></tr>
+      <tr><td class="item">Butterfly Pavilion</td><td>Westminster</td><td class="rnum">≈18mi</td><td><span class="tag t5">⑤</span></td><td class="rnum">1–8</td><td class="rnum">$14.45</td><td class="rnum rk hi">4.7</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">공개 지도 데이터·리서치 xlsx(2026.07–08 조회). 거리는 직선. 전체 38개소 중 대표 22개소 발췌 — 콜로라도 스프링스(Air City 360·Pikes Peak·Kids Empire·We Rock·Lost Realm 등) 광역 확장군은 방향 신호로만 사용.</p>
+
+  <h3>리뷰 종합 — 무엇을 좋다고 하고 무엇에 불만인가</h3>
+  <div class="grid2">
+    <div class="pi go"><div class="sl">칭찬이 반복되는 것</div><div class="sv">① 시야선("어디서나 아이가 보인다") ② 보호자 좌석·카페 ③ 밀착 응대 ④ 청결 ⑤ 연령 분리존(크롤러·토들러)</div></div>
+    <div class="pi no"><div class="sl">불만이 반복되는 것</div><div class="sv">① 시설 노후·먼지(Urban Air 3.9) ② 연령 분리 미준수 ③ 직원 미상주(안전) ④ 주차 ⑤ 멤버십 강매(Sky Zone 4.0)</div></div>
+  </div>
+  <div class="note"><span class="lb">판단</span>포지션 공백은 실재 — 조사 어느 곳도 30,000 SF급 프리미엄 미디어 키즈 포맷이 아님. 5–10세를 정면 겨냥하는 곳은 4.6mi 밖 Lava Island뿐이라 <b>실제 경쟁은 근거리가 아니라 원거리 대형점</b> → 상권을 2mi가 아닌 5mi 이상으로 잡아야 함(광역 퍼포먼스 마케팅으로 공략).</div>
+</div>
+
+<!-- ============ TAB: DIRECTION ============ -->
+<div class="tab" id="dir">
+  <div class="secnum">D · Direction</div>
+  <h2>방향성 · 존 구성 (30,512 SF · 857.5평)</h2>
+  <p class="secdesc">별내에서 검증된 방향성을 승계하고, 도면(A-1) 앵커에 존을 고정했습니다. 존 배분은 260803 조닝 시뮬레이터 v2 기준.</p>
+
+  <div class="keyfind">
+    <div class="kf"><div class="kfn">타깃</div><div class="kft">3–8 + 0–2</div><div class="kfd">토들러 0–2 + 메인 3–8 + 미션 8–10 → 실질 0–10</div></div>
+    <div class="kf"><div class="kfn">구성</div><div class="kft">6존·13종</div><div class="kfd">Type B 조닝 + 토들러존 + 파티룸 3실</div></div>
+    <div class="kf"><div class="kfn">가격</div><div class="kft">$24–30</div><div class="kfd">놀이 상단 좌표 + 프리미엄 4장치</div></div>
+    <div class="kf"><div class="kfn">멤버십</div><div class="kft">$75–95/월</div><div class="kfd">데이패스 3–4회 회수 · 가구 락인</div></div>
+  </div>
+
+  <h3>존 배분 (조닝 시뮬레이터 v2)</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>존</th><th class="rnum">㎡</th><th class="rnum">평</th><th class="rnum">%</th><th style="width:150px">비중</th></tr></thead>
+    <tbody>
+      <tr><td class="item">Experience (프로젝션·샌드비치 최대)</td><td class="rnum">663</td><td class="rnum">200.7</td><td class="rnum">23.4%</td><td><i class="bar" style="width:94px;background:#7a5cbf"></i></td></tr>
+      <tr><td class="item">Adventure (고층 어트랙션)</td><td class="rnum">603</td><td class="rnum">182.4</td><td class="rnum">21.3%</td><td><i class="bar" style="width:85px;background:#C0341E"></i></td></tr>
+      <tr><td class="item">BOH · 창고 · 기계</td><td class="rnum">281</td><td class="rnum">85.1</td><td class="rnum">9.9%</td><td><i class="bar" style="width:40px;background:#8a8a8a"></i></td></tr>
+      <tr><td class="item">F&B · 부모석</td><td class="rnum">267</td><td class="rnum">80.9</td><td class="rnum">9.4%</td><td><i class="bar" style="width:38px;background:#00A7B5"></i></td></tr>
+      <tr><td class="item">Quest</td><td class="rnum">247</td><td class="rnum">74.8</td><td class="rnum">8.7%</td><td><i class="bar" style="width:35px;background:#0065B2"></i></td></tr>
+      <tr><td class="item">대기홀 · 락커 · 리테일</td><td class="rnum">181</td><td class="rnum">54.7</td><td class="rnum">6.4%</td><td><i class="bar" style="width:26px;background:#999"></i></td></tr>
+      <tr><td class="item">파티룸 3실</td><td class="rnum">153</td><td class="rnum">46.2</td><td class="rnum">5.4%</td><td><i class="bar" style="width:22px;background:#ED92B9"></i></td></tr>
+      <tr><td class="item">토들러 0–2 크롤존</td><td class="rnum">135</td><td class="rnum">40.7</td><td class="rnum">4.8%</td><td><i class="bar" style="width:19px;background:#12833C"></i></td></tr>
+      <tr><td class="item">화장실 (기존)</td><td class="rnum">127</td><td class="rnum">38.3</td><td class="rnum">4.5%</td><td><i class="bar" style="width:18px;background:#0065B2"></i></td></tr>
+      <tr><td class="item">주방</td><td class="rnum">99</td><td class="rnum">29.8</td><td class="rnum">3.5%</td><td><i class="bar" style="width:14px;background:#FF6B00"></i></td></tr>
+      <tr><td class="item">수유 · 기저귀실</td><td class="rnum">32</td><td class="rnum">9.7</td><td class="rnum">1.1%</td><td><i class="bar" style="width:5px;background:#12833C"></i></td></tr>
+      <tr><td class="item">미지정 동선</td><td class="rnum">46</td><td class="rnum">14.0</td><td class="rnum">1.6%</td><td><i class="bar" style="width:7px;background:#ccc"></i></td></tr>
+      <tr class="total"><td class="item">합계</td><td class="rnum">2,834</td><td class="rnum">857.5</td><td class="rnum">100%</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">출처: 260803_AKP_SouthGlenn_zoning_simulator_v2. 습식(주방·화장실·수유)은 A-1의 동측 배수 스택에 집약. 주방 정확 좌표는 M-2/M-3 배관 평면 확인 후 확정.</p>
+
+  <h3>도면 앵커 (A-1 판독)</h3>
+  <div class="premise">
+    <div class="pi go"><div class="sl">주출입</div><div class="sv">남측 Vestibule 101 · storefront 47' · 도어 32' · 단일 출입</div></div>
+    <div class="pi go"><div class="sl">급배수 스택</div><div class="sv">동측 Mens/Womens/Janitor(온수기·floor sink) — 주방·화장실·수유 집약</div></div>
+    <div class="pi mid"><div class="sl">하역 · 층고</div><div class="sv">북측 Receiving(대형 부재 반입) · 최고 층고 7.06m = Adventure</div></div>
+  </div>
+
+  <h3>승계할 방향성 (별내)</h3>
+  <ul class="tl">
+    <li><b>타깃 확대</b> — 미취학 한정하지 않고 초등까지. 미디어는 조치 없이 넓히면 8세+로 밀리므로 <b>Spectra식 이중설계(감각 레이어 + 서사 레이어)</b>가 전제.</li>
+    <li><b>태깅 밴드 미션</b> — 60개 태그 포인트 점수 획득 → 재방문 동기 + 객단가 애드온.</li>
+    <li><b>보호자 상품화</b> — 전시존 오아시스처럼 보호자 공간을 콘텐츠로. 리뷰 최다 호평(시야선·카페)과 직결.</li>
+    <li><b>단층 대응</b> — 층 분산 불가 → 평면 안의 존 구획·동선 설계가 관건. 습식은 동측 스택, 중앙은 F&B/부모석, 고층은 북측.</li>
+  </ul>
+
+  <div class="warn"><span class="lb">확정 전 정리 3건</span>① 관광 수요 계상 여부(가격 성립 전제) ② 객단가 WTP ③ 용도변경(A-3) 화장실 기구·피난·공조 재산정. 세 항목이 정리되면 사업성 수치가 잠정에서 확정으로 넘어갑니다.</div>
+</div>
+</main>
+
+<div class="foot">
+  입력: AKP_NAGOYA v3.2(포맷) · Age Composition Research 260729 xlsx(가격) · 260804 기획 PDF(방향성·존) · CEN0800595 A-1(도면) · v13–v20 분석.<br>
+  별내 요금 네이버 예약(2026.08) · 덴버 경쟁 공개 지도/리서치(2026.07–08) · 소득 U.S. Census ACS. 점유비용·A-3 수치는 개략이며 현지 정산 필요.<br>
+  d'strict · Arte Kids Park USA · SouthGlenn Screening v1 · 2026.08.04
+</div>
+</div>
+<script>
+document.querySelectorAll('.tb').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tb').forEach(function(x){x.classList.remove('on')});
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    document.getElementById(b.dataset.t).classList.add('on');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
