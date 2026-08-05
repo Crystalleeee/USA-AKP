@@ -231,54 +231,50 @@ ul.tl{margin:6px 0 12px;padding-left:18px}ul.tl li{margin-bottom:6px;font-size:1
 <section id="s4">
   <div class="snum">04 · Floor Plan</div>
   <h2>건축 평면 판독 — 이 공간은 이렇게 생겼다</h2>
-  <p class="lede">A-1 평면도를 한국어로 옮긴 것입니다. 큰 사각형 하나(단층 대형 박스)에, 오른쪽(동측)에 서비스실이 세로로 붙어 있고, 아래(남측)가 출입구입니다.</p>
+  <p class="lede">A-1 평면도를 <b>실제 형상·위치 그대로</b> 한국어로 옮기고 <b>m 단위 치수</b>를 넣었습니다. 외곽은 약 <b>49m × 58m</b>, 오른쪽(동측)에 서비스실이 세로로 붙고, 아래(남측)가 출입면입니다.</p>
   <div class="planbox">
-    <svg viewBox="0 0 900 560" role="img" aria-label="A-1 평면 한국어 판독">
-      <rect x="45" y="45" width="810" height="470" fill="#fff" stroke="#111" stroke-width="3"/>
-      <text x="450" y="34" text-anchor="middle" font-family="var(--mono)" font-size="11" font-weight="700" fill="#888">N · 북측 (위)</text>
-      <text x="450" y="540" text-anchor="middle" font-family="var(--mono)" font-size="11" font-weight="700" fill="#888">S · 남측 (아래) — 주출입</text>
-      <text x="36" y="285" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#888" transform="rotate(-90 36 285)">W · 서측</text>
-      <text x="866" y="285" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#888" transform="rotate(90 866 285)">E · 동측 (배관 집중)</text>
-      <!-- north receiving -->
-      <rect x="45" y="45" width="810" height="58" fill="#EDEDED" stroke="#bbb"/>
-      <text x="330" y="79" text-anchor="middle" font-size="12" font-weight="700" fill="#555">Receiving / Staging — 하역·창고 (북측)</text>
-      <text x="720" y="72" text-anchor="middle" font-size="9.5" fill="#666">압축기·하역문</text>
-      <!-- sales floor big -->
-      <rect x="45" y="103" width="560" height="330" fill="#F3F6FA" stroke="#cbd8e6"/>
-      <text x="325" y="255" text-anchor="middle" font-size="15" font-weight="800" fill="#3a5a7a">Sales Area — 판매장 (기존)</text>
-      <text x="325" y="277" text-anchor="middle" font-size="11" fill="#5a7a9a">약 24,229 SF · 넓은 무주 공간 = 아르떼 메인 놀이존</text>
+    <svg viewBox="0 0 720 660" role="img" aria-label="A-1 평면 한국어 판독 (m 치수)">
+      <!-- outer dimension lines -->
+      <text x="360" y="20" text-anchor="middle" font-family="var(--mono)" font-size="11" font-weight="700" fill="#888">N · 북측 — Receiving / 하역</text>
+      <text x="360" y="648" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#888">S · 남측 — 주출입 파사드</text>
+      <!-- top dim -->
+      <line x1="70" y1="48" x2="650" y2="48" stroke="#c00" stroke-width=".8"/><text x="360" y="42" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#c00">약 49.4 m</text>
+      <!-- right dim -->
+      <line x1="668" y1="60" x2="668" y2="600" stroke="#c00" stroke-width=".8"/><text x="682" y="330" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#c00" transform="rotate(90 682 330)">동측 약 58.3 m</text>
+      <!-- building -->
+      <rect x="70" y="60" width="580" height="540" fill="#fff" stroke="#111" stroke-width="2.6"/>
+      <!-- north receiving strip -->
+      <rect x="70" y="60" width="580" height="66" fill="#EDEDED" stroke="#bbb"/>
+      <text x="300" y="90" text-anchor="middle" font-size="11.5" font-weight="700" fill="#555">Receiving / Staging — 하역·창고</text>
+      <rect x="520" y="60" width="130" height="66" fill="#DDD" stroke="#999"/><text x="585" y="90" text-anchor="middle" font-size="9.5" font-weight="700" fill="#444">하역문·압축기</text>
+      <!-- sales floor -->
+      <rect x="70" y="126" width="390" height="404" fill="#F3F6FA" stroke="#cbd8e6"/>
+      <text x="265" y="300" text-anchor="middle" font-size="14" font-weight="800" fill="#3a5a7a">Sales Area — 판매장</text>
+      <text x="265" y="320" text-anchor="middle" font-size="10.5" fill="#5a7a9a">약 24,229 SF · 무주 대공간 = 메인 놀이존</text>
+      <text x="265" y="360" text-anchor="middle" font-size="9" fill="#8aa" font-family="var(--mono)">기둥 그리드 9.8 × 12.2 m (15본)</text>
       <!-- east service band -->
-      <rect x="605" y="103" width="250" height="412" fill="#FBF3E8" stroke="#e0c9a8"/>
-      <text x="730" y="120" text-anchor="middle" font-size="10" font-weight="700" fill="#a8791f">동측 서비스 밴드 (배관 집중)</text>
-      <rect x="615" y="130" width="230" height="70" fill="#fff" stroke="#d8b98a"/>
-      <text x="730" y="160" text-anchor="middle" font-size="11" font-weight="700" fill="#7a5a1a">Janitor 107 · 청소실</text>
-      <text x="730" y="177" text-anchor="middle" font-size="8.5" fill="#9a7a3a">바닥싱크 + 온수기(WH-1)</text>
-      <rect x="615" y="204" width="230" height="66" fill="#fff" stroke="#d8b98a"/>
-      <text x="730" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="#7a5a1a">ISC 111 · 설치 베이 2대</text>
-      <text x="730" y="249" text-anchor="middle" font-size="8.5" fill="#9a7a3a">카오디오 설치장 (주방 후보)</text>
-      <rect x="615" y="274" width="230" height="70" fill="#E6EEF6" stroke="#9bb8d4"/>
-      <text x="730" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#2a4a6a">Mens 103 / Womens 102</text>
-      <text x="730" y="319" text-anchor="middle" font-size="8.5" fill="#4a6a8a">화장실 (남 2변기 · 급배수 스택)</text>
-      <rect x="615" y="348" width="230" height="60" fill="#fff" stroke="#d8b98a"/>
-      <text x="730" y="374" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7a5a1a">Sales Dev 114 · 서비스</text>
-      <rect x="615" y="412" width="230" height="93" fill="#fff" stroke="#d8b98a"/>
-      <text x="730" y="452" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7a5a1a">Hub 106 · 수리 데스크</text>
+      <rect x="460" y="126" width="190" height="404" fill="#FBF3E8" stroke="#e0c9a8"/>
+      <rect x="468" y="130" width="174" height="74" fill="#fff" stroke="#d8b98a"/><text x="555" y="160" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7a5a1a">Janitor 107 · 청소실</text><text x="555" y="176" text-anchor="middle" font-size="8" fill="#9a7a3a">바닥싱크+온수기</text>
+      <rect x="468" y="208" width="174" height="96" fill="#fff" stroke="#d8b98a"/><text x="555" y="250" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7a5a1a">ISC 설치베이 2대</text><text x="555" y="266" text-anchor="middle" font-size="8" fill="#9a7a3a">(주방 후보)</text>
+      <rect x="468" y="308" width="174" height="86" fill="#E6EEF6" stroke="#9bb8d4"/><text x="555" y="345" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2a4a6a">화장실 Mens/Womens</text><text x="555" y="361" text-anchor="middle" font-size="8" fill="#4a6a8a">급배수 스택</text>
+      <rect x="468" y="398" width="174" height="60" fill="#fff" stroke="#d8b98a"/><text x="555" y="432" text-anchor="middle" font-size="10" font-weight="700" fill="#7a5a1a">Sales Dev 114</text>
+      <rect x="468" y="462" width="174" height="64" fill="#fff" stroke="#d8b98a"/><text x="555" y="498" text-anchor="middle" font-size="10" font-weight="700" fill="#7a5a1a">Hub 106 · 수리데스크</text>
       <!-- south support + entry -->
-      <rect x="45" y="433" width="230" height="82" fill="#EFEFEF" stroke="#bbb"/>
-      <text x="160" y="465" text-anchor="middle" font-size="10.5" font-weight="700" fill="#555">전기실·통신실·관리실·보안(L.P.)</text>
-      <text x="160" y="482" text-anchor="middle" font-size="8.5" fill="#777">Electrical / Comm / Admin / L.P.</text>
-      <rect x="330" y="502" width="150" height="13" fill="#12833C"/>
-      <text x="405" y="512" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">주출입 Vestibule (32')</text>
+      <rect x="70" y="530" width="200" height="70" fill="#EFEFEF" stroke="#bbb"/><text x="170" y="560" text-anchor="middle" font-size="9.5" font-weight="700" fill="#555">전기·통신·관리·보안</text><text x="170" y="576" text-anchor="middle" font-size="8" fill="#777">Elec/Comm/Admin/L.P.</text>
+      <rect x="270" y="530" width="190" height="70" fill="#F7F7F5" stroke="#ccc"/><text x="365" y="562" text-anchor="middle" font-size="10" font-weight="700" fill="#666">대기홀 (판매장 하부)</text>
+      <!-- vestibule on bottom edge -->
+      <rect x="300" y="594" width="120" height="12" fill="#12833C"/><text x="360" y="604" text-anchor="middle" font-size="8.5" font-weight="700" fill="#fff">주출입 도어 9.8 m</text>
+      <line x1="300" y1="620" x2="420" y2="620" stroke="#c00" stroke-width=".8"/><text x="360" y="634" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="#c00">M.O. 32'-0" = 9.8 m</text>
     </svg>
     <div class="lgd">
-      <span><i style="background:#F3F6FA"></i>판매장(메인 놀이존 후보)</span>
-      <span><i style="background:#FBF3E8"></i>동측 서비스 밴드(배관)</span>
-      <span><i style="background:#E6EEF6"></i>화장실(급배수 스택)</span>
+      <span><i style="background:#F3F6FA"></i>판매장(메인 놀이존)</span>
+      <span><i style="background:#FBF3E8"></i>동측 서비스 밴드</span>
+      <span><i style="background:#E6EEF6"></i>화장실(급배수)</span>
       <span><i style="background:#EDEDED"></i>하역·지원실</span>
       <span><i style="background:#12833C"></i>주출입</span>
     </div>
   </div>
-  <div class="note"><span class="lb">한 문장 요약</span>넓은 판매장(서·중앙)이 <b>아르떼 메인 놀이존</b>이 되고, 물이 필요한 것(주방·화장실·수유실)은 <b>이미 배관이 있는 동측 서비스 밴드</b>에 모으며, 출입은 <b>남측 기존 방풍실</b>을 그대로 씁니다.</div>
+  <div class="note"><span class="lb">치수 요약 (m)</span>외곽 약 <b>49.4 × 58.3 m</b>(2,835㎡·857.5평) · 주출입 도어 <b>9.8m</b>(32'-0") · 기둥 그리드 <b>9.8 × 12.2m</b>. 넓은 판매장이 <b>메인 놀이존</b>, 물 쓰는 것은 <b>동측 배관 스택</b>, 출입은 <b>남측 기존 방풍실</b>. ※ 외곽 치수는 LOD 기준 ± 대략이며 방위 표기는 확인 대상.</div>
 </section>
 
 <!-- 05 -->
@@ -317,6 +313,34 @@ ul.tl{margin:6px 0 12px;padding-left:18px}ul.tl li{margin-bottom:6px;font-size:1
       <tr><td class="item">전면 챔퍼</td><td class="num">25'-8"</td><td class="num">7.8 m</td><td>모서리 모따기 — 비정형, Quest 미로에 활용</td></tr>
     </tbody>
   </table></div>
+  <div class="planbox">
+    <svg viewBox="0 0 720 620" role="img" aria-label="평면 위 층고 9개 지점">
+      <text x="360" y="18" text-anchor="middle" font-family="var(--mono)" font-size="10.5" font-weight="700" fill="#888">N · 북측 (최고 층고)</text>
+      <text x="360" y="612" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#888">S · 남측 (최저 층고 · 주출입)</text>
+      <rect x="70" y="40" width="580" height="540" fill="#fff" stroke="#111" stroke-width="2.4"/>
+      <rect x="70" y="40" width="580" height="52" fill="#EDEDED" stroke="#ccc"/><text x="360" y="71" text-anchor="middle" font-size="10" font-weight="700" fill="#777">Receiving / 하역</text>
+      <line x1="70" y1="230" x2="650" y2="230" stroke="#ddd" stroke-dasharray="4 4"/><line x1="70" y1="400" x2="650" y2="400" stroke="#ddd" stroke-dasharray="4 4"/>
+      <line x1="260" y1="92" x2="260" y2="580" stroke="#ddd" stroke-dasharray="4 4"/><line x1="450" y1="92" x2="450" y2="580" stroke="#ddd" stroke-dasharray="4 4"/>
+      <!-- 9 points: cx,cy,value,color(high red/low blue) -->
+      <g font-family="var(--mono)" text-anchor="middle">
+        <!-- top row -->
+        <circle cx="165" cy="160" r="21" fill="#F7D3D6" stroke="#C0341E"/><text x="165" y="157" font-size="12" font-weight="800" fill="#8a1e10">6.40</text><text x="165" y="171" font-size="7.5" fill="#8a1e10">21'-0"</text>
+        <circle cx="355" cy="160" r="21" fill="#FDECD9" stroke="#d98a3a"/><text x="355" y="157" font-size="12" font-weight="800" fill="#96591a">6.07</text><text x="355" y="171" font-size="7.5" fill="#96591a">19'-11"</text>
+        <circle cx="555" cy="160" r="23" fill="#E41E2E" stroke="#8a0f1a"/><text x="555" y="156" font-size="13" font-weight="800" fill="#fff">7.06</text><text x="555" y="171" font-size="7.5" fill="#ffd">최고</text>
+        <!-- mid row -->
+        <circle cx="165" cy="315" r="21" fill="#DCE6F2" stroke="#4a78ac"/><text x="165" y="312" font-size="12" font-weight="800" fill="#274a70">5.69</text><text x="165" y="326" font-size="7.5" fill="#274a70">18'-8"</text>
+        <circle cx="355" cy="315" r="21" fill="#DCE6F2" stroke="#4a78ac"/><text x="355" y="312" font-size="12" font-weight="800" fill="#274a70">5.77</text><text x="355" y="326" font-size="7.5" fill="#274a70">18'-11"</text>
+        <circle cx="555" cy="315" r="21" fill="#FDECD9" stroke="#d98a3a"/><text x="555" y="312" font-size="12" font-weight="800" fill="#96591a">6.38</text><text x="555" y="326" font-size="7.5" fill="#96591a">20'-11"</text>
+        <!-- bottom row -->
+        <circle cx="165" cy="485" r="21" fill="#DCE6F2" stroke="#4a78ac"/><text x="165" y="482" font-size="12" font-weight="800" fill="#274a70">5.87</text><text x="165" y="496" font-size="7.5" fill="#274a70">19'-3"</text>
+        <circle cx="355" cy="485" r="23" fill="#0065B2" stroke="#023a68"/><text x="355" y="481" font-size="13" font-weight="800" fill="#fff">5.56</text><text x="355" y="496" font-size="7.5" fill="#dde">최저</text>
+        <circle cx="555" cy="485" r="21" fill="#FDECD9" stroke="#d98a3a"/><text x="555" y="482" font-size="12" font-weight="800" fill="#96591a">6.66</text><text x="555" y="496" font-size="7.5" fill="#96591a">21'-10"</text>
+      </g>
+      <text x="555" y="205" text-anchor="middle" font-size="8.5" fill="#8a1e10" font-family="var(--mono)">↑ Adventure 고층존</text>
+      <text x="360" y="540" text-anchor="middle" font-size="9" fill="#666" font-family="var(--mono)">숫자 = 구조체 하단고(m, AFF) · 순천장고는 −0.6~0.9m</text>
+    </svg>
+    <div class="lgd"><span><i style="background:#E41E2E"></i>최고 7.06m (고층 어트랙션)</span><span><i style="background:#FDECD9"></i>중간 6.0–6.7m</span><span><i style="background:#0065B2"></i>최저 5.56m (저층·출입)</span></div>
+  </div>
   <div class="warn"><span class="lb">디자인팀 유의</span>층고 수치는 원 도면(LOD) 기준이며 모두 <b>±(대략) 표기</b>입니다. 실제 순(純)천장고는 여기서 <b>스프링클러·덕트·조명·마감 0.6~0.9m를 빼야</b> 합니다(예: 7.06m → 실사용 약 6.2m). 대형 수직 구조물 확정 전 <b>현장 9개 지점 실측이 필수</b>입니다.</div>
 </section>
 
@@ -336,6 +360,50 @@ ul.tl{margin:6px 0 12px;padding-left:18px}ul.tl li{margin-bottom:6px;font-size:1
       <tr><td class="item">주방 위치</td><td class="num">ISC 설치베이 (동측, 스택 인접)</td><td>배수 스택 밀착 = 신규 배관 최소</td></tr>
     </tbody>
   </table></div>
+  <div class="planbox">
+    <svg viewBox="0 0 720 620" role="img" aria-label="평면 위 배수 항목">
+      <text x="360" y="18" text-anchor="middle" font-family="var(--mono)" font-size="10.5" font-weight="700" fill="#888">배수·급수는 전부 동측(오른쪽)에 집중</text>
+      <rect x="70" y="40" width="580" height="540" fill="#fff" stroke="#111" stroke-width="2.4"/>
+      <rect x="70" y="40" width="580" height="50" fill="#F5F5F5" stroke="#ddd"/><text x="290" y="70" text-anchor="middle" font-size="9.5" font-weight="700" fill="#999">Receiving / 하역 (배수 없음)</text>
+      <rect x="70" y="90" width="380" height="490" fill="#FBFCFD" stroke="#e8eef4"/><text x="255" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#b8c4d0">판매장 (바닥 배수 없음 — 습식 신설 시 슬래브 파취)</text>
+      <!-- east wet band -->
+      <rect x="450" y="90" width="200" height="490" fill="#EAF3FB" stroke="#9bc0e0"/>
+      <text x="550" y="108" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0065B2">동측 배수 스택</text>
+      <!-- Janitor: floor sink + water heater -->
+      <g font-family="var(--mono)">
+        <rect x="470" y="120" width="160" height="66" fill="#fff" stroke="#9bc0e0"/>
+        <rect x="482" y="140" width="16" height="16" fill="#bfe0f5" stroke="#0065B2"/><text x="490" y="152" text-anchor="middle" font-size="9" font-weight="800" fill="#023a68">FS</text>
+        <circle cx="530" cy="148" r="9" fill="#FFE0B0" stroke="#c07a00"/><text x="530" y="151" text-anchor="middle" font-size="8" font-weight="800" fill="#7a4a00">WH</text>
+        <text x="600" y="145" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0d3f66">청소실</text><text x="600" y="157" text-anchor="middle" font-size="7.5" fill="#4a6a8a">바닥싱크·온수기</text>
+        <text x="550" y="178" text-anchor="middle" font-size="8" fill="#3a5a7a">Janitor 107 — 급수·배수 기점</text>
+        <!-- ISC (unverified drain) -->
+        <rect x="470" y="192" width="160" height="86" fill="#FFF7EC" stroke="#e0b070"/>
+        <text x="550" y="228" text-anchor="middle" font-size="10" font-weight="800" fill="#a86a10">ISC 설치베이 = 주방(안)</text>
+        <circle cx="510" cy="250" r="10" fill="#FDE0C0" stroke="#c07a00" stroke-dasharray="3 2"/><text x="510" y="253" text-anchor="middle" font-size="8" font-weight="800" fill="#a86a10">FD?</text>
+        <text x="585" y="253" text-anchor="middle" font-size="8" fill="#a86a10">바닥배수 유무 미확인</text>
+        <rect x="470" y="300" width="16" height="12" fill="#ffd0c8" stroke="#C0341E"/><text x="512" y="310" text-anchor="middle" font-size="8" font-weight="700" fill="#8a1e10">그리스트랩 신설(주방)</text>
+        <!-- Restrooms fixtures -->
+        <rect x="470" y="320" width="160" height="96" fill="#E6EEF6" stroke="#4a78ac"/>
+        <text x="550" y="338" text-anchor="middle" font-size="9.5" font-weight="800" fill="#274a70">화장실 Mens/Womens</text>
+        <circle cx="484" cy="360" r="7" fill="#fff" stroke="#274a70"/><circle cx="502" cy="360" r="7" fill="#fff" stroke="#274a70"/><circle cx="520" cy="360" r="7" fill="#fff" stroke="#274a70"/>
+        <rect x="474" y="378" width="12" height="8" fill="#fff" stroke="#274a70"/><rect x="492" y="378" width="12" height="8" fill="#fff" stroke="#274a70"/>
+        <line x1="540" y1="352" x2="626" y2="352" stroke="#4a78ac" stroke-width=".7"/><text x="583" y="349" text-anchor="middle" font-size="7.5" fill="#274a70">변기 ● 소변기 ▭ 세면</text>
+        <text x="550" y="404" text-anchor="middle" font-size="8" fill="#3a5a7a">남 2 WC/2 UR/2 LAV (증설 대상)</text>
+        <!-- roof drain / cleanout at band edge -->
+        <circle cx="458" cy="440" r="8" fill="#e8f0e8" stroke="#12833C"/><text x="458" y="443" text-anchor="middle" font-size="7.5" font-weight="800" fill="#0a5b2e">RD</text>
+        <text x="545" y="443" text-anchor="middle" font-size="8" fill="#0a5b2e">지붕배수(RD)·청소구(CO) — 밴드 경계</text>
+        <!-- water service -->
+        <rect x="636" y="300" width="10" height="30" fill="#0065B2"/><text x="600" y="470" text-anchor="middle" font-size="8" fill="#0065B2">급수 인입(Denver Water)</text>
+        <text x="600" y="482" text-anchor="middle" font-size="7.5" fill="#4a6a8a">계량기·역류방지·감압 — 동측(추정)</text>
+        <text x="550" y="520" text-anchor="middle" font-size="8.5" font-weight="700" fill="#8a1e10">Hub/SalesDev → 파티룸(주방 근접)</text>
+      </g>
+    </svg>
+    <div class="lgd">
+      <span><i style="background:#bfe0f5"></i>FS 바닥싱크</span><span><i style="background:#FFE0B0"></i>WH 온수기</span>
+      <span><i style="background:#fff;border-color:#274a70"></i>변기/세면</span><span><i style="background:#FDE0C0"></i>FD 바닥배수(?)</span>
+      <span><i style="background:#ffd0c8"></i>그리스트랩(신설)</span><span><i style="background:#e8f0e8"></i>RD/CO 지붕배수·청소구</span><span><i style="background:#0065B2"></i>급수 인입</span>
+    </div>
+  </div>
   <div class="danger"><span class="lb">공사비 핵심 — 반드시 확인</span>주방을 동측 스택에 붙이는 것까지는 도면으로 확정됩니다. 그러나 <b>ISC 베이에 바닥배수가 있는지, 하수 본관이 어디로 나가는지</b>는 <b>M-2 배관 평면(세트에 없음)</b>이 있어야 알 수 있습니다. 이걸 모르면 그리스 트랩·주방 배수 경로가 길어져 <b>공사비가 크게 뜁니다</b>. → M-2/M-3 확보 또는 현장 배관 실사 최우선.</div>
 </section>
 
