@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>미국 키즈 시설 주간 다이제스트 — 2026년 8월 20일</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #201a14;
+    --text-muted: #675c4e;
+    --border: #e8e0d4;
+    --accent: #c2410c;
+    --accent-soft: #fdf0e6;
+    --tag-denver: #0f766e;
+    --tag-denver-bg: #e6f5f3;
+    --tag-national: #6d28d9;
+    --tag-national-bg: #f1eafc;
+    --tag-construction: #b45309;
+    --tag-construction-bg: #fdf3e0;
+    --tag-marketing: #be123c;
+    --tag-marketing-bg: #fde8ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16130f;
+      --surface: #201c16;
+      --text: #f2ece1;
+      --text-muted: #b5a993;
+      --border: #362f24;
+      --accent: #f0864a;
+      --accent-soft: #2c1d12;
+      --tag-denver: #5eead4;
+      --tag-denver-bg: #103330;
+      --tag-national: #c4b5fd;
+      --tag-national-bg: #2a2145;
+      --tag-construction: #fbbf24;
+      --tag-construction-bg: #332507;
+      --tag-marketing: #fda4af;
+      --tag-marketing-bg: #3a1420;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16130f;
+    --surface: #201c16;
+    --text: #f2ece1;
+    --text-muted: #b5a993;
+    --border: #362f24;
+    --accent: #f0864a;
+    --accent-soft: #2c1d12;
+    --tag-denver: #5eead4;
+    --tag-denver-bg: #103330;
+    --tag-national: #c4b5fd;
+    --tag-national-bg: #2a2145;
+    --tag-construction: #fbbf24;
+    --tag-construction-bg: #332507;
+    --tag-marketing: #fda4af;
+    --tag-marketing-bg: #3a1420;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Serif KR", "Nanum Myeongjo", "Apple SD Gothic Neo", "Malgun Gothic", "Iowan Old Style", Georgia, serif;
+    line-height: 1.65;
+    word-break: keep-all;
+  }
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+  header.masthead {
+    border-bottom: 3px solid var(--text);
+    padding-bottom: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+  h1.title {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.6rem, 4vw, 2.15rem);
+    line-height: 1.25;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .lede {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    margin: 1.1rem 0 0;
+  }
+
+  nav.toc {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 1.6rem 0 2.4rem;
+    padding: 0.9rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.85rem;
+  }
+  nav.toc a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  nav.toc a:hover { text-decoration: underline; }
+  nav.toc span.sep { color: var(--border); }
+
+  section.digest-section { margin-bottom: 2.8rem; }
+  h2.section-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-size: 1.02rem;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin: 0 0 1.3rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  h2.section-title .num {
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
+
+  article.item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 1.1rem;
+  }
+  article.item h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+  article.item h3 a { color: var(--text); text-decoration: none; }
+  article.item h3 a:hover { color: var(--accent); text-decoration: underline; }
+  .item-meta {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .tag {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+  }
+  .tag.denver { color: var(--tag-denver); background: var(--tag-denver-bg); }
+  .tag.national { color: var(--tag-national); background: var(--tag-national-bg); }
+  .tag.construction { color: var(--tag-construction); background: var(--tag-construction-bg); }
+  .tag.marketing { color: var(--tag-marketing); background: var(--tag-marketing-bg); }
+  article.item p { margin: 0 0 0.6rem; }
+  article.item p:last-of-type { margin-bottom: 0; }
+  .source-link {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-size: 0.8rem;
+  }
+  .source-link a { color: var(--accent); }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.8rem;
+    margin: 0 0 1.6rem;
+  }
+  .stat {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+  }
+  .stat .num {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+  }
+  .stat .label {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  footer.colophon {
+    border-top: 1px solid var(--border);
+    padding-top: 1.2rem;
+    margin-top: 3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  footer.colophon a { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 1.6rem 1rem 3.5rem; }
+    article.item { padding: 1.05rem 1.05rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="kicker">USA-AKP · 주간 산업 다이제스트</p>
+    <h1 class="title">미국 키즈 시설 뉴스 다이제스트</h1>
+    <div class="meta-row">
+      <span>2026년 8월 20일 주간</span>
+      <span>&middot;</span>
+      <span>덴버 집중 + 전국 동향</span>
+    </div>
+    <p class="lede">미국 키즈파크와 패밀리 엔터테인먼트 센터의 건설, 마케팅, 산업 동향을 정리했습니다 — 덴버(콜로라도) 시장은 별도로 자세히 다룹니다.</p>
+  </header>
+
+  <nav class="toc">
+    <a href="#denver">덴버 지역 소식</a><span class="sep">/</span>
+    <a href="#national">전국 주요 시설</a><span class="sep">/</span>
+    <a href="#construction">건설·확장 뉴스</a><span class="sep">/</span>
+    <a href="#marketing">마케팅 트렌드</a>
+  </nav>
+
+  <div class="stat-row">
+    <div class="stat"><span class="num">$346억</span><span class="label">2026년 글로벌 FEC 시장 규모, 2031년 $479억 전망 (CAGR 6.75%)</span></div>
+    <div class="stat"><span class="num">$2.68억</span><span class="label">레고 그룹의 머린 디스커버리 센터 29곳 인수 대금</span></div>
+    <div class="stat"><span class="num">$3억</span><span class="label">척 E. 치즈가 2021년 이후 누적 투입한 브랜드 리뉴얼 비용</span></div>
+    <div class="stat"><span class="num">20에이커</span><span class="label">유니버설 키즈 리조트(프리스코, 텍사스) 부지 면적</span></div>
+  </div>
+
+  <section class="digest-section" id="denver">
+    <h2 class="section-title"><span class="num">01</span> 덴버 지역 소식</h2>
+
+    <article class="item">
+      <h3><a href="https://www.franchising.com/amp/news/20260604_launch_family_entertainment_signs_lease_for_colorado_location.html" target="_blank" rel="noopener">런치 패밀리 엔터테인먼트, 콜로라도 첫 매장 임대 계약 체결</a></h3>
+      <div class="item-meta"><span class="tag denver">덴버 메트로</span><span class="tag construction">건설</span><span>2026년 6월 4일 보도</span></div>
+      <p>런치 패밀리 엔터테인먼트가 콜로라도 첫 거점을 센테니얼 요세미티 파크 쇼핑센터(9090 E. Phillips Place)에 연다. 약 3,285㎡(35,350sq ft) 규모의 이 시설은 볼링, 아케이드 게임, 미니 골프, 트램폴린, 혼합현실(MR) 놀이터, 유아용 소프트 플레이 공간을 갖추며 자체 레스토랑·바 브랜드 KRAVE도 함께 들어선다. 공사는 2026년 8월 착공 예정이며, 개장 목표는 2027년 초다.</p>
+      <div class="source-link">출처: <a href="https://www.franchising.com/amp/news/20260604_launch_family_entertainment_signs_lease_for_colorado_location.html" target="_blank" rel="noopener">franchising.com</a> &middot; <a href="https://www.amusementsandattractions.com/amusements/news/launch-family-entertainment-signs-lease-for-first-colorado-entertainment-hub" target="_blank" rel="noopener">Amusements &amp; Attractions</a> · <a href="https://hoodline.com/2026/06/massive-indoor-fun-zone-set-to-take-over-centennial-strip-mall/" target="_blank" rel="noopener">Hoodline</a>에서도 보도</div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.skyzone.com/sky-zone-expanding-to-highlands-ranch-co/" target="_blank" rel="noopener">스카이존 콜로라도 6번째 매장, 하이랜즈 랜치 개장 준비 중</a></h3>
+      <div class="item-meta"><span class="tag denver">덴버 메트로</span><span class="tag construction">건설</span><span>가맹점 추진 중</span></div>
+      <p>현지 가맹점주 부부 닉·리사 네틀턴이 콜로라도 6호점을 하이랜즈 랜치에 열기 위한 절차를 계속 진행 중이다. 정확한 주소와 개장일은 아직 발표되지 않았으며, 최근 덴버 지역 트렌드 정리 기사들도 남부 메트로 교외 지역에서 주목할 다음 실내 트램폴린 시설로 이곳을 꼽고 있다.</p>
+      <div class="source-link">출처: <a href="https://www.skyzone.com/sky-zone-expanding-to-highlands-ranch-co/" target="_blank" rel="noopener">skyzone.com</a> &middot; <a href="https://www.9news.com/article/life/style/colorado-guide/indoor-trampoline-park-sky-zone/73-1de210a2-2316-4377-82ac-99db03262924" target="_blank" rel="noopener">9News</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://coloradobiz.com/elitch-gardens-2026-season-denver-opening/" target="_blank" rel="noopener">엘리치 가든스, 136번째 시즌 개막…키즈 라인업도 확대</a></h3>
+      <div class="item-meta"><span class="tag denver">덴버</span><span class="tag marketing">프로그램</span><span>2026년 4월 18일 시즌 개막</span></div>
+      <p>덴버의 엘리치 가든스가 2026 시즌을 시작했다. 54종의 놀이기구·슬라이드·어트랙션을 운영하며, 이 중 키디랜드의 아동용 놀이기구가 14종이고 특정일에는 아일랜드 킹덤 워터파크도 함께 이용할 수 있다. 새로운 페스티벌 주말, 드론쇼, 드라이브인 상영 등이 시즌을 채운다. 인근 리버마일 부지의 단독 소유주가 된 크로엔키 스포츠 & 엔터테인먼트는 공원을 현재 위치(다운타운)에서 계속 운영하겠다고 재확인했다.</p>
+      <div class="source-link">출처: <a href="https://coloradobiz.com/elitch-gardens-2026-season-denver-opening/" target="_blank" rel="noopener">ColoradoBiz</a> &middot; <a href="https://denverite.com/2026/04/16/elitch-gardens-opening-river-mile-development/" target="_blank" rel="noopener">Denverite</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://gazette.com/2026/03/05/jump-around-next-generation-adventure-park-lands-at-former-colorado-springs-trampoline-facility/" target="_blank" rel="noopener">'Jump Around' 어드벤처파크, 콜로라도 스프링스 옛 트램폴린 부지에 입점</a></h3>
+      <div class="item-meta"><span class="tag denver">프론트 레인지</span><span class="tag construction">재개장</span><span>2026년 3월 5일 보도</span></div>
+      <p>차세대 어드벤처파크 콘셉트가 덴버에서 남쪽으로 약 1시간 거리인 콜로라도 스프링스의 옛 트램폴린 시설 자리를 새로 채운다. 사업자들이 문을 닫은 실내 놀이시설 부동산을 비워두지 않고 재활용하는 지역적 흐름을 보여주는 사례다.</p>
+      <div class="source-link">출처: <a href="https://gazette.com/2026/03/05/jump-around-next-generation-adventure-park-lands-at-former-colorado-springs-trampoline-facility/" target="_blank" rel="noopener">The Gazette (Colorado Springs)</a></div>
+    </article>
+  </section>
+
+  <section class="digest-section" id="national">
+    <h2 class="section-title"><span class="num">02</span> 전국 주요 시설</h2>
+    <p class="lede" style="margin-top:0;font-size:0.92rem;">이번 주 언론 보도량과 소셜 화제성을 기준으로 정리했습니다.</p>
+
+    <article class="item">
+      <h3><a href="https://corporate.universaldestinationsandexperiences.com/save-the-playdate-universal-kids-resort-universal-destinations-experiences-first-ever-theme-park-designed-for-families-with-young-children-officially-opens-on-july-1-2026/" target="_blank" rel="noopener">유니버설 키즈 리조트(프리스코, 텍사스) — 2026년 업계 최대 신규 개장</a></h3>
+      <div class="item-meta"><span class="tag national">전국</span><span class="tag marketing">높은 화제성</span><span>2026년 7월 1일 개장</span></div>
+      <p>유니버설 데스티네이션스 & 익스피리언스가 3~8세 아동만을 위해 처음 만든 테마파크가 댈러스 외곽에서 문을 열었다. 슈렉, 스폰지밥, 쥬라기 월드, 미니언즈, 트롤, 장화신은 고양이, 가비네 돌하우스 등 7개 테마 구역과 레스토랑 11곳, 20에이커 부지 내 300객실 호텔을 갖췄다. 개장 첫 주는 뜨거운 관심과 함께 엇갈린 반응을 얻었다 — 가족 단위 방문객의 열띤 호응이 있었던 한편, 요금과 혼잡도를 둘러싼 소셜미디어상의 비판도 크게 확산되며 이번 여름 가장 많이 회자된 키즈 시설 오픈이 됐다.</p>
+      <div class="source-link">출처: <a href="https://corporate.universaldestinationsandexperiences.com/save-the-playdate-universal-kids-resort-universal-destinations-experiences-first-ever-theme-park-designed-for-families-with-young-children-officially-opens-on-july-1-2026/" target="_blank" rel="noopener">Universal Destinations &amp; Experiences</a> &middot; <a href="https://www.dallasnews.com/business/local-companies/article/universal-kids-resort-getting-roasted-social-media-22315314.php" target="_blank" rel="noopener">Dallas Morning News</a> &middot; <a href="https://en.wikipedia.org/wiki/Universal_Kids_Resort" target="_blank" rel="noopener">Wikipedia</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.chuckecheese.com/whats-new-at-chuck-e-cheese/" target="_blank" rel="noopener">척 E. 치즈, 3억 달러 규모 '공격적 브랜드 전환' 추진</a></h3>
+      <div class="item-meta"><span class="tag national">전국</span><span class="tag marketing">마케팅</span><span>진행 중, 2026년 CMO 영입 보도</span></div>
+      <p>척 E. 치즈는 2021년 이후 리모델링에 3억 달러 이상을 투입해왔다 — 새로운 아케이드 게임 순환 배치, 대형 비디오월, 인터랙티브 댄스플로어, 트램폴린 존, 슈퍼히어로 놀이터 등이다. 동시에 성인 취향을 겨냥한 노스탤지어 콘셉트 'Chuck's Arcade'도 시험 중이다. 최근에는 데이브 앤 버스터스 출신 마케팅 베테랑 션 글리슨을 CMO로 영입해 다음 단계를 이끌게 했다.</p>
+      <div class="source-link">출처: <a href="https://dallasinnovates.com/chuck-e-cheese-appoints-former-db-marketing-veteran-sean-gleason-as-cmo-amid-aggressive-brand-transformation/" target="_blank" rel="noopener">Dallas Innovates</a> &middot; <a href="https://www.chuckecheese.com/whats-new-at-chuck-e-cheese/" target="_blank" rel="noopener">Chuck E. Cheese Newsroom</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.lego.com/en-us/aboutus/news/2026/february/the-lego-group-completes-acquisition-of-lego-discovery-centres-and-legoland-discovery-centres-from-merlin-entertainments" target="_blank" rel="noopener">레고 그룹, 머린으로부터 디스커버리 센터 29곳 2.68억 달러에 인수 완료</a></h3>
+      <div class="item-meta"><span class="tag national">전국</span><span class="tag construction">산업 통합</span><span>2026년 2월 27일 완료</span></div>
+      <p>레고 그룹이 머린 엔터테인먼츠로부터 레고·레고랜드 디스커버리 센터를 약 2억 파운드(2억 6,800만 달러)에 인수하는 절차를 마무리했다. 9개국 29개 시설, 연간 방문객 약 500만 명, 직원 1,500명이 레고 그룹의 직접 관할로 편입됐다. 대형 레고랜드 리조트는 계속 머린이 장기 라이선스로 운영하며, 이번 거래는 쇼핑몰 기반의 소규모 디스커버리 센터에 한정된다 — 뉴저지, 미시간, 필라델피아 등 다수의 미국 지점이 포함된다.</p>
+      <div class="source-link">출처: <a href="https://www.lego.com/en-us/aboutus/news/2026/february/the-lego-group-completes-acquisition-of-lego-discovery-centres-and-legoland-discovery-centres-from-merlin-entertainments" target="_blank" rel="noopener">LEGO.com 보도자료</a> &middot; <a href="https://blooloop.com/lego-discovery-centre-acquisition/" target="_blank" rel="noopener">blooloop</a> &middot; <a href="https://www.ausleisure.com.au/news/lego-group-acquires-29-discovery-centres-from-merlin-entertainments-in-us268-million-deal" target="_blank" rel="noopener">Australasian Leisure Management</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://meowwolf.com/visit/los-angeles" target="_blank" rel="noopener">미아우 울프, 2026년 말 LA 개장 확정</a></h3>
+      <div class="item-meta"><span class="tag national">전국</span><span class="tag construction">확장</span><span>2026년 말 목표</span></div>
+      <p>가족과 청소년 모두에게 인기 있는, '인스타그램에 올리기 좋은' 방들로 유명한 미아우 울프의 몰입형 아트 포맷이 최근 텍사스 진출에 이어 LA 컬버시티 인근에 여섯 번째 상설 전시관을 준비 중이다. 전통적 키즈 시설이라기보다 예술 브랜드로 마케팅되지만, 가족 친화적 프로그램과 소셜미디어 중심 설계 덕분에 업계에서 자주 참조되는 사례다.</p>
+      <div class="source-link">출처: <a href="https://meowwolf.com/visit/los-angeles" target="_blank" rel="noopener">Meow Wolf</a> &middot; <a href="https://en.wikipedia.org/wiki/Meow_Wolf" target="_blank" rel="noopener">Wikipedia</a></div>
+    </article>
+  </section>
+
+  <section class="digest-section" id="construction">
+    <h2 class="section-title"><span class="num">03</span> 건설·확장 뉴스</h2>
+
+    <article class="item">
+      <h3><a href="https://wrnjradio.com/legoland-discovery-center-new-jerseys-expansion-now-set-for-grand-opening-on-june-28/" target="_blank" rel="noopener">레고랜드 디스커버리 센터 뉴저지, 30% 증축 완료</a></h3>
+      <div class="item-meta"><span class="tag construction">건설 완료</span><span class="tag national">전국</span><span>2026년 6월 28일 그랜드 오픈</span></div>
+      <p>새 구역 5곳이 추가되며 뉴저지 디스커버리 센터의 매장 면적이 약 30% 늘었다 — 레고랜드 디스커버리 센터 포트폴리오 중 북미 최대 규모 확장으로 소개됐다. 시점상으로도 레고 그룹의 디스커버리 센터 사업 인수(위 항목 참고) 직후에 이뤄졌다.</p>
+      <div class="source-link">출처: <a href="https://wrnjradio.com/legoland-discovery-center-new-jerseys-expansion-now-set-for-grand-opening-on-june-28/" target="_blank" rel="noopener">WRNJ Radio</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://sanantonio.culturemap.com/news/travel/great-wolf-lodge-waterpark-texas/" target="_blank" rel="noopener">그레이트 울프 롯지, 텍사스 샌안토니오에 신규 워터파크 리조트 개장</a></h3>
+      <div class="item-meta"><span class="tag construction">신규 개장</span><span class="tag national">전국</span><span>2026년 여름</span></div>
+      <p>그레이트 울프 롯지의 최신 실내 워터파크 리조트가 이번 여름 샌안토니오에서 문을 열었다. 이 체인은 디즈니랜드 인근 애너하임에서도 착공했으며, 재방문을 유도하기 위한 '2026 서머 시즌패스'도 새로 선보였다.</p>
+      <div class="source-link">출처: <a href="https://sanantonio.culturemap.com/news/travel/great-wolf-lodge-waterpark-texas/" target="_blank" rel="noopener">CultureMap San Antonio</a> &middot; <a href="https://www.foxnews.com/travel/great-wolf-lodge-opens-in-new-england-begins-construction-on-new-site-near-disneyland" target="_blank" rel="noopener">Fox News</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.franchising.com/amp/news/20260604_launch_family_entertainment_signs_lease_for_colorado_location.html" target="_blank" rel="noopener">런치 패밀리 엔터테인먼트, 콜로라도 센테니얼서 착공</a></h3>
+      <div class="item-meta"><span class="tag construction">착공</span><span class="tag denver">덴버 메트로</span><span>2026년 8월 공사 시작</span></div>
+      <p>위 덴버 지역 소식 참조 — 약 3,285㎡ 규모 엔터테인먼트 허브 공사가 이번 달 시작되며, 목표 개장일은 2027년 초다.</p>
+    </article>
+  </section>
+
+  <section class="digest-section" id="marketing">
+    <h2 class="section-title"><span class="num">04</span> 마케팅 트렌드</h2>
+
+    <article class="item">
+      <h3>노스탤지어와 '어른을 위한' 파생 콘셉트가 이번 시즌 마케팅의 핵심</h3>
+      <div class="item-meta"><span class="tag marketing">트렌드</span><span class="tag national">전국</span></div>
+      <p>척 E. 치즈의 'Chuck's Arcade' — 아이보다 밀레니얼 부모 세대의 향수를 겨냥한 콘셉트 — 와 그레이트 울프 롯지의 시즌패스 전략 모두, 사업자들이 일회성 가족 방문을 넘어 반복 방문과 세대를 아우르는 참여, 그리고 로열티 상품으로 확장하고 있음을 보여준다.</p>
+    </article>
+
+    <article class="item">
+      <h3>AR/VR·혼합현실 어트랙션이 이제는 기본 구성 요소로 자리잡음</h3>
+      <div class="item-meta"><span class="tag marketing">트렌드</span><span class="tag national">전국</span></div>
+      <p>위치 기반 VR 엔터테인먼트는 2026~2031년 연평균 7.8% 성장할 것으로 전망된다. 런치 패밀리 엔터테인먼트의 센테니얼(콜로라도) 지점을 포함한 신규 시설들이 혼합현실 놀이터를 부가 요소가 아닌 주력 어트랙션으로 내세워 개장하고 있으며, 체류 시간을 늘리기 위한 식음료(F&B) 통합도 강화되는 추세다.</p>
+      <div class="source-link">출처: Mordor Intelligence, <a href="https://www.mordorintelligence.com/industry-reports/global-family-entertainment-center-market" target="_blank" rel="noopener">Family Entertainment Center Market Report</a></div>
+    </article>
+
+    <article class="item">
+      <h3>이제 소셜미디어 반응 자체가 개장 첫 주 마케팅 전략의 일부 — 양날의 검</h3>
+      <div class="item-meta"><span class="tag marketing">트렌드</span><span class="tag national">전국</span></div>
+      <p>유니버설 키즈 리조트의 개장은 이 현상의 양면을 모두 보여줬다 — 가족 여행 콘텐츠를 장악한 동시에, 요금·혼잡 문제로 소셜미디어상의 강한 비판도 함께 받았다. 반대로 미아우 울프의 '사진 찍기 좋은' 공간들은 전통적 광고 없이도 자연 발생적이고 대체로 긍정적인 입소문으로 티켓 판매를 이끄는 사례로 꼽힌다.</p>
+    </article>
+
+    <article class="item">
+      <h3>산업 전망: 통합과 카테고리 성장이 동시에 진행 중</h3>
+      <div class="item-meta"><span class="tag marketing">시장 데이터</span><span class="tag national">전국</span></div>
+      <p>글로벌 패밀리 엔터테인먼트 센터(FEC) 시장은 2026년 약 345.7억 달러로 추정되며 2031년에는 479.3억 달러(CAGR 6.75%)에 이를 전망이다. 이런 성장세 속에서도 레고 그룹의 머린 인수는 브랜드 소유주들이 체험형 리테일을 라이선스가 아닌 직접 운영으로 가져가는 흐름을 보여준다. IAAPA의 2026 FEC 서밋도 바로 이 지점 — 성장 기회와 운영·소유 구조의 통합 — 을 핵심 의제로 다루고 있다.</p>
+      <div class="source-link">출처: <a href="https://www.mordorintelligence.com/industry-reports/global-family-entertainment-center-market" target="_blank" rel="noopener">Mordor Intelligence</a> &middot; <a href="https://iaapa.org/event/iaapa-summit-entertainment-centers-2026" target="_blank" rel="noopener">IAAPA</a></div>
+    </article>
+  </section>
+
+  <footer class="colophon">
+    <p>2026년 8월 20일, 공개된 웹 자료를 바탕으로 작성했습니다. 이 다이제스트는 자동 생성된 주간 리서치 요약이므로, 실제 의사결정 전 원문 출처를 통해 세부 사항을 다시 확인하시기 바랍니다.</p>
+    <p><a href="index.html">&larr; 다이제스트 아카이브로 돌아가기</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
