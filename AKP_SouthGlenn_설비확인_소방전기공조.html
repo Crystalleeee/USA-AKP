@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SouthGlenn 설비 확인 — 소방·공조·전기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<style>
+:root{--ink:#161616;--ink2:#3a3a3a;--ink3:#8a8a8a;--rule:#DEDEDE;--rule2:#EDEDED;--bg:#fff;--bg2:#F6F5F3;
+--pine:#0065B2;--pine-soft:#E9F1FA;--accent:#FF6B00;--ok:#12833C;--ok-bg:#E7F3EC;--warn:#B45309;--warn-bg:#FBF0DC;--no:#C0341E;--no-bg:#FBEAE7;
+--sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;--mono:"LINESeedKR","LINE Seed KR",ui-monospace,monospace;}
+*{box-sizing:border-box}body{margin:0;background:var(--bg2);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.72}
+.wrap{max-width:960px;margin:0 auto;background:var(--bg);min-height:100vh;padding:0 0 90px;box-shadow:0 0 0 1px var(--rule)}
+header{padding:32px 40px 20px;border-top:5px solid var(--accent);border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 9px}
+h1{font-size:clamp(20px,2.3vw,26px);font-weight:800;letter-spacing:-.02em;line-height:1.16;margin:0 0 6px}
+.sub{color:var(--ink3);font-family:var(--mono);font-size:11px}
+main{padding:0 40px}
+section{padding-top:34px}
+h2{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:0 0 3px}
+h2 .n{font-family:var(--mono);font-size:12px;color:var(--pine);margin-right:8px}
+.desc{color:var(--ink2);max-width:74ch;margin:5px 0 14px;font-size:13.5px}
+h3{font-size:14px;font-weight:700;margin:20px 0 8px}
+p{margin:0 0 11px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:9px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:7px 8px;border-bottom:1px solid var(--rule)}
+td{padding:7px 8px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.5}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr.total td{background:var(--pine-soft);font-weight:700;border-top:1px solid var(--rule)}
+tbody tr:hover{background:#FAFAFA}
+td.item{font-weight:600}
+.tablewrap{overflow-x:auto}
+.tcap{font-size:11px;color:var(--ink3);font-family:var(--mono);margin:6px 0 0;line-height:1.55}
+.src{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;color:var(--pine);background:var(--pine-soft);border:1px solid #BBD6EE;border-radius:3px;padding:2px 7px;margin-left:6px;white-space:nowrap}
+.kbox{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0}
+.kb{background:var(--bg2);padding:12px 13px}.kb b{display:block;font-size:16px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.kb span{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.03em;color:var(--ink3);text-transform:uppercase;margin-top:6px;line-height:1.4}
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:11px 14px;font-size:12.5px;color:#0d3f66;margin:11px 0;border-radius:0 3px 3px 0;line-height:1.66}
+.warn{border-left:2px solid var(--warn);background:var(--warn-bg);padding:11px 14px;font-size:12.5px;color:#6b4308;margin:11px 0;border-radius:0 3px 3px 0;line-height:1.66}
+.danger{border-left:3px solid var(--no);background:var(--no-bg);padding:11px 14px;font-size:12.5px;color:#8a1e10;margin:11px 0;border-radius:0 3px 3px 0;line-height:1.66}
+.ok-box{border-left:3px solid var(--ok);background:var(--ok-bg);padding:11px 14px;font-size:12.5px;color:#0a5b2e;margin:11px 0;border-radius:0 3px 3px 0;line-height:1.66}
+.note .lb,.warn .lb,.danger .lb,.ok-box .lb{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.note .lb{color:var(--pine)}.warn .lb{color:var(--warn)}.danger .lb{color:var(--no)}.ok-box .lb{color:var(--ok)}
+.st{display:inline-block;font-family:var(--mono);font-size:9.5px;padding:2px 6px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:var(--ok);border-color:#BEE0C8;background:var(--ok-bg)}.st-mid{color:var(--warn);border-color:#EAD9AE;background:var(--warn-bg)}.st-no{color:var(--no);border-color:#EEC7BF;background:var(--no-bg)}
+ul.tl{margin:6px 0 11px;padding-left:18px}ul.tl li{margin-bottom:5px;font-size:13px}
+.foot{margin:30px 40px 0;border-top:1px solid var(--rule);padding-top:13px;font-family:var(--mono);font-size:10.5px;color:var(--ink3);line-height:1.6}
+@media(max-width:720px){header,main{padding-left:18px;padding-right:18px}.foot{margin-left:18px;margin-right:18px}.kbox{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="eyebrow">설비 확인 — 소방 · 공조(에어컨/FCU) · 전기</p>
+  <h1>도면에서 확인한 설비 현황 (58장 전세트 기준)</h1>
+  <div class="sub">CEN0800595 · 근거 시트: CS-2(p9) · M-9(p45) · M-1/M-4 · E-5(p51) · E-7(p53) · 2008 시공도면</div>
+  <div class="kbox">
+    <div class="kb"><b>800A</b><span>메인 분전반 MDP · 208/120V 3φ</span></div>
+    <div class="kb"><b>111.5톤</b><span>RTU 10대 (옥상) + FCU 1대</span></div>
+    <div class="kb"><b>FC-1 3톤</b><span>유일 FCU · 방풍실(주출입) 담당</span></div>
+    <div class="kb"><b>별도제출</b><span>스프링클러·화재경보 (세트에 없음)</span></div>
+  </div>
+</header>
+<main>
+
+<!-- 1 소방 -->
+<section>
+  <h2><span class="n">01</span>소방 · 스프링클러</h2>
+  <p class="desc">건물은 <b>전체 스프링클러 완비</b>(Type II-B 비내화·스프링클러, NFPA 13)입니다. 다만 스프링클러·화재경보의 <b>상세 설계는 "별도제출(Deferred Submittal)"</b>이라 이 도면세트에 없습니다.<span class="src">CS-2 · p9</span></p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th>도면 확인값</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td class="item">건물 스프링클러</td><td class="num">전체 완비 (NFPA 13)</td><td>Type II-B 비내화 · 스프링클러로 면적 증가 허용</td></tr>
+      <tr><td class="item">스프링클러 상세(헤드·수리계산)</td><td class="num">별도제출</td><td><span class="st st-no">도면 없음</span> 스프링클러 업체 설계 · 소방 flow test 확인</td></tr>
+      <tr><td class="item">화재경보(Fire Alarm)</td><td class="num">별도제출</td><td><span class="st st-no">도면 없음</span> 장치(연기감지·사운드스트로브·덕트감지·FACP)는 E 시트 표기</td></tr>
+      <tr><td class="item">관할 소방</td><td class="num">South Metro Fire Rescue</td><td>City of Centennial · flow test·허가 별도 트랙</td></tr>
+      <tr><td class="item">소화기</td><td class="num">3,000 SF당 2A10BC 1개</td><td>—</td></tr>
+      <tr><td class="item">방화 구획</td><td class="num">2시간 방화벽 분리</td><td>Table 103.4</td></tr>
+      <tr><td class="item">재실(설계)</td><td class="num">853명 (30,530 SF ÷ 30)</td><td>판매시설 기준 (A-0 참조)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="danger"><span class="lb">리뉴얼 핵심</span>① <b>스프링클러 헤드는 도면에 없음</b> → 기존 배치는 현장 촬영·별도도면 확보 필요, 3층 네트 구조물은 <b>살수장애로 헤드 추가/재배치</b>. ② <b>용도변경(판매→집회 A-3)</b>으로 <b>화재경보 재설계·피난 재계산</b> 발생. ③ 스프링클러·화재경보 모두 <b>별도제출 트랙</b>이라 전문업체+소방 협의가 인허가 병목.</div>
+</section>
+
+<!-- 2 공조 RTU -->
+<section>
+  <h2><span class="n">02</span>에어컨(공조) — 옥상형 RTU 10대 · 총 111.5톤</h2>
+  <p class="desc">냉난방은 <b>지붕(옥상)에 옥상형 공조기(RTU) 10대</b>로 처리합니다. 전량 <b>TRANE, 가스난방, EMS 자동제어</b>. 실별 담당·용량은 아래와 같습니다.<span class="src">M-9 · p45 (스케줄)</span> <span class="src">M-1 지붕평면 · M-4 바닥평면 (위치)</span></p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>기기</th><th>담당 구역</th><th class="num">용량</th><th class="num">풍량</th><th class="num">외기</th><th>모델·효율</th></tr></thead>
+    <tbody>
+      <tr><td class="item">RTU-1~6</td><td>판매장 (Sales)</td><td class="num">15톤 ×6 = 90톤</td><td class="num">6,000 CFM</td><td class="num">1,215 ×6</td><td>Trane YCD181 · 11.5 EER · 가스 250MBH</td></tr>
+      <tr><td class="item">RTU-7</td><td>하역 (Receiving)</td><td class="num">10톤</td><td class="num">4,000 CFM</td><td class="num">720</td><td>Trane YHC120 · 11.3 EER</td></tr>
+      <tr><td class="item">RTU-8</td><td>설치베이 (ISC)</td><td class="num">5톤</td><td class="num">1,950 CFM</td><td class="num">370</td><td>Trane YHC063 · 13 SEER</td></tr>
+      <tr><td class="item">RTU-9</td><td>허브·화장실·Sales Dev</td><td class="num">4톤</td><td class="num">1,600 CFM</td><td class="num">840</td><td>Trane YHC043 · 13 SEER</td></tr>
+      <tr><td class="item">RTU-10</td><td>통신실·관리실</td><td class="num">2.5톤</td><td class="num">800 CFM</td><td class="num">120</td><td>Trane 2YCC302 · 208/1φ</td></tr>
+      <tr class="total"><td class="item">합계</td><td>10대 · 옥상 · 가스난방 · EMS</td><td class="num">111.5톤</td><td class="num">~38,350 CFM</td><td class="num">~8,600</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <h3>보조 공조 기기</h3>
+  <ul class="tl">
+    <li><b>단위히터(가스식)</b> — UH-1 설치베이 / UH-2 하역, Reznor UDBS-300, 300,000 BTU 입력.</li>
+    <li><b>배기팬</b> — EF-1 화장실(1,401 CFM·EMS) / EF-2 전기실 / EF-3 설치장 / EF-4 L.P.실.</li>
+    <li><b>VAV·바이패스</b> — VAV-1 관리실 / BP-1 허브 / BP-2 Sales Dev.</li>
+    <li><b>설계 조건</b> — 여름 외기 88.9°F, 실내 73°F. 내부부하: 조명 105KW(=30톤), 진열 50KW(=12톤). 내부 양압 유지.</li>
+  </ul>
+  <div class="warn"><span class="lb">리뉴얼 시사점</span>2008년 설치(18년)라 <b>부분 교체 유력</b>. 판매장 외기 7,290 CFM은 집회(A-3) 필요량의 82~111% <b>경계</b>. 상업 주방은 <b>후드 배기 + 급기(MUA) 신규</b>. 진열 50KW 부하가 사라지고 미디어·활동 발열로 대체되므로 냉방부하 재산정 필요.</div>
+</section>
+
+<!-- 3 FCU -->
+<section>
+  <h2><span class="n">03</span>FCU (팬코일) — FC-1, 방풍실(주출입) 전용</h2>
+  <p class="desc">건물 내 <b>FCU는 딱 1대(FC-1)</b>입니다. RTU와 별개의 <b>스플릿(분리형) 시스템</b>으로, <b>주출입 방풍실(Vestibule)</b>을 담당합니다 — 출입문 개폐에 따른 열손실 대응용입니다.<span class="src">M-9 · p45 (Cooling Split System)</span></p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>기기</th><th>구분</th><th>담당</th><th class="num">용량</th><th class="num">전기</th><th>모델</th></tr></thead>
+    <tbody>
+      <tr><td class="item">FC-1</td><td>실내기 (에어핸들러/팬코일)</td><td>방풍실 Vestibule</td><td class="num">3톤 · 냉방 35,400 BTU · 전기히터 12KW</td><td class="num">460/3φ · 1,200 CFM</td><td>Trane BCHC054</td></tr>
+      <tr><td class="item">CU-1</td><td>실외기 (콘덴싱 유닛)</td><td>FC-1 짝</td><td class="num">3톤 · 13 SEER</td><td class="num">208/1φ</td><td>Trane 2TTB3036</td></tr>
+      <tr><td class="item">CP-1</td><td>응축수 펌프</td><td>FC-1 응축수</td><td class="num">인라인 · 10' 양정</td><td class="num">115/1φ</td><td>Little Giant</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lb">위치</span>FC-1 실내기는 <b>방풍실(전면 주출입부) 상부/인접</b>, 실외기 CU-1은 외부(옥상 또는 지상). 정확 설치 위치는 <b>M-4/M-5(HVAC 평면·부분평면)</b>에서 확인. 아르떼 주출입 재구성 시 <b>FC-1 재배치·용량 재검토</b> 대상.</div>
+</section>
+
+<!-- 4 전기 개요 -->
+<section>
+  <h2><span class="n">04</span>전기 — 개요</h2>
+  <p class="desc">전기 방식은 <b>208/120V 3상 4선</b>, 자재는 Square D. 공급은 Xcel Energy(전기·가스), 급수는 Denver Water.<span class="src">E-5 · p51</span> <span class="src">E-7 · p53</span></p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th>도면 확인값</th></tr></thead>
+    <tbody>
+      <tr><td class="item">전압/방식</td><td class="num">208/120V · 3상 4선 (3φ-4W)</td></tr>
+      <tr><td class="item">공급 유틸리티</td><td class="num">Xcel Energy (전기·가스) · pulse meter 계량</td></tr>
+      <tr><td class="item">변압기</td><td class="num">T-1 150 KVA · T-2 150 KVA · T-3 30 KVA (조명패널 LG용)</td></tr>
+      <tr><td class="item">자재</td><td class="num">Square D 전 계열</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 5 메인 분전반 -->
+<section>
+  <h2><span class="n">05</span>메인 분전반(MDP) — 위치 · 용량</h2>
+  <p class="desc">건물 인입 메인은 <b>800A MDP(Main Distribution Panel)</b>이며, <b>전기실(Electrical Room)</b>에 있습니다.<span class="src">E-7 · p53 (전기실 배치·서비스 엔트런스)</span> <span class="src">E-5 · p51 (패널 스케줄)</span></p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th>도면 확인값</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td class="item">메인 용량</td><td class="num">800A Main Section (MDP)</td><td>208/120V 3φ 4W · Service Entrance</td></tr>
+      <tr><td class="item">위치</td><td class="num">전기실 (Electrical Room)</td><td>전면 남서측 지원실 — MDP·변압기·패널 모듈러월 배치</td></tr>
+      <tr><td class="item">인입 경로</td><td class="num">Utility → 계량(pulse meter) → C.T./Pull → 800A MDP → 하위 패널</td><td>실내 Pull 38"·Main 42" / 실외 MDP 36"</td></tr>
+      <tr><td class="item">하위 분전</td><td class="num">DP1 · DP2 각 600A-3P + 225A MLO 분기패널 다수 + LG 100A</td><td>DP1/DP2가 앞서 언급한 600A</td></tr>
+      <tr><td class="item">주 배전패널 부하</td><td class="num">600A MCB 패널 접속부하 157.6 KVA / 437.8A</td><td>Phase A/B/C ≈ 55/51/52 KVA</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok-box"><span class="lb">정정 — 전체 세트로 확정</span>이전 요약에서 "600A 인입"이라 적었던 것은 <b>하위 분전반(DP1/DP2·600A MCB 패널)</b>이었고, <b>실제 건물 인입 메인은 800A MDP</b>임을 58장 전세트(E-7/E-5)로 확정했습니다.</div>
+  <div class="warn"><span class="lb">리뉴얼 시사점</span>주 배전패널 현재 사용 <b>438A</b>(800A 메인 대비 여유 有). 그러나 아르떼는 <b>미디어·프로젝션 + 상업 주방</b> 부하가 Best Buy 진열부하와 성격이 달라 <b>800A 충분성 재계산</b> 필요. 미디어 장비는 분전반 분산 배치, 주방을 <b>가스 기반</b>으로 하면 전기 압박↓.</div>
+</section>
+
+<section>
+  <h2><span class="n">★</span>한눈 요약 · 시트 위치</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th>결론</th><th>도면(뷰어 p / 시트)</th></tr></thead>
+    <tbody>
+      <tr><td class="item">스프링클러</td><td>건물 완비, 헤드상세는 별도제출(없음)</td><td class="num">CS-2 (p9)</td></tr>
+      <tr><td class="item">화재경보</td><td>별도제출 · 장치는 E시트</td><td class="num">CS-2(p9) · E(p52,53)</td></tr>
+      <tr><td class="item">RTU(에어컨)</td><td>옥상 10대 111.5톤 · Trane 가스</td><td class="num">M-9(p45) · M-1/M-4</td></tr>
+      <tr><td class="item">FCU</td><td>FC-1 3톤 · 방풍실 전용 (+CU-1 실외기)</td><td class="num">M-9(p45)</td></tr>
+      <tr><td class="item">전기 방식</td><td>208/120V 3φ4W · Xcel · Square D</td><td class="num">E-5(p51)·E-7(p53)</td></tr>
+      <tr><td class="item">메인 분전반</td><td><b>800A MDP · 전기실</b> · T-1/2 150KVA·T-3 30KVA</td><td class="num">E-7(p53)·E-5(p51)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tcap">"뷰어 p번호"는 도면 통합 뷰어(원본·한국어)의 페이지 번호입니다. 해당 p를 열어 원본 표제란·스케줄을 대조하세요.</p>
+</section>
+
+</main>
+<div class="foot">
+  본 문서는 CEN0800595 58장 전세트의 M-9·E-5·E-7·CS-2 등 판독 결과입니다. 수치는 2008년 도면 표기값이며, RTU 잔여수명·스프링클러 헤드 현황·전기 실사용 부하는 현장 실사로 확인해야 합니다.<br>
+  스프링클러 헤드·화재경보 상세는 별도제출로 본 세트에 미포함 — 전문업체 도면·기존 소방필증 확보 권장. · d'strict · Arte Kids Park USA · 2026.08.05
+</div>
+</div>
+</body>
+</html>
