@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>US Kids Facilities Weekly Digest — August 20, 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #201a14;
+    --text-muted: #675c4e;
+    --border: #e8e0d4;
+    --accent: #c2410c;
+    --accent-soft: #fdf0e6;
+    --tag-denver: #0f766e;
+    --tag-denver-bg: #e6f5f3;
+    --tag-national: #6d28d9;
+    --tag-national-bg: #f1eafc;
+    --tag-construction: #b45309;
+    --tag-construction-bg: #fdf3e0;
+    --tag-marketing: #be123c;
+    --tag-marketing-bg: #fde8ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16130f;
+      --surface: #201c16;
+      --text: #f2ece1;
+      --text-muted: #b5a993;
+      --border: #362f24;
+      --accent: #f0864a;
+      --accent-soft: #2c1d12;
+      --tag-denver: #5eead4;
+      --tag-denver-bg: #103330;
+      --tag-national: #c4b5fd;
+      --tag-national-bg: #2a2145;
+      --tag-construction: #fbbf24;
+      --tag-construction-bg: #332507;
+      --tag-marketing: #fda4af;
+      --tag-marketing-bg: #3a1420;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16130f;
+    --surface: #201c16;
+    --text: #f2ece1;
+    --text-muted: #b5a993;
+    --border: #362f24;
+    --accent: #f0864a;
+    --accent-soft: #2c1d12;
+    --tag-denver: #5eead4;
+    --tag-denver-bg: #103330;
+    --tag-national: #c4b5fd;
+    --tag-national-bg: #2a2145;
+    --tag-construction: #fbbf24;
+    --tag-construction-bg: #332507;
+    --tag-marketing: #fda4af;
+    --tag-marketing-bg: #3a1420;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    line-height: 1.55;
+  }
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+  header.masthead {
+    border-bottom: 3px solid var(--text);
+    padding-bottom: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+  h1.title {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    line-height: 1.15;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .lede {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 1.1rem 0 0;
+  }
+
+  nav.toc {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 1.6rem 0 2.4rem;
+    padding: 0.9rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.85rem;
+  }
+  nav.toc a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  nav.toc a:hover { text-decoration: underline; }
+  nav.toc span.sep { color: var(--border); }
+
+  section.digest-section { margin-bottom: 2.8rem; }
+  h2.section-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin: 0 0 1.3rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  h2.section-title .num {
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
+
+  article.item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 1.1rem;
+  }
+  article.item h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.15rem;
+  }
+  article.item h3 a { color: var(--text); text-decoration: none; }
+  article.item h3 a:hover { color: var(--accent); text-decoration: underline; }
+  .item-meta {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .tag {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+  }
+  .tag.denver { color: var(--tag-denver); background: var(--tag-denver-bg); }
+  .tag.national { color: var(--tag-national); background: var(--tag-national-bg); }
+  .tag.construction { color: var(--tag-construction); background: var(--tag-construction-bg); }
+  .tag.marketing { color: var(--tag-marketing); background: var(--tag-marketing-bg); }
+  article.item p { margin: 0 0 0.6rem; }
+  article.item p:last-of-type { margin-bottom: 0; }
+  .source-link {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.8rem;
+  }
+  .source-link a { color: var(--accent); }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.8rem;
+    margin: 0 0 1.6rem;
+  }
+  .stat {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+  }
+  .stat .num {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+  }
+  .stat .label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  footer.colophon {
+    border-top: 1px solid var(--border);
+    padding-top: 1.2rem;
+    margin-top: 3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  footer.colophon a { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 1.6rem 1rem 3.5rem; }
+    article.item { padding: 1.05rem 1.05rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="kicker">USA-AKP &middot; Weekly Industry Digest</p>
+    <h1 class="title">US Kids Facilities News Digest</h1>
+    <div class="meta-row">
+      <span>Week of August 20, 2026</span>
+      <span>&middot;</span>
+      <span>Denver focus + national roundup</span>
+    </div>
+    <p class="lede">Construction, marketing, and industry developments across US kids parks and family entertainment centers — with a dedicated look at the Denver, Colorado market.</p>
+  </header>
+
+  <nav class="toc">
+    <a href="#denver">Denver-Area Updates</a><span class="sep">/</span>
+    <a href="#national">National Facility Highlights</a><span class="sep">/</span>
+    <a href="#construction">Construction &amp; Expansion</a><span class="sep">/</span>
+    <a href="#marketing">Marketing Trends</a>
+  </nav>
+
+  <div class="stat-row">
+    <div class="stat"><span class="num">$34.6B</span><span class="label">2026 global FEC market size, en route to $47.9B by 2031 (6.75% CAGR)</span></div>
+    <div class="stat"><span class="num">$268M</span><span class="label">LEGO Group's cash deal for 29 Merlin Discovery Centres</span></div>
+    <div class="stat"><span class="num">$300M</span><span class="label">Chuck E. Cheese's cumulative brand-transformation spend since 2021</span></div>
+    <div class="stat"><span class="num">20 acres</span><span class="label">Footprint of Universal Kids Resort, Frisco, TX</span></div>
+  </div>
+
+  <section class="digest-section" id="denver">
+    <h2 class="section-title"><span class="num">01</span> Denver-Area Updates</h2>
+
+    <article class="item">
+      <h3><a href="https://www.franchising.com/amp/news/20260604_launch_family_entertainment_signs_lease_for_colorado_location.html" target="_blank" rel="noopener">Launch Family Entertainment signs lease for its first Colorado location</a></h3>
+      <div class="item-meta"><span class="tag denver">Denver Metro</span><span class="tag construction">Construction</span><span>Reported June 4, 2026</span></div>
+      <p>Launch Family Entertainment will open its first Colorado hub in the Yosemite Park Shopping Center at 9090 E. Phillips Place, Centennial. The 35,350-sq-ft venue will combine bowling, arcade games, mini golf, trampolines, a mixed-reality playground, and a toddler soft-play area, plus the brand's KRAVE restaurant and bar. Construction is slated to begin in August 2026, with the location targeting an early-2027 opening.</p>
+      <div class="source-link">Source: <a href="https://www.franchising.com/amp/news/20260604_launch_family_entertainment_signs_lease_for_colorado_location.html" target="_blank" rel="noopener">franchising.com</a> &middot; also covered by <a href="https://www.amusementsandattractions.com/amusements/news/launch-family-entertainment-signs-lease-for-first-colorado-entertainment-hub" target="_blank" rel="noopener">Amusements &amp; Attractions</a> and <a href="https://hoodline.com/2026/06/massive-indoor-fun-zone-set-to-take-over-centennial-strip-mall/" target="_blank" rel="noopener">Hoodline</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.skyzone.com/sky-zone-expanding-to-highlands-ranch-co/" target="_blank" rel="noopener">Sky Zone's sixth Colorado park advances toward Highlands Ranch</a></h3>
+      <div class="item-meta"><span class="tag denver">Denver Metro</span><span class="tag construction">Construction</span><span>Franchise in development</span></div>
+      <p>Local franchisee couple Nick and Lisa Nettleton continue to move the sixth Colorado Sky Zone toward opening in Highlands Ranch. A precise address and opening date have not yet been announced; recent Denver-market roundups still list it as the next indoor-trampoline addition to watch in the south-metro suburbs.</p>
+      <div class="source-link">Source: <a href="https://www.skyzone.com/sky-zone-expanding-to-highlands-ranch-co/" target="_blank" rel="noopener">skyzone.com</a> &middot; <a href="https://www.9news.com/article/life/style/colorado-guide/indoor-trampoline-park-sky-zone/73-1de210a2-2316-4377-82ac-99db03262924" target="_blank" rel="noopener">9News</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://coloradobiz.com/elitch-gardens-2026-season-denver-opening/" target="_blank" rel="noopener">Elitch Gardens opens its 136th season with an expanded kids' lineup</a></h3>
+      <div class="item-meta"><span class="tag denver">Denver</span><span class="tag marketing">Programming</span><span>Season opened April 18, 2026</span></div>
+      <p>Denver's Elitch Gardens opened for 2026 with 54 rides, slides, and attractions, including 14 kid-sized rides in KiddieLand and full access to the Island Kingdom water park on select days. New festival weekends, drone shows, and dive-in movies round out the season. Kroenke Sports &amp; Entertainment, now sole owner of the surrounding River Mile site, has reaffirmed the park will keep operating at its current downtown location.</p>
+      <div class="source-link">Source: <a href="https://coloradobiz.com/elitch-gardens-2026-season-denver-opening/" target="_blank" rel="noopener">ColoradoBiz</a> &middot; <a href="https://denverite.com/2026/04/16/elitch-gardens-opening-river-mile-development/" target="_blank" rel="noopener">Denverite</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://gazette.com/2026/03/05/jump-around-next-generation-adventure-park-lands-at-former-colorado-springs-trampoline-facility/" target="_blank" rel="noopener">"Jump Around" adventure park lands at a former Colorado Springs trampoline site</a></h3>
+      <div class="item-meta"><span class="tag denver">Front Range</span><span class="tag construction">Reopening</span><span>Reported March 5, 2026</span></div>
+      <p>A next-generation adventure-park concept is taking over a former trampoline facility in Colorado Springs, about an hour south of Denver — a regional signal that operators are recycling shuttered indoor-play real estate rather than leaving it vacant.</p>
+      <div class="source-link">Source: <a href="https://gazette.com/2026/03/05/jump-around-next-generation-adventure-park-lands-at-former-colorado-springs-trampoline-facility/" target="_blank" rel="noopener">The Gazette (Colorado Springs)</a></div>
+    </article>
+  </section>
+
+  <section class="digest-section" id="national">
+    <h2 class="section-title"><span class="num">02</span> National Facility Highlights</h2>
+    <p class="lede" style="margin-top:0;font-size:0.95rem;">Ranked by this week's visibility across press coverage and social buzz.</p>
+
+    <article class="item">
+      <h3><a href="https://corporate.universaldestinationsandexperiences.com/save-the-playdate-universal-kids-resort-universal-destinations-experiences-first-ever-theme-park-designed-for-families-with-young-children-officially-opens-on-july-1-2026/" target="_blank" rel="noopener">Universal Kids Resort (Frisco, TX) — the industry's biggest new opening of 2026</a></h3>
+      <div class="item-meta"><span class="tag national">National</span><span class="tag marketing">High visibility</span><span>Opened July 1, 2026</span></div>
+      <p>Universal Destinations &amp; Experiences' first theme park built specifically for ages 3–8 opened outside Dallas with seven themed lands (Shrek, SpongeBob, Jurassic World, Minions, Trolls, Puss in Boots, Gabby's Dollhouse), 11 restaurants, and a 300-room on-site hotel across 20 acres. Opening-week coverage was heavy but mixed — enthusiastic family reaction alongside a wave of social-media snark over pricing and crowding, making it the most-discussed kids facility launch of the summer.</p>
+      <div class="source-link">Source: <a href="https://corporate.universaldestinationsandexperiences.com/save-the-playdate-universal-kids-resort-universal-destinations-experiences-first-ever-theme-park-designed-for-families-with-young-children-officially-opens-on-july-1-2026/" target="_blank" rel="noopener">Universal Destinations &amp; Experiences</a> &middot; <a href="https://www.dallasnews.com/business/local-companies/article/universal-kids-resort-getting-roasted-social-media-22315314.php" target="_blank" rel="noopener">Dallas Morning News</a> &middot; <a href="https://en.wikipedia.org/wiki/Universal_Kids_Resort" target="_blank" rel="noopener">Wikipedia</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.chuckecheese.com/whats-new-at-chuck-e-cheese/" target="_blank" rel="noopener">Chuck E. Cheese leans into a $300M "aggressive brand transformation"</a></h3>
+      <div class="item-meta"><span class="tag national">National</span><span class="tag marketing">Marketing</span><span>Ongoing, CMO hire reported 2026</span></div>
+      <p>Chuck E. Cheese has poured more than $300 million into remodels since 2021 — new arcade rotations, jumbo video walls, interactive dance floors, Trampoline Zones, and Superhero Playgrounds — while also testing an adult-skewing nostalgia format, "Chuck's Arcade." The brand recently named former Dave &amp; Buster's marketing veteran Sean Gleason as CMO to lead the next phase.</p>
+      <div class="source-link">Source: <a href="https://dallasinnovates.com/chuck-e-cheese-appoints-former-db-marketing-veteran-sean-gleason-as-cmo-amid-aggressive-brand-transformation/" target="_blank" rel="noopener">Dallas Innovates</a> &middot; <a href="https://www.chuckecheese.com/whats-new-at-chuck-e-cheese/" target="_blank" rel="noopener">Chuck E. Cheese Newsroom</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.lego.com/en-us/aboutus/news/2026/february/the-lego-group-completes-acquisition-of-lego-discovery-centres-and-legoland-discovery-centres-from-merlin-entertainments" target="_blank" rel="noopener">LEGO Group completes $268M buyout of 29 Discovery Centres from Merlin</a></h3>
+      <div class="item-meta"><span class="tag national">National</span><span class="tag construction">Industry consolidation</span><span>Completed Feb 27, 2026</span></div>
+      <p>The LEGO Group closed its acquisition of LEGO and LEGOLAND Discovery Centres from Merlin Entertainments for roughly £0.2B ($268M), bringing 29 sites across nine countries — about five million annual visitors and 1,500 employees — under direct LEGO Group control. Merlin keeps operating the larger LEGOLAND destination resorts under long-term license; this deal covers only the smaller mall-based Discovery Centres, several of which are US properties (New Jersey, Michigan, Philadelphia, and others).</p>
+      <div class="source-link">Source: <a href="https://www.lego.com/en-us/aboutus/news/2026/february/the-lego-group-completes-acquisition-of-lego-discovery-centres-and-legoland-discovery-centres-from-merlin-entertainments" target="_blank" rel="noopener">LEGO.com Press Room</a> &middot; <a href="https://blooloop.com/lego-discovery-centre-acquisition/" target="_blank" rel="noopener">blooloop</a> &middot; <a href="https://www.ausleisure.com.au/news/lego-group-acquires-29-discovery-centres-from-merlin-entertainments-in-us268-million-deal" target="_blank" rel="noopener">Australasian Leisure Management</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://meowwolf.com/visit/los-angeles" target="_blank" rel="noopener">Meow Wolf sets a late-2026 Los Angeles opening</a></h3>
+      <div class="item-meta"><span class="tag national">National</span><span class="tag construction">Expansion</span><span>Targeted late 2026</span></div>
+      <p>Meow Wolf's immersive-art format — popular with families and teens alike for its highly Instagrammable rooms — is preparing its sixth permanent exhibition near Culver City, LA, following recent growth into Texas. While marketed as art rather than a traditional kids facility, its family-friendly programming and social-first design make it a recurring reference point for the industry.</p>
+      <div class="source-link">Source: <a href="https://meowwolf.com/visit/los-angeles" target="_blank" rel="noopener">Meow Wolf</a> &middot; <a href="https://en.wikipedia.org/wiki/Meow_Wolf" target="_blank" rel="noopener">Wikipedia</a></div>
+    </article>
+  </section>
+
+  <section class="digest-section" id="construction">
+    <h2 class="section-title"><span class="num">03</span> Construction &amp; Expansion News</h2>
+
+    <article class="item">
+      <h3><a href="https://wrnjradio.com/legoland-discovery-center-new-jerseys-expansion-now-set-for-grand-opening-on-june-28/" target="_blank" rel="noopener">LEGOLAND Discovery Center New Jersey completes a 30% expansion</a></h3>
+      <div class="item-meta"><span class="tag construction">Construction complete</span><span class="tag national">National</span><span>Grand opening June 28, 2026</span></div>
+      <p>Five new zones grew the New Jersey Discovery Center by roughly 30% floor space, described as the largest North American expansion in the LEGOLAND Discovery Center portfolio to date — timed just months after the LEGO Group's acquisition of the Discovery Centre business (see above).</p>
+      <div class="source-link">Source: <a href="https://wrnjradio.com/legoland-discovery-center-new-jerseys-expansion-now-set-for-grand-opening-on-june-28/" target="_blank" rel="noopener">WRNJ Radio</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://sanantonio.culturemap.com/news/travel/great-wolf-lodge-waterpark-texas/" target="_blank" rel="noopener">Great Wolf Lodge opens a new waterpark-resort in San Antonio, TX</a></h3>
+      <div class="item-meta"><span class="tag construction">New opening</span><span class="tag national">National</span><span>Summer 2026</span></div>
+      <p>Great Wolf Lodge's newest indoor waterpark-resort opened in San Antonio this summer. The chain has also broken ground near Anaheim, close to Disneyland, and introduced a Summer 2026 Season Pass to drive repeat visitation across its growing footprint.</p>
+      <div class="source-link">Source: <a href="https://sanantonio.culturemap.com/news/travel/great-wolf-lodge-waterpark-texas/" target="_blank" rel="noopener">CultureMap San Antonio</a> &middot; <a href="https://www.foxnews.com/travel/great-wolf-lodge-opens-in-new-england-begins-construction-on-new-site-near-disneyland" target="_blank" rel="noopener">Fox News</a></div>
+    </article>
+
+    <article class="item">
+      <h3><a href="https://www.franchising.com/amp/news/20260604_launch_family_entertainment_signs_lease_for_colorado_location.html" target="_blank" rel="noopener">Launch Family Entertainment breaks ground in Centennial, CO</a></h3>
+      <div class="item-meta"><span class="tag construction">Groundbreaking</span><span class="tag denver">Denver Metro</span><span>Construction starts Aug 2026</span></div>
+      <p>See the full Denver-area writeup above — construction on the 35,350-sq-ft entertainment hub is set to begin this month, targeting an early-2027 opening.</p>
+    </article>
+  </section>
+
+  <section class="digest-section" id="marketing">
+    <h2 class="section-title"><span class="num">04</span> Marketing Trends</h2>
+
+    <article class="item">
+      <h3>Nostalgia-driven and "grown-up" spinoffs are the season's marketing play</h3>
+      <div class="item-meta"><span class="tag marketing">Trend</span><span class="tag national">National</span></div>
+      <p>Chuck E. Cheese's "Chuck's Arcade" concept — targeting millennial parents' own nostalgia rather than only their kids — and Great Wolf Lodge's season-pass push both point to operators broadening beyond single-visit family trips toward repeat, cross-generational engagement and loyalty products.</p>
+    </article>
+
+    <article class="item">
+      <h3>AR/VR and mixed-reality attractions are now a standard build-out line item</h3>
+      <div class="item-meta"><span class="tag marketing">Trend</span><span class="tag national">National</span></div>
+      <p>Location-based VR entertainment is projected to grow at a 7.8% CAGR from 2026–2031, and new builds — including Launch Family Entertainment's Centennial, CO location — are opening with mixed-reality playgrounds as a headline attraction rather than an add-on, alongside deeper food-and-beverage integration to extend dwell time.</p>
+      <div class="source-link">Source: Mordor Intelligence, <a href="https://www.mordorintelligence.com/industry-reports/global-family-entertainment-center-market" target="_blank" rel="noopener">Family Entertainment Center Market Report</a></div>
+    </article>
+
+    <article class="item">
+      <h3>Social-media reaction is now part of the opening-week playbook — for better or worse</h3>
+      <div class="item-meta"><span class="tag marketing">Trend</span><span class="tag national">National</span></div>
+      <p>Universal Kids Resort's launch showed both sides: it dominated family-travel content while also drawing viral criticism over pricing and crowds. Meow Wolf's highly photographable rooms remain a case study in the opposite pattern — organic, largely positive social spread driving ticket sales without a traditional ad push.</p>
+    </article>
+
+    <article class="item">
+      <h3>Industry outlook: consolidation and category growth continue in parallel</h3>
+      <div class="item-meta"><span class="tag marketing">Market data</span><span class="tag national">National</span></div>
+      <p>The global family entertainment center market is estimated at $34.57B in 2026, on pace for $47.93B by 2031 (6.75% CAGR), even as the LEGO Group's Merlin acquisition signals brand owners taking direct control of experiential retail rather than licensing it out. IAAPA's 2026 FEC Summit programming is centered on exactly this tension — growth opportunity alongside operational and ownership consolidation.</p>
+      <div class="source-link">Source: <a href="https://www.mordorintelligence.com/industry-reports/global-family-entertainment-center-market" target="_blank" rel="noopener">Mordor Intelligence</a> &middot; <a href="https://iaapa.org/event/iaapa-summit-entertainment-centers-2026" target="_blank" rel="noopener">IAAPA</a></div>
+    </article>
+  </section>
+
+  <footer class="colophon">
+    <p>Compiled from public web sources on August 20, 2026. This digest is an automated weekly research summary — verify details with the linked primary sources before acting on them.</p>
+    <p><a href="index.html">&larr; Back to digest archive</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
