@@ -1,0 +1,315 @@
+<title>Arte Park 재조닝 · 동선 검토</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<style>
+:root{
+  --c1:#0065B2;--c3:#E41E2E;--c4:#00913B;--c5:#FF8000;--c8:#00A7B5;
+  --ok:#00B050;--ok-bg:#E6F1ED;--mid:#F59E0B;--mid-bg:#FEF3C7;--no:#FF0000;--no-bg:#FCEBEB;
+  --paper:#FFFFFF;--paper2:#F5F5F5;--card:#FFFFFF;--ink:#111;--ink2:#353535;--ink3:#888;
+  --rule:#D6D6D6;--rule2:#E8E8E8;--pine:#0065B2;--pine-soft:#E6F1FB;--accent:#FF8000;
+  --cor:#F3E7D3;--corln:#C99B5E;--corink:#A5723A;
+  --sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,"Noto Sans KR",-apple-system,system-ui,sans-serif;
+  --disp:var(--sans);--mono:var(--sans);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.shell{display:flex;align-items:flex-start}
+.side{position:sticky;top:0;height:100vh;width:250px;flex:none;border-right:1px solid var(--rule);background:var(--paper2);padding:24px 20px;display:flex;flex-direction:column;gap:14px}
+.brand{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.025em;line-height:1.1}
+.brand small{display:block;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ink3);letter-spacing:.06em;margin-top:8px;line-height:1.6}
+nav{display:flex;flex-direction:column;gap:1px}
+nav a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:var(--ink2);font-size:13px;padding:6px 9px;border-radius:6px;border-left:2px solid transparent}
+nav a span{font-family:var(--mono);font-size:10px;color:var(--ink3);flex:none}
+nav a:hover{background:#EFEFEF;color:var(--ink)}
+nav a.on{background:var(--pine-soft);color:var(--pine);border-left-color:var(--pine);font-weight:700}
+nav a.on span{color:var(--pine)}
+.side footer{margin-top:auto;font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--rule2);padding-top:12px}
+main{flex:1;min-width:0;padding:0 46px 120px;max-width:1000px}
+section{padding-top:52px;scroll-margin-top:12px}
+h2{font-family:var(--disp);font-size:25px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin:0 0 8px;font-weight:700}
+.lede{color:var(--ink2);max-width:74ch;margin:0 0 22px;font-size:14.5px}
+h3{font-size:15px;font-weight:700;margin:30px 0 12px;letter-spacing:-.01em;padding-bottom:8px;border-bottom:1px solid var(--rule2)}
+h3 i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--pine);margin-right:9px;font-weight:700}
+p{margin:0 0 12px}
+.hero{padding:48px 0 8px;border-top:4px solid var(--accent);border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--disp);font-size:clamp(20px,2.3vw,29px);line-height:1.14;letter-spacing:-.02em;font-weight:800;margin:0 0 10px}
+.hero p{color:var(--ink2);max-width:78ch}
+.keyrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 0}
+.key{background:var(--paper2);padding:14px 16px}
+.key b{display:block;font-family:var(--disp);font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.key b em{font-style:normal;font-size:12px;font-weight:700;color:var(--ink2);margin-left:3px}
+.key span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;color:var(--ink3);text-transform:uppercase;margin-top:7px;line-height:1.4}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.6}
+td.num,td.rnum{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}td.rnum{text-align:right}
+tr:last-child td{border-bottom:none}tbody tr.total td{background:#E6F1FB;font-weight:700;border-top:1px solid var(--rule)}
+td.item{font-weight:600}
+.tablewrap{overflow-x:auto}
+.st{display:inline-block;font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:#0A7A3A;border-color:#B9DEC7;background:#E6F1ED}.st-mid{color:#B45309;border-color:#F5DFA0;background:#FEF3C7}
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:13px 16px;font-size:13px;color:#10466E;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
+.warn{border-left:2px solid var(--mid);background:var(--mid-bg);padding:13px 16px;font-size:13px;color:#7C4A03;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
+.note .lab,.warn .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.note .lab{color:var(--pine)}.warn .lab{color:#B45309}
+.verdict{border:1px solid var(--rule);border-left:3px solid var(--c4);background:var(--paper2);border-radius:3px;padding:16px 18px;margin:0 0 20px}
+.verdict b{display:block;font-family:var(--disp);font-size:16px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.verdict span{color:var(--ink2);font-size:13.5px;line-height:1.75}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--card);border:1px solid var(--rule2);border-radius:3px;padding:16px 18px}
+.card h4{margin:0 0 8px;font-size:13.5px;font-weight:700}.card p{font-size:13px;color:var(--ink2);margin:0}
+ul.tight{margin:6px 0 12px;padding-left:20px}ul.tight li{margin-bottom:5px;font-size:13.5px}
+figure{margin:16px 0}
+.fwrap{background:var(--card);border:1px solid var(--rule2);border-radius:3px;padding:16px 12px 10px;overflow-x:auto}
+.fwrap svg{display:block;width:100%;height:auto;min-width:720px}
+figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:11px;font-size:11.5px;color:var(--ink3)}
+.legend i{width:14px;height:10px;display:inline-block;margin-right:5px;vertical-align:middle;border:1px solid var(--rule)}
+/* plan classes */
+.bld{fill:var(--paper);stroke:var(--ink);stroke-width:2.4}
+.rm{fill:#F5F5F5;stroke:#C6B08A;stroke-width:1}
+.rm.play{fill:var(--pine-soft);stroke:#9DBBD8}
+.rm.svc{fill:#F0F0F0;stroke:#CCC7BB;stroke-width:1;stroke-dasharray:3 2}
+.rt{fill:var(--ink2);font-family:var(--sans);font-size:8px;font-weight:600}
+.rt.b{fill:var(--ink);font-size:9px;font-weight:700}
+.rs{fill:var(--ink3);font-family:var(--sans);font-size:7px}
+.cor{fill:var(--cor);stroke:var(--corln);stroke-width:.8}
+.cw{fill:var(--corink);font-family:var(--mono);font-size:7px;font-weight:700;text-anchor:middle}
+.exs{fill:var(--c4);stroke:#fff;stroke-width:.7}
+.ext{fill:#fff;font-family:var(--mono);font-size:6px;font-weight:700;text-anchor:middle}
+.egl{fill:none;stroke:#0A7A3A;stroke-width:2;stroke-dasharray:4 3}
+.egc{fill:#0A7A3A}.egt{fill:#fff;font-family:var(--mono);font-size:8px;font-weight:700;text-anchor:middle}
+.foot{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--ink3);line-height:1.7}
+@media (max-width:1000px){.shell{display:block}.side{position:sticky;top:0;height:auto;width:auto;border-right:none;border-bottom:1px solid var(--rule);flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:12px 18px;z-index:20}.side footer,.brand small,nav a span{display:none}nav{flex-direction:row;gap:2px}nav a{white-space:nowrap;border-left:none}nav a.on{border-left:none;border-bottom:2px solid var(--pine)}main{padding:0 20px 90px}.keyrow{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}
+</style>
+<div class="shell">
+<aside class="side">
+  <div class="brand">재조닝 · 동선 검토
+    <small>Arte Park · SouthGlenn<br>복도 2,200 mm 반영<br>2026.08.21</small>
+  </div>
+  <nav id="toc">
+    <a href="#s0"><span>00</span>개요</a>
+    <a href="#s1"><span>01</span>재조닝 평면</a>
+    <a href="#s2"><span>02</span>일반 동선</a>
+    <a href="#s3"><span>03</span>피난 동선</a>
+    <a href="#s4"><span>04</span>규제 적합성 검토</a>
+    <a href="#s5"><span>05</span>남은 확인 사항</a>
+  </nav>
+  <footer>공간 계획 가이드의<br>B2 복도 폭 결론을<br>평면에 적용한 검토안<br>d'strict · Arte Kids Park</footer>
+</aside>
+<main>
+
+<section id="s0" class="hero">
+  <p class="eyebrow">Re-zoning &amp; Circulation Study</p>
+  <h1>복도 2,200 mm를 넣어 다시 조닝하고,<br>일반 동선·피난 동선과 규제 적합성을 검토했습니다.</h1>
+  <p>현재 공간 현황을 기준으로, 기존 실 배치의 <b>틈(gap)을 정식 복도로 확장·정형화</b>했습니다. 메인 복도 2,200 mm·보조 복도 1,829 mm로 구성한 <b>순환 루프(loop)</b>를 넣고, 일반 방문 동선과 6개 비상구로의 피난 동선을 그린 뒤, 미국 건축법(2021 IBC)의 피난 규정에 걸리는 곳이 없는지 확인했습니다. 결과는 <b>주요 6개 항목 모두 적합</b>합니다.</p>
+  <div class="keyrow">
+    <div class="key"><b>2,200<em>mm</em></b><span>메인 복도 · 루프형</span></div>
+    <div class="key"><b>28<em>m</em></b><span>최대 피난거리 · 한도 76.2 m</span></div>
+    <div class="key"><b>6<em>개</em></b><span>비상구 · 필요 3개</span></div>
+    <div class="key"><b>6 / 6</b><span>규제 검토 항목 적합</span></div>
+  </div>
+</section>
+
+<section id="s1">
+  <p class="eyebrow">01</p>
+  <h2>재조닝 평면</h2>
+  <p class="lede">현재 실 배치를 유지하되, 실 사이의 틈을 <b>2,200 mm 메인 복도</b>(중앙 세로·동쪽 세로·좌측 세로·하부 가로)와 <b>1,829 mm 보조 복도</b>(북측 가로)로 확장해 <b>순환 루프</b>를 만들었습니다. 루프에서 각 비상구로 짧은 지선(spur)이 뻗어 6개 출구를 모두 연결합니다.</p>
+  <figure id="planfig">
+    <div class="fwrap">
+      <svg viewBox="0 0 700 600" role="img" aria-label="Arte Park 재조닝 평면. 2,200 mm 메인 복도와 1,829 mm 보조 복도로 구성한 순환 루프, 6개 비상구, 대표 피난 동선과 거리">
+        <rect class="bld" x="40" y="38" width="620" height="524"/>
+        <rect class="rm play" x="48" y="46" width="190" height="300"/>
+        <text class="rt" x="52" y="59">ADVENTURE ZONE</text>
+        <text class="rs" x="52" y="69">19.0×29.3 · 556 m²</text>
+        <rect class="rm play" x="48" y="356" width="86" height="60"/>
+        <text class="rt" x="52" y="369">TRAMP.</text>
+        <rect class="rm play" x="140" y="356" width="96" height="58"/>
+        <text class="rt" x="144" y="369">FOREST F.</text>
+        <rect class="rm play" x="48" y="420" width="86" height="70"/>
+        <text class="rt" x="52" y="433">STAR JUMP</text>
+        <rect class="rm play" x="140" y="420" width="96" height="70"/>
+        <text class="rt" x="144" y="433">MAZE RUN</text>
+        <rect class="rm svc" x="264" y="136" width="66" height="36"/>
+        <text class="rt" x="268" y="149">SERVER</text>
+        <rect class="rm play" x="264" y="178" width="66" height="58"/>
+        <text class="rt" x="268" y="191">OASIS</text>
+        <rect class="rm play" x="264" y="300" width="66" height="58"/>
+        <text class="rt" x="268" y="313">STEPPING</text>
+        <rect class="rm" x="360" y="150" width="168" height="148"/>
+        <text class="rt b" x="364" y="163">F&B</text>
+        <text class="rs" x="364" y="173">17.0×16.4</text>
+        <rect class="rm play" x="360" y="330" width="22" height="64"/>
+        <text class="rt" x="364" y="343">RID</text>
+        <rect class="rm" x="384" y="330" width="70" height="64"/>
+        <text class="rt" x="388" y="343">PARTY 4</text>
+        <rect class="rm" x="458" y="330" width="72" height="64"/>
+        <text class="rt" x="462" y="343">PARTY 3</text>
+        <rect class="rm" x="360" y="420" width="80" height="70"/>
+        <text class="rt" x="364" y="433">PARTY 2</text>
+        <rect class="rm" x="444" y="420" width="86" height="70"/>
+        <text class="rt" x="448" y="433">PARTY 1</text>
+        <rect class="rm play" x="262" y="46" width="80" height="74"/>
+        <text class="rt" x="266" y="59">LIVE SK.</text>
+        <rect class="rm play" x="346" y="46" width="70" height="74"/>
+        <text class="rt" x="350" y="59">BLOCK</text>
+        <rect class="rm play" x="420" y="46" width="110" height="74"/>
+        <text class="rt" x="424" y="59">COLOR GR.</text>
+        <rect class="rm play" x="556" y="46" width="100" height="86"/>
+        <text class="rt" x="560" y="59">SAND BEACH</text>
+        <rect class="rm svc" x="556" y="158" width="100" height="60"/>
+        <text class="rt" x="560" y="171">SERVER</text>
+        <rect class="rm" x="556" y="326" width="100" height="78"/>
+        <text class="rt" x="560" y="339">KITCHEN</text>
+        <rect class="rm" x="584" y="410" width="72" height="86"/>
+        <text class="rt" x="588" y="423">REST</text>
+        <text class="rs" x="588" y="433">확장</text>
+        <rect class="rm svc" x="556" y="410" width="26" height="86"/>
+        <rect class="rm svc" x="48" y="516" width="40" height="40"/>
+        <text class="rt" x="52" y="529">E.P.S</text>
+        <rect class="rm" x="96" y="516" width="118" height="40"/>
+        <text class="rt" x="100" y="529">LOCKERS</text>
+        <rect class="rm" x="326" y="516" width="140" height="44"/>
+        <text class="rt" x="330" y="529">LOBBY</text>
+        <rect class="rm" x="474" y="516" width="116" height="44"/>
+        <text class="rt" x="478" y="529">OPERATION</text>
+        <rect class="rm" x="600" y="506" width="56" height="50"/>
+        <text class="rt" x="604" y="519">NURS</text>
+        <rect class="cor" x="238" y="100" width="24" height="402"/>
+        <rect class="cor" x="334" y="130" width="24" height="372"/>
+        <rect class="cor" x="530" y="130" width="24" height="372"/>
+        <rect class="cor" x="238" y="120" width="380" height="20"/>
+        <rect class="cor" x="110" y="490" width="522" height="24"/>
+        <rect class="cor" x="288" y="502" width="24" height="56"/>
+        <rect class="cor" x="594" y="50" width="24" height="82"/>
+        <rect class="cor" x="542" y="288" width="114" height="24"/>
+        <rect class="cor" x="588" y="502" width="24" height="56"/>
+        <text class="cw" transform="rotate(-90 250 320)" x="250" y="320">2,200</text>
+        <text class="cw" transform="rotate(-90 346 470)" x="346" y="470">2,200</text>
+        <text class="cw" transform="rotate(-90 542 240)" x="542" y="240">2,200</text>
+        <text class="cw" x="430" y="127">1,829</text>
+        <text class="cw" x="180" y="499">2,200</text>
+        <defs><marker id="ah" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#0A7A3A"/></marker></defs>
+        <line class="egl" x1="150" y1="300" x2="110" y2="60" marker-end="url(#ah)"/>
+        <rect class="egc" x="135" y="242" width="30" height="13" rx="2"/><text class="egt" x="150" y="251.5">28 m</text>
+        <line class="egl" x1="600" y1="120" x2="600" y2="54" marker-end="url(#ah)"/>
+        <rect class="egc" x="605" y="87" width="30" height="13" rx="2"/><text class="egt" x="620" y="96.5">12 m</text>
+        <line class="egl" x1="95" y1="460" x2="272" y2="545" marker-end="url(#ah)"/>
+        <rect class="egc" x="160" y="522" width="30" height="13" rx="2"/><text class="egt" x="175" y="531.5">16 m</text>
+        <line class="egl" x1="444" y1="230" x2="640" y2="300" marker-end="url(#ah)"/>
+        <rect class="egc" x="530" y="232" width="30" height="13" rx="2"/><text class="egt" x="545" y="241.5">26 m</text>
+        <line class="egl" x1="487" y1="455" x2="595" y2="545" marker-end="url(#ah)"/>
+        <rect class="egc" x="540" y="497" width="30" height="13" rx="2"/><text class="egt" x="555" y="506.5">20 m</text>
+        <line class="egl" x1="188" y1="455" x2="318" y2="548" marker-end="url(#ah)"/>
+        <rect class="egc" x="230" y="522" width="30" height="13" rx="2"/><text class="egt" x="245" y="531.5">22 m</text>
+        <rect class="exs" x="83" y="33" width="26" height="11" rx="1.5"/><text class="ext" x="96" y="40.5">EXIT</text>
+        <rect class="exs" x="259" y="551" width="26" height="11" rx="1.5"/><text class="ext" x="272" y="558.5">EXIT</text>
+        <rect class="exs" x="303" y="551" width="26" height="11" rx="1.5"/><text class="ext" x="316" y="558.5">EXIT</text>
+        <rect class="exs" x="587" y="33" width="26" height="11" rx="1.5"/><text class="ext" x="600" y="40.5">EXIT</text>
+        <rect class="exs" x="635" y="295" width="26" height="11" rx="1.5"/><text class="ext" x="648" y="302.5">EXIT</text>
+        <rect class="exs" x="587" y="551" width="26" height="11" rx="1.5"/><text class="ext" x="600" y="558.5">EXIT</text>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--cor);border-color:var(--corln)"></i>복도 (일반 동선 · 2,200 / 1,829 mm)</span>
+      <span><i style="background:var(--pine-soft);border-color:#9DBBD8"></i>놀이·활동 실</span>
+      <span><i style="background:#F5F5F5;border-color:#C6B08A"></i>실·지원 공간</span>
+      <span><i style="background:var(--c4);border:none"></i>비상구 (EXIT)</span>
+      <span><i style="background:none;border-bottom:2px dashed #0A7A3A;height:0"></i>피난 동선 · 거리(m)</span>
+    </div>
+    <figcaption>복도(주황 밴드)가 곧 <b>일반 동선 네트워크</b>입니다. 초록 점선은 각 구역에서 <b>가장 가까운 비상구까지의 피난 동선</b>과 거리입니다. 실 크기는 복도를 넣기 위해 현재 도면에서 소폭 조정된 개념값이며, 정확한 배치는 실시설계에서 확정합니다.</figcaption>
+  </figure>
+</section>
+
+<section id="s2">
+  <p class="eyebrow">02</p>
+  <h2>일반 동선 — 순환 루프</h2>
+  <p class="lede">방문객은 <b>정문(비상구 2·3) → 로비 → 중앙 진입 복도</b>로 들어와 루프를 따라 각 존을 순회합니다. 막다른 곳 없이 <b>한 바퀴 돌아 제자리로</b> 오는 구조라 정체가 분산되고, 유모차 양방향 통행(2,200 mm)이 확보됩니다.</p>
+  <div class="grid2">
+    <div class="card"><h4>메인 순환 루프 (2,200 mm)</h4><p>중앙 세로축(OASIS·STEPPING ↔ 파티룸) · 동쪽 세로축(파티룸 ↔ 주방·화장실) · 좌측 세로축(ADVENTURE ↔ 중앙) · 하부 가로축(전 폭)을 잇는 사각 루프. 유모차 2대 교행.</p></div>
+    <div class="card"><h4>보조·지선 (1,829 mm)</h4><p>북측 가로축(상단 놀이존 ↔ F&amp;B) 및 각 비상구로 가는 짧은 지선. 파티룸·화장실 접근 복도도 1,829 mm.</p></div>
+  </div>
+  <div class="note"><span class="lab">면적 영향</span>메인 복도 총 연장 약 120 m × 2,200 mm ≈ <b>264 m²</b>. 현재 통로·개방부 잔여(약 848 m²) 안에서 흡수되므로, <b>놀이·활동 실 면적을 줄이지 않고</b> 복도를 확보할 수 있습니다. 좁았던 파티룸↔화장실(1,694 mm)·파티룸↔주방(1,794 mm) 두 구간만 실을 소폭 물려 2,200 mm를 확보했습니다.</div>
+</section>
+
+<section id="s3">
+  <p class="eyebrow">03</p>
+  <h2>피난 동선 — 6개 비상구 분산</h2>
+  <p class="lede">각 구역에서 <b>가장 가까운 비상구</b>까지의 대표 피난거리입니다. 루프 구조 덕분에 어느 지점에서든 <b>두 방향</b>으로 나뉘어 대피할 수 있고, 최대 거리도 <b>28 m</b>로 한도(76.2 m)의 절반에 못 미칩니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>출발 구역</th><th>도착 비상구</th><th class="rnum">피난거리</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">ADVENTURE ZONE 최심부</td><td>비상구 1 (북서)</td><td class="rnum">약 28 m</td><td><span class="st st-ok">여유</span></td></tr>
+      <tr><td class="item">SAND BEACH</td><td>비상구 4 (북동·하역)</td><td class="rnum">약 12 m</td><td><span class="st st-ok">여유</span></td></tr>
+      <tr><td class="item">STAR JUMPING</td><td>비상구 2·3 (정문)</td><td class="rnum">약 16 m</td><td><span class="st st-ok">여유</span></td></tr>
+      <tr><td class="item">F&amp;B 중심</td><td>비상구 6 (동)</td><td class="rnum">약 26 m</td><td><span class="st st-ok">여유</span></td></tr>
+      <tr><td class="item">PARTY ROOM 1</td><td>비상구 5 (남동)</td><td class="rnum">약 20 m</td><td><span class="st st-ok">여유</span></td></tr>
+      <tr><td class="item">MAZE RUNNER</td><td>비상구 3 (정문)</td><td class="rnum">약 22 m</td><td><span class="st st-ok">여유</span></td></tr>
+      <tr class="total"><td class="item">최대 피난거리</td><td></td><td class="rnum">28 m</td><td><span class="st st-ok">한도 76.2 m</span></td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:12.5px;color:var(--ink3)">거리는 복도를 따라간 개략값(축척 역산)이며, ±2 m 수준. 실시설계에서 실측 확정.</p>
+</section>
+
+<section id="s4">
+  <p class="eyebrow">04</p>
+  <h2>규제 적합성 검토</h2>
+  <p class="lede">2021 IBC 제10장(피난) 주요 항목을 이 재조닝안으로 검토했습니다. <b>6개 항목 모두 적합</b>하며, 1개 항목(공통 피난경로)은 개별 실 확정 시 재확인이 필요합니다.</p>
+  <div class="verdict">
+    <b>결론: 이 복도 구성으로 피난 규정에 걸리는 곳은 없습니다.</b>
+    <span>수용 인원 약 840명 기준, 6개 비상구가 분산돼 있어 피난거리·출구 수·이격거리·용량 모두 여유가 큽니다. 다만 놀이구조물이 실제로 배치되면 <b>공통 피난경로(22.9 m)</b>는 구조물 내부 기준으로 다시 확인해야 합니다.</span>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>검토 항목</th><th>기준 (2021 IBC)</th><th>이 재조닝안</th><th>판정</th></tr></thead>
+    <tbody>
+      <tr><td class="item">복도 폭</td><td>최소 1,118 mm · 인원 계산폭</td><td>메인 2,200 · 보조 1,829 mm</td><td><span class="st st-ok">적합</span></td></tr>
+      <tr><td class="item">피난거리 (travel distance)</td><td>≤ 76.2 m (250 ft, 스프링클러)</td><td>최대 약 28 m</td><td><span class="st st-ok">적합</span></td></tr>
+      <tr><td class="item">출구 수</td><td>501–1,000명 → 3개 이상</td><td>6개</td><td><span class="st st-ok">적합</span></td></tr>
+      <tr><td class="item">출구 이격거리</td><td>대각선의 1/3 이상 = 24.3 m</td><td>비상구 1↔5 = 약 67.5 m</td><td><span class="st st-ok">적합</span></td></tr>
+      <tr><td class="item">막다른 복도 (dead-end)</td><td>≤ 6.1 m (20 ft, Group A)</td><td>지선은 모두 비상구로 연결 · 막다른 구간 없음</td><td><span class="st st-ok">적합</span></td></tr>
+      <tr><td class="item">복도 용량</td><td>2,200 mm = 433명 수용</td><td>840명을 6개 출구·복수 복도로 분산</td><td><span class="st st-ok">적합</span></td></tr>
+      <tr><td class="item">공통 피난경로 (common path)</td><td>≤ 22.9 m (75 ft)</td><td>루프로 두 방향 확보 · <b>놀이구조물 내부는 별도 확인</b></td><td><span class="st st-mid">조건부</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="lab">유일한 조건부 항목 — 공통 피난경로</span>루프 복도 자체는 어느 지점에서든 두 방향 대피가 되므로 문제없습니다. 다만 <b>다층 놀이구조물 내부</b>는 "빠져나오는 길이 하나"인 구간이 생길 수 있어, 구조물마다 <b>이격된 탈출구 2개소</b>를 두고 내부 최심부 → 개방 바닥까지 22.9 m 이내로 설계해야 합니다(공간 계획 가이드 C2 참조). 콘텐츠·구조물 확정 후 재확인 항목입니다.</div>
+</section>
+
+<section id="s5">
+  <p class="eyebrow">05</p>
+  <h2>남은 확인 사항</h2>
+  <ul class="tight">
+    <li><b>ADVENTURE ZONE 2개 출구</b> — 556 m² 단일 실은 수용 120명 내외로 출구 2개 필요. 비상구 1 + 루프 접근 2곳으로 충족하되, 두 출구가 <b>실 대각선의 1/3(약 12 m) 이상 이격</b>돼야 함.</li>
+    <li><b>미기입 치수 확정</b> — KITCHEN·RESTROOM·NURSING·OPERATION·SERVER 치수가 확정되면 복도 폭·피난거리 재검증.</li>
+    <li><b>수용 인원 계수</b> — 관청이 놀이공간 계수를 1.39(집회 저밀도)로 적용하면 인원 1,840명 → 복도 용량·출구 폭 재계산 필요(공간 계획 가이드 B1).</li>
+    <li><b>스프링클러</b> — 피난거리 76.2 m·막다른 복도 6.1 m 기준은 <b>스프링클러 유효</b> 전제. 기존 시스템 재설계 시 유지 확인.</li>
+    <li><b>정식 복도(corridor) 인정</b> — 개방형 홀의 통로를 corridor로 인정받으면 순면적 공제로 수용 인원이 더 낮아짐(관청 사전 확인).</li>
+  </ul>
+  <div class="note"><span class="lab">이 문서의 위치</span>이 재조닝안은 <b>공간 계획 가이드</b>의 B2(복도 폭 2,200 mm 결론)를 실제 평면에 적용해 <b>동선·피난을 검증</b>한 것입니다. 복도 폭·화장실·소방·놀이기구 규정의 상세 근거는 공간 계획 가이드를 참조하십시오.</div>
+</section>
+
+<div class="foot">
+  근거 — 2021 IBC §1005(용량) · §1006(공통 피난경로·출구 수) · §1017(피난거리) · §1018·§1020(복도) · §1004.3(수용 인원 게시) / 스프링클러 전제(NFPA 13) / CAD 실측(축척 역산 ±2%)<br>
+  제한 — 실 크기·복도 위치는 복도 2,200 mm 확보를 위한 개념 배치이며 확정 도면 아님. 피난거리는 개략값. 미기입 치수 6개 항목 확정 및 놀이구조물 배치 후 재검증 필요.<br>
+  d'strict · Arte Kids Park USA · 2026.08.21
+</div>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#toc a[href^="#"]'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var ids=Object.keys(map);if(!('IntersectionObserver' in window))return;var vis={};
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){vis[e.target.id]=e.isIntersecting?e.intersectionRatio:0;});
+    var best=null,bv=0;ids.forEach(function(id){if((vis[id]||0)>bv){bv=vis[id];best=id;}});
+    if(!best){var t=null;ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=140)t=id;});best=t;}
+    links.forEach(function(a){a.classList.remove('on');});if(best&&map[best])map[best].classList.add('on');
+  },{rootMargin:'-8% 0px -70% 0px',threshold:[0,.25,.5,1]});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+})();
+</script>
