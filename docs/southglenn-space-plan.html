@@ -145,6 +145,12 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
 .cp-s{fill:var(--ink2);font-family:var(--sans);font-size:9px}
 .cp-c{fill:var(--no);font-family:var(--mono);font-size:9px;font-weight:700}
 .cp-g{fill:var(--c4);font-family:var(--mono);font-size:9px;font-weight:700}
+.ex-sign{fill:var(--c4);stroke:#fff;stroke-width:.7}
+.ex-t{fill:#fff;font-family:var(--mono);font-size:5px;font-weight:700;text-anchor:middle}
+.dir-sign{fill:none;stroke:var(--c4);stroke-width:1.4}
+.em-dot{fill:#fff;stroke:var(--c3);stroke-width:1.4}
+.em-core{fill:var(--c3)}
+.egpath{fill:none;stroke:var(--c4);stroke-width:2.5;stroke-linecap:round;opacity:.35;stroke-dasharray:1 5}
 .gterms > div{border:1px solid var(--rule2);border-radius:3px;padding:14px 16px;margin-bottom:9px;background:var(--card);scroll-margin-top:12px}
 .gterms > div:target{background:var(--pine-soft);border-color:#B9D4EC}
 .gterms dt{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
@@ -184,6 +190,7 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
     <a href="#c1"><span>C1</span>존별 후보 규정 판정</a>
     <a href="#c2"><span>C2</span>구조물 면적 · 탈출구</a>
     <a href="#c3"><span>C3</span>소방 · 스프링클러</a>
+    <a href="#c4"><span>C4</span>비상 유도등 · 비상조명</a>
     <a class="grp">PART D · 실행</a>
     <a href="#d1"><span>D1</span>지금 해야 할 일</a>
     <a href="#d2"><span>D2</span>용어 사전</a>
@@ -896,6 +903,84 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
   <div class="note"><span class="lab">라이저 접근성</span>라이저와 제어밸브는 남서쪽 모서리에 있고, 현 도면에서 <b>E.P.S · LOCKERS 구역</b>과 겹칩니다. 소방 제어밸브는 상시 접근이 가능해야 하므로 락커나 수납으로 가리면 지적 대상입니다. <b>라이저 앞 점검 통로(1,118 mm)를 도면에 명시</b>하고 락커 배치 제외 구역으로 지정할 것.</div>
 </section>
 
+<section id="c4">
+  <h2>비상 유도등 · 비상조명</h2>
+  <p class="lede">두 가지는 <b>다른 설비</b>입니다. <b>유도등(Exit Sign)</b>은 "출구가 이쪽"이라고 알려주는 <b>초록 EXIT 표지</b>이고, <b>비상조명(Emergency Lighting)</b>은 정전 시 피난 경로 바닥을 <b>밝혀 주는 조명</b>입니다. 둘 다 <b>정전 시 90분 이상</b> 자체 배터리로 작동해야 합니다.</p>
+
+  <div class="verdict">
+    <b>기존 Best Buy 도면에 이미 설치돼 있습니다 — 배치만 새 평면에 맞게 재구성하면 됩니다.</b>
+    <span>기존 전기도면(E-1.0 / E-6)에서 확인: <b>유도등 = Type "X-1"</b>(출구 상부·매장부 4.9 m 높이) · <b>비상조명 = Type "X-4"</b>(출구 상부) + <b>비상배터리등 Type "X-2"</b>. 전관이 90분 배터리 백업으로 설계돼 있습니다.</span>
+  </div>
+
+  <h3><i>C4</i>설치 기준</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>구분</th><th>기준</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td class="item">유도등 설치 위치</td><td><b>모든 출구·비상구 문 위</b> · 출구로 가는 경로에서 <b>출구가 안 보이는 모든 방향 전환점</b></td><td class="mono">IBC §1013.1</td></tr>
+      <tr class="total"><td class="item">유도등 간격</td><td>어느 지점에서든 가장 가까운 유도등까지 <b>30.5 m(100 ft) 이내</b> · 항상 <b>1개 이상 보여야 함</b></td><td class="mono">§1013.1</td></tr>
+      <tr><td class="item">유도등 표시</td><td>글자 높이 <b>152 mm(6″) 이상</b> · 내부/외부 조명식 · 정전 시 자동 점등</td><td class="mono">§1013.3·5·6</td></tr>
+      <tr><td class="item">비상조명 대상</td><td>집회(A) 용도는 <b>재실 시 상시</b> 피난 경로 조명 의무</td><td class="mono">§1008.2</td></tr>
+      <tr><td class="item">평상시 밝기</td><td>피난 경로 바닥에서 <b>1 fc(11 lux) 이상</b></td><td class="mono">§1008.2.1</td></tr>
+      <tr class="total"><td class="item">정전 시 밝기</td><td>초기 <b>평균 1 fc · 최저 0.1 fc</b> → 90분 후 <b>평균 0.6 fc · 최저 0.06 fc</b>까지 허용</td><td class="mono">§1008.3</td></tr>
+      <tr><td class="item">전원 지속</td><td>유도등·비상조명 모두 <b>90분 이상</b> 비상전원(배터리/발전기)</td><td class="mono">§1008.3 · §1013.6.3</td></tr>
+      <tr><td class="item">부속 규정</td><td>바닥면 유도선·저위치 유도등은 <b>암전 연출 존(§411)</b>에서 추가 요구 — C1 참조</td><td class="mono">§411</td></tr>
+    </tbody>
+  </table></div>
+
+  <figure id="egfig">
+    <div class="fwrap">
+      <svg viewBox="0 0 700 600" role="img" aria-label="Arte Park 비상 유도등·비상조명 배치 개념도. 6개 비상구 상부 유도등, 방향 전환점 방향 유도등, 피난 경로 비상조명">
+        <rect class="shellline" x="40" y="38" width="620" height="524"/>
+        <rect class="z play" x="46" y="43" width="206" height="317"/><text class="zt" x="60" y="192">ADVENTURE ZONE</text>
+        <rect class="z play" x="252" y="43" width="80" height="46"/><rect class="z play" x="332" y="43" width="68" height="89"/><rect class="z play" x="400" y="43" width="144" height="89"/><rect class="z play" x="544" y="43" width="101" height="206"/><text class="zt" x="548" y="58">SAND BEACH</text>
+        <rect class="z svc" x="254" y="137" width="64" height="39"/><rect class="z play" x="253" y="192" width="69" height="62"/><rect class="z" x="342" y="154" width="190" height="182"/><text class="zt b" x="410" y="248">F&amp;B</text><rect class="z play" x="252" y="281" width="91" height="56"/>
+        <rect class="z play" x="68" y="361" width="89" height="66"/><text class="zt" x="72" y="396">TRAMP.</text><rect class="z play" x="157" y="361" width="72" height="47"/><rect class="z svc" x="157" y="410" width="72" height="34"/><rect class="z play" x="157" y="446" width="90" height="41"/><rect class="z play" x="247" y="446" width="91" height="41"/>
+        <rect class="z play" x="363" y="333" width="22" height="68"/><rect class="z" x="385" y="333" width="80" height="68"/><rect class="z" x="466" y="333" width="77" height="68"/><rect class="z" x="338" y="425" width="76" height="64"/><rect class="z" x="445" y="425" width="99" height="64"/>
+        <rect class="z svc" x="617" y="248" width="42" height="40"/><rect class="z" x="565" y="292" width="94" height="115"/><text class="zt" x="569" y="352">KITCHEN</text><rect class="z" x="584" y="411" width="68" height="88"/><text class="zt b" x="588" y="455">REST</text><rect class="z" x="583" y="501" width="70" height="56"/><rect class="z" x="445" y="492" width="114" height="65"/><text class="zt" x="449" y="527">LOBBY</text><rect class="z svc" x="43" y="519" width="38" height="38"/>
+
+        <path class="egpath" d="M261 545 L320 480 L320 300 L250 250"/>
+        <path class="egpath" d="M320 420 L600 420 L631 360"/>
+        <path class="egpath" d="M320 300 L150 210 L100 90 L62 55"/>
+        <path class="egpath" d="M320 250 L500 130 L600 90 L631 55"/>
+
+        <g class="em-dot"><circle cx="280" cy="510" r="4"/></g><circle class="em-core" cx="280" cy="510" r="1.4"/>
+        <g class="em-dot"><circle cx="320" cy="380" r="4"/></g><circle class="em-core" cx="320" cy="380" r="1.4"/>
+        <g class="em-dot"><circle cx="200" cy="250" r="4"/></g><circle class="em-core" cx="200" cy="250" r="1.4"/>
+        <g class="em-dot"><circle cx="110" cy="150" r="4"/></g><circle class="em-core" cx="110" cy="150" r="1.4"/>
+        <g class="em-dot"><circle cx="440" cy="420" r="4"/></g><circle class="em-core" cx="440" cy="420" r="1.4"/>
+        <g class="em-dot"><circle cx="560" cy="420" r="4"/></g><circle class="em-core" cx="560" cy="420" r="1.4"/>
+        <g class="em-dot"><circle cx="430" cy="200" r="4"/></g><circle class="em-core" cx="430" cy="200" r="1.4"/>
+        <g class="em-dot"><circle cx="540" cy="110" r="4"/></g><circle class="em-core" cx="540" cy="110" r="1.4"/>
+        <g class="em-dot"><circle cx="150" cy="470" r="4"/></g><circle class="em-core" cx="150" cy="470" r="1.4"/>
+
+        <g class="dir-sign">
+          <path d="M316 300 h8 M320 296 v8"/><path d="M316 250 h8 M320 246 v8"/>
+          <path d="M436 420 h8 M440 416 v8"/><path d="M320 476 h8 M324 480 v-8" transform="translate(-4 0)"/>
+          <path d="M500 130 h8 M504 126 v8"/>
+        </g>
+
+        <g>
+          <rect class="ex-sign" x="52" y="48" width="20" height="9" rx="1.5"/><text class="ex-t" x="62" y="54.5">EXIT</text>
+          <rect class="ex-sign" x="621" y="48" width="20" height="9" rx="1.5"/><text class="ex-t" x="631" y="54.5">EXIT</text>
+          <rect class="ex-sign" x="224" y="548" width="20" height="9" rx="1.5"/><text class="ex-t" x="234" y="554.5">EXIT</text>
+          <rect class="ex-sign" x="278" y="548" width="20" height="9" rx="1.5"/><text class="ex-t" x="288" y="554.5">EXIT</text>
+          <rect class="ex-sign" x="594" y="548" width="20" height="9" rx="1.5"/><text class="ex-t" x="604" y="554.5">EXIT</text>
+          <rect class="ex-sign" x="649" y="299" width="20" height="9" rx="1.5"/><text class="ex-t" x="659" y="305.5">EXIT</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--c4);border:none"></i>유도등 · EXIT 표지 (6개 비상구 상부)</span>
+      <span><i style="background:none;border:1.4px solid var(--c4)"></i>방향 유도등 (경로 전환점)</span>
+      <span><i style="background:var(--c3);border:none;border-radius:50%;width:9px;height:9px"></i>비상조명 (피난 경로)</span>
+      <span><i style="background:none;border-bottom:2px dotted var(--c4);height:0"></i>피난 경로(egress path)</span>
+    </div>
+    <figcaption><b>배치 원칙</b> — ① 6개 비상구 문 위에 <b>유도등</b>, ② 놀이구조물·실 벽으로 출구가 가려지는 <b>방향 전환점마다 방향 유도등</b>(어느 지점에서든 30.5 m 이내에 하나는 보이도록), ③ 피난 경로를 따라 <b>비상조명</b>을 배치해 정전 시 바닥 밝기를 유지. 실제 개수·간격은 조명 광도 계산(photometric)으로 확정하며, 놀이구조물 배치가 시야를 가리므로 방향 유도등이 일반 매장보다 촘촘해집니다.</figcaption>
+  </figure>
+
+  <div class="note"><span class="lab">새 평면에서 특히 유의</span>기존 매장은 개방형이라 유도등 몇 개로 전체가 보였지만, 키즈파크는 <b>다층 놀이구조물과 칸막이 실이 시야를 가립니다.</b> 구조물 뒤·파티룸 복도·ADVENTURE ZONE 안쪽처럼 <b>출구가 안 보이는 지점마다 방향 유도등을 추가</b>해야 합니다. C1의 <b>암전 연출 존(Oasis·레이저·미디어룸)</b>은 <a class="gl" href="#g-411">§411</a>에 따라 <b>바닥 근처 저위치 유도등</b>이 추가로 요구됩니다.</div>
+</section>
+
 <section id="d1">
   <p class="eyebrow">Part D — 실행</p>
   <h2>지금 해야 할 일</h2>
@@ -944,6 +1029,7 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
       <tr><td class="rnum">9</td><td class="item">놀이구조물 탈출구</td><td>콘텐츠 미정</td><td>구조물별 <b>2개소 이상</b> · 안쪽에서 22.9 m 이내</td><td><span class="tag t-open">대기</span></td></tr>
       <tr><td class="rnum">10</td><td class="item">트램펄린 존 게이트·스태프 포스트</td><td>개방형</td><td>게이트 + 감시 위치 + 평활 벽면 명시</td><td><span class="tag t-change">신규</span></td></tr>
       <tr><td class="rnum">11</td><td class="item">대기줄 · 유모차 주차</td><td>미표기</td><td>복도 요구 폭 <b>바깥</b>에 별도 구역</td><td><span class="tag t-change">신규</span></td></tr>
+      <tr><td class="rnum">12b</td><td class="item">유도등 · 비상조명</td><td>기존 X-1/X-4 있음</td><td>새 평면 기준 <b>유도등 방향 전환점 추가</b> · 90분 배터리 · 광도 계산 (C4)</td><td><span class="tag t-change">재배치</span></td></tr>
       <tr><td class="rnum">12</td><td class="item">음수대 · 소화기</td><td>미표기</td><td>음수대 2개소(hi/low) · 소화기 8개소 이상, 22.9 m 이내, 벽 매입</td><td><span class="tag t-change">신규</span></td></tr>
       <tr><td class="rnum">13</td><td class="item">기존 비상구 5개소</td><td>도면 미표기 (인지됨)</td><td>원 도면대로 유지 · 각 비상구 앞 통로만 확보 확인</td><td><span class="tag t-keep">유지</span></td></tr>
     </tbody>
