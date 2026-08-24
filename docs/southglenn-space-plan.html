@@ -10,17 +10,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
 <style>
 :root{
-  --m1:#FFFFFF; --m2:#111111; --m3:#353535; --m4:#D6D6D6;
-  --c1:#0065B2; --c2:#FFDF00; --c3:#E41E2E; --c4:#00913B;
-  --c5:#FF8000; --c6:#ED92B9; --c7:#62B5E5; --c8:#00A7B5;
-  --ok:#00B050; --ok-bg:#E6F1ED;
-  --mid:#F59E0B; --mid-bg:#FEF3C7;
-  --no:#FF0000; --no-bg:#FCEBEB;
+  --c1:#0065B2; --c3:#E41E2E; --c4:#00913B; --c5:#FF8000; --c8:#00A7B5;
+  --ok:#00B050; --ok-bg:#E6F1ED; --mid:#F59E0B; --mid-bg:#FEF3C7; --no:#FF0000; --no-bg:#FCEBEB;
   --paper:#FFFFFF; --paper2:#F5F5F5; --card:#FFFFFF;
   --ink:#111111; --ink2:#353535; --ink3:#888888;
   --rule:#D6D6D6; --rule2:#E8E8E8;
-  --pine:#0065B2; --pine-soft:#E6F1FB;
-  --accent:#FF8000;
+  --pine:#0065B2; --pine-soft:#E6F1FB; --accent:#FF8000; --m3:#565656;
   --sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,"Noto Sans KR",-apple-system,system-ui,sans-serif;
   --disp:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,"Noto Sans KR",sans-serif;
   --mono:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,"Noto Sans KR",sans-serif;
@@ -48,6 +43,7 @@ h2{font-family:var(--disp);font-size:26px;font-weight:800;letter-spacing:-.02em;
 .lede{color:var(--ink2);max-width:74ch;margin:0 0 24px;font-size:14.5px}
 h3{font-size:15.5px;font-weight:700;margin:34px 0 12px;letter-spacing:-.01em;padding-bottom:8px;border-bottom:1px solid var(--rule2)}
 h3 i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--pine);margin-right:9px;font-weight:700}
+h3 small{font-weight:400;color:var(--ink3);font-size:12.5px;margin-left:8px}
 h4{font-size:14px;font-weight:700;margin:20px 0 8px}
 p{margin:0 0 12px}
 .hero{padding:48px 0 8px;border-top:4px solid var(--accent);border-bottom:1px solid var(--rule)}
@@ -79,12 +75,12 @@ td.item{font-weight:600}
 .st-ok{color:#0A7A3A;border-color:#B9DEC7;background:#E6F1ED}
 .st-mid{color:#B45309;border-color:#F5DFA0;background:#FEF3C7}
 .st-no{color:var(--no);border-color:#F5C2C2;background:#FCEBEB}
+.st-n{color:var(--ink3);border-color:var(--rule);background:var(--paper2)}
 .note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:13px 16px;font-size:13px;color:#10466E;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
 .warn{border-left:2px solid var(--mid);background:var(--mid-bg);padding:13px 16px;font-size:13px;color:#7C4A03;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
 .danger{border-left:3px solid var(--no);background:var(--no-bg);padding:13px 16px;font-size:13px;color:#8A0A0A;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
 .note .lab,.warn .lab,.danger .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
 .note .lab{color:var(--pine)}.warn .lab{color:#B45309}.danger .lab{color:var(--no)}
-.note b,.warn b,.danger b{color:inherit}
 .verdict{border:1px solid var(--rule);border-left:3px solid var(--pine);background:var(--paper2);border-radius:3px;padding:16px 18px;margin:0 0 20px}
 .verdict b{display:block;font-family:var(--disp);font-size:16px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
 .verdict span{color:var(--ink2);font-size:13.5px;line-height:1.75;display:block}
@@ -94,16 +90,13 @@ td.item{font-weight:600}
 .kpi .k{font-size:12px;color:var(--ink2);margin-top:6px;line-height:1.5}
 .kpi .s{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:6px;line-height:1.5}
 .kpi.c1{border-top:3px solid var(--c1)} .kpi.c1 .v{color:var(--c1)}
-.kpi.c5{border-top:3px solid var(--c5)} .kpi.c5 .v{color:var(--c5)}
 .kpi.c3{border-top:3px solid var(--c3)} .kpi.c3 .v{color:var(--c3)}
-.kpi.c8{border-top:3px solid var(--c8)} .kpi.c8 .v{color:var(--c8)}
 .kpi.c4{border-top:3px solid var(--c4)} .kpi.c4 .v{color:var(--c4)}
 .reb{border:1px solid var(--rule2);border-radius:3px;margin-bottom:16px;overflow:hidden}
 .reb .claim{background:#F6F6F6;border-bottom:1px solid var(--rule2);padding:12px 16px;font-size:13px;color:var(--ink2)}
 .reb .claim b{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:4px;font-weight:700}
 .reb .rbody{padding:14px 16px}
-.reb .rbody p{font-size:13.5px;margin:0 0 10px}
-.reb .rbody p:last-child{margin-bottom:0}
+.reb .rbody p{font-size:13.5px;margin:0}
 .reb .fix{border-top:1px dashed var(--rule);background:var(--ok-bg);padding:12px 16px;font-size:13px;color:#0A5B33}
 .reb .fix .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#0A7A3A;font-weight:700;display:block;margin-bottom:5px}
 .tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.04em;padding:2px 7px;border-radius:2px;color:#fff;white-space:nowrap}
@@ -112,6 +105,7 @@ ul.tight{margin:6px 0 12px;padding-left:20px}ul.tight li{margin-bottom:5px;font-
 ol.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0 16px}
 ol.steps li{counter-increment:s;position:relative;padding-left:32px;margin-bottom:9px;font-size:13.5px}
 ol.steps li::before{content:counter(s);position:absolute;left:0;top:3px;width:21px;height:21px;display:grid;place-items:center;font-family:var(--mono);font-size:10px;color:#fff;background:var(--pine);border-radius:50%;font-weight:700}
+a{color:var(--pine)}
 a.gl{color:inherit;text-decoration:none;border-bottom:1px dotted var(--pine);font-weight:700}
 a.gl::after{content:"?";font-family:var(--mono);font-size:.62em;vertical-align:super;color:var(--pine);margin-left:1px;font-weight:700}
 a.gl:hover{background:var(--pine-soft)}
@@ -127,21 +121,22 @@ summary:focus-visible{outline:2px solid var(--pine);outline-offset:-2px}
 figure{margin:16px 0}
 .fwrap{background:var(--card);border:1px solid var(--rule2);border-radius:3px;padding:16px 12px 10px;overflow-x:auto}
 .fwrap svg{display:block;width:100%;height:auto}
-#planfig svg{min-width:640px} #cptfig svg{min-width:520px}
+#planfig svg{min-width:680px} #cptfig svg{min-width:520px}
 figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
 .legend{display:flex;flex-wrap:wrap;gap:13px;margin-top:10px;font-size:11.5px;color:var(--ink3)}
 .legend i{width:13px;height:9px;border:1px solid var(--rule);display:inline-block;margin-right:5px;vertical-align:middle}
+.zopen{fill:#FFF7EF;stroke:#F0C79A;stroke-width:1;stroke-dasharray:4 3}
 .z{fill:var(--paper2);stroke:var(--rule);stroke-width:1}
 .z.play{fill:var(--pine-soft);stroke:#B9D4EC}
 .z.svc{fill:var(--paper);stroke:var(--rule);stroke-dasharray:3 2}
-.zt{fill:var(--ink2);font-family:var(--sans);font-size:8.5px;font-weight:500}
-.zt.b{fill:var(--ink);font-size:9.5px;font-weight:700}
+.zt{fill:var(--ink2);font-family:var(--sans);font-size:8px;font-weight:500}
+.zt.b{fill:var(--ink);font-size:9px;font-weight:700}
+.zt.o{fill:#A05A14}
 .shellline{fill:none;stroke:var(--ink);stroke-width:2.4}
 .exd{fill:var(--c4)} .exl{fill:var(--c4);font-family:var(--mono);font-size:8px;font-weight:700}
 .util{fill:var(--accent)} .utl{fill:var(--accent);font-family:var(--mono);font-size:8px;font-weight:700}
 .utline{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:5 3}
-.spine{fill:none;stroke:var(--pine);stroke-width:5;stroke-linecap:round;opacity:.4}
-.pinch{fill:none;stroke:var(--no);stroke-width:1.6;stroke-dasharray:3 2}
+.arw{fill:var(--m3)}
 .cp-room{fill:var(--paper2);stroke:var(--rule);stroke-width:1}
 .cp-bad{fill:none;stroke:var(--no);stroke-width:2.6;stroke-linecap:round}
 .cp-ok{fill:none;stroke:var(--c4);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:5 3}
@@ -178,17 +173,16 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
   <nav id="toc">
     <a href="#s0"><span>00</span>이 문서를 읽는 법</a>
     <a class="grp">PART A · 공간 이해</a>
-    <a href="#a1"><span>A1</span>공간 현황</a>
+    <a href="#a1"><span>A1</span>공간 현황 · 동선</a>
     <a href="#a2"><span>A2</span>알아야 할 개념 3가지</a>
     <a class="grp">PART B · 확정된 결론</a>
-    <a href="#b1"><span>B1</span>수용 인원 867명</a>
-    <a href="#b2"><span>B2</span>복도 폭 2,210 mm</a>
-    <a href="#b3"><span>B3</span>화장실 +25~33 m²</a>
+    <a href="#b1"><span>B1</span>수용 인원 약 840명</a>
+    <a href="#b2"><span>B2</span>복도 폭 2,200 mm</a>
+    <a href="#b3"><span>B3</span>화장실 +22~31 m²</a>
     <a class="grp">PART C · 놀이기구와 규정</a>
-    <a href="#c1"><span>C1</span>층고가 1차 필터</a>
-    <a href="#c2"><span>C2</span>존별 후보 규정 판정</a>
+    <a href="#c1"><span>C1</span>존별 후보 규정 판정</a>
+    <a href="#c2"><span>C2</span>구조물 면적 · 탈출구</a>
     <a href="#c3"><span>C3</span>소방 · 스프링클러</a>
-    <a href="#c4"><span>C4</span>구조물 면적 · 탈출구</a>
     <a class="grp">PART D · 실행</a>
     <a href="#d1"><span>D1</span>지금 해야 할 일</a>
     <a href="#d2"><span>D2</span>용어 사전</a>
@@ -207,62 +201,83 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
 
 <section id="s0" class="hero">
   <p class="eyebrow">Space Planning Guide</p>
-  <h1>옛 전자제품 매장을 키즈파크로 바꿉니다.<br>무엇이 그대로 쓰이고, 무엇을 바꿔야 하는지 정리했습니다.</h1>
-  <p>미국 건축법에서 <b>매장과 키즈파크는 다른 용도</b>이기 때문에, 안전 관련 기준이 전부 다시 계산됩니다. 계산해 보니 <b>복도 폭</b>과 <b>화장실 크기</b> 두 가지가 지금 도면보다 커져야 하고, <b>기존 층고</b>가 놀이기구 선택을 제한합니다. 나머지는 대체로 기존 건물 조건 안에서 해결됩니다. 이 문서는 공간·도면·규정을 모르는 분도 읽을 수 있도록 썼습니다 — 어려운 단어에는 <a class="gl" href="#g-load">이런 표시</a>가 붙어 있고, 누르면 뜻이 나옵니다.</p>
+  <h1>옛 전자제품 매장을 키즈파크로 바꿉니다.<br>무엇이 그대로 쓰이고, 무엇을 새로 정해야 하는지 정리했습니다.</h1>
+  <p>미국 건축법에서 <b>매장과 키즈파크는 다른 용도</b>이기 때문에, 안전 관련 기준이 전부 다시 계산됩니다. 계산해 보니 <b>복도 폭</b>은 지금 도면에 없어 새로 설정해야 하고, <b>화장실</b>은 지금보다 커져야 합니다. 나머지는 대체로 기존 건물 조건 안에서 해결됩니다. 이 문서는 공간·도면·규정을 모르는 분도 읽을 수 있도록 썼습니다 — 어려운 단어에는 <a class="gl" href="#g-load">이런 표시</a>가 붙어 있고, 누르면 뜻이 나옵니다.</p>
   <div class="keyrow">
-    <div class="key"><b>2,210<em>mm</em></b><span>메인 복도 폭 · 아직 도면에 없음</span></div>
-    <div class="key"><b>+25~33<em>m²</em></b><span>화장실 증설 필요량</span></div>
-    <div class="key"><b>867<em>명</em></b><span>목표 수용 인원 · 기존 853명과 동급</span></div>
-    <div class="key"><b>3<em>종</em></b><span>층고 초과로 불가한 놀이기구 후보</span></div>
+    <div class="key"><b>2,200<em>mm</em></b><span>메인 복도 폭 · 새로 설정할 값</span></div>
+    <div class="key"><b>+22~31<em>m²</em></b><span>화장실 증설 필요량</span></div>
+    <div class="key"><b>840<em>명</em></b><span>목표 수용 인원 · 기존 853명과 동급</span></div>
+    <div class="key"><b>10<em>종</em></b><span>주정부 등록 대상 후보 기구</span></div>
   </div>
 </section>
 
 <section id="a1">
   <p class="eyebrow">Part A — 공간 이해</p>
-  <h2>공간 현황 — 축구장 절반 크기의 단층 사각형</h2>
-  <p class="lede">가로 <b>55.6 m</b>, 세로 <b>47.0 m</b>. 왼쪽 절반이 놀이 공간, 가운데가 식음(F&amp;B), 오른쪽 아래가 화장실·주방, 아래쪽이 로비와 매표소입니다. <b>비상구는 5곳</b>, <b>물과 소방 배관은 왼쪽 아래 모서리</b>에서 들어와 아래쪽 벽을 따라 오른쪽 화장실로 갑니다.</p>
+  <h2>공간 현황 · 동선</h2>
+  <p class="lede">가로 <b>55.6 m</b>, 세로 <b>47.0 m</b>의 단층 사각형입니다. 서쪽 절반이 <b>ADVENTURE ZONE — 아직 비어 있는 개방 구역</b>이고, 그 안팎에 아이템 박스들이 배치돼 있습니다. 가운데가 식음(F&amp;B), 동쪽 아래가 화장실·주방, 남쪽이 로비와 매표소입니다. <b>비상구는 5곳</b>, <b>물과 소방 배관은 남서쪽 모서리</b>에서 들어와 남측 벽을 따라 동쪽 화장실로 갑니다.</p>
 
   <figure id="planfig">
     <div class="fwrap">
-      <svg viewBox="0 0 700 615" role="img" aria-label="Arte Park 평면 개념도. 놀이 존, 지원 공간, 비상구 5개소, 배관 인입 경로, 권장 순환 동선">
+      <svg viewBox="0 0 700 620" role="img" aria-label="Arte Park 평면 개념도. 개방 구역, 아이템 박스, 동선 화살표 13개, 비상구 5개소, 배관 인입 경로">
         <rect class="shellline" x="40" y="38" width="620" height="524"/>
-        <rect class="z play" x="45" y="45" width="206" height="380"/>
-        <text class="zt b" x="60" y="228">ADVENTURE ZONE</text>
-        <text class="zt" x="60" y="241">놀이구조물 여러 개가 모인 구역</text>
-        <rect class="z play" x="254" y="45" width="87" height="43"/><text class="zt" x="259" y="63">LIVE</text><text class="zt" x="259" y="74">SKETCHBOOK</text>
-        <rect class="z play" x="343" y="45" width="65" height="108"/><text class="zt" x="348" y="63">BLOCK</text>
-        <rect class="z play" x="411" y="45" width="140" height="108"/><text class="zt" x="416" y="63">COLOR GROUND</text>
-        <rect class="z play" x="553" y="45" width="99" height="200"/><text class="zt" x="558" y="63">SAND BEACH</text>
-        <rect class="z svc" x="254" y="120" width="65" height="40"/><text class="zt" x="259" y="139">SERVER</text>
-        <rect class="z play" x="254" y="195" width="65" height="60"/><text class="zt" x="259" y="222">OASIS</text>
-        <rect class="z" x="343" y="153" width="187" height="180"/><text class="zt b" x="408" y="243">F&amp;B</text><text class="zt" x="399" y="256">279 m²</text>
-        <rect class="z play" x="254" y="286" width="87" height="57"/><text class="zt" x="259" y="310">STEPPING</text>
-        <rect class="z" x="568" y="299" width="84" height="96"/><text class="zt" x="573" y="341">KITCHEN</text>
-        <rect class="z svc" x="568" y="250" width="84" height="42"/><text class="zt" x="573" y="270">SERVER</text>
-        <rect class="z" x="388" y="343" width="76" height="65"/><text class="zt" x="393" y="371">PARTY 4</text>
-        <rect class="z" x="467" y="343" width="76" height="65"/><text class="zt" x="472" y="371">PARTY 3</text>
-        <rect class="z play" x="254" y="352" width="87" height="48"/><text class="zt" x="259" y="378">RIDING</text>
-        <rect class="z play" x="67" y="324" width="89" height="66"/><text class="zt" x="72" y="358">TRAMPOLINE</text>
-        <rect class="z play" x="159" y="286" width="87" height="52"/><text class="zt" x="164" y="308">FOREST</text><text class="zt" x="164" y="319">FREEZE</text>
-        <rect class="z svc" x="159" y="345" width="87" height="35"/><text class="zt" x="164" y="365">SERVER</text>
-        <rect class="z play" x="159" y="445" width="87" height="49"/><text class="zt" x="164" y="468">STAR JUMPING</text>
-        <rect class="z play" x="254" y="445" width="82" height="49"/><text class="zt" x="259" y="468">MAZE RUNNER</text>
-        <rect class="z" x="339" y="431" width="76" height="65"/><text class="zt" x="344" y="459">PARTY 2</text>
-        <rect class="z" x="447" y="431" width="97" height="65"/><text class="zt" x="452" y="459">PARTY 1</text>
-        <rect class="z" x="568" y="431" width="84" height="65"/><text class="zt b" x="573" y="457">RESTROOM</text><text class="zt" x="573" y="469">46 m² · 확장 필요</text>
-        <rect class="z" x="45" y="499" width="200" height="58"/><text class="zt" x="50" y="524">LOCKERS · E.P.S</text>
-        <rect class="z" x="248" y="499" width="155" height="58"/><text class="zt" x="253" y="524">LOBBY</text>
-        <rect class="z" x="447" y="499" width="111" height="58"/><text class="zt" x="452" y="524">OPERATION</text>
-        <rect class="z" x="562" y="499" width="90" height="58"/><text class="zt" x="567" y="524">NURSING</text>
-        <path class="spine" d="M320 545 L320 420 L320 270 L250 270"/>
-        <path class="spine" d="M320 420 L560 420"/>
-        <path class="spine" d="M320 270 L150 200 L150 90"/>
-        <line class="pinch" x1="544" y1="431" x2="568" y2="431"/>
-        <line class="pinch" x1="544" y1="408" x2="568" y2="408"/>
+
+        <rect class="zopen" x="45" y="43" width="200" height="470"/>
+        <text class="zt b o" x="58" y="205">ADVENTURE ZONE</text>
+        <text class="zt o" x="58" y="217">개방 구역 · 폭 19,000 mm</text>
+        <text class="zt o" x="58" y="228">Adventure 아이템이 들어갈 자리</text>
+
+        <rect class="z play" x="244" y="43" width="89" height="46"/><text class="zt" x="248" y="60">LIVE</text><text class="zt" x="248" y="70">SKETCHBOOK</text><text class="zt" x="248" y="82">8.0×4.0</text>
+        <rect class="z play" x="333" y="43" width="67" height="89"/><text class="zt" x="337" y="60">BLOCK</text><text class="zt" x="337" y="72">6.0×8.0</text>
+        <rect class="z play" x="400" y="43" width="143" height="89"/><text class="zt" x="404" y="60">COLOR GROUND</text><text class="zt" x="404" y="72">12.9×8.0</text>
+        <rect class="z play" x="543" y="43" width="103" height="206"/><text class="zt" x="547" y="60">SAND BEACH</text><text class="zt" x="547" y="72">9.2×18.5</text>
+
+        <rect class="z svc" x="253" y="137" width="65" height="39"/><text class="zt" x="257" y="154">SERVER</text><text class="zt" x="257" y="166">6.0×3.5</text>
+        <rect class="z play" x="253" y="192" width="69" height="62"/><text class="zt" x="257" y="215">OASIS</text><text class="zt" x="257" y="227">6.0×5.5</text>
+        <rect class="z" x="342" y="154" width="190" height="182"/><text class="zt b" x="410" y="240">F&amp;B</text><text class="zt" x="404" y="252">17.0×16.4 · 278 m²</text>
+        <rect class="z play" x="252" y="281" width="91" height="56"/><text class="zt" x="256" y="303">STEPPING</text><text class="zt" x="256" y="315">8.0×5.0</text>
+
+        <rect class="z play" x="69" y="361" width="87" height="65"/><text class="zt" x="73" y="386">TRAMPOLINE</text><text class="zt" x="73" y="398">8.0×5.8</text>
+        <rect class="z play" x="158" y="361" width="72" height="47"/><text class="zt" x="162" y="380">FOREST</text><text class="zt" x="162" y="390">FREEZE</text><text class="zt" x="162" y="401">6.4×4.0</text>
+        <rect class="z svc" x="158" y="410" width="72" height="33"/><text class="zt" x="162" y="428">SERVER</text>
+        <rect class="z play" x="158" y="446" width="89" height="40"/><text class="zt" x="162" y="464">STAR JUMPING</text><text class="zt" x="162" y="476">8.0×4.0</text>
+        <rect class="z play" x="247" y="446" width="91" height="40"/><text class="zt" x="251" y="464">MAZE RUNNER</text><text class="zt" x="251" y="476">8.0×5.0</text>
+        <rect class="z play" x="247" y="337" width="91" height="87"/><text class="zt" x="251" y="378">RIDING</text><text class="zt" x="251" y="390">치수 미표기</text>
+
+        <rect class="z" x="388" y="336" width="76" height="65"/><text class="zt" x="392" y="362">PARTY 4</text><text class="zt" x="392" y="374">7.0×5.75</text>
+        <rect class="z" x="466" y="336" width="77" height="65"/><text class="zt" x="470" y="362">PARTY 3</text><text class="zt" x="470" y="374">7.0×5.75</text>
+        <rect class="z" x="338" y="425" width="76" height="64"/><text class="zt" x="342" y="451">PARTY 2</text><text class="zt" x="342" y="463">7.0×6.0</text>
+        <rect class="z" x="445" y="425" width="98" height="64"/><text class="zt" x="449" y="451">PARTY 1</text><text class="zt" x="449" y="463">9.0×6.0</text>
+
+        <rect class="z svc" x="617" y="248" width="42" height="40"/><text class="zt" x="620" y="272">SERVER</text>
+        <rect class="z" x="565" y="292" width="94" height="115"/><text class="zt" x="569" y="345">KITCHEN</text><text class="zt" x="569" y="357">8.4×10.3</text>
+        <rect class="z" x="584" y="411" width="68" height="88"/><text class="zt b" x="588" y="450">RESTROOM</text><text class="zt" x="588" y="462">48 m² · 확장</text>
+        <rect class="z" x="583" y="501" width="70" height="56"/><text class="zt" x="587" y="527">NURSING</text>
+        <rect class="z" x="445" y="492" width="114" height="65"/><text class="zt" x="449" y="522">OPERATION</text>
+        <rect class="z svc" x="43" y="519" width="38" height="38"/><text class="zt" x="46" y="540">E.P.S</text>
+        <text class="zt" x="100" y="470">LOCKERS</text>
+        <text class="zt" x="300" y="525">LOBBY</text>
+
         <path class="utline" d="M52 556 L560 556 L560 500"/>
         <g class="util"><rect x="46" y="549" width="13" height="13" rx="2"/></g>
         <text class="utl" x="64" y="578">급수 · 소방 배관 인입 (남서쪽)</text>
         <text class="utl" x="466" y="578">→ 화장실 (남동쪽)</text>
+
+        <g class="arw">
+          <path d="M246 122 l7 6 -7 6 -2.5 -2 4.5 -4 -4.5 -4z"/>
+          <path d="M542 141 l7 6 -7 6 -2.5 -2 4.5 -4 -4.5 -4z"/>
+          <path d="M324 141 l6 7 6 -7 2 2.5 -8 4.5 -8 -4.5z"/>
+          <path d="M567 262 l7 6 -7 6 -2.5 -2 4.5 -4 -4.5 -4z"/>
+          <path d="M261 271 l6 -7 6 7 2 -2.5 -8 -4.5 -8 4.5z"/>
+          <path d="M544 300 l6 7 6 -7 2 2.5 -8 4.5 -8 -4.5z"/>
+          <path d="M518 318 l7 6 -7 6 -2.5 -2 4.5 -4 -4.5 -4z"/>
+          <path d="M349 340 l6 -7 6 7 2 -2.5 -8 -4.5 -8 4.5z"/>
+          <path d="M246 349 l7 6 -7 6 -2.5 -2 4.5 -4 -4.5 -4z"/>
+          <path d="M106 359 l6 7 6 -7 2 2.5 -8 4.5 -8 -4.5z"/>
+          <path d="M548 407 l-7 6 7 6 2.5 -2 -4.5 -4 4.5 -4z"/>
+          <path d="M48 445 l6 -7 6 7 2 -2.5 -8 -4.5 -8 4.5z"/>
+          <path d="M241 505 l-7 6 7 6 2.5 -2 -4.5 -4 4.5 -4z"/>
+        </g>
+
         <g class="exd">
           <circle cx="62" cy="45" r="5"/><circle cx="631" cy="45" r="5"/>
           <circle cx="234" cy="561" r="5"/><circle cx="288" cy="561" r="5"/>
@@ -273,36 +288,79 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
         <text class="exl" x="176" y="596">비상구 2·3 · 각 1,905 mm (정문)</text>
         <text class="exl" x="596" y="596">비상구 5 · 864 mm</text>
         <text class="exl" x="592" y="298">비상구 6 · 864 mm</text>
+        <text class="zt" x="45" y="609">치수 단위 m · 회색 화살표는 도면에 표기된 동선 방향 13개소</text>
       </svg>
     </div>
     <div class="legend">
-      <span><i style="background:var(--pine-soft)"></i>놀이·활동 공간</span>
+      <span><i style="background:#FFF7EF;border-color:#F0C79A"></i>ADVENTURE ZONE 개방 구역</span>
+      <span><i style="background:var(--pine-soft)"></i>놀이·활동 아이템</span>
       <span><i style="background:var(--paper2)"></i>실·지원 공간</span>
-      <span><i style="background:var(--pine);opacity:.4;border:none"></i>새로 잡아야 할 메인 복도</span>
+      <span><i style="background:var(--m3);border:none"></i>도면 표기 동선 화살표</span>
       <span><i style="background:var(--c4);border:none;border-radius:50%;width:9px;height:9px"></i>기존 비상구</span>
       <span><i style="background:none;border:1px dashed var(--accent)"></i>배관 경로</span>
-      <span><i style="background:none;border:1px dashed var(--no)"></i>통로가 좁은 곳</span>
     </div>
-    <figcaption>파란 굵은 선은 <b>아직 도면에 없습니다.</b> B2에서 설명하는, 새로 그려 넣어야 할 메인 복도입니다. 비상구 위치는 기존 도면에서 비례 환산한 개략 위치입니다.</figcaption>
+    <figcaption>ADVENTURE ZONE은 <b>내부 칸막이가 없는 개방 구역</b>입니다. 현재 이 구역 안에 박스로 확정 배치된 것은 <b>TRAMPOLINE 하나뿐</b>이고, FOREST FREEZE·SERVER ROOM·STAR JUMPING은 그 동쪽에 별도로 그려진 실입니다. 비상구 위치는 기존 도면에서 비례 환산한 개략 위치입니다.</figcaption>
   </figure>
 
-  <h3><i>A1</i>공간별 크기</h3>
+  <h3><i>A1</i>도면에 표기된 동선 화살표 <small>13개소</small></h3>
+  <p>도면에는 각 구역의 <b>진입 방향을 나타내는 화살표 13개</b>가 표기돼 있습니다. 대부분 아이템 박스의 개구부 앞에 놓여 있어, <b>어느 쪽에서 들어가는 구역인가</b>를 지시합니다.</p>
   <div class="tablewrap"><table>
-    <thead><tr><th>공간</th><th class="rnum">크기</th><th class="rnum">면적</th><th>메모</th></tr></thead>
+    <thead><tr><th class="rnum">#</th><th>방향</th><th>위치 (인접 구역)</th><th class="rnum">#</th><th>방향</th><th>위치 (인접 구역)</th></tr></thead>
     <tbody>
-      <tr><td class="item">전체</td><td class="rnum">55.6 × 47.0 m</td><td class="rnum">2,832 m² <span class="si">30,490 SF</span></td><td>단층 · 가장 먼 대각선 72.8 m</td></tr>
-      <tr><td class="item">F&amp;B</td><td class="rnum">17.0 × 16.4 m</td><td class="rnum">279 m²</td><td>가장 큰 실</td></tr>
-      <tr><td class="item">SAND BEACH</td><td class="rnum">8.9 × 18.0 m</td><td class="rnum">161 m²</td><td></td></tr>
-      <tr><td class="item">COLOR GROUND</td><td class="rnum">12.6 × 9.7 m</td><td class="rnum">122 m²</td><td></td></tr>
-      <tr><td class="item">KITCHEN</td><td class="rnum">7.6 × 10.0 m</td><td class="rnum">76 m²</td><td>배관 조건으로 위치 확정</td></tr>
-      <tr><td class="item">PARTY ROOM 1</td><td class="rnum">8.8 × 7.9 m</td><td class="rnum">69 m²</td><td></td></tr>
-      <tr><td class="item">PARTY ROOM 2</td><td class="rnum">6.8 × 7.9 m</td><td class="rnum">54 m²</td><td></td></tr>
-      <tr><td class="item">PARTY ROOM 3 · 4</td><td class="rnum">각 6.8 × 5.6 m</td><td class="rnum">각 38 m²</td><td></td></tr>
-      <tr><td class="item">RESTROOM</td><td class="rnum">7.6 × 6.0 m</td><td class="rnum">46 m²</td><td><span class="st st-no">확장 필요</span> B3 참조</td></tr>
-      <tr><td class="item">NURSING</td><td class="rnum">7.6 × 3.0 m</td><td class="rnum">23 m²</td><td>화장실 통합 재편 검토 대상</td></tr>
+      <tr><td class="rnum">1</td><td>→ 우</td><td>SERVER(상) 좌측</td><td class="rnum">8</td><td>↑ 상</td><td>PARTY 4 좌측 하단</td></tr>
+      <tr><td class="rnum">2</td><td>→ 우</td><td>COLOR GROUND ↔ SAND BEACH 사이</td><td class="rnum">9</td><td>→ 우</td><td>STEPPING 좌측 하단</td></tr>
+      <tr><td class="rnum">3</td><td>↓ 하</td><td>F&amp;B 상단 좌측</td><td class="rnum">10</td><td>↓ 하</td><td>TRAMPOLINE 상단</td></tr>
+      <tr><td class="rnum">4</td><td>→ 우</td><td>SERVER(우) 좌측</td><td class="rnum">11</td><td>← 좌</td><td>RESTROOM 좌측</td></tr>
+      <tr><td class="rnum">5</td><td>↑ 상</td><td>OASIS 하단</td><td class="rnum">12</td><td>↑ 상</td><td>ADVENTURE ZONE 남서 하단</td></tr>
+      <tr><td class="rnum">6</td><td>↓ 하</td><td>KITCHEN 좌측 상단</td><td class="rnum">13</td><td>← 좌</td><td>LOBBY 좌측</td></tr>
+      <tr><td class="rnum">7</td><td>→ 우</td><td>PARTY 3 우측 상단</td><td class="rnum"></td><td></td><td></td></tr>
     </tbody>
   </table></div>
-  <p class="tcap">CAD 도면의 선 좌표를 추출하고 도면 상단 치수열(합계 55,068 mm)로 축척을 역산해 실측. 오차 ±2%.</p>
+  <div class="note"><span class="lab">복도 계획과의 관계</span>이 화살표들은 <b>진입 방향 표시</b>이지 복도 폭이 정해진 동선은 아닙니다. B2에서 정하는 메인 복도는 이 진입점들을 <b>하나의 순환 경로로 잇는 선</b>이 되어야 합니다. 특히 화살표 5·8·9(중앙 세로축)와 7·11(동쪽 가로축)이 메인 복도가 지나야 할 축을 이미 가리키고 있습니다.</div>
+
+  <h3><i>A1</i>공간별 크기</h3>
+  <p>도면에 <b>치수가 기입된 항목</b>과 <b>기입되지 않아 실측한 항목</b>을 구분했습니다. 기입 치수만이 확정값입니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th class="rnum">크기 (m)</th><th class="rnum">면적</th><th>치수 출처</th><th>콘텐츠 존</th></tr></thead>
+    <tbody>
+      <tr class="total"><td class="item">전체</td><td class="rnum">55.6 × 47.0</td><td class="rnum">2,832 m²</td><td>상단 치수열 합계 55,068</td><td>—</td></tr>
+      <tr><td class="item">ADVENTURE ZONE (개방)</td><td class="rnum">폭 19.0</td><td class="rnum">—</td><td><span class="st st-ok">기입</span> 상단 치수열 1구간</td><td>Adventure</td></tr>
+      <tr><td class="item">TRAMPOLINE</td><td class="rnum">8.0 × 5.8</td><td class="rnum">46 m²</td><td><span class="st st-ok">기입</span> 8000 / 5800</td><td>Adventure</td></tr>
+      <tr><td class="item">FOREST FREEZE</td><td class="rnum">6.4 × 4.0</td><td class="rnum">26 m²</td><td><span class="st st-ok">기입</span> 6400 / 4000</td><td>미배정</td></tr>
+      <tr><td class="item">STAR JUMPING</td><td class="rnum">8.0 × 4.0</td><td class="rnum">32 m²</td><td><span class="st st-ok">기입</span> 8000 / 4000</td><td>Quest</td></tr>
+      <tr><td class="item">MAZE RUNNER</td><td class="rnum">8.0 × 5.0</td><td class="rnum">40 m²</td><td><span class="st st-ok">기입</span> 8000 / 5000</td><td>미배정</td></tr>
+      <tr><td class="item">STEPPING</td><td class="rnum">8.0 × 5.0</td><td class="rnum">40 m²</td><td><span class="st st-mid">폭만 기입</span> 8000</td><td>Quest</td></tr>
+      <tr><td class="item">RIDING</td><td class="rnum">미표기</td><td class="rnum">약 63 m²</td><td><span class="st st-no">미기입</span> 실측 추정</td><td>Quest</td></tr>
+      <tr><td class="item">LIVE SKETCHBOOK</td><td class="rnum">8.0 × 4.0</td><td class="rnum">32 m²</td><td><span class="st st-mid">폭만 기입</span> 8000</td><td>Experience</td></tr>
+      <tr><td class="item">BLOCK</td><td class="rnum">6.0 × 8.0</td><td class="rnum">48 m²</td><td><span class="st st-mid">폭만 기입</span> 6000</td><td>Experience</td></tr>
+      <tr><td class="item">COLOR GROUND</td><td class="rnum">12.9 × 8.0</td><td class="rnum">103 m²</td><td><span class="st st-mid">폭만 기입</span> 12900</td><td>Experience</td></tr>
+      <tr><td class="item">SAND BEACH</td><td class="rnum">9.2 × 18.5</td><td class="rnum">170 m²</td><td><span class="st st-ok">기입</span> 9168 / 18500</td><td>Experience</td></tr>
+      <tr><td class="item">OASIS</td><td class="rnum">6.0 × 5.5</td><td class="rnum">33 m²</td><td><span class="st st-mid">높이만 기입</span> 5500</td><td>Experience</td></tr>
+      <tr><td class="item">F&amp;B</td><td class="rnum">17.0 × 16.4</td><td class="rnum">278 m²</td><td><span class="st st-ok">기입</span> 17000 / 16380</td><td>—</td></tr>
+      <tr><td class="item">PARTY ROOM 4</td><td class="rnum">7.0 × 5.75</td><td class="rnum">40 m²</td><td><span class="st st-ok">기입</span> 7000 / 5746</td><td>—</td></tr>
+      <tr><td class="item">PARTY ROOM 3</td><td class="rnum">7.0 × 5.75</td><td class="rnum">40 m²</td><td><span class="st st-ok">기입</span> 7000 / 5746</td><td>—</td></tr>
+      <tr><td class="item">PARTY ROOM 2</td><td class="rnum">7.0 × 6.0</td><td class="rnum">42 m²</td><td><span class="st st-ok">기입</span> 7000 / 6000</td><td>—</td></tr>
+      <tr><td class="item">PARTY ROOM 1</td><td class="rnum">9.0 × 6.0</td><td class="rnum">54 m²</td><td><span class="st st-ok">기입</span> 9000 / 6000</td><td>—</td></tr>
+      <tr><td class="item">SERVER ROOM (상)</td><td class="rnum">6.0 × 3.5</td><td class="rnum">21 m²</td><td><span class="st st-mid">폭만 기입</span> 6000</td><td>BOH</td></tr>
+      <tr><td class="item">SERVER ROOM (좌)</td><td class="rnum">6.4 × 3.0</td><td class="rnum">19 m²</td><td><span class="st st-no">미기입</span> 실측</td><td>BOH</td></tr>
+      <tr><td class="item">SERVER ROOM (우)</td><td class="rnum">3.8 × 3.6</td><td class="rnum">14 m²</td><td><span class="st st-no">미기입</span> 실측</td><td>BOH</td></tr>
+      <tr><td class="item">KITCHEN</td><td class="rnum">8.4 × 10.3</td><td class="rnum">87 m²</td><td><span class="st st-no">미기입</span> 실측</td><td>—</td></tr>
+      <tr><td class="item">RESTROOM</td><td class="rnum">6.1 × 7.9</td><td class="rnum">48 m²</td><td><span class="st st-no">미기입</span> 실측 · <b>확장 필요</b></td><td>—</td></tr>
+      <tr><td class="item">NURSING</td><td class="rnum">6.3 × 5.0</td><td class="rnum">32 m²</td><td><span class="st st-no">미기입</span> 실측</td><td>—</td></tr>
+      <tr><td class="item">OPERATION</td><td class="rnum">10.1 × 5.6</td><td class="rnum">57 m²</td><td><span class="st st-no">미기입</span> 실측</td><td>—</td></tr>
+      <tr><td class="item">LOBBY (개방)</td><td class="rnum">약 17.6 × 5.9</td><td class="rnum">약 103 m²</td><td><span class="st st-no">미기입</span> 실측</td><td>—</td></tr>
+      <tr class="total"><td class="item">개방 구역 + 통로 잔여</td><td class="rnum">—</td><td class="rnum">약 1,353 m²</td><td>전체에서 위 항목을 뺀 값</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="lab">확인 필요</span><b>RIDING</b>은 치수가 기입돼 있지 않아 실측 추정값입니다. <b>SERVER ROOM(좌·우), KITCHEN, RESTROOM, NURSING, OPERATION</b>도 미기입입니다. 이 항목들의 치수를 도면에 기입해 주셔야 수용 인원과 화장실 산정이 최종 확정됩니다.</div>
+
+  <details>
+    <summary>실측 방법</summary>
+    <div class="dbody">
+      <p>CAD 도면 파일의 선(벡터) 좌표를 직접 추출하고, 도면 상단 치수열(19,000 + 8,000 + 6,000 + 12,900 + 9,168 = 55,068 mm)로 축척을 역산했습니다. 기입 치수가 있는 항목은 모두 이 축척으로 재현되어 검증됐습니다. 미기입 항목의 실측 오차는 ±2% 수준입니다.</p>
+      <p>동선 화살표는 도면의 채워진 도형 요소로 13개를 검출하고, 각 도형의 꼭짓점 분포로 방향을 판정한 뒤 확대 이미지로 교차 확인했습니다.</p>
+    </div>
+  </details>
 </section>
 
 <section id="a2">
@@ -341,51 +399,52 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
   <h3><i>③</i>피난폭 — 비상시 빠져나갈 통로의 총 폭</h3>
   <p><a class="gl" href="#g-egress">피난폭</a>은 화재 등 비상시 사람들이 빠져나가는 문·복도의 <b>폭을 전부 합한 값</b>입니다. 사람 수에 비례해 필요량이 정해집니다.</p>
   <div class="grid3">
-    <div class="kpi c1"><div class="v">5.08<span style="font-size:14px">mm</span></div><div class="k">1인당 필요 폭 — 기본</div><div class="s">867명 → 4,394 mm 필요</div></div>
-    <div class="kpi c1"><div class="v">3.81<span style="font-size:14px">mm</span></div><div class="k">스프링클러 + 비상방송 둘 다 있을 때</div><div class="s">867명 → 3,302 mm 필요</div></div>
-    <div class="kpi c4"><div class="v">5,994<span style="font-size:14px">mm</span></div><div class="k">기존 비상구 5개소 총 폭</div><div class="s">필요량의 1.4~1.8배 — 여유</div></div>
+    <div class="kpi c1"><div class="v">5.08<span style="font-size:14px">mm</span></div><div class="k">1인당 필요 폭 — 기본</div><div class="s">840명 → 4,272 mm 필요</div></div>
+    <div class="kpi c1"><div class="v">3.81<span style="font-size:14px">mm</span></div><div class="k">스프링클러 + 비상방송 둘 다 있을 때</div><div class="s">840명 → 3,204 mm 필요</div></div>
+    <div class="kpi c4"><div class="v">5,994<span style="font-size:14px">mm</span></div><div class="k">기존 비상구 5개소 총 폭</div><div class="s">필요량의 1.4~1.9배 — 여유</div></div>
   </div>
   <div class="note"><span class="lab">좋은 소식</span>비상구를 새로 뚫는 공사는 <b>필요 없습니다.</b> 기존 5개소만 막지 않고 유지하면 됩니다.</div>
 </section>
 
 <section id="b1">
   <p class="eyebrow">Part B — 확정된 결론</p>
-  <h2>수용 인원 — 867명을 목표로 합니다</h2>
-  <p class="lede">놀이 공간에 어떤 <b>계수</b>를 적용받느냐에 따라 <b>867명</b>이 될 수도, <b>1,886명</b>이 될 수도 있습니다. 2배 넘게 차이 납니다. 867명이면 기존 건물 설비를 거의 그대로 쓸 수 있고, 1,886명이 되면 <b>외벽에 비상구를 새로 뚫고, 화장실을 2배로 키우고, 비상방송 설비를 새로 넣어야</b> 합니다.</p>
+  <h2>수용 인원 — 약 840명을 목표로 합니다</h2>
+  <p class="lede">놀이 공간에 어떤 <b>계수</b>를 적용받느냐에 따라 <b>약 840명</b>이 될 수도, <b>약 1,840명</b>이 될 수도 있습니다. 2배 넘게 차이 납니다. 840명이면 기존 건물 설비를 거의 그대로 쓸 수 있고, 1,840명이 되면 <b>외벽에 비상구를 새로 뚫고, 화장실을 2배로 키우고, 비상방송 설비를 새로 넣어야</b> 합니다.</p>
 
   <div class="grid2">
-    <div class="kpi c1"><div class="v">867명</div><div class="k"><b>기준안</b> — 놀이 공간을 운동실(4.65 m²/인) 또는 협의된 실제 정원으로 산정받는 경우</div><div class="s">기존 매장 853명과 거의 동일</div></div>
-    <div class="kpi c3"><div class="v">1,886명</div><div class="k"><b>최악안</b> — 관청이 기본값인 집회 저밀도(1.39 m²/인)를 놀이 공간 전체에 적용하는 경우</div><div class="s">참고용 상한선</div></div>
+    <div class="kpi c1"><div class="v">약 840명</div><div class="k"><b>기준안</b> — 놀이 공간을 운동실(4.65 m²/인) 또는 협의된 실제 정원으로 산정받는 경우</div><div class="s">기존 매장 853명과 거의 동일</div></div>
+    <div class="kpi c3"><div class="v">약 1,840명</div><div class="k"><b>최악안</b> — 관청이 기본값인 집회 저밀도(1.39 m²/인)를 놀이 공간 전체에 적용하는 경우</div><div class="s">참고용 상한선</div></div>
   </div>
 
   <h3><i>B1</i>공간별 산정</h3>
   <div class="tablewrap"><table>
     <thead><tr><th>공간</th><th class="rnum">면적</th><th>기준안 계수</th><th class="rnum">기준안</th><th class="rnum">최악안</th></tr></thead>
     <tbody>
-      <tr><td class="item">놀이·활동 바닥 + 통로</td><td class="rnum">1,626 m²</td><td>운동실 4.65</td><td class="rnum">351</td><td class="rnum">1,168</td></tr>
-      <tr><td class="item">상단 활동존 4실</td><td class="rnum">401 m²</td><td>운동실 4.65</td><td class="rnum">86</td><td class="rnum">288</td></tr>
-      <tr><td class="item">F&amp;B</td><td class="rnum">279 m²</td><td>집회 저밀도 1.39</td><td class="rnum">200</td><td class="rnum">200</td></tr>
-      <tr><td class="item">PARTY ROOM 1–4</td><td class="rnum">200 m²</td><td>집회 저밀도 1.39</td><td class="rnum">143</td><td class="rnum">143</td></tr>
-      <tr><td class="item">LOBBY</td><td class="rnum">111 m²</td><td>집회 저밀도 1.39</td><td class="rnum">80</td><td class="rnum">80</td></tr>
-      <tr><td class="item">OPERATION · KITCHEN</td><td class="rnum">122 m²</td><td>사무 · 주방</td><td class="rnum">7</td><td class="rnum">7</td></tr>
-      <tr class="total"><td class="item">합계</td><td class="rnum">2,832 m²</td><td></td><td class="rnum">≈ 867</td><td class="rnum">≈ 1,886</td></tr>
+      <tr><td class="item">놀이·활동 아이템 11개</td><td class="rnum">633 m²</td><td>운동실 4.65</td><td class="rnum">137</td><td class="rnum">456</td></tr>
+      <tr class="total"><td class="item">ADVENTURE ZONE 개방 구역 + 통로</td><td class="rnum">1,353 m²</td><td>운동실 4.65</td><td class="rnum">291</td><td class="rnum">974</td></tr>
+      <tr><td class="item">F&amp;B</td><td class="rnum">278 m²</td><td>집회 저밀도 1.39</td><td class="rnum">200</td><td class="rnum">200</td></tr>
+      <tr><td class="item">PARTY ROOM 1–4</td><td class="rnum">176 m²</td><td>집회 저밀도 1.39</td><td class="rnum">127</td><td class="rnum">127</td></tr>
+      <tr><td class="item">LOBBY</td><td class="rnum">103 m²</td><td>집회 저밀도 1.39</td><td class="rnum">75</td><td class="rnum">75</td></tr>
+      <tr><td class="item">OPERATION · KITCHEN</td><td class="rnum">144 m²</td><td>사무 13.9 · 주방 18.6</td><td class="rnum">10</td><td class="rnum">10</td></tr>
+      <tr><td class="item">화장실 · 수유실 · 서버룸 · E.P.S</td><td class="rnum">148 m²</td><td>부속 공간</td><td class="rnum">0</td><td class="rnum">0</td></tr>
+      <tr class="total"><td class="item">합계</td><td class="rnum">2,832 m²</td><td></td><td class="rnum">≈ 840</td><td class="rnum">≈ 1,840</td></tr>
     </tbody>
   </table></div>
-  <p class="tcap">두 안의 차이는 놀이 공간 계수 하나뿐. F&amp;B·파티룸·로비·주방은 양쪽 동일.</p>
+  <p class="tcap">두 안의 차이는 놀이 공간·개방 구역 계수 하나뿐. F&amp;B·파티룸·로비·주방은 양쪽 동일. 개방 구역과 통로가 전체의 절반을 차지하므로 이 구역의 계수가 결정적.</p>
 
-  <h3><i>B1</i>867명이면 무엇이 해결되나</h3>
+  <h3><i>B1</i>840명이면 무엇이 해결되나</h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>항목</th><th>기준안 867명</th><th>최악안 1,886명</th></tr></thead>
+    <thead><tr><th>항목</th><th>기준안 840명</th><th>최악안 1,840명</th></tr></thead>
     <tbody>
-      <tr><td class="item">필요 피난폭</td><td class="num">3,302~4,394 mm</td><td class="num">7,188 mm</td></tr>
-      <tr><td class="item">기존 5,994 mm 대비</td><td><span class="st st-ok">여유 최대 1.8배</span></td><td><span class="st st-no">1,194 mm 부족 · 비상구 신설</span></td></tr>
+      <tr><td class="item">필요 피난폭</td><td class="num">3,204~4,272 mm</td><td class="num">7,022 mm</td></tr>
+      <tr><td class="item">기존 5,994 mm 대비</td><td><span class="st st-ok">여유 최대 1.9배</span></td><td><span class="st st-no">1,028 mm 부족 · 비상구 신설</span></td></tr>
       <tr><td class="item">비상방송(<a class="gl" href="#g-evac">EVAC</a>) 설비</td><td>불필요</td><td><span class="st st-no">의무 · 신설 공사</span></td></tr>
       <tr><td class="item">화장실 면적</td><td class="num">70~79 m²</td><td class="num">116~130 m²</td></tr>
       <tr><td class="item">여자 변기</td><td class="num">7개</td><td class="num">15개</td></tr>
     </tbody>
   </table></div>
 
-  <h3><i>B1</i>867명을 인정받는 방법 — 두 갈래 논리</h3>
+  <h3><i>B1</i>840명을 인정받는 방법 — 두 갈래 논리</h3>
   <p>미국 건축법 <a class="gl" href="#g-1004">§1004.5</a>가 근거입니다. "수용 인원을 어떻게 계산하는가"를 정한 조항이며, 그 안에 <b>우리에게 유리한 문장이 두 개</b> 있습니다.</p>
   <div class="reb">
     <div class="claim"><b>근거 1 · §1004.5 본문 후단</b>"표에 없는 기능은, 관청이 <b>가장 비슷한 기능</b>을 근거로 정한다"</div>
@@ -424,26 +483,27 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
 </section>
 
 <section id="b2">
-  <h2>복도 폭 — 2,210 mm로 잡으면 됩니다</h2>
-  <p class="lede">복도 폭은 <b>아직 도면에 정해져 있지 않습니다.</b> 이 문서의 가장 중요한 결론이 이것입니다. 흔히 "미국 복도 최소 폭은 44인치(1,118 mm)"라고 알려져 있는데, <b>그건 사람 수와 무관한 최저 바닥값</b>일 뿐입니다. 복도 하나가 담당하는 인원이 <b>220명을 넘으면 그 순간 1,118 mm는 위법</b>이 됩니다.</p>
+  <h2>복도 폭 — 2,200 mm로 설정하면 됩니다</h2>
+  <p class="lede">현재 도면은 <b>복도 폭을 계산하지 않고 공간을 잡은 상태</b>입니다. 복도가 그려져 있지 않으므로 "고칠 곳"이 있는 게 아니라, <b>새로 설정해야 할 항목</b>입니다. 이 문서의 가장 중요한 결론이 이것입니다.</p>
 
   <div class="verdict">
-    <b>메인 복도 2,210 mm 이상 · 보조 복도 1,829 mm 이상</b>
+    <b>메인 복도 2,200 mm 이상 · 보조 복도 1,829 mm 이상</b>
     <span>메인 복도는 로비에서 각 존을 잇는 주 순환 동선입니다. <b>2,400 mm</b>까지 잡으면 여유가 생깁니다. 직원 전용(BOH) 복도는 1,118 mm, 설비 점검 전용 통로는 610 mm까지 줄일 수 있습니다.</span>
   </div>
 
-  <h3><i>B2</i>왜 2,210 mm인가</h3>
-  <p>미국 코드는 <b>비상구 하나가 막혀도 나머지로 절반 이상이 빠져나갈 수 있어야</b> 한다고 요구합니다. 867명의 절반인 <b>434명</b>이 메인 복도 하나의 담당 인원이 됩니다.</p>
+  <h3><i>B2</i>왜 2,200 mm인가</h3>
+  <p>흔히 "미국 복도 최소 폭은 44인치(1,118 mm)"라고 알려져 있는데, <b>그건 사람 수와 무관한 최저 바닥값</b>일 뿐입니다. 복도 하나가 담당하는 인원이 <b>220명을 넘으면 그 순간 1,118 mm는 위법</b>이 됩니다.</p>
+  <p>미국 코드는 <b>비상구 하나가 막혀도 나머지로 절반 이상이 빠져나갈 수 있어야</b> 한다고 요구합니다. 840명의 절반인 <b>420명</b>이 메인 복도 하나의 담당 인원이 됩니다.</p>
   <div class="verdict" style="border-left-color:var(--accent)">
-    <b>434명 × 5.08 mm/인 = 2,205 mm</b>
-    <span>여기에 여유를 더해 <b>2,210 mm</b>를 기준으로 삼습니다. 스프링클러와 비상방송이 둘 다 있으면 1,651 mm까지 줄지만, 비상방송 설비가 확인되지 않아 보수적으로 잡았습니다.</span>
+    <b>420명 × 5.08 mm/인 = 2,134 mm</b>
+    <span>여기에 여유를 더해 <b>2,200 mm</b>를 기준으로 삼습니다. 스프링클러와 비상방송이 둘 다 있으면 1,600 mm까지 줄지만, 비상방송 설비가 확인되지 않아 보수적으로 잡았습니다.</span>
   </div>
 
-  <h3><i>B2</i>공간별 권장 폭</h3>
+  <h3><i>B2</i>공간별 설정할 폭</h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>어떤 통로</th><th class="rnum">권장 폭</th><th class="rnum">법적 최소</th><th>왜 이 값인가</th></tr></thead>
+    <thead><tr><th>어떤 통로</th><th class="rnum">설정할 폭</th><th class="rnum">법적 최소</th><th>왜 이 값인가</th></tr></thead>
     <tbody>
-      <tr class="total"><td class="item">메인 순환 복도 · 로비 → 각 존</td><td class="rnum">2,210–2,400 mm</td><td class="rnum">1,118 mm</td><td>434명 담당 계산값 + 여유</td></tr>
+      <tr class="total"><td class="item">메인 순환 복도 · 로비 → 각 존</td><td class="rnum">2,200–2,400 mm</td><td class="rnum">1,118 mm</td><td>420명 담당 계산값 + 여유</td></tr>
       <tr><td class="item">존 사이 보조 통로</td><td class="rnum">1,829 mm</td><td class="rnum">1,118 mm</td><td>유모차 2대가 마주쳐도 지나갈 수 있는 폭</td></tr>
       <tr><td class="item">파티룸 앞 복도</td><td class="rnum">1,829 mm + 문 열림 여유</td><td class="rnum">1,118 mm</td><td>파티 끝나면 한꺼번에 나온다</td></tr>
       <tr><td class="item">화장실 앞 복도</td><td class="rnum">1,829 mm</td><td class="rnum">1,118 mm</td><td>유모차 진입 필수</td></tr>
@@ -453,79 +513,108 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
     </tbody>
   </table></div>
 
-  <h3><i>B2</i>지금 도면에서 조정할 곳 — 2군데</h3>
-  <p>복도가 아직 그려져 있지 않으므로, 현재 존 블록 사이에 <b>자연히 남아 있는 간격</b>을 실측했습니다. 대부분 이미 기준에 근접해 있고 <b>남동쪽 두 곳만</b> 조정하면 됩니다.</p>
+  <h3><i>B2</i>어느 축에 복도를 설정해야 하나</h3>
+  <p>A1의 <b>동선 화살표 13개</b>가 진입 방향을 이미 가리키고 있습니다. 그 진입점들을 잇는 축이 복도가 되어야 합니다.</p>
   <div class="tablewrap"><table>
-    <thead><tr><th>위치</th><th class="rnum">현재</th><th class="rnum">필요</th><th>판정</th></tr></thead>
+    <thead><tr><th>축</th><th>구간</th><th class="rnum">설정할 폭</th><th>근거 화살표</th></tr></thead>
     <tbody>
-      <tr><td class="item">PARTY ROOM 1 ↔ RESTROOM</td><td class="rnum">1,694 mm</td><td class="rnum">1,829 mm</td><td><span class="st st-no">135 mm 부족</span></td></tr>
-      <tr><td class="item">PARTY ROOM 3 ↔ KITCHEN</td><td class="rnum">1,794 mm</td><td class="rnum">1,829 mm</td><td><span class="st st-no">35 mm 부족</span></td></tr>
-      <tr><td class="item">OASIS ↔ STEPPING</td><td class="rnum">1,945 mm</td><td class="rnum">1,829 mm</td><td><span class="st st-ok">보조 통로 충족</span></td></tr>
-      <tr><td class="item">TRAMPOLINE 좌측</td><td class="rnum">1,979 mm</td><td class="rnum">1,829 mm</td><td><span class="st st-ok">충족</span></td></tr>
-      <tr><td class="item">PARTY ROOM 2 ↔ PARTY ROOM 1</td><td class="rnum">2,364 mm</td><td class="rnum">2,210 mm</td><td><span class="st st-ok">메인 복도 가능</span></td></tr>
-      <tr><td class="item">FOREST FREEZE ↔ SERVER</td><td class="rnum">2,918 mm</td><td class="rnum">2,210 mm</td><td><span class="st st-ok">여유</span></td></tr>
-      <tr><td class="item">SAND BEACH ↔ KITCHEN</td><td class="rnum">3,731 mm</td><td class="rnum">2,210 mm</td><td><span class="st st-ok">여유</span></td></tr>
+      <tr class="total"><td class="item">중앙 세로축</td><td>LOBBY → RIDING → STEPPING → OASIS → SERVER(상)</td><td class="rnum">2,200 mm</td><td>#5 ↑, #8 ↑, #9 →</td></tr>
+      <tr class="total"><td class="item">동쪽 가로축</td><td>중앙축 → PARTY 3 → KITCHEN · RESTROOM</td><td class="rnum">2,200 mm</td><td>#7 →, #11 ←</td></tr>
+      <tr><td class="item">북쪽 가로축</td><td>중앙축 → BLOCK · COLOR GROUND → SAND BEACH</td><td class="rnum">1,829 mm</td><td>#1 →, #2 →, #3 ↓</td></tr>
+      <tr><td class="item">서쪽 진입축</td><td>중앙축 → ADVENTURE ZONE 개방 구역</td><td class="rnum">2,200 mm</td><td>#10 ↓, #12 ↑</td></tr>
+      <tr><td class="item">남쪽 로비축</td><td>정문 → LOBBY → 좌우 분기</td><td class="rnum">2,200 mm</td><td>#13 ←</td></tr>
+      <tr><td class="item">파티룸 접근</td><td>PARTY 1·2 및 3·4 각 실 앞</td><td class="rnum">1,829 mm</td><td>—</td></tr>
+      <tr><td class="item">BOH 접근</td><td>SERVER ROOM 3개소 · E.P.S · 라이저</td><td class="rnum">1,118 mm</td><td>#4 →, #6 ↓</td></tr>
     </tbody>
   </table></div>
+  <div class="note"><span class="lab">면적 영향</span>메인 복도 축(중앙 세로 + 동쪽 가로 + 서쪽 진입 + 남쪽 로비)의 총 연장을 약 120 m로 보면, 2,200 mm 폭 기준 <b>약 264 m²</b>가 복도로 확보됩니다. 이는 현재 <b>개방 구역·통로 잔여 1,353 m²</b> 안에서 흡수 가능한 규모이므로, <b>아이템 면적을 줄이지 않고도 복도를 설정할 수 있습니다.</b></div>
 
   <div class="warn"><span class="lab">복도 폭 안에 두면 안 되는 것</span>매표 대기줄 · 유모차 주차 · 락커 · 벤치 · 자판기 · <b>소화기함</b>. 요구 폭 안에 들어오면 위반입니다. 소화기함은 <b>벽에 파묻는 방식(리세스)</b>으로 설계해야 합니다.</div>
   <div class="note"><span class="lab">보너스 — 복도를 넓게 그리면 오히려 이득</span>미국 코드는 <a class="gl" href="#g-netgross">순면적</a>을 계산할 때 <b>복도를 제외</b>합니다. 메인 통로를 <b>정식 복도로 도면에 정의</b>하면 그 면적만큼 수용 인원 계산에서 빠질 수 있습니다. 다만 개방형 홀의 통로를 복도로 인정할지는 관청 판단이므로 사전 확인이 필요합니다.</div>
 </section>
 
 <section id="b3">
-  <h2>화장실 — 지금의 1.6배로 키워야 합니다</h2>
+  <h2>화장실 — 지금의 약 1.6배로 키워야 합니다</h2>
   <p class="lede">매장과 키즈파크는 <b>화장실 기준이 완전히 다릅니다.</b> 매장은 "변기 1개당 500명"이면 됐지만, 집회시설은 <b>"여자 변기 1개당 65명"</b>입니다. 무려 7.7배 엄격합니다.</p>
 
   <div class="verdict">
-    <b>지금 46 m² → 70~79 m² · 약 25~33 m² 추가 필요</b>
+    <b>지금 48 m² → 70~79 m² · 약 22~31 m² 추가 필요</b>
     <span>기구는 <b>여자 변기 +4개, 남자 변기 +1개, 세면기 +2개, 음수대 +1개</b>, 그리고 <b>가족화장실 1개소 신설</b>(법정 의무)입니다.</span>
   </div>
 
   <h3><i>B3</i>기구를 몇 개 늘려야 하나</h3>
+  <p>아래는 <b>법정 요구 개수</b>입니다. 변기의 <b>높이(성인용/아동용)는 법정 요구 개수와 무관</b>합니다 — 개수만 맞으면 됩니다.</p>
   <div class="tablewrap"><table>
-    <thead><tr><th>기구</th><th class="rnum">지금</th><th class="rnum">필요</th><th class="rnum">추가</th><th>비고</th></tr></thead>
+    <thead><tr><th>기구</th><th class="rnum">지금</th><th class="rnum">법정 요구</th><th class="rnum">추가</th><th>비고</th></tr></thead>
     <tbody>
       <tr><td class="item">남자 변기</td><td class="rnum">2 + 소변기 1</td><td class="rnum">4</td><td class="rnum">+1</td><td>4개 중 2개까지 소변기로 대체 가능</td></tr>
       <tr class="total"><td class="item">여자 변기</td><td class="rnum">3</td><td class="rnum">7</td><td class="rnum">+4</td><td>가장 큰 증설 요인</td></tr>
       <tr><td class="item">세면기 (남 / 여)</td><td class="rnum">2 / 2</td><td class="rnum">3 / 3</td><td class="rnum">+1 / +1</td><td></td></tr>
-      <tr><td class="item">음수대</td><td class="rnum">1</td><td class="rnum">2</td><td class="rnum">+1</td><td>아동 높이 포함</td></tr>
+      <tr><td class="item">음수대</td><td class="rnum">1</td><td class="rnum">2</td><td class="rnum">+1</td><td>성인·아동 2단(hi/low) 1대로 2개 산입 가능</td></tr>
       <tr><td class="item">청소 싱크</td><td class="rnum">1</td><td class="rnum">1</td><td class="rnum">—</td><td></td></tr>
       <tr class="total"><td class="item">가족화장실</td><td class="rnum">없음</td><td class="rnum">1</td><td class="rnum">+1</td><td>남녀 변기 합계 6개 넘으면 법정 의무</td></tr>
     </tbody>
   </table></div>
-  <p class="tcap">수용 인원 867명 기준 · 남녀 각 434명 가정.</p>
+  <p class="tcap">수용 인원 840명 기준 · 남녀 각 420명 가정.</p>
+
+  <h3><i>B3</i>아동용 변기 — 의무일까, 선택일까</h3>
+  <div class="verdict" style="border-left-color:var(--c4)">
+    <b>결론: 아동용 변기는 법적 의무가 아닙니다. 다만 아이 시설이므로 설치를 권장합니다.</b>
+    <span>미국 접근성 기준(ADA §604.9)은 <b>"아동용으로 설치하는 경우 이 치수를 따를 수 있다(permitted to comply)"</b>는 <b>선택 조항</b>입니다. 설치를 의무화하는 조항이 아닙니다.</span>
+    <span>그리고 <b>아동용으로 설치해도 법정 요구 개수에 그대로 산입됩니다.</b> 배관코드는 변기의 <b>개수만</b> 셀 뿐 높이를 규정하지 않기 때문입니다. 즉 아동용을 넣는다고 성인용을 추가로 더 넣어야 하는 것은 아닙니다.</span>
+  </div>
+  <div class="warn"><span class="lab">단, 여기에 조건이 하나 붙습니다</span>
+    <b>휠체어 사용 칸(접근성 칸)</b>은 성인 치수 또는 아동 치수 중 <b>하나</b>를 따라야 합니다. 아동 치수를 쓰려면 그 화장실이 <b>"주로 아동이 사용하는(primarily for children's use)"</b> 곳이어야 합니다.
+    <br><br>Arte Park는 <b>보호자가 항상 동반</b>하는 시설이므로, 접근성 칸은 <b>성인 치수</b>로 두는 것이 안전합니다. 아동용은 접근성 칸이 아닌 일반 칸에 배치하십시오.
+  </div>
+
+  <h4>권장 구성 — 남·여 양쪽 모두</h4>
+  <p>아동용은 <b>남자·여자 화장실 양쪽에</b> 배치해야 합니다. 아래는 법정 요구 개수를 유지하면서 높이만 배분한 안입니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>실</th><th class="rnum">법정 요구</th><th class="rnum">성인 높이</th><th class="rnum">아동 높이</th><th>배치 원칙</th></tr></thead>
+    <tbody>
+      <tr class="total"><td class="item">여자화장실 변기</td><td class="rnum">7</td><td class="rnum">5</td><td class="rnum">2</td><td>휠체어용 1 + 보행보조용 1은 반드시 성인 치수</td></tr>
+      <tr class="total"><td class="item">남자화장실 변기</td><td class="rnum">4</td><td class="rnum">3</td><td class="rnum">1</td><td>휠체어용 1은 성인 치수</td></tr>
+      <tr><td class="item">남자화장실 소변기</td><td class="rnum">변기 대체 2</td><td class="rnum">1</td><td class="rnum">1</td><td>아동용 소변기는 립 높이 355 mm 이하</td></tr>
+      <tr><td class="item">세면기 (남 / 여)</td><td class="rnum">3 / 3</td><td class="rnum">2 / 2</td><td class="rnum">1 / 1</td><td>성인용 중 1개는 휠체어 접근 가능</td></tr>
+      <tr><td class="item">가족화장실</td><td class="rnum">1</td><td class="rnum">1</td><td class="rnum">—</td><td>성인 치수 + 기저귀교환대 · 보호자 동반 전용</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lab">아동용 치수 — ADA §604.9 · 3–12세 기준</span>
+    변기 중심선이 벽에서 <b>305–455 mm</b> · 좌면 높이 <b>280–430 mm</b> · 손잡이 높이 <b>455–685 mm</b>. 연령대별로 치수가 다르므로 <b>주 이용 연령을 먼저 정하고</b> 그에 맞춰 발주해야 합니다.
+  </div>
 
   <h3><i>B3</i>면적은 어떻게 나오나</h3>
   <div class="tablewrap"><table>
     <thead><tr><th>실</th><th>구성</th><th class="rnum">필요 면적</th></tr></thead>
     <tbody>
-      <tr><td class="item">여자화장실</td><td>변기 7 (휠체어용 1 + 보행보조용 1 포함) + 세면기 3</td><td class="rnum">약 33 m²</td></tr>
-      <tr><td class="item">남자화장실</td><td>변기 2 + 소변기 2 + 세면기 3</td><td class="rnum">약 21 m²</td></tr>
+      <tr><td class="item">여자화장실</td><td>변기 7 (휠체어용 1 + 보행보조용 1 + 아동 2 포함) + 세면기 3</td><td class="rnum">약 33 m²</td></tr>
+      <tr><td class="item">남자화장실</td><td>변기 2 + 소변기 2 + 세면기 3 (아동 각 1 포함)</td><td class="rnum">약 21 m²</td></tr>
       <tr><td class="item">가족화장실</td><td>휠체어 회전공간 + 변기 + 세면기 + 기저귀교환대</td><td class="rnum">약 11 m²</td></tr>
       <tr class="total"><td class="item">합계</td><td>벽체·전실 포함</td><td class="rnum">70–79 m²</td></tr>
-      <tr><td class="item">현재 도면</td><td></td><td class="rnum">46 m²</td></tr>
+      <tr><td class="item">현재 도면 (실측)</td><td>6.1 × 7.9 m</td><td class="rnum">48 m²</td></tr>
     </tbody>
   </table></div>
 
   <div class="note"><span class="lab">확장 방향 — 남동쪽이 맞습니다</span>
     기존 배관 도면(M-2)을 확인한 결과 <b>급수·소방 인입은 남서쪽 모서리</b>에서 들어와 <b>남측 벽을 따라 동쪽으로</b> 이어지고, 하수도 같은 구역에 있습니다. 즉 <b>배관이 남동쪽 화장실 자리에 집중</b>돼 있습니다. 다른 위치에 새로 만드는 것보다 지금 자리를 넓히는 편이 배관 리스크와 공사비 양쪽에서 유리합니다.
     <ul class="tight" style="margin-top:8px">
-      <li><b>수유실 통합 재편</b> — 화장실 + 수유실 + 가족화장실을 하나의 위생 코어로. 수유실 23 m²를 흡수하면 필요 면적의 상당 부분이 해결됩니다</li>
-      <li><b>서쪽 확장</b> — PARTY ROOM 1 방향. 단 B2의 1,694 mm 통로와 상충하므로 파티룸 폭 조정과 함께</li>
+      <li><b>수유실 통합 재편</b> — 화장실 + 수유실 + 가족화장실을 하나의 위생 코어로. 수유실 32 m²를 흡수하면 필요 면적이 바로 해결됩니다</li>
+      <li><b>서쪽 확장</b> — PARTY ROOM 1 방향. 단 화장실 앞 복도 1,829 mm 확보와 함께 검토</li>
       <li><b>북쪽 확장</b> — KITCHEN 아래 여유 공간</li>
     </ul>
   </div>
   <div class="note"><span class="lab">거리는 문제없습니다</span>가장 먼 지점에서 화장실까지 <b>약 71.9 m</b>. 법적 한도는 <b>152.4 m</b>이므로 절반도 안 됩니다. 다만 유아 동반 시 편도 3~4분이 걸리므로, 확장할 때 <b>대기줄이 통로를 막지 않도록 전실을 넉넉히</b> 잡는 것이 운영상 관건입니다.</div>
 
-  <h3><i>B3</i>아이 시설이라서 추가로 필요한 것</h3>
+  <h3><i>B3</i>그 밖에 필요한 것</h3>
   <div class="tablewrap"><table>
     <thead><tr><th>항목</th><th>기준</th><th>설계 반영</th></tr></thead>
     <tbody>
-      <tr><td class="item">아동용 변기</td><td>변기 중심선이 벽에서 305–455 mm · 좌면 높이 280–430 mm (3–12세)</td><td>성인용과 <b>나란히</b> 설치. 아동용을 넣는다고 요구 개수가 줄지 않음</td></tr>
-      <tr><td class="item">휠체어 사용 칸</td><td>폭 1,524 mm 이상</td><td>남·여 각 최소 1개소</td></tr>
-      <tr><td class="item">보행보조 칸</td><td>914 × 1,524 mm · 변기+소변기 6개 초과 시 의무</td><td>여자화장실 해당</td></tr>
+      <tr><td class="item">휠체어 사용 칸</td><td>폭 1,524 mm 이상</td><td>남·여 각 최소 1개소 · <b>성인 치수</b></td></tr>
+      <tr><td class="item">보행보조 칸</td><td>914 × 1,524 mm · 변기+소변기 6개 초과 시 의무</td><td>여자화장실 해당 · 성인 치수</td></tr>
       <tr><td class="item">기저귀교환대</td><td>—</td><td>남·여·가족실 <b>전부</b></td></tr>
       <tr><td class="item">유모차 진입</td><td>전실·통로 1,829 mm</td><td>여닫이 게이트 회피</td></tr>
+      <tr><td class="item">손세정대 (별도)</td><td>슬라임바 채택 시 인접 필수</td><td>급배수 계획에 반영</td></tr>
     </tbody>
   </table></div>
   <div class="note"><span class="lab">권장 구성</span>큰 화장실 2개(남/여)보다 <b>1인용 개별 화장실 6~8개 + 작은 공용 화장실</b> 조합을 권합니다. 미국 배관코드상 <b>1인용 화장실의 기구도 요구 개수에 포함</b>됩니다. 아빠가 딸을, 엄마가 아들을 데리고 들어갈 수 있고, 대기줄이 분산되며, <b>좁고 긴 확장 부지에 배치하기도 쉽습니다.</b> 단 남녀 분리 원칙의 예외 적용이므로 관청 사전 확인이 필요합니다.</div>
@@ -545,51 +634,16 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
       </table></div>
       <p>A-3 중에서도 "arcades and gymnasiums(오락실·체육관)" 행에 해당할 가능성이 높습니다. 소변기는 요구 변기 수의 <b>67%까지</b> 대체 가능합니다. 가족화장실은 남녀 변기 합계 6개 이상일 때 1개소 이상 의무 — 기준안에서 이미 11개이므로 의무 발생.</p>
       <p><b>F&amp;B·주방 별도</b>: 3조 싱크, 손세정 전용 싱크, 대걸레 싱크, 그리스 트랩이 필요합니다. 식품 영업허가는 <b>Arapahoe County Public Health</b> 소관으로 건축 인허가와 별개 라인입니다.</p>
-      <p><b>DIY Slime Bar를 넣는 경우</b> 손세정대 인접 설치가 필수이므로 급배수 계획에 반영해야 합니다. 볼 풀·모래 존도 정기 세척 루틴을 위한 급배수가 필요합니다.</p>
     </div>
   </details>
 </section>
 
 <section id="c1">
   <p class="eyebrow">Part C — 놀이기구와 규정</p>
-  <h2>층고가 1차 필터입니다</h2>
-  <p class="lede">Contents Reference의 후보 <b>49종</b>을 기존 건물 조건과 대조했습니다. 규정보다 먼저 걸리는 것이 <b>천장 높이</b>입니다. 기존 건물의 실측 층고는 <b>5.56 ~ 7.06 m</b>이며, 이 범위를 넘는 기구는 물리적으로 들어가지 않습니다.</p>
-
-  <div class="grid3">
-    <div class="kpi c1"><div class="v">5.56–7.06<span style="font-size:13px">m</span></div><div class="k">기존 건물 실측 층고 범위</div><div class="s">9개 지점 · ± 근사치 · 재실측 필요</div></div>
-    <div class="kpi c3"><div class="v">3종</div><div class="k">층고 초과로 <b>불가</b>한 후보</div><div class="s">Drop Slide · KristallTurm · Clip&amp;Climb 12m</div></div>
-    <div class="kpi c5"><div class="v">2종</div><div class="k">층고 <b>경계</b> — 축소 시 가능</div><div class="s">Racing Slide · Sky Trail</div></div>
-  </div>
-
-  <h3><i>C1</i>층고 판정</h3>
-  <div class="tablewrap"><table>
-    <thead><tr><th>후보</th><th>존</th><th class="rnum">요구 높이</th><th>판정</th><th>대응</th></tr></thead>
-    <tbody>
-      <tr><td class="item">Drop Slide (Freefall Dry Slide)</td><td>Adventure</td><td class="rnum">타워 6–9 m<br>층고 8 m+ 권장</td><td><span class="st st-no">불가</span></td><td>타워 5 m급으로 축소 시 낙하감 상실 — 사실상 제외</td></tr>
-      <tr><td class="item">KristallTurm® PlayLetter</td><td>Adventure</td><td class="rnum">8 m+</td><td><span class="st st-no">불가</span></td><td>저층형 커스텀 협의 필요</td></tr>
-      <tr><td class="item">JUMP Nowon — Clip &amp; Climb</td><td>Adventure</td><td class="rnum">최대 12 m</td><td><span class="st st-no">불가</span></td><td>Clip 'n Climb 저층 모듈로 대체</td></tr>
-      <tr><td class="item">Multi-Lane Racing Slide</td><td>Adventure</td><td class="rnum">타워 5–7 m</td><td><span class="st st-mid">경계</span></td><td>층고 실측 후 타워 높이 확정</td></tr>
-      <tr><td class="item">Sky Trail® Indoor Ropes Course</td><td>Adventure</td><td class="rnum">층고 의존형</td><td><span class="st st-mid">경계</span></td><td>레벨 수를 층고에 맞춰 커스텀</td></tr>
-      <tr><td class="item">Sweetplay — Big Play Structures</td><td>Adventure</td><td class="rnum">4층 / 4.9 m</td><td><span class="st st-ok">가능</span></td><td>—</td></tr>
-      <tr><td class="item">Gym — Net Play + LED Slide</td><td>Adventure</td><td class="rnum">층고 5 m+</td><td><span class="st st-ok">가능</span></td><td>—</td></tr>
-      <tr><td class="item">Ninja Warrior + Warped Wall</td><td>Adventure</td><td class="rnum">층고 5 m+<br>워프드월 3–4 m</td><td><span class="st st-ok">가능</span></td><td>—</td></tr>
-      <tr><td class="item">Urban Air — Leap of Faith</td><td>Adventure</td><td class="rnum">층고 5 m+</td><td><span class="st st-ok">가능</span></td><td>—</td></tr>
-      <tr><td class="item">Trampoline — Media Jump Zone</td><td>Adventure</td><td class="rnum">층고 5 m+</td><td><span class="st st-ok">가능</span></td><td>—</td></tr>
-      <tr><td class="item">Sweetplay — Obstacle Course</td><td>Adventure</td><td class="rnum">층고 3–4 m</td><td><span class="st st-ok">가능</span></td><td>—</td></tr>
-      <tr><td class="item">Star Jumping</td><td>Quest</td><td class="rnum">층고 4 m+</td><td><span class="st st-ok">가능</span></td><td>—</td></tr>
-      <tr><td class="item">Krazy Arrowz (LASERTRON)</td><td>Quest</td><td class="rnum">3.2 m</td><td><span class="st st-ok">가능</span></td><td>—</td></tr>
-      <tr><td class="item">Experience zone 전 후보</td><td>Experience</td><td class="rnum">벽·바닥형</td><td><span class="st st-ok">가능</span></td><td>층고 제약 없음</td></tr>
-    </tbody>
-  </table></div>
-
-  <div class="danger"><span class="lab">가장 먼저 할 일 — 층고 실측</span>기존 도서의 층고는 <b>모두 ± 근사치</b>이며, 9개 지점만 표기돼 있습니다. <b>구조물 발주 전에 현장 실측</b>이 선행돼야 합니다. 특히 위 "경계" 2종은 실측 결과에 따라 가능/불가가 갈립니다. 실측 없이 발주하면 <b>재제작 리스크</b>가 그대로 남습니다.</div>
-</section>
-
-<section id="c2">
   <h2>존별 후보 규정 판정</h2>
-  <p class="lede">콜로라도주는 건축 인허가와 <b>완전히 별개</b>로 놀이기구를 <b>주정부에 등록</b>하도록 요구합니다(7 CCR 1101-12). 등록 없이는 개장할 수 없습니다. 모든 기구가 대상은 아니며, 아래 기준으로 갈립니다.</p>
+  <p class="lede">Contents Reference의 후보 <b>49종 전체</b>를 검토했습니다. 콜로라도주는 건축 인허가와 <b>완전히 별개</b>로 놀이기구를 <b>주정부에 등록</b>하도록 요구합니다(7 CCR 1101-12). 등록 없이는 개장할 수 없습니다. 모든 기구가 대상은 아니며, 아래 기준으로 갈립니다.</p>
 
-  <h3><i>C2</i>등록 대상 판단 기준</h3>
+  <h3><i>C1</i>등록 대상 판단 기준</h3>
   <div class="grid2">
     <div class="card"><h4>등록 대상 — 이런 기구</h4>
       <ul class="tight" style="margin-bottom:0">
@@ -611,65 +665,89 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
     </div>
   </div>
 
-  <h3><i>C2</i>Adventure zone <span style="font-weight:400;color:var(--ink3)">활동적인 놀이기구형 · 약 618 m²</span></h3>
+  <h3><i>C1</i>Adventure zone <small>활동적인 놀이기구형 · 19종 · 개방 구역에 배치 예정</small></h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>후보</th><th>주(州) 등록</th><th>이유</th><th>부속 규정</th></tr></thead>
+    <thead><tr><th>후보</th><th>주(州) 등록</th><th>이유</th><th>부속 규정 · 메모</th></tr></thead>
     <tbody>
-      <tr><td class="item">Trampoline — Media Jump Zone</td><td><span class="st st-no">등록 대상</span></td><td>트램펄린 코트</td><td>운영 요건 6개 강제 · 아래 참조</td></tr>
-      <tr><td class="item">Sky Trail® Indoor Ropes Course</td><td><span class="st st-no">등록 대상</span></td><td>하네스 사용 공중 코스</td><td><a class="gl" href="#g-astm">ASTM F2959</a></td></tr>
-      <tr><td class="item">JUMP Nowon — Sky Trail</td><td><span class="st st-no">등록 대상</span></td><td>오버헤드 트랙 + 하네스 상시 연결</td><td>ASTM F2959</td></tr>
+      <tr><td class="item">Trampoline — Media Jump Zone</td><td><span class="st st-no">등록 대상</span></td><td>트램펄린 코트</td><td>운영 요건 6개 강제 · <b>도면상 유일하게 확정 배치</b></td></tr>
+      <tr><td class="item">Sky Trail® Indoor Ropes Course</td><td><span class="st st-no">등록 대상</span></td><td>하네스 사용 공중 코스</td><td><a class="gl" href="#g-astm">ASTM F2959</a> · §424 다층 구조물</td></tr>
+      <tr><td class="item">JUMP Nowon — Sky Trail</td><td><span class="st st-no">등록 대상</span></td><td>오버헤드 트랙 + 하네스 상시 연결</td><td>ASTM F2959 · 2개 층</td></tr>
       <tr><td class="item">Block Party — Ropes Course &amp; Zip Line</td><td><span class="st st-no">등록 대상</span></td><td>하네스 + 집라인</td><td>ASTM F2959 · 신장 제한 127 cm</td></tr>
-      <tr><td class="item">Urban Air — Sky Rider (Indoor Zipline)</td><td><span class="st st-no">등록 대상</span></td><td>집라인 + 키즈 하네스</td><td>신장 제한 122 cm</td></tr>
+      <tr><td class="item">Urban Air — Sky Rider (Indoor Zipline)</td><td><span class="st st-no">등록 대상</span></td><td>집라인 + 키즈 하네스</td><td>신장 제한 122 cm · 운영 1명</td></tr>
       <tr><td class="item">Urban Air — Leap of Faith</td><td><span class="st st-no">등록 대상</span></td><td>의도적 낙하 + 에어백 착지 → Free Fall Device</td><td>하네스는 없지만 대상</td></tr>
-      <tr><td class="item">Clip 'n Climb® Challenge Walls</td><td><span class="st st-no">등록 대상</span></td><td>오토빌레이(TRUBLUE) 추락방지 장비</td><td>운영자 1 : 12</td></tr>
-      <tr><td class="item">Drop Slide · Multi-Lane Racing Slide</td><td><span class="st st-no">등록 대상</span></td><td>건식 슬라이드도 조문상 놀이기구</td><td>Drop Slide는 층고 불가</td></tr>
-      <tr><td class="item">Ninja Warrior + Warped Wall</td><td><span class="st st-mid">판정 필요</span></td><td>하네스 없음 · 강습 시설도 아님 → 애매</td><td>관청 질의 항목</td></tr>
-      <tr><td class="item">KristallTurm® PlayLetter</td><td><span class="st st-mid">판정 필요</span></td><td>출구 2개 대형 타워 구조물</td><td>층고 불가 · 구조물 면적 40–80 m²</td></tr>
-      <tr><td class="item">Gym — Net Play + LED Slide</td><td><span class="st st-ok">면제 유력</span></td><td>하네스 불필요 소프트 플레이</td><td>건축 §424 대상</td></tr>
-      <tr><td class="item">Sweetplay — Obstacle / Big Play</td><td><span class="st st-ok">면제 유력</span></td><td>전 구간 패딩 · 하네스 불필요</td><td>건축 §424 대상</td></tr>
-      <tr><td class="item">Junior Slides · Junior Jungle</td><td><span class="st st-ok">면제 유력</span></td><td>5세 이하 전용 소형 놀이구조물</td><td>—</td></tr>
-      <tr><td class="item">Ball Pool / Foam Cube Pit</td><td><span class="st st-ok">면제</span></td><td>착지 안전 구성</td><td>위생 급배수 계획 필요</td></tr>
-      <tr><td class="item">AREA15 — Haley's Comet</td><td><span class="st st-mid">사양 확인</span></td><td>사양 미확보</td><td>—</td></tr>
+      <tr><td class="item">Clip 'n Climb® Challenge Walls</td><td><span class="st st-no">등록 대상</span></td><td>오토빌레이(TRUBLUE) 추락방지 장비</td><td>운영자 1 : 12 · 난이도 등급제</td></tr>
+      <tr><td class="item">JUMP Nowon — Clip &amp; Climb</td><td><span class="st st-no">등록 대상</span></td><td>오토빌레이</td><td>챌린지 월 22종</td></tr>
+      <tr><td class="item">Drop Slide (Freefall Dry Slide)</td><td><span class="st st-no">등록 대상</span></td><td>건식 슬라이드도 조문상 놀이기구</td><td>전용 슈트 착용 · 5세+</td></tr>
+      <tr><td class="item">Multi-Lane Racing Slide</td><td><span class="st st-no">등록 대상</span></td><td>슬라이드</td><td>4레인 기준 폭 4–5 m</td></tr>
+      <tr><td class="item">Ninja Warrior + Warped Wall</td><td><span class="st st-mid">판정 필요</span></td><td>하네스 없음 · 강습 시설도 아님 → 애매</td><td>관청 질의 항목 · 코스 15–25 m → §424 검토</td></tr>
+      <tr><td class="item">KristallTurm® PlayLetter</td><td><span class="st st-mid">판정 필요</span></td><td>대형 타워 구조물 · 출구 2개(1개 스틸 슬라이드)</td><td><b>글자당 40–80 m² → §424 상한 검토 필수</b></td></tr>
+      <tr><td class="item">Gym — Net Play + LED Slide</td><td><span class="st st-ok">면제 유력</span></td><td>하네스 불필요 소프트 플레이</td><td>다층 그물 → §424 대상 · 상주 감시 최소</td></tr>
+      <tr><td class="item">Sweetplay — Big Play Structures</td><td><span class="st st-ok">면제 유력</span></td><td>패딩 마감 · 하네스 불필요</td><td>4개 층 / 높이 4.9 m → §424 대상</td></tr>
+      <tr><td class="item">Sweetplay — Obstacle Course</td><td><span class="st st-ok">면제 유력</span></td><td>전 구간 패딩 · 하네스 불필요</td><td>전 연령 · 보호자 동반 가능</td></tr>
+      <tr><td class="item">Junior Slides</td><td><span class="st st-ok">면제 유력</span></td><td>5세 이하 전용 축소 슬라이드</td><td>완만한 경사 + 소프트 랜딩</td></tr>
+      <tr><td class="item">Junior Jungle</td><td><span class="st st-ok">면제 유력</span></td><td>5세 이하 전용 소형 놀이구조물</td><td>전면 패딩 마감</td></tr>
+      <tr><td class="item">Ball Pool / Foam Cube Pit</td><td><span class="st st-ok">면제</span></td><td>착지 안전 구성</td><td><b>위생 급배수 계획 필요</b></td></tr>
+      <tr><td class="item">AREA15 — Haley's Comet</td><td><span class="st st-n">사양 확인</span></td><td>공개 사양 미확보</td><td>—</td></tr>
     </tbody>
   </table></div>
 
-  <h3><i>C2</i>Quest zone <span style="font-weight:400;color:var(--ink3)">인터랙티브 게임형 · 약 192 m²</span></h3>
+  <h3><i>C1</i>Quest zone <small>인터랙티브 게임형 · 14종</small></h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>후보</th><th>주(州) 등록</th><th>이유</th><th>부속 규정</th></tr></thead>
+    <thead><tr><th>후보</th><th>주(州) 등록</th><th>이유</th><th>부속 규정 · 메모</th></tr></thead>
     <tbody>
-      <tr><td class="item">Star Jumping — Interactive Trampoline</td><td><span class="st st-no">등록 대상</span></td><td>트램펄린 코트</td><td>운영 요건 6개 강제</td></tr>
+      <tr><td class="item">Star Jumping — Interactive Trampoline</td><td><span class="st st-no">등록 대상</span></td><td>트램펄린 코트</td><td>운영 요건 6개 강제 · <b>도면상 확정 배치</b></td></tr>
       <tr><td class="item">Constellation Carousel</td><td><span class="st st-no">등록 대상</span></td><td>회전 탑승 기구</td><td>—</td></tr>
       <tr><td class="item">ValoClimb — Interactive Climbing</td><td><span class="st st-mid">판정 필요</span></td><td>높이·매트 사양에 따라 클라이밍월 해당 여부 갈림</td><td>사양 확인 후 질의</td></tr>
-      <tr><td class="item">Krazy Arrowz (LASERTRON)</td><td><span class="st st-ok">면제</span></td><td><b>레이저 게임은 조문에 명시된 면제 대상</b></td><td>암전 연출 시 §411 검토</td></tr>
+      <tr><td class="item">Krazy Arrowz (LASERTRON)</td><td><span class="st st-ok">면제</span></td><td><b>레이저 게임은 조문에 명시된 면제 대상</b></td><td>암전 연출 시 <a class="gl" href="#g-411">§411</a> 검토 · 3세~성인</td></tr>
       <tr><td class="item">Puttshack — Tech Mini Golf</td><td><span class="st st-ok">면제</span></td><td><b>미니골프는 조문에 명시된 면제 대상</b></td><td>—</td></tr>
-      <tr class="total"><td class="item">Sky Riding — Interactive Bike</td><td><span class="st st-ok">면제 유력</span></td><td><b>정지한 자전거에 타는 인터랙티브 체험</b> — 이용자를 경로를 따라 이동시키지 않음</td><td>관청 확인 권장</td></tr>
-      <tr><td class="item">Activate — Grid / Strike / Control</td><td><span class="st st-ok">면제</span></td><td>룸형 디지털 게임</td><td>암전 룸이면 §411 검토</td></tr>
+      <tr class="total"><td class="item">Sky Riding — Interactive Bike</td><td><span class="st st-ok">면제 유력</span></td><td><b>정지한 자전거에 타는 인터랙티브 체험</b> — 이용자를 경로를 따라 이동시키지 않음</td><td>관청 확인 권장 · <b>도면상 RIDING으로 배치</b></td></tr>
+      <tr><td class="item">Activate — Grid / Mega Grid</td><td><span class="st st-ok">면제</span></td><td>룸형 디지털 게임</td><td>암전 룸이면 §411 검토</td></tr>
+      <tr><td class="item">Activate — Strike (Digital Dodgeball)</td><td><span class="st st-ok">면제</span></td><td>소프트볼 사용 게임</td><td>암전 룸이면 §411 검토</td></tr>
+      <tr><td class="item">Activate — Control</td><td><span class="st st-ok">면제</span></td><td>벽면+바닥형 게임</td><td>면적 효율 우수</td></tr>
       <tr><td class="item">Level99 — 8 Bit Lava / Elements</td><td><span class="st st-ok">면제</span></td><td>미션형 게임</td><td>암전 연출 시 §411 검토</td></tr>
-      <tr><td class="item">BlazePod · Groundfall · Garden Stepping</td><td><span class="st st-ok">면제</span></td><td>벽·바닥 인터랙티브</td><td>—</td></tr>
+      <tr><td class="item">BlazePod — Reactive Wall</td><td><span class="st st-ok">면제</span></td><td>벽면 반응 훈련</td><td>—</td></tr>
+      <tr><td class="item">Groundfall by Valo Motion</td><td><span class="st st-ok">면제</span></td><td>바닥 프로젝션 게임</td><td>—</td></tr>
+      <tr><td class="item">Garden Stepping — Interactive Floor</td><td><span class="st st-ok">면제</span></td><td>바닥+벽면 프로젝션</td><td><b>도면상 STEPPING으로 배치</b> · 최대 4인</td></tr>
     </tbody>
   </table></div>
 
-  <h3><i>C2</i>Experience zone <span style="font-weight:400;color:var(--ink3)">감성 체험 전시형 · 약 569 m²</span></h3>
+  <h3><i>C1</i>Experience zone <small>감성 체험 전시형 · 14종</small></h3>
   <div class="tablewrap"><table>
     <thead><tr><th>후보</th><th>주(州) 등록</th><th>부속 규정 · 메모</th></tr></thead>
     <tbody>
-      <tr><td class="item">Oasis — Ceiling Projection Lounge</td><td><span class="st st-ok">면제</span></td><td><b>저조도 명시 — §411 검토 대상.</b> 보호자 대기 겸용이라 피난 유도 설계 특히 중요</td></tr>
-      <tr><td class="item">Live Sketchbook · Color Ground · Sand Beach</td><td><span class="st st-ok">면제</span></td><td>Sand Beach는 모래 관리 루틴 · Live Sketchbook 볼풀은 위생 급배수</td></tr>
+      <tr><td class="item">Oasis — Ceiling Projection Lounge</td><td><span class="st st-ok">면제</span></td><td><b>저조도 명시 — §411 검토 대상.</b> 보호자 대기 겸용이라 피난 유도 설계 특히 중요 · <b>도면상 배치</b></td></tr>
+      <tr><td class="item">Live Sketchbook — Draw &amp; Dive</td><td><span class="st st-ok">면제</span></td><td>볼풀 포함 → 위생 급배수 · <b>도면상 배치</b></td></tr>
+      <tr><td class="item">Color Ground — Interactive Floor</td><td><span class="st st-ok">면제</span></td><td>고조도 · 유아 대응 · <b>도면상 배치</b></td></tr>
+      <tr><td class="item">Sand Beach — Interactive Sand Play</td><td><span class="st st-ok">면제</span></td><td><b>모래 관리 루틴 필요</b> · <b>도면상 배치</b></td></tr>
       <tr><td class="item">A-Mazing Airways (Pneumatic Tubes)</td><td><span class="st st-ok">면제</span></td><td>공압 튜브 — 사람이 타지 않음</td></tr>
-      <tr><td class="item">Build Alive · Gear Wall · Lite-Brite · Pin Screen · Magnetic Ball Run · Micro-Market · Praxinoscope · The Everbright</td><td><span class="st st-ok">면제</span></td><td>벽부·테이블형 전시. The Everbright는 ADA 옵션 확인</td></tr>
+      <tr><td class="item">Build Alive (Breeze Creative)</td><td><span class="st st-ok">면제</span></td><td>ADA 준수 원목 테이블 · 100–200 sq ft급 초소형</td></tr>
+      <tr><td class="item">Gear Wall</td><td><span class="st st-ok">면제</span></td><td>벽 46×92″ · 3세+ · 유지보수 거의 없음</td></tr>
+      <tr><td class="item">Giant Lite-Brite Light Wall</td><td><span class="st st-ok">면제</span></td><td>벽부형</td></tr>
+      <tr><td class="item">Giant Pin Screen (Pin Art Wall)</td><td><span class="st st-ok">면제</span></td><td>핀 끝 라운드 처리 제품 필수 · 일 2회 소독</td></tr>
+      <tr><td class="item">Magnetic Ball Run Wall</td><td><span class="st st-ok">면제</span></td><td>벽부형</td></tr>
+      <tr><td class="item">Micro-Market Role Play</td><td><span class="st st-ok">면제</span></td><td>역할놀이 · 소품 관리</td></tr>
+      <tr><td class="item">Praxinoscope (Spin-to-Animate)</td><td><span class="st st-ok">면제</span></td><td>전원 불필요 · 점유 2 m² 미만</td></tr>
+      <tr><td class="item">The Everbright (Dial Light Wall)</td><td><span class="st st-ok">면제</span></td><td>ADA 옵션 확인 · 120V 콘센트 1구</td></tr>
       <tr><td class="item">Baby Shark's Magic Cooking Lab</td><td><span class="st st-ok">면제</span></td><td>조리 연출 시 급배수·환기 확인</td></tr>
-      <tr><td class="item">DIY Slime Bar</td><td><span class="st st-ok">면제</span></td><td><b>손세정대 인접 필수</b> · 붕사 함량 규제 · 알레르기 고지</td></tr>
-      <tr><td class="item">Korean 4-Cut Photo Studio</td><td><span class="st st-ok">면제</span></td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3><i>C1</i>Other <small>기타 · 2종</small></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>후보</th><th>주(州) 등록</th><th>부속 규정 · 메모</th></tr></thead>
+    <tbody>
+      <tr><td class="item">DIY Slime Bar (Sloomoo-style)</td><td><span class="st st-ok">면제</span></td><td><b>손세정대 인접 필수</b> · 붕사 함량 규제 · 알레르기 고지 · 상주 2–3명</td></tr>
+      <tr><td class="item">Korean 4-Cut Self Photo Studio</td><td><span class="st st-ok">면제</span></td><td>—</td></tr>
     </tbody>
   </table></div>
 
   <div class="warn"><span class="lab">암전·연출 공간은 어느 존이든 해당될 수 있습니다</span>
-    <a class="gl" href="#g-411">IBC §411</a>은 특정 존에 한정되지 않습니다. <b>어둡게 하거나, 소리·영상 연출로 피난 경로가 즉시 안 보이거나, 일부러 헷갈리게 만든</b> 공간이면 어디든 적용됩니다. 2021년판부터 방탈출도 명시 포함됐습니다. 현재 후보 중에서는 <b>Oasis(저조도), Krazy Arrowz(레이저), Level99, Activate 룸형</b>이 검토 대상입니다.
+    IBC §411은 특정 존에 한정되지 않습니다. <b>어둡게 하거나, 소리·영상 연출로 피난 경로가 즉시 안 보이거나, 일부러 헷갈리게 만든</b> 공간이면 어디든 적용됩니다. 2021년판부터 방탈출도 명시 포함됐습니다. 현재 후보 중에서는 <b>Oasis(저조도), Krazy Arrowz(레이저), Level99, Activate 룸형</b>이 검토 대상입니다.
     <br><br>해당 시 필요한 것: 자동 화재감지 · 감지 시 <b>연출 즉시 정지 + 조명 자동 밝아짐 + 피난표시 작동</b> · <b>바닥 근처 유도등</b> · <b>비상방송(EVAC)</b> · 내장재 등급 제한. 적용되면 EVAC가 의무화되는데, 이건 피난폭 계산을 완화시키는 부수효과가 있으니 <b>득실을 함께 계산</b>해 결정하면 됩니다.
   </div>
 
-  <h3><i>C2</i>트램펄린을 넣는다면 — 공간설계에 직접 영향</h3>
-  <p>콜로라도 주법이 <b>강제하는</b> 운영 조건이며, 도면에 반영돼야 합니다. Trampoline Media Jump Zone과 Star Jumping 두 후보 모두 해당합니다.</p>
+  <h3><i>C1</i>트램펄린을 넣는다면 — 공간설계에 직접 영향</h3>
+  <p>콜로라도 주법이 <b>강제하는</b> 운영 조건이며, 도면에 반영돼야 합니다. Trampoline Media Jump Zone과 Star Jumping 두 후보 모두 해당하고, 둘 다 <b>이미 도면에 배치</b>돼 있습니다.</p>
   <ol class="steps">
     <li>구역을 <b>물리적으로 폐쇄·차단할 수 있어야</b> 한다 → <b>게이트 필요</b></li>
     <li>담당자가 없으면 <b>닫을 수 있는 구조</b>여야 한다</li>
@@ -696,50 +774,16 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
           <tr><td class="item">수수료</td><td>2027년 이후 운영자 연 $800 + 기구당 연 $260</td></tr>
         </tbody>
       </table></div>
-      <p class="tcap">현재 후보 기준 등록 대상이 8~10종이면 연 $2,880~$3,400 수준.</p>
+      <p class="tcap">현재 후보 기준 등록 대상이 10종이면 연 $3,400 수준.</p>
     </div>
   </details>
 </section>
 
-<section id="c3">
-  <h2>소방 · 스프링클러</h2>
-  <p class="lede">건물에는 스프링클러가 <b>이미 전체에 설치</b>돼 있습니다. 문제는 두 가지입니다. <b>첫째</b>, 기존 스프링클러 도면이 인허가 도서에 없습니다 — 미국식 관행상 스프링클러 업체가 따로 설계해 <a class="gl" href="#g-deferred">별도 제출</a>했기 때문입니다. <b>둘째</b>, 기존 헤드는 <b>매장 진열대 기준</b>으로 배치됐습니다. 높이 3~5 m짜리 놀이구조물이 들어오면 <b>물이 구조물에 막혀 아래로 안 떨어집니다.</b></p>
-
-  <div class="danger"><span class="lab">가장 먼저 할 일</span><b>건물주 또는 원 시공사에게 기존 스프링클러 설계도서(헤드 배치도 + 수리계산서)를 요청할 것.</b> 이게 없으면 놀이구조물을 얼마나 넣을 수 있는지 판단이 안 됩니다. <b>놀이구조물 발주 전에</b> 확보해야 합니다 — 구조물이 확정된 뒤에 소방을 맞추면 재제작이 발생합니다.</div>
-
-  <h3><i>C3</i>놀이구조물이 스프링클러 물을 막습니다</h3>
-  <p>미국 소방 기준(<a class="gl" href="#g-nfpa">NFPA 13</a>)은 <b>폭 1,219 mm를 넘는 고정 장애물</b> 아래로는 천장 스프링클러 물이 도달하지 못한다고 봅니다. 놀이구조물의 수평 데크·터널·플랫폼이 전형적인 해당 사례입니다.</p>
-  <div class="tablewrap"><table>
-    <thead><tr><th>방법</th><th>내용</th><th>평가</th></tr></thead>
-    <tbody>
-      <tr><td class="item">구조물 안에 헤드 설치</td><td>장애물 아래 보조 스프링클러를 넣는다</td><td><span class="st st-no">비권장</span> 헤드·배관·행거가 아이 동선에 노출 → 충돌·걸림 위험</td></tr>
-      <tr class="total"><td class="item">천장 시스템 강화</td><td>천장 스프링클러를 <b>더 높은 등급(Extra Hazard Group II) 밀도</b>로 재설계해 장애물 아래까지 제압</td><td><span class="st st-ok">권장</span> 실무에서 널리 쓰이며 NFPA 13도 이를 상정</td></tr>
-    </tbody>
-  </table></div>
-  <div class="warn"><span class="lab">비용·공기에 영향</span>천장 시스템을 강화하면 <b>물 사용량과 배관 굵기가 커집니다.</b> 기존 인입관(200 mm)과 수압이 감당하지 못하면 <b>인입관 교체나 소방 펌프 설치</b>가 필요할 수 있습니다. 후보 중 <b>Sweetplay Big Play(4층), Gym Net Play, Sky Trail, Ninja Warrior, 볼 풀 상부</b>가 해당 검토 대상입니다.</div>
-
-  <h3><i>C3</i>도면에서 확인된 소방 정보</h3>
-  <div class="tablewrap"><table>
-    <thead><tr><th>항목</th><th>확인 내용</th></tr></thead>
-    <tbody>
-      <tr class="total"><td class="item"><a class="gl" href="#g-riser">스프링클러 라이저</a></td><td><b>남서쪽 모서리</b> — 현 도면의 E.P.S · LOCKERS 구역과 겹침</td></tr>
-      <tr><td class="item">소방 인입관</td><td>200 mm <span class="si">8″</span> — 남서쪽</td></tr>
-      <tr><td class="item">급수 인입</td><td>50 mm 계량기 — 남서쪽. 남측 벽 따라 동쪽 화장실로</td></tr>
-      <tr><td class="item">스프링클러 방식</td><td>NFPA 13 전관 설치 · Type II-B 비내화 단층</td></tr>
-      <tr><td class="item">제어밸브</td><td>전자 감시 + <b>개방 위치 자물쇠 고정</b> 의무</td></tr>
-      <tr><td class="item">소화기</td><td>279 m²당 1개 · <b>최소 8개소</b> · 어디서든 <b>22.9 m 이내</b> · 상단 높이 1,524 mm 이하</td></tr>
-      <tr><td class="item">수용 인원 표지</td><td>소방서장 요구에 따라 <b>최대 수용 인원 표지 게시 의무</b></td></tr>
-      <tr><td class="item">관할 소방서</td><td>당시 Littleton Fire → <b>현재 South Metro Fire Rescue</b> (2022년 통합)</td></tr>
-    </tbody>
-  </table></div>
-  <div class="note"><span class="lab">라이저 접근성</span>라이저와 제어밸브는 남서쪽 모서리에 있고, 현 도면에서 <b>E.P.S · LOCKERS 구역</b>과 겹칩니다. 소방 제어밸브는 상시 접근이 가능해야 하므로 락커나 수납으로 가리면 지적 대상입니다. <b>라이저 앞 점검 통로를 도면에 명시</b>하고 락커 배치 제외 구역으로 지정할 것.</div>
-</section>
-
-<section id="c4">
+<section id="c2">
   <h2>구조물 면적 · 탈출구</h2>
   <p class="lede">미국 건축법에는 <b>실내 놀이구조물 전용 조항(<a class="gl" href="#g-424">§424</a>)</b>이 있습니다. 핵심은 <b>"구조물 하나당 55.7 m² 이하"</b>입니다. 넘으면 화재안전 전문가의 별도 보고서가 필요합니다.</p>
 
-  <h3><i>C4</i>적용 기준</h3>
+  <h3><i>C2</i>적용 기준</h3>
   <div class="tablewrap"><table>
     <thead><tr><th>항목</th><th>기준</th></tr></thead>
     <tbody>
@@ -763,7 +807,7 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
   </div>
   <div class="note"><span class="lab">"하나의 구조물"의 범위</span>다리·터널·네트로 연결된 요소들을 관청이 하나로 묶어 볼 수 있습니다. <b>물리적으로 분리돼 있음이 명확하도록</b> 설계하는 것이 안전합니다. 큰 구조물이 불가피하다면 <a class="gl" href="#g-fpe">FPE</a> 보고서가 필요하며, 작성에 수 주가 걸리는 <b>일정 항목</b>이므로 콘텐츠 확정과 동시에 착수해야 합니다.</div>
 
-  <h3><i>C4</i>왜 탈출구가 2개 필요한가 — Common Path of Travel</h3>
+  <h3><i>C2</i>왜 탈출구가 2개 필요한가 — Common Path of Travel</h3>
   <p><a class="gl" href="#g-cpt">Common path of travel</a>은 <b>"피난할 때 선택지가 하나뿐인 구간"</b>의 길이입니다. 서로 다른 두 비상구로 갈 수 있는 갈림길에 도달하면 끝납니다. 집회시설의 한도는 <b>22.9 m</b>입니다.</p>
 
   <figure id="cptfig">
@@ -797,6 +841,40 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
   <br><br><b>대응</b> — 구조물마다 <b>서로 떨어진 탈출구를 2개소 이상</b> 두고, 가장 안쪽 지점에서 열린 바닥까지의 실제 보행거리를 22.9 m 이내로 설계합니다. <b>놀이기구 발주 시 제조사에 이 조건을 사양으로 전달</b>해야 합니다. 참고로 KristallTurm은 사양상 이미 출구 2개(1개는 스틸 슬라이드)를 갖추고 있습니다.</div>
 </section>
 
+<section id="c3">
+  <h2>소방 · 스프링클러</h2>
+  <p class="lede">건물에는 스프링클러가 <b>이미 전체에 설치</b>돼 있습니다. 문제는 두 가지입니다. <b>첫째</b>, 기존 스프링클러 도면이 인허가 도서에 없습니다 — 미국식 관행상 스프링클러 업체가 따로 설계해 <a class="gl" href="#g-deferred">별도 제출</a>했기 때문입니다. <b>둘째</b>, 기존 헤드는 <b>매장 진열대 기준</b>으로 배치됐습니다. 다층 놀이구조물이 들어오면 <b>물이 구조물에 막혀 아래로 안 떨어집니다.</b></p>
+
+  <div class="danger"><span class="lab">가장 먼저 할 일</span><b>건물주 또는 원 시공사에게 기존 스프링클러 설계도서(헤드 배치도 + 수리계산서)를 요청할 것.</b> 이게 없으면 놀이구조물을 얼마나 넣을 수 있는지 판단이 안 됩니다. <b>놀이구조물 발주 전에</b> 확보해야 합니다 — 구조물이 확정된 뒤에 소방을 맞추면 재제작이 발생합니다.</div>
+
+  <h3><i>C3</i>놀이구조물이 스프링클러 물을 막습니다</h3>
+  <p>미국 소방 기준(<a class="gl" href="#g-nfpa">NFPA 13</a>)은 <b>폭 1,219 mm를 넘는 고정 장애물</b> 아래로는 천장 스프링클러 물이 도달하지 못한다고 봅니다. 놀이구조물의 수평 데크·터널·플랫폼이 전형적인 해당 사례입니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>방법</th><th>내용</th><th>평가</th></tr></thead>
+    <tbody>
+      <tr><td class="item">구조물 안에 헤드 설치</td><td>장애물 아래 보조 스프링클러를 넣는다</td><td><span class="st st-no">비권장</span> 헤드·배관·행거가 아이 동선에 노출 → 충돌·걸림 위험</td></tr>
+      <tr class="total"><td class="item">천장 시스템 강화</td><td>천장 스프링클러를 <b>더 높은 등급(Extra Hazard Group II) 밀도</b>로 재설계해 장애물 아래까지 제압</td><td><span class="st st-ok">권장</span> 실무에서 널리 쓰이며 NFPA 13도 이를 상정</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><span class="lab">비용·공기에 영향</span>천장 시스템을 강화하면 <b>물 사용량과 배관 굵기가 커집니다.</b> 기존 인입관(200 mm)과 수압이 감당하지 못하면 <b>인입관 교체나 소방 펌프 설치</b>가 필요할 수 있습니다. 후보 중 <b>Sweetplay Big Play(4층), Gym Net Play, Sky Trail, Ninja Warrior, KristallTurm, 볼 풀 상부</b>가 해당 검토 대상입니다.</div>
+
+  <h3><i>C3</i>도면에서 확인된 소방 정보</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>항목</th><th>확인 내용</th></tr></thead>
+    <tbody>
+      <tr class="total"><td class="item"><a class="gl" href="#g-riser">스프링클러 라이저</a></td><td><b>남서쪽 모서리</b> — 현 도면의 E.P.S · LOCKERS 구역과 겹침</td></tr>
+      <tr><td class="item">소방 인입관</td><td>200 mm <span class="si">8″</span> — 남서쪽</td></tr>
+      <tr><td class="item">급수 인입</td><td>50 mm 계량기 — 남서쪽. 남측 벽 따라 동쪽 화장실로</td></tr>
+      <tr><td class="item">스프링클러 방식</td><td>NFPA 13 전관 설치 · Type II-B 비내화 단층</td></tr>
+      <tr><td class="item">제어밸브</td><td>전자 감시 + <b>개방 위치 자물쇠 고정</b> 의무</td></tr>
+      <tr><td class="item">소화기</td><td>279 m²당 1개 · <b>최소 8개소</b> · 어디서든 <b>22.9 m 이내</b> · 상단 높이 1,524 mm 이하</td></tr>
+      <tr><td class="item">수용 인원 표지</td><td>소방서장 요구에 따라 <b>최대 수용 인원 표지 게시 의무</b></td></tr>
+      <tr><td class="item">관할 소방서</td><td>당시 Littleton Fire → <b>현재 South Metro Fire Rescue</b> (2022년 통합)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lab">라이저 접근성</span>라이저와 제어밸브는 남서쪽 모서리에 있고, 현 도면에서 <b>E.P.S · LOCKERS 구역</b>과 겹칩니다. 소방 제어밸브는 상시 접근이 가능해야 하므로 락커나 수납으로 가리면 지적 대상입니다. <b>라이저 앞 점검 통로(1,118 mm)를 도면에 명시</b>하고 락커 배치 제외 구역으로 지정할 것.</div>
+</section>
+
 <section id="d1">
   <p class="eyebrow">Part D — 실행</p>
   <h2>지금 해야 할 일</h2>
@@ -804,29 +882,29 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
 
   <h3><i>D1</i>진행 순서</h3>
   <ol class="steps">
-    <li><b>실측·자료 확보</b> — 층고 9개 지점 재실측(C1), 기존 스프링클러 설계도서 요청(C3), 콜로라도 동종시설 수용 인원 표지 촬영(B1)</li>
-    <li><b>콘텐츠 확정</b> — 층고 판정(C1)을 1차 필터로 후보를 좁힌 뒤 기구 선정</li>
+    <li><b>도면 치수 보완</b> — RIDING · KITCHEN · RESTROOM · NURSING · OPERATION · SERVER ROOM 치수 기입 (A1 참조)</li>
+    <li><b>자료 확보</b> — 기존 스프링클러 설계도서 요청(C3), 콜로라도 동종시설 수용 인원 표지 촬영(B1)</li>
+    <li><b>콘텐츠 확정</b> — C1의 규정 판정을 참고해 존별 기구 선정</li>
     <li><b>기구별 정원·면적표 작성</b> — 제조사 사양서에서 동시 수용 정원과 구조물 투영면적을 뽑아 정리</li>
     <li><b>사전협의(pre-application meeting)</b> — 아래 표의 1·2·3번을 <b>문서화된 답</b>으로 받는다</li>
-    <li><b>도면 본격 착수</b></li>
+    <li><b>복도 설정 → 도면 본격 착수</b></li>
   </ol>
 
   <h3><i>D1</i>관청(<a class="gl" href="#g-ahj">AHJ</a>)에서 확정받아야 할 것</h3>
   <div class="tablewrap"><table>
     <thead><tr><th>항목</th><th>어디에</th><th>왜 중요한가</th><th>상태</th></tr></thead>
     <tbody>
-      <tr class="total"><td class="item">놀이 공간 수용 인원 계수</td><td>Centennial 건축과 + 소방서</td><td>867명 ↔ 1,886명. 비상구 신설 여부, 화장실 규모 2배 차이</td><td><span class="tag t-open">선행</span></td></tr>
+      <tr class="total"><td class="item">놀이 공간·개방 구역 수용 인원 계수</td><td>Centennial 건축과 + 소방서</td><td>840명 ↔ 1,840명. 비상구 신설 여부, 화장실 규모 2배 차이</td><td><span class="tag t-open">선행</span></td></tr>
       <tr class="total"><td class="item">기존 스프링클러 설계도서</td><td>건물주 · 원 시공사</td><td>놀이구조물 보호 방식 결정. 인입관·펌프 교체 여부</td><td><span class="tag t-open">선행</span></td></tr>
-      <tr class="total"><td class="item">층고 9개 지점 실측</td><td>현지 파트너</td><td>구조물 후보 3종의 가능/불가가 여기서 갈림</td><td><span class="tag t-open">선행</span></td></tr>
+      <tr class="total"><td class="item">메인 복도의 corridor 인정 여부</td><td>건축과</td><td>순면적 공제 가능 여부 — 수용 인원 직접 영향</td><td><span class="tag t-open">선행</span></td></tr>
       <tr><td class="item">용도분류 확정 (A-3 단독)</td><td>건축과</td><td>교육시설이 섞이면 복도 기준이 달라짐</td><td><span class="tag t-open">미해결</span></td></tr>
       <tr><td class="item">"하나의 구조물" 판정 기준</td><td>건축과</td><td>55.7 m² 적용 범위. FPE 보고서 일정</td><td><span class="tag t-open">미해결</span></td></tr>
       <tr><td class="item">구조물 간 거리 6,096 mm 적용 여부</td><td>건축과</td><td>적용되면 존 배치 재조정</td><td><span class="tag t-open">미해결</span></td></tr>
       <tr><td class="item">주정부 등록 대상 목록 확정</td><td>Division of Oil and Public Safety</td><td>개장 전 등록·검사 필수. 일정 항목</td><td><span class="tag t-open">미해결</span></td></tr>
-      <tr><td class="item">Ninja Warrior · ValoClimb 판정</td><td>동일</td><td>등록 대상 여부 애매 — 질의 필요</td><td><span class="tag t-open">미해결</span></td></tr>
+      <tr><td class="item">Ninja Warrior · ValoClimb · KristallTurm 판정</td><td>동일</td><td>등록 대상 여부 애매 — 질의 필요</td><td><span class="tag t-open">미해결</span></td></tr>
       <tr><td class="item">암전 연출 존의 §411 해당 여부</td><td>건축과 + 소방서</td><td>EVAC·저위치 유도등 추가</td><td><span class="tag t-open">미해결</span></td></tr>
       <tr><td class="item">비상방송(EVAC) 설비 유무</td><td>현장 실사</td><td>피난폭 완화 가능 여부</td><td><span class="tag t-open">미해결</span></td></tr>
       <tr><td class="item">1인용 화장실 구성 인정 여부</td><td>건축과</td><td>남녀 분리 원칙 예외 적용</td><td><span class="tag t-open">미해결</span></td></tr>
-      <tr><td class="item">메인 복도의 corridor 인정 여부</td><td>건축과</td><td>순면적 공제 가능 여부</td><td><span class="tag t-open">미해결</span></td></tr>
     </tbody>
   </table></div>
 
@@ -834,18 +912,18 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
   <div class="tablewrap"><table>
     <thead><tr><th class="rnum">#</th><th>항목</th><th>현재</th><th>조치</th><th>상태</th></tr></thead>
     <tbody>
-      <tr class="total"><td class="rnum">1</td><td class="item">메인 순환 복도</td><td>미정</td><td><b>2,210 mm 이상</b>으로 도면에 정의</td><td><span class="tag t-change">신규</span></td></tr>
-      <tr><td class="rnum">2</td><td class="item">남동쪽 좁은 통로 2곳</td><td>1,694 / 1,794 mm</td><td><b>1,829 mm 이상</b>으로 확대</td><td><span class="tag t-change">변경</span></td></tr>
-      <tr><td class="rnum">3</td><td class="item">화장실 확장</td><td>46 m²</td><td><b>70–79 m²</b> · 수유실 통합 재편 검토</td><td><span class="tag t-change">변경</span></td></tr>
+      <tr class="total"><td class="rnum">1</td><td class="item">메인 순환 복도</td><td>미설정</td><td>B2의 5개 축에 <b>2,200 mm</b> 복도를 새로 정의</td><td><span class="tag t-change">신규</span></td></tr>
+      <tr class="total"><td class="rnum">2</td><td class="item">보조 통로</td><td>미설정</td><td>파티룸·화장실 앞 <b>1,829 mm</b></td><td><span class="tag t-change">신규</span></td></tr>
+      <tr class="total"><td class="rnum">3</td><td class="item">화장실 확장</td><td>48 m²</td><td><b>70–79 m²</b> · 수유실 통합 재편 검토</td><td><span class="tag t-change">변경</span></td></tr>
       <tr><td class="rnum">4</td><td class="item">가족화장실</td><td>없음</td><td><b>1개소 신설</b> (법정 의무)</td><td><span class="tag t-change">신규</span></td></tr>
-      <tr><td class="rnum">5</td><td class="item">스프링클러 라이저 접근 통로</td><td>락커 구역과 중첩</td><td>점검 통로 명시 · 락커 제외 구역 지정</td><td><span class="tag t-change">변경</span></td></tr>
-      <tr><td class="rnum">6</td><td class="item">놀이구조물 개별 면적표</td><td>콘텐츠 미정</td><td>구조물 단위 <b>55.7 m² 이하</b> 확인표</td><td><span class="tag t-open">대기</span></td></tr>
-      <tr><td class="rnum">7</td><td class="item">놀이구조물 탈출구</td><td>콘텐츠 미정</td><td>구조물별 <b>2개소 이상</b> · 안쪽에서 22.9 m 이내</td><td><span class="tag t-open">대기</span></td></tr>
-      <tr><td class="rnum">8</td><td class="item">트램펄린 존 게이트·스태프 포스트</td><td>개방형</td><td>게이트 + 감시 위치 + 평활 벽면 명시</td><td><span class="tag t-change">신규</span></td></tr>
-      <tr><td class="rnum">9</td><td class="item">대기줄 · 유모차 주차</td><td>미표기</td><td>통로 요구 폭 <b>바깥</b>에 별도 구역</td><td><span class="tag t-change">신규</span></td></tr>
-      <tr><td class="rnum">10</td><td class="item">음수대</td><td>미표기</td><td><b>2개소</b> · 아동 높이 포함</td><td><span class="tag t-change">신규</span></td></tr>
-      <tr><td class="rnum">11</td><td class="item">소화기</td><td>미표기</td><td><b>8개소 이상</b> · 22.9 m 이내 · 벽 매입</td><td><span class="tag t-change">신규</span></td></tr>
-      <tr><td class="rnum">12</td><td class="item">슬라임바 손세정대</td><td>미표기</td><td>콘텐츠 채택 시 급배수 계획 반영</td><td><span class="tag t-open">대기</span></td></tr>
+      <tr><td class="rnum">5</td><td class="item">아동용 변기·세면기</td><td>미표기</td><td>남·여 각 <b>변기 1~2 · 세면기 1</b>을 아동 높이로 (요구 개수에 산입)</td><td><span class="tag t-change">신규</span></td></tr>
+      <tr><td class="rnum">6</td><td class="item">미기입 치수</td><td>6개 항목</td><td>RIDING · KITCHEN · RESTROOM · NURSING · OPERATION · SERVER 치수 기입</td><td><span class="tag t-change">보완</span></td></tr>
+      <tr><td class="rnum">7</td><td class="item">스프링클러 라이저 접근 통로</td><td>락커 구역과 중첩</td><td>점검 통로 명시 · 락커 제외 구역 지정</td><td><span class="tag t-change">신규</span></td></tr>
+      <tr><td class="rnum">8</td><td class="item">놀이구조물 개별 면적표</td><td>콘텐츠 미정</td><td>구조물 단위 <b>55.7 m² 이하</b> 확인표</td><td><span class="tag t-open">대기</span></td></tr>
+      <tr><td class="rnum">9</td><td class="item">놀이구조물 탈출구</td><td>콘텐츠 미정</td><td>구조물별 <b>2개소 이상</b> · 안쪽에서 22.9 m 이내</td><td><span class="tag t-open">대기</span></td></tr>
+      <tr><td class="rnum">10</td><td class="item">트램펄린 존 게이트·스태프 포스트</td><td>개방형</td><td>게이트 + 감시 위치 + 평활 벽면 명시</td><td><span class="tag t-change">신규</span></td></tr>
+      <tr><td class="rnum">11</td><td class="item">대기줄 · 유모차 주차</td><td>미표기</td><td>복도 요구 폭 <b>바깥</b>에 별도 구역</td><td><span class="tag t-change">신규</span></td></tr>
+      <tr><td class="rnum">12</td><td class="item">음수대 · 소화기</td><td>미표기</td><td>음수대 2개소(hi/low) · 소화기 8개소 이상, 22.9 m 이내, 벽 매입</td><td><span class="tag t-change">신규</span></td></tr>
       <tr><td class="rnum">13</td><td class="item">기존 비상구 5개소</td><td>도면 미표기 (인지됨)</td><td>원 도면대로 유지 · 각 비상구 앞 통로만 확보 확인</td><td><span class="tag t-keep">유지</span></td></tr>
     </tbody>
   </table></div>
@@ -929,7 +1007,7 @@ figcaption{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.7}
 <div class="foot">
   검토 자료 — ① ARTE_KIDS_LAYOUT_0820 (CAD) ② Best Buy 인허가 도서 58매 (2008, A-0 / M-2) ③ Contents Item Reference (2026.08.19) ④ 7 CCR 1101-12 Amusement Rides and Devices Regulations<br>
   근거 법령 — 2021 IBC §303 · §411 · §424 · §1004.3 · §1004.5 · §1005.3.2 · §1005.5 · §1006.2.1 · §1017.2 · §1018 · §1020.2 · §1020.3 · Table 1004.5 · Table 2902.1 / 2021 IPC §403 · §419.2 · Table 403.1 / Colorado Plumbing Code 3 CCR 720-1 / NFPA 13 · NFPA 10 / ASTM F770 · F1159 · F2291 · F2375 · F2959 · F2970 / 2010 ADA Standards §213 · §403.5 · §404.2.4 · §604.8 · §604.9 / Centennial Municipal Code Ch.18<br><br>
-  제한사항 — 기존 도서는 2008년 스캔 도면으로 수치는 판독 결과이며, 인허가 제출 전 원본 대조가 필요합니다. CAD 실측은 도면 치수열로 축척을 역산한 값으로 오차 ±2% 수준이고, 평면 개념도의 비상구 위치는 비례 환산한 개략 위치입니다. 층고는 9개 지점 ± 근사치이므로 재실측이 선행돼야 합니다. 놀이기구 규정 판정은 Contents Reference의 공개 사양 기준 잠정 판정이며, 실제 발주 사양으로 재확인이 필요합니다. §1004.5 예외 조항 문구는 2차 자료 교차확인 결과로 Centennial 채택 판본 원문에서 재확인이 필요합니다. 기존 스프링클러 설계도서는 미확보 상태입니다.<br><br>
+  제한사항 — 기존 도서는 2008년 스캔 도면으로 수치는 판독 결과이며, 인허가 제출 전 원본 대조가 필요합니다. CAD 실측은 도면 상단 치수열(합계 55,068 mm)로 축척을 역산한 값으로, 치수가 기입되지 않은 항목(RIDING · KITCHEN · RESTROOM · NURSING · OPERATION · SERVER ROOM 좌·우)은 실측 추정값이며 오차 ±2% 수준입니다. 수용 인원 합계는 이 추정값에 영향을 받으므로, 치수 기입 후 재산정이 필요합니다. 평면 개념도의 비상구 위치는 비례 환산한 개략 위치입니다. 놀이기구 규정 판정은 Contents Reference의 공개 사양 기준 잠정 판정이며, 실제 발주 사양으로 재확인이 필요합니다. §1004.5 예외 조항 문구는 2차 자료 교차확인 결과로 Centennial 채택 판본 원문에서 재확인이 필요합니다. 기존 스프링클러 설계도서는 미확보 상태입니다.<br><br>
   d'strict · Arte Kids Park USA · 2026.08.21
 </div>
 
