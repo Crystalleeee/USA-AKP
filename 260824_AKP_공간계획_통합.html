@@ -188,6 +188,8 @@ a.gl{cursor:help}
 .sumrow a.t span{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-right:7px}
 .sumrow p{margin:0;font-size:12.8px;color:var(--ink2);line-height:1.6}
 @media(max-width:640px){.sumrow{grid-template-columns:1fr;gap:2px}}
+.srcline{font-family:var(--mono);font-size:10.5px;color:var(--ink3);border-top:1px dashed var(--rule);margin-top:20px;padding-top:9px;line-height:1.8}
+.srcline b{color:var(--ink2);font-weight:700;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -206,6 +208,7 @@ a.gl{cursor:help}
     <a href="#b1"><span>B1</span>수용 인원 약 840명</a>
     <a href="#b2"><span>B2</span>복도 폭 2,200 mm</a>
     <a href="#b3"><span>B3</span>화장실 +22~31 m²</a>
+    <a href="#b4"><span>B4</span>피난 동선 3조건</a>
     <a class="grp">PART C · 놀이기구와 규정</a>
     <a href="#c1"><span>C1</span>존별 후보 규정 판정</a>
     <a href="#c2"><span>C2</span>구조물 면적 · 탈출구</a>
@@ -238,6 +241,8 @@ a.gl{cursor:help}
     <a href="#mb4"><span>B4</span>소방(전수)</a>
     <a href="#mc1"><span>C1</span>도면 사진</a>
     <a href="#mc2"><span>C2</span>알수없음·리뉴얼</a>
+    <a class="grp">검증</a>
+    <a href="#vlog"><span>V</span>반박·수정·재검증 로그</a>
   </nav>
   <footer>
     검토 자료<br>
@@ -254,7 +259,7 @@ a.gl{cursor:help}
 <section id="s0" class="hero">
   <p class="eyebrow">Space Planning Guide</p>
   <h1>옛 전자제품 매장을 키즈파크로 바꿉니다.<br>무엇이 그대로 쓰이고, 무엇을 새로 정해야 하는지 정리했습니다.</h1>
-  <p>미국 건축법에서 <b>매장과 키즈파크는 다른 용도</b>이기 때문에, 안전 관련 기준이 전부 다시 계산됩니다. 계산해 보니 <b>복도 폭</b>은 지금 도면에 없어 새로 설정해야 하고, <b>화장실</b>은 지금보다 커져야 합니다. 나머지는 대체로 기존 건물 조건 안에서 해결됩니다. 이 문서는 공간·도면·규정을 모르는 분도 읽을 수 있도록 썼습니다 — 어려운 단어에는 <a class="gl" href="#g-load">이런 표시</a>가 붙어 있고, 마우스를 올리면(모바일은 탭) 뜻이 나옵니다.</p>
+  <p>미국 건축법에서 <b>매장과 키즈파크는 다른 용도</b>이기 때문에, 안전 관련 기준이 전부 다시 계산됩니다. 계산해 보니 <b>복도 폭</b>은 지금 도면에 없어 새로 설정해야 하고, <b>화장실</b>은 지금보다 커져야 합니다. 나머지는 대체로 기존 건물 조건 안에서 해결됩니다. 이 문서는 공간·도면·규정을 모르는 분도 읽을 수 있도록 썼습니다 — 어려운 단어에는 <a class="gl" href="#g-load">이런 표시</a>가 붙어 있고, 마우스를 올리면(모바일은 탭) 뜻이 나옵니다. 각 섹션 하단의 <b>근거(출처)</b> 줄에서 모든 수치가 어떤 기준에서 왔는지 확인할 수 있고, 문서 끝의 <a href="#vlog">검증 로그</a>에 반박·수정·재검증 기록이 있습니다.</p>
   <div class="keyrow">
     <div class="key"><b>2,200<em>mm</em></b><span>메인 복도 폭 · 새로 설정할 값</span></div>
     <div class="key"><b>+22~31<em>m²</em></b><span>화장실 증설 필요량</span></div>
@@ -282,6 +287,7 @@ a.gl{cursor:help}
   <div class="sumrow"><a class="t" href="#b1"><span>B1</span>수용 인원 약 840명</a><p>놀이존을 운동실 계수로 보면 ~840명(기존 매장 정원과 동급). 이 숫자가 모든 안전기준의 기준값입니다.</p></div>
   <div class="sumrow"><a class="t" href="#b2"><span>B2</span>복도 폭 2,200 mm</a><p>도면에 없던 메인 복도 폭을 최소 2,200 mm로 설정하면 피난폭·통행이 함께 충족됩니다.</p></div>
   <div class="sumrow"><a class="t" href="#b3"><span>B3</span>화장실 +22~31 m²</a><p>집회시설 기준상 변기 수가 늘어, 화장실을 지금의 약 1.6배로 키워야 합니다.</p></div>
+  <div class="sumrow"><a class="t" href="#b4"><span>B4</span>피난 동선 3조건</a><p>총거리 76.2 m · 공용 통로 22.9 m · 막다른 복도 6.1 m를 동시에 충족 — A용도는 막다른 복도의 스프링클러 완화가 없습니다.</p></div>
   <div class="sumgrp">Part C · 규정 (놀이·소방·에너지)</div>
   <div class="sumrow"><a class="t" href="#c1"><span>C1</span>존별 규정 판정</a><p>각 놀이존이 §424(구조물)·§411(암전·연출) 중 무엇에 걸리는지 — 벽·연출·어둠 여부로 갈립니다.</p></div>
   <div class="sumrow"><a class="t" href="#c2"><span>C2</span>구조물 면적·탈출구</a><p>놀이구조물 하나당 55.7 m² 이하, 구조물마다 탈출구를 확보해야 합니다.</p></div>
@@ -294,6 +300,8 @@ a.gl{cursor:help}
   <div class="sumgrp">Part F · MEP 설비</div>
   <div class="sumrow"><a class="t" href="#mg1"><span>G1–G6</span>배치 판단 가이드</a><p>전기·공조·급배수·소방의 고정점을 기준으로, 어디에 무엇을 두면 공사·비용이 유리한지 정리했습니다.</p></div>
   <div class="sumrow"><a class="t" href="#ma1"><span>A1–C2</span>설비 실측·재사용 판정</a><p>전기 800A(접속 87%)·공조 RTU 10대·급배수 남서 인입 등 기존 설비의 재사용/교체를 판정했습니다.</p></div>
+  <div class="sumgrp">검증</div>
+  <div class="sumrow"><a class="t" href="#vlog"><span>V</span>반박·수정·재검증 로그</a><p>본문 주요 주장 11건을 코드 원문 기준으로 반박 시도 — 5건 수정, 5건 검증 후 유지, 1건 오픈(원문 대조 필요).</p></div>
 </section>
 
 <section id="a1">
@@ -466,6 +474,8 @@ a.gl{cursor:help}
       <p>동선 화살표는 도면의 채워진 도형 요소로 13개를 검출하고, 각 도형의 꼭짓점 분포로 방향을 판정한 뒤 확대 이미지로 교차 확인했습니다.</p>
     </div>
   </details>
+
+  <p class="srcline"><b>근거(출처)</b> — ARTE_KIDS_LAYOUT_0820(CAD) 치수열 역산 실측 · Best Buy 인허가 도서(2008 · CEN0800595) A-0/A-1 판독 — 비상구·배관 인입 위치 포함</p>
 </section>
 
 <section id="a2">
@@ -525,6 +535,8 @@ a.gl{cursor:help}
     <span>벽으로 나누지 않으므로, 코드상 세 가지 길이 있습니다. ① <b>부속용도</b> — F&amp;B가 전체 바닥면적의 <b>10% 이하</b>면 A-3 하나로 보고 분리 불필요. ② <b>비분리 혼합용도</b> — 나누지 않되 <b>각 기준 중 더 엄격한 쪽</b>을 전체에 적용. ③ <b>분리 혼합용도</b> — 내화벽으로 구획(개방 콘셉트와 맞지 않음).</span>
     <span>우리처럼 카페가 작고 개방형이면 <b>①부속용도 또는 ②비분리</b>가 현실적입니다. 최종 판단은 면적 비율과 관청 협의로 정합니다.</span>
   </div>
+
+  <p class="srcline"><b>근거(출처)</b> — 용도분류: 2021 IBC §302·§303.3(A-2)·§303.4(A-3) · 계수: Table 1004.5 · 피난폭 5.08/3.81 mm/인: §1005.3.2(0.2″/0.15″, 완화는 스프링클러+EVAC 동시 충족 시) · 혼합용도: §508.2(부속 10% 이하)·§508.3(비분리)·§508.4(분리)</p>
 </section>
 
 <section id="b1">
@@ -601,6 +613,8 @@ a.gl{cursor:help}
       <p>추가로 Centennial 건축과에 <b>기존 인허가 도서 열람</b>을 신청할 수 있습니다(콜로라도 공공기록법 CORA 대상).</p>
     </div>
   </details>
+
+  <p class="srcline"><b>근거(출처)</b> — 2021 IBC §1004.5·Table 1004.5(운동실 4.65 gross · 집회 미고정석 1.39 net ㎡/인) · §1004.5 예외(관청 승인 시 실제 설계 정원 적용 가능) · 면적: CAD 실측(오차 ±2%)</p>
 </section>
 
 <section id="b2">
@@ -652,6 +666,8 @@ a.gl{cursor:help}
 
   <div class="warn"><span class="lab">복도 폭 안에 두면 안 되는 것</span>매표 대기줄 · 유모차 주차 · 락커 · 벤치 · 자판기 · <b>소화기함</b>. 요구 폭 안에 들어오면 위반입니다. 소화기함은 <b>벽에 파묻는 방식(리세스)</b>으로 설계해야 합니다.</div>
   <div class="note"><span class="lab">보너스 — 복도를 넓게 그리면 오히려 이득</span>미국 코드는 <a class="gl" href="#g-netgross">순면적</a>을 계산할 때 <b>복도를 제외</b>합니다. 메인 통로를 <b>정식 복도로 도면에 정의</b>하면 그 면적만큼 수용 인원 계산에서 빠질 수 있습니다. 다만 개방형 홀의 통로를 복도로 인정할지는 관청 판단이므로 사전 확인이 필요합니다.</div>
+
+  <p class="srcline"><b>근거(출처)</b> — 2021 IBC §1005.3.2(피난폭 1인당 0.2″=5.08 mm, 스프링클러+EVAC 시 0.15″=3.81 mm) · §1020.3·Table 1020.3(복도 최소폭 1,118 mm=44″) · 수용 인원: B1</p>
 </section>
 
 <section id="b3">
@@ -757,6 +773,25 @@ a.gl{cursor:help}
       <p><b>F&amp;B·주방 별도</b>: 3조 싱크, 손세정 전용 싱크, 대걸레 싱크, 그리스 트랩이 필요합니다. 식품 영업허가는 <b>Arapahoe County Public Health</b> 소관으로 건축 인허가와 별개 라인입니다.</p>
     </div>
   </details>
+
+  <p class="srcline"><b>근거(출처)</b> — 2021 IPC §403.1·Table 403.1(A-3: 남 변기 1/125 · 여 1/65 · 세면기 1/200 — 기존 M: 변기 1/500) · Colorado Plumbing Code 3 CCR 720-1(주 전역 2021 IPC 채택) · 2010 ADA Standards §213·§604</p>
+</section>
+
+<section id="b4">
+  <h2>피난 동선 — 동시에 지켜야 할 거리 조건 3가지</h2>
+  <p class="lede">피난은 "복도 폭"(B2)과 별개로 <b>거리 조건 3가지</b>를 동시에 만족해야 합니다. "<b>총 피난거리 76 m 안이면 OK</b>"는 셋 중 <b>하나만</b> 본 것입니다. 벽 배치가 바뀔 때마다 아래 3개를 함께 재측정하세요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>조건</th><th class="rnum">한도</th><th>뜻</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td class="item">① 총 피난거리<br><span class="si">Travel distance</span></td><td class="rnum"><b>76.2 m</b> <span class="si">250 ft</span></td><td>건물 안 가장 먼 지점에서 비상구까지 <b>실제 걷는 거리</b>. 스프링클러 전제 — 없으면 61 m(200 ft)로 줄어듦</td><td class="num">2021 IBC Table 1017.2</td></tr>
+      <tr class="total"><td class="item">② 공용 통로<br><span class="si">Common path</span></td><td class="rnum"><b>22.9 m</b> <span class="si">75 ft</span></td><td>서로 다른 두 비상구로 갈리는 <b>갈림길에 도달하기 전, 선택지가 하나뿐인 구간</b>의 길이. <b>스프링클러가 있어도 늘어나지 않음</b></td><td class="num">2021 IBC Table 1006.2.1</td></tr>
+      <tr><td class="item">③ 막다른 복도<br><span class="si">Dead-end</span></td><td class="rnum"><b>6.1 m</b> <span class="si">20 ft</span></td><td>들어가면 <b>되돌아 나와야만 하는</b> 막힌 복도의 길이</td><td class="num">2021 IBC §1020.5</td></tr>
+    </tbody>
+  </table></div>
+  <div class="danger"><span class="lab">가장 흔한 오적용 — 반박 검증에서 정정된 항목</span>"막다른 복도는 스프링클러가 있으면 15.2 m(50 ft)까지 완화된다"는 규정이 있지만, 그 완화 예외의 적용 대상 목록(B·E·F·M·R·S·U 등)에 <b>집회시설(A)은 포함되지 않습니다.</b> 즉 <b>A-3인 우리 공간은 스프링클러가 있어도 막다른 복도 6.1 m를 그대로 지켜야 합니다</b>(2021 IBC §1020.5 예외 2). 이 문서의 이전 문답에서 완화가 되는 것처럼 안내된 부분을 정정합니다.</div>
+  <div class="warn"><span class="lab">실전에서 먼저 걸리는 것</span>개방형 공간에 아이템 벽이 늘어날수록 실제로 먼저 걸리는 것은 76 m(①)가 아니라 <b>공용 통로 22.9 m(②)</b>입니다. 놀이존 안쪽 깊숙한 지점(구조물 내부 포함)에서 "두 방향으로 갈리는 지점"까지의 거리를 우선 확인하세요.</div>
+  <div class="note"><span class="lab">체크 방법 (레이아웃 수정 때마다)</span>① 각 존의 <b>가장 깊은 지점</b>을 표시 → ② 그 지점에서 두 비상구로 갈리는 <b>갈림점까지 거리</b>를 잼(공용 통로 ≤22.9 m) → ③ 갈림점을 지나 비상구까지 <b>총거리</b>를 잼(≤76.2 m) → ④ 막힌 복도가 생겼으면 길이를 잼(≤6.1 m). 통과하지 못하면 <b>벽에 개구부(출구)를 추가</b>하거나 존을 재배치합니다.</div>
+  <p class="srcline"><b>근거(출처)</b> — 2021 IBC Table 1017.2(총 피난거리·A·스프링클러 250 ft) · Table 1006.2.1(공용 통로·A·75 ft) · §1020.5(막다른 복도 20 ft, 예외 2의 완화 대상에 Group A 불포함) · §1020 조항 번호는 2021판 기준(채택 판본 원문 대조 권장)</p>
 </section>
 
 <section id="c1">
@@ -898,6 +933,8 @@ a.gl{cursor:help}
       <p class="tcap">현재 후보 기준 등록 대상이 10종이면 연 $3,400 수준.</p>
     </div>
   </details>
+
+  <p class="srcline"><b>근거(출처)</b> — 2021 IBC §424(놀이구조물)·§411(특수 유희 구역: 암전·연출) · 7 CCR 1101-12(콜로라도 놀이기구 등록) · ASTM F2970(트램펄린)·F2959(공중 코스)·F1159·F2375 · 기구 사양: Contents Item Reference(08.19) 공개 사양</p>
 </section>
 
 <section id="c2">
@@ -960,6 +997,8 @@ a.gl{cursor:help}
 
   <div class="note"><span class="lab">왜 놀이구조물에서 문제가 되나</span>다층 놀이구조물은 <b>안에서 빠져나오는 길이 사실상 하나</b>인 경우가 많습니다. 3층 터널 안쪽 아이가 미끄럼틀 하나로만 내려올 수 있다면, 그 지점부터 열린 바닥에 나와 두 방향을 고를 수 있는 지점까지가 전부 common path입니다.
   <br><br><b>대응</b> — 구조물마다 <b>서로 떨어진 탈출구를 2개소 이상</b> 두고, 가장 안쪽 지점에서 열린 바닥까지의 실제 보행거리를 22.9 m 이내로 설계합니다. <b>놀이기구 발주 시 제조사에 이 조건을 사양으로 전달</b>해야 합니다. 참고로 KristallTurm은 사양상 이미 출구 2개(1개는 스틸 슬라이드)를 갖추고 있습니다.</div>
+
+  <p class="srcline"><b>근거(출처)</b> — 2021 IBC §424 — 적용 문턱(높이 3,048 mm·면적 13.9 ㎡ 초과)과 구조물당 55.7 ㎡ 한도는 판독 기준이며 <b>§424 원문 대조가 필요한 오픈 항목</b>(검증 로그 #10) · 탈출구: §1006</p>
 </section>
 
 <section id="c3">
@@ -974,7 +1013,7 @@ a.gl{cursor:help}
     <thead><tr><th>방법</th><th>내용</th><th>평가</th></tr></thead>
     <tbody>
       <tr><td class="item">구조물 안에 헤드 설치</td><td>장애물 아래 보조 스프링클러를 넣는다</td><td><span class="st st-no">비권장</span> 헤드·배관·행거가 아이 동선에 노출 → 충돌·걸림 위험</td></tr>
-      <tr class="total"><td class="item">천장 시스템 강화</td><td>천장 스프링클러를 <b>더 높은 등급(Extra Hazard Group II) 밀도</b>로 재설계해 장애물 아래까지 제압</td><td><span class="st st-ok">권장</span> 실무에서 널리 쓰이며 NFPA 13도 이를 상정</td></tr>
+      <tr class="total"><td class="item">천장 시스템 강화</td><td>천장 스프링클러를 <b>더 높은 밀도</b>(예: Extra Hazard 급)로 재설계해 장애물 아래까지 제압</td><td><span class="st st-ok">권장</span> 실무에서 널리 쓰이는 방식 — 단, <b>적용 밀도 등급은 NFPA 13이 특정하지 않으므로 FPE 수리계산·AHJ 협의로 확정</b></td></tr>
     </tbody>
   </table></div>
   <div class="warn"><span class="lab">비용·공기에 영향</span>천장 시스템을 강화하면 <b>물 사용량과 배관 굵기가 커집니다.</b> 기존 인입관(200 mm)과 수압이 감당하지 못하면 <b>인입관 교체나 소방 펌프 설치</b>가 필요할 수 있습니다. 후보 중 <b>Sweetplay Big Play(4층), Gym Net Play, Sky Trail, Ninja Warrior, KristallTurm, 볼 풀 상부</b>가 해당 검토 대상입니다.</div>
@@ -990,7 +1029,7 @@ a.gl{cursor:help}
       <tr><td class="item">제어밸브</td><td>전자 감시 + <b>개방 위치 자물쇠 고정</b> 의무</td></tr>
       <tr><td class="item">소화기</td><td>279 m²당 1개 · <b>최소 8개소</b> · 어디서든 <b>22.9 m 이내</b> · 상단 높이 1,524 mm 이하</td></tr>
       <tr><td class="item">수용 인원 표지</td><td>소방서장 요구에 따라 <b>최대 수용 인원 표지 게시 의무</b></td></tr>
-      <tr><td class="item">관할 소방서</td><td>당시 Littleton Fire → <b>현재 South Metro Fire Rescue</b> (2022년 통합)</td></tr>
+      <tr><td class="item">관할 소방서</td><td>당시 Littleton Fire → <b>현재 South Metro Fire Rescue</b> (2019년 LFR→SMFR 통합 · 연도 재확인 권장)</td></tr>
     </tbody>
   </table></div>
   <div class="note"><span class="lab">라이저 접근성</span>라이저와 제어밸브는 남서쪽 모서리에 있고, 현 도면에서 <b>E.P.S · LOCKERS 구역</b>과 겹칩니다. 소방 제어밸브는 상시 접근이 가능해야 하므로 락커나 수납으로 가리면 지적 대상입니다. <b>라이저 앞 점검 통로(1,118 mm)를 도면에 명시</b>하고 락커 배치 제외 구역으로 지정할 것.</div>
@@ -1006,6 +1045,27 @@ a.gl{cursor:help}
   </table></div>
   <div class="note"><span class="lab">우리 건물은?</span>이미 <b>건물 전관에 스프링클러가 설치</b>돼 있어(NFPA 13 전관), A-2든 A-3든 <b>설치 의무는 이미 충족</b>합니다 — 새로 트리거될 걱정은 없습니다. 실제 과제는 "설치하느냐"가 아니라 <b>놀이구조물 아래까지 물이 닿게 재설계(위 표)</b>하는 것입니다.</div>
   <div class="warn"><span class="lab">F&amp;B(A-2)라서 추가되는 것</span>상업용 주방을 넣으면 스프링클러와 <b>별개로</b> 조리기구 위 <b>Type I 후드 + 자동소화설비(NFPA 96)</b>가 의무입니다. 천장 스프링클러로 대체되지 않는 <b>별도 라인</b>이니 주방 계획 시 반드시 포함하세요.</div>
+
+  <h3><i>C3</i>기존 스프링클러 — 자료가 없을 때 무엇을·어떻게 확인하나</h3>
+  <p>"헤드가 몇 개 있나"만 세는 것으로는 부족합니다. 이 문서의 피난 완화(총 피난거리 76.2 m, 피난폭 3.81 mm/인)는 전부 <b>"건물이 NFPA 13대로 스프링클러가 되어 있다"는 증빙</b> 위에서 성립하므로, 아래 <b>4가지</b>를 확인해야 합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>확인 항목</th><th>내용</th><th>왜 필요한가</th></tr></thead>
+    <tbody>
+      <tr><td class="item">① 범위 <span class="si">coverage</span></td><td>정말 전관인가 — 창고·후방·메자닌 하부까지 빠짐없이</td><td>피난 완화의 전제 조건</td></tr>
+      <tr class="total"><td class="item">② 설계 밀도·헤드</td><td>위험등급·설계 밀도(density)·헤드 종류·간격·K값</td><td><b>가장 중요</b> — 놀이구조물·주방을 감당할 밀도인지가 재설계 범위를 결정</td></tr>
+      <tr><td class="item">③ 수원 성능</td><td>인입관(도면상 200 mm) 정압·잔압·유량시험(flow test) · 소방펌프 유무</td><td>밀도를 올려야 할 때 감당 가능한지 — 인입관 교체·펌프 신설 여부를 좌우</td></tr>
+      <tr><td class="item">④ 라이저·점검 이력</td><td>라이저·제어밸브 위치(도면상 남서 모서리)·상태, 최근 점검(ITM) 기록</td><td>기존 시스템의 유지 상태 증빙(NFPA 25)</td></tr>
+    </tbody>
+  </table></div>
+  <h4>자료가 없을 때 확보 순서</h4>
+  <ol class="steps">
+    <li><b>건물주·관리사·원 스프링클러 시공사</b>에 헤드 배치도 + 수리계산서 요청 — 미국은 스프링클러가 별도 제출(Deferred Submittal) 관행이라 <b>시공 업체가 보관</b>하고 있을 가능성이 가장 높습니다.</li>
+    <li>없으면 <b>South Metro Fire Rescue·Centennial 인허가 기록</b> 조회 — 별도 제출본이 관청에 남아 있을 수 있습니다.</li>
+    <li>그래도 없으면 <b>면허 스프링클러 업체/FPE의 현장 실측</b>으로 as-built를 새로 만들고, <b>유량시험(NFPA 291)</b>으로 수원 성능을 측정해 이것을 baseline으로 삼습니다.</li>
+  </ol>
+  <div class="warn"><span class="lab">타이밍</span><b>놀이구조물 발주·벽체 확정 전</b>에 끝내야 합니다. 이 결과가 "천장 시스템을 얼마나 강화해야 하는가 → 인입관·펌프까지 가는가"를 결정하며, 그것이 예산·공기에 가장 크게 영향을 줍니다.</div>
+
+  <p class="srcline"><b>근거(출처)</b> — NFPA 13(장애물 하부 살수·설계 밀도) · NFPA 10(소화기: 279 ㎡당 1 · 보행 22.9 m) · NFPA 96(주방 Type I 후드 자동소화) · NFPA 25(점검 ITM) · NFPA 291(유량시험) · 2021 IBC §903.2.1.2(A-2 트리거)·§903.2.1.3(A-3 트리거)·§903.4(밸브 감시) · 위치·관경: CEN0800595 판독</p>
 </section>
 
 <section id="en1">
@@ -1022,6 +1082,8 @@ a.gl{cursor:help}
   </table></div>
   <div class="note"><span class="lab">뭘 준비하나</span>① 조명은 <b>LED + 조명제어</b>를 처음부터 예산에 반영 · ② RTU를 교체한다면 <b>고효율 모델</b>로 · ③ 큰 기계 설비는 <b>커미셔닝(성능검증)</b> 요구가 있을 수 있으니 설계사와 확인 · ④ 외피는 손대지 않으면 부담이 적습니다.</div>
   <div class="warn"><span class="lab">주의</span>정확한 적용 범위(특히 조명·커미셔닝 트리거)는 <b>개보수 범위와 관청 해석</b>에 따라 달라지므로, 설계사에게 "이번 스코프가 IECC 상 무엇을 유발하는지" 초기에 확인받으세요.</div>
+
+  <p class="srcline"><b>근거(출처)</b> — 2021 IECC C501~C505(기존 건물 개보수·용도변경) · C405(조명 LPD·자동제어) · C403(기계 효율) · C408(커미셔닝) — 적용 트리거는 공사 범위·관청 해석에 따름</p>
 </section>
 
 <section id="d1">
@@ -1076,12 +1138,14 @@ a.gl{cursor:help}
       <tr><td class="rnum">13</td><td class="item">기존 비상구 5개소</td><td>도면 미표기 (인지됨)</td><td>원 도면대로 유지 · 각 비상구 앞 통로만 확보 확인</td><td><span class="tag t-keep">유지</span></td></tr>
     </tbody>
   </table></div>
+
+  <p class="srcline"><b>근거(출처)</b> — 관할: Centennial 시 건축과 · South Metro Fire Rescue(소방) · 7 CCR 1101-12(주 등록) · 상기 2021 IBC/IPC 각 조항</p>
 </section>
 
 <div class="foot">
   검토 자료 — ① ARTE_KIDS_LAYOUT_0820 (CAD) ② Best Buy 인허가 도서 58매 (2008, A-0 / M-2) ③ Contents Item Reference (2026.08.19) ④ 7 CCR 1101-12 Amusement Rides and Devices Regulations<br>
-  근거 법령 — 2021 IBC §303 · §411 · §424 · §1004.3 · §1004.5 · §1005.3.2 · §1005.5 · §1006.2.1 · §1017.2 · §1018 · §1020.2 · §1020.3 · Table 1004.5 · Table 2902.1 / 2021 IPC §403 · §419.2 · Table 403.1 / Colorado Plumbing Code 3 CCR 720-1 / NFPA 13 · NFPA 10 / ASTM F770 · F1159 · F2291 · F2375 · F2959 · F2970 / 2010 ADA Standards §213 · §403.5 · §404.2.4 · §604.8 · §604.9 / Centennial Municipal Code Ch.18<br><br>
-  제한사항 — 기존 도서는 2008년 스캔 도면으로 수치는 판독 결과이며, 인허가 제출 전 원본 대조가 필요합니다. CAD 실측은 도면 상단 치수열(합계 55,068 mm)로 축척을 역산한 값으로, 치수가 기입되지 않은 항목(KITCHEN · RESTROOM · NURSING · OPERATION · SERVER ROOM 좌·우)은 실측 추정값이며 오차 ±2% 수준입니다. 수용 인원 합계는 이 추정값에 영향을 받으므로, 치수 기입 후 재산정이 필요합니다. 평면 개념도의 비상구 위치는 비례 환산한 개략 위치입니다. 놀이기구 규정 판정은 Contents Reference의 공개 사양 기준 잠정 판정이며, 실제 발주 사양으로 재확인이 필요합니다. §1004.5 예외 조항 문구는 2차 자료 교차확인 결과로 Centennial 채택 판본 원문에서 재확인이 필요합니다. 기존 스프링클러 설계도서는 미확보 상태입니다.<br><br>
+  근거 법령 — 2021 IBC §303 · §411 · §424 · §1004.3 · §1004.5 · §1005.3.2 · §1005.5 · §1006.2.1 · §1017.2 · Table 1017.2 · §1018 · §1020.2 · §1020.3 · §1020.5 · §508.2~§508.4 · §903.2.1.2 · §903.2.1.3 · Table 1004.5 · Table 1006.2.1 · Table 2902.1 / 2021 IPC §403 · §419.2 · Table 403.1 / Colorado Plumbing Code 3 CCR 720-1 / NFPA 13 · NFPA 10 · NFPA 25 · NFPA 96 · NFPA 291 / 2021 IECC C405 · C408 · C501~C505 / ASTM F770 · F1159 · F2291 · F2375 · F2959 · F2970 / 2010 ADA Standards §213 · §403.5 · §404.2.4 · §604.8 · §604.9 / Centennial Municipal Code Ch.18<br><br>
+  제한사항 — 기존 도서는 2008년 스캔 도면으로 수치는 판독 결과이며, 인허가 제출 전 원본 대조가 필요합니다. CAD 실측은 도면 상단 치수열(합계 55,068 mm)로 축척을 역산한 값으로, 치수가 기입되지 않은 항목(KITCHEN · RESTROOM · NURSING · OPERATION · SERVER ROOM 좌·우)은 실측 추정값이며 오차 ±2% 수준입니다. 수용 인원 합계는 이 추정값에 영향을 받으므로, 치수 기입 후 재산정이 필요합니다. 평면 개념도의 비상구 위치는 비례 환산한 개략 위치입니다. 놀이기구 규정 판정은 Contents Reference의 공개 사양 기준 잠정 판정이며, 실제 발주 사양으로 재확인이 필요합니다. §1004.5 예외 조항 문구는 2차 자료 교차확인 결과로 Centennial 채택 판본 원문에서 재확인이 필요합니다. 기존 스프링클러 설계도서는 미확보 상태입니다. 막다른 복도 등 §1020 계열 조항 번호는 2021판 재번호 기준(§1020.5)으로 표기했으며 채택 판본 원문 대조가 필요합니다. LFR→SMFR 통합 연도(2019)는 재확인을 권장합니다.<br><br>
   d'strict · Arte Kids Park USA · 2026.08.21
 </div>
 
@@ -1092,7 +1156,9 @@ a.gl{cursor:help}
 <div class="key"><b>3<em>가지</em></b><span>벽이 만드는 문제: 시야가림·빛그늘·새 밀폐방</span></div>
 <div class="key"><b>17P</b><span>비상 조명기구 종류</span></div>
 <div class="key"><b>46P</b><span>조명 위치(E-1.0)</span></div>
-<div class="key"><b>전관</b><span>스프링클러·화재경보</span></div></div></section>
+<div class="key"><b>전관</b><span>스프링클러·화재경보</span></div></div>
+  <p class="srcline"><b>근거(출처)</b> — Best Buy 도서 17P(조명 스케줄)·46P(E-1.0 조명평면)·50P(FA-1.0 화재경보평면) 판독 · 2021 IBC §1008(비상조명)·§1013(유도등) · NFPA 72(화재경보)·NFPA 13(스프링클러)</p>
+</section>
 
 <section id="l1"><h2>L1 · 비상 조명기구 종류 (17P 조명 스케줄)</h2>
 <p class="lede">정전이 되면 자동으로 켜져 <b>사람이 안전하게 빠져나가게</b> 하는 조명들입니다. 크게 <b>①유도등(방향 안내) ②비상등(바닥 밝히기) ③배터리 내장 형광등(평소엔 일반등)</b> 세 종류입니다.</p>
@@ -1179,6 +1245,8 @@ a.gl{cursor:help}
     <div class="key"><b>남서</b><span>급수·스프링클러 입상관·8″소방급수</span></div>
     <div class="key"><b>2<em>건</em></b><span>알 수 없음 (스프링클러 헤드·FA 배치)</span></div>
   </div>
+
+  <p class="srcline"><b>근거(출처)</b> — CEN0800595 58장 중 M-2(기계)·E-5(전기 라이저·패널 스케줄)·E-7(전기실 입면)·P 계열(급배수)·A-1(건축평면) 판독 — 위치·용량은 도면 판독값이며 현장 실측 검증 필요</p>
 </section>
 
 <section id="mg1"><p class="eyebrow">Part G · 설계 가이드 (기획·디자인 관점)</p><h2>G1 · 공간 배치 판단 지도</h2>
@@ -1345,6 +1413,31 @@ a.gl{cursor:help}
   <div class="note"><span class="lab">추가 확보</span>스프링클러 실시도면 · 화재경보 실시도면 · 기존 소방 필증 · M-1(지붕)·M-3(화장실 배관)·M-5(방풍실 FC-1).</div>
 </section>
 
+
+
+<section id="vlog">
+  <p class="eyebrow">Verification · 반박 → 수정 → 재검증</p>
+  <h2>검증 로그 — 본문 주장을 스스로 반박해 본 기록</h2>
+  <p class="lede">이 문서의 주요 주장 각각에 대해 <b>"틀렸다"고 가정하고 코드 원문 기준으로 반박</b>을 시도했습니다. 반박이 성립하면 본문을 <b>수정</b>했고, 성립하지 않으면 <b>유지(검증됨)</b>, 원문 확인 없이는 판정할 수 없으면 <b>오픈</b>으로 남겼습니다. 오픈 항목은 인허가 제출 전 반드시 원문 대조가 필요합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>#</th><th>검증 대상 주장</th><th>반박 (무엇을 의심했나)</th><th>재검증 결과 · 조치</th><th>판정</th></tr></thead>
+    <tbody>
+    <tr><td class="num">1</td><td class="item">"피난은 총 피난거리 76 m만 지키면 된다"</td><td>총거리 외에 공용 통로·막다른 복도 한도가 별도로 존재하지 않는가</td><td>성립 — Table 1006.2.1(공용 통로 22.9 m)·§1020.5(막다른 복도 6.1 m)가 별도 적용 → <a href="#b4">B4 섹션 신설</a>로 3조건 명시</td><td><span class="st st-mid">수정 반영</span></td></tr>
+    <tr><td class="num">2</td><td class="item">"막다른 복도는 스프링클러가 있으면 15.2 m로 완화"</td><td>§1020.5 예외 2의 완화 대상 목록에 집회시설(A)이 포함되는가</td><td>성립(오류 확인) — 완화 목록(B·E·F·M·R·S·U 등)에 <b>A 없음</b> → A-3는 스프링클러가 있어도 <b>6.1 m 유지</b>로 정정(B4에 명시)</td><td><span class="st st-mid">수정 반영</span></td></tr>
+    <tr><td class="num">3</td><td class="item">"스프링클러가 전관에 있으니 소방은 해결"</td><td>완화 적용에는 NFPA 13 적합 "증빙"이 필요한데 설계도서가 미확보 아닌가</td><td>성립 — 증빙 없이는 76.2 m·3.81 mm 완화가 불인정될 수 있음 → C3에 확인 4항목·확보 3단계 추가</td><td><span class="st st-mid">수정 반영</span></td></tr>
+    <tr><td class="num">4</td><td class="item">"천장 강화 = EH Group II로 재설계, NFPA 13도 이를 상정"</td><td>NFPA 13이 놀이구조물에 특정 등급(EH-II)을 지정하는가</td><td>성립(과잉 단정) — NFPA 13은 등급을 특정하지 않음 → "밀도 등급은 FPE 수리계산·AHJ 협의로 확정"으로 완화</td><td><span class="st st-mid">수정 반영</span></td></tr>
+    <tr><td class="num">5</td><td class="item">"관할 소방은 SMFR(2022년 통합)"</td><td>Littleton Fire→South Metro Fire 통합 연도가 2022년이 맞는가</td><td>성립 — 통합은 <b>2019년</b>으로 확인되어 정정(연도는 재확인 권장 표기)</td><td><span class="st st-mid">수정 반영</span></td></tr>
+    <tr><td class="num">6</td><td class="item">"800A면 전기는 충분"</td><td>기존 접속부하 87%(698 A)·전기주방·미디어 추가를 반영했는가</td><td>기존 문서(B2E·G3)에 이미 "총부하 재계산 필수"로 반영 — E-5 판독값 유지</td><td><span class="st st-ok">유지 · 검증됨</span></td></tr>
+    <tr><td class="num">7</td><td class="item">"수용인원 계수: 운동실 4.65 · 집회 1.39 ㎡/인"</td><td>Table 1004.5 원표와 일치하는가</td><td>불성립 — 50 SF gross(=4.65 ㎡)·15 SF net(=1.39 ㎡)로 일치</td><td><span class="st st-ok">유지 · 검증됨</span></td></tr>
+    <tr><td class="num">8</td><td class="item">"스프링클러 트리거: A-2 100명·464 ㎡ / A-3 300명·1,115 ㎡"</td><td>§903.2.1.2·§903.2.1.3 수치와 일치하는가</td><td>불성립 — 5,000 SF/OL 100(A-2)·12,000 SF/OL 300(A-3)으로 일치</td><td><span class="st st-ok">유지 · 검증됨</span></td></tr>
+    <tr><td class="num">9</td><td class="item">"화장실 A-3: 여 변기 1/65 · 남 1/125, 기존 M은 1/500"</td><td>2021 IPC Table 403.1과 일치하는가</td><td>불성립 — 원표와 일치</td><td><span class="st st-ok">유지 · 검증됨</span></td></tr>
+    <tr><td class="num">10</td><td class="item">"놀이구조물 1개당 55.7 ㎡(600 SF) 한도"</td><td>§424 원문에 이 한도가 그대로 존재하는가</td><td>판정 불가 — 조항 원문 미대조 상태. <b>발주 전 §424 원문·관청 확인 필수</b>(문서 제한사항에 기존 명시)</td><td><span class="st st-no">오픈 · 원문 대조</span></td></tr>
+    <tr><td class="num">11</td><td class="item">"피난폭 3.81 mm 완화는 스프링클러만으로 가능"</td><td>§1005.3.2 예외의 요건이 스프링클러 단독인가</td><td>불성립(본문이 이미 정확) — <b>스프링클러+비상방송(EVAC) 동시</b> 요구로 전 문서 일관 기재 확인</td><td><span class="st st-ok">유지 · 검증됨</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="lab">오픈 항목 처리 방법</span>#10(§424 구조물 면적 한도)과 조항 번호 표기(§1020.5 등 2021판 재번호)는 <b>Centennial이 채택한 판본 원문</b>으로 설계사가 대조 후 확정합니다. 반박·재검증은 코드 지식 기반 자체 검증이며, 인허가 효력은 관청(AHJ) 해석이 최종입니다.</div>
+  <p class="srcline"><b>근거(출처)</b> — 각 행의 재검증 결과 열에 조항 표기 · 판정 기준: 반박 성립=수정, 불성립=유지, 판정 불가=오픈</p>
+</section>
 
 </main>
 </div>
