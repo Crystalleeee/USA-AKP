@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>설계사 미팅 Q&A · AKP SouthGlenn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/lineSeed/LINESeedKR.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{ --m1:#FFFFFF;--m2:#111111;--m3:#353535;--m4:#D6D6D6;
+ --c1:#0065B2;--c2:#FFDF00;--c3:#E41E2E;--c4:#00913B;--c5:#FF8000;--c6:#ED92B9;--c7:#62B5E5;--c8:#00A7B5;
+ --ok:#00B050;--ok-bg:#E6F1ED;--mid:#F59E0B;--mid-bg:#FEF3C7;--no:#FF0000;--no-bg:#FCEBEB;
+ --paper:#FFFFFF;--paper2:#F5F5F5;--card:#FFFFFF;--ink:#111111;--ink2:#353535;--ink3:#888888;--rule:#D6D6D6;--rule2:#E8E8E8;
+ --pine:#0065B2;--pine-soft:#E6F1FB;--accent:#FF8000;
+ --sans:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+ --disp:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,sans-serif;
+ --mono:"LINESeedKR","LINE Seed KR","Pretendard Variable",Pretendard,sans-serif;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.shell{display:flex;align-items:flex-start}
+.side{position:sticky;top:0;height:100vh;width:258px;flex:none;border-right:1px solid var(--rule);background:var(--paper2);padding:24px 20px;display:flex;flex-direction:column;gap:14px}
+.brand{font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:-.025em;line-height:1.1}
+.brand small{display:block;font-family:var(--mono);font-size:10px;font-weight:500;color:var(--ink3);letter-spacing:.06em;margin-top:8px;line-height:1.6}
+nav{display:flex;flex-direction:column;gap:1px;overflow-y:auto}
+nav a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:var(--ink2);font-size:13px;padding:6px 9px;border-radius:6px;border-left:2px solid transparent}
+nav a span{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+nav a:hover{background:#EFEFEF;color:var(--ink)}
+nav a.grp{margin-top:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);pointer-events:none;padding-bottom:2px}
+.side footer{margin-top:auto;font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.6;border-top:1px solid var(--rule2);padding-top:12px}
+main{flex:1;min-width:0;padding:0 46px 120px;max-width:1000px}
+section{padding-top:54px}
+h2{font-family:var(--disp);font-size:26px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin:0 0 8px;font-weight:700}
+.lede{color:var(--ink2);max-width:74ch;margin:0 0 24px;font-size:14.5px}
+h3{font-size:15.5px;font-weight:700;margin:34px 0 12px;letter-spacing:-.01em;padding-bottom:8px;border-bottom:1px solid var(--rule2)}
+h3 i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--pine);margin-right:9px;font-weight:700}
+h4{font-size:14px;font-weight:700;margin:20px 0 8px}
+p{margin:0 0 12px}
+.hero{padding:48px 0 8px;border-top:4px solid var(--accent);border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--disp);font-size:clamp(21px,2.4vw,30px);line-height:1.14;letter-spacing:-.02em;font-weight:800;margin:0 0 10px;color:var(--ink)}
+.hero p{color:var(--ink2);max-width:78ch}
+.keyrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:28px 0 0}
+.key{background:var(--paper2);padding:15px 17px}
+.key b{display:block;font-family:var(--disp);font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.key b em{font-style:normal;font-size:12px;font-weight:700;color:var(--ink2);margin-left:3px}
+.key span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--ink3);text-transform:uppercase;margin-top:7px;line-height:1.4}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 4px}
+th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--rule)}
+td{padding:9px 10px;border-bottom:1px solid var(--rule2);vertical-align:top;line-height:1.65}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tbody tr.total td{background:#E6F1FB;font-weight:700;border-top:1px solid var(--rule)}
+td.item{font-weight:600}
+.tcap{font-size:11.5px;color:var(--ink3);margin:6px 0 0;font-family:var(--mono);line-height:1.6}
+.tablewrap{overflow-x:auto}
+.st{display:inline-block;font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:2px;white-space:nowrap;border:1px solid}
+.st-ok{color:var(--ok);border-color:#B9DEC7;background:#E6F1ED}.st-mid{color:#B45309;border-color:#F5DFA0;background:#FEF3C7}.st-no{color:var(--no);border-color:#F5C2C2;background:#FCEBEB}
+.note{border-left:2px solid var(--pine);background:var(--pine-soft);padding:13px 16px;font-size:13px;color:#10466E;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
+.warn{border-left:2px solid var(--mid);background:var(--mid-bg);padding:13px 16px;font-size:13px;color:#7C4A03;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
+.danger{border-left:3px solid var(--no);background:var(--no-bg);padding:13px 16px;font-size:13px;color:#8A0A0A;margin:14px 0;border-radius:0 3px 3px 0;line-height:1.75}
+.note .lab,.warn .lab,.danger .lab{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.note .lab{color:var(--pine)}.warn .lab{color:#B45309}.danger .lab{color:var(--no)}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.04em;padding:2px 7px;border-radius:2px;color:#fff;white-space:nowrap}
+.t-hvac{background:#FF8000}.t-elec{background:#0065B2}.t-plumb{background:#00A7B5}.t-fire{background:#E41E2E}.t-unk{background:#888}
+ul.tight{margin:6px 0 12px;padding-left:20px}ul.tight li{margin-bottom:5px;font-size:13.5px}
+.planwrap{background:var(--paper2);border:1px solid var(--rule);border-radius:3px;padding:16px}
+.planwrap svg{width:100%;height:auto;display:block}
+.lgd{display:flex;flex-wrap:wrap;gap:7px 15px;margin-top:12px;font-family:var(--mono);font-size:10.5px}
+.lgd span{display:inline-flex;align-items:center;gap:5px}.lgd i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.dw{margin:14px 0;border:1px solid var(--rule2);border-radius:3px;overflow:hidden}
+.dw img{width:100%;display:block;background:#fbe7ef}
+.dw figcaption{font-family:var(--mono);font-size:11px;color:#555;padding:8px 12px;background:#FAFAFA;border-top:1px solid var(--rule2);line-height:1.5}
+.foot{margin-top:60px;border-top:1px solid var(--rule);padding-top:16px;font-family:var(--mono);font-size:11px;color:var(--ink3);line-height:1.7}
+@media (max-width:1000px){.shell{display:block}.side{position:static;height:auto;width:auto;border-right:none;border-bottom:1px solid var(--rule);flex-direction:row;align-items:center;gap:14px;overflow-x:auto;padding:14px 18px}.side footer,.brand small,nav a span,nav a.grp{display:none}nav{flex-direction:row;gap:2px}nav a{white-space:nowrap;border-left:none}main{padding:0 20px 90px}.keyrow{grid-template-columns:1fr 1fr}}
+</style></head><body><div class="shell"><aside class="side"><div class="brand">Arte Kids Park <span style="color:var(--accent)">Q&amp;A</span>
+  <small>설계사(A/E) 미팅 질문지<br>Due Diligence · Full Report<br>2026.08.25</small></div>
+  <nav><a href="#s0"><span>00</span>미팅 개요·전략</a>
+  <a href="#qa"><span>A</span>범위·산출물</a>
+  <a href="#qb"><span>B</span>As-built 부재 대응</a>
+  <a href="#qc"><span>C</span>분야별 핵심 검증</a>
+  <a href="#qd"><span>D</span>인허가·관할</a>
+  <a href="#qe"><span>E</span>일정·비용·팀</a>
+  <a href="#qf"><span>F</span>자료 제공·요청</a>
+  <a href="#ll"><span>★</span>임대인 자료 요청 체크</a></nav>
+  <footer>근거<br>CEN0800595(2008) 판독<br>IBC·2021 IPC·ADA<br>Centennial·South Metro Fire<br>d'strict · AKP USA</footer></aside><main>
+<section id="s0" class="hero"><p class="eyebrow">설계사(A/E) 미팅 · 질문지</p>
+<h1>설계사 미팅 Q&amp;A</h1>
+<p>한 설계사가 <b>건축·구조·전기·기계·배관·소방·피난·접근성</b>을 <b>한 계약으로 통합 검토(full report)</b>해 주는 방식으로 진행합니다. 핵심은 <b>As-built(준공도면)이 없을 가능성</b>이 높다는 점 — 그래서 <b>옛 도면이 아니라 ‘현장 실측 기반 최신 현황’</b>을 확보하는 것이 이 미팅의 최우선 목표입니다. 아래 질문을 순서대로 확인하세요.</p>
+<div class="keyrow">
+<div class="key"><b>1<em>계약</em></b><span>통합 검토(9개 분야)</span></div>
+<div class="key"><b>현황</b><span>실측→업데이트 도면 확보</span></div>
+<div class="key"><b>M→A-3</b><span>용도변경 인허가</span></div>
+<div class="key"><b>800A·87%</b><span>전기 최대 리스크</span></div></div>
+<div class="note"><span class="lab">미팅 전략 한 줄</span>① <b>산출물에 ‘현황 도면’이 포함되는지</b> 반드시 확정 · ② <b>우리 2008 도서 판독 자료</b>를 baseline으로 제공해 조사 범위·비용을 줄이고 · ③ <b>용도변경 사전협의(관청)</b>를 초기에 잡기.</div>
+</section>
+
+<section id="qa"><h2>A · 계약 범위 · 산출물</h2>
+<p class="lede">무엇을, 어떤 형태로 받는지부터 확정합니다.</p><div class="tablewrap"><table><thead><tr><th>#</th><th>질문 (한국어)</th><th>질문 (영어 · 미팅용)</th><th>목적 · 확인 포인트</th></tr></thead><tbody><tr><td class="num">1</td><td class="item">이번 검토에 포함되는 분야는? 빠지는 분야가 있나?</td><td class=""><span style="color:#555">Which disciplines does the assessment cover — architectural, structural, electrical, mechanical (HVAC), plumbing, fire protection, life-safety/code, accessibility (ADA), energy code? Anything excluded?</span></td><td class=""><b>풀 리포트 범위 확정</b> — 9개 분야 전부 커버되는지, 별도 하청/추가비 분야가 있는지</td></tr><tr><td class="num">2</td><td class="item">산출물(deliverable)은? 보고서만인가, <b>현황 도면</b>도 포함되나? 형식은?</td><td class=""><span style="color:#555">What are the deliverables — narrative report only, or measured/existing-conditions drawings? What file formats (PDF / CAD / Revit-BIM)?</span></td><td class="">As-built이 없으므로 <b>업데이트된 현황도면</b> 포함 여부가 핵심. CAD/BIM으로 받으면 후속 설계 재사용</td></tr><tr><td class="num">3</td><td class="item">이 검토가 후속 <b>인허가 설계(permit/CD set)</b>로 이어질 수 있나? 동일 팀 연속 가능?</td><td class=""><span style="color:#555">Can this due-diligence phase roll into the permit/construction-document design with the same team?</span></td><td class="">한 업체 연속 진행 시 정보 인계 손실↓ · 별도계약 번거로움↓</td></tr><tr><td class="num">4</td><td class="item">이번 건은 <b>ASTM E2018 PCA 수준</b>인가, 리뉴얼 설계 목적의 <b>심층 검토</b>인가?</td><td class=""><span style="color:#555">Is this a Property Condition Assessment (ASTM E2018) level, or a deeper feasibility review aimed at the renovation design?</span></td><td class="">깊이·목적 정렬 — 우리는 용도변경(키즈파크) 설계 실행이 목적</td></tr></tbody></table></div></section>
+
+<section id="qb"><h2>B · As-built 부재 대응 (핵심)</h2>
+<p class="lede">임대인에게 준공도면이 없을 확률이 높습니다. 많은 임차인이 <b>옛 도면보다 실측 최신 현황</b>을 선호하는 이유이기도 합니다. 현황을 <b>어떻게, 어디까지</b> 확보하는지가 이 프로젝트의 토대입니다.</p><div class="tablewrap"><table><thead><tr><th>#</th><th>질문 (한국어)</th><th>질문 (영어 · 미팅용)</th><th>목적 · 확인 포인트</th></tr></thead><tbody><tr><td class="num">5</td><td class="item">As-built이 없을 확률이 높다. <b>현황을 어떻게 파악</b>하나?</td><td class=""><span style="color:#555">As-builts are likely unavailable. How do you establish existing conditions — field survey, laser scanning / point cloud, selective ceiling access, pipe (CCTV) camera?</span></td><td class=""><b>임차인은 옛 도면보다 ‘최신 실측 현황’ 선호</b> — 조사 방법·정밀도·비파괴/파괴 범위 확인</td></tr><tr><td class="num">6</td><td class="item">실측으로 <b>‘업데이트된 현황 도면’</b>을 만들어 주나? 산출물에 포함?</td><td class=""><span style="color:#555">Will you produce updated existing-conditions drawings from the field survey, and are these included in the deliverable?</span></td><td class="">가장 중요한 질문. 이후 모든 설계의 baseline</td></tr><tr><td class="num">7</td><td class="item">기존 <b>2008 Best Buy 인허가 도서(CEN0800595, 58장)</b>를 baseline으로 쓸 수 있나? 우리가 판독한 내용을 <b>검증</b>해 줄 수 있나?</td><td class=""><span style="color:#555">Can the 2008 Best Buy permit set (CEN0800595, 58 sheets) serve as a baseline, and can you verify our findings against field conditions?</span></td><td class="">우리 분석(아래 C)을 무료/저비용으로 재활용 → 조사 범위·비용 절감</td></tr><tr><td class="num">8</td><td class="item">어디까지 실측하나 — <b>벽·천장 뒤 배관·덕트·배선</b>까지? 제한(파괴검사 범위, 운영 중 매장)?</td><td class=""><span style="color:#555">How deep does the survey go — behind walls/ceilings for piping, ductwork, wiring? What are the limits (destructive testing, occupied-store constraints)?</span></td><td class="">숨은 설비 확인 범위 · 추가 조사 트리거 · 접근 협조 필요 범위</td></tr></tbody></table></div>
+<div class="warn"><span class="lab">확인 포인트</span><b>‘업데이트된 현황 도면(existing-conditions drawings)’이 산출물에 포함되는지</b>를 명확히 문서로 남기세요. 이것이 이후 조닝·설계·인허가의 baseline입니다.</div></section>
+
+<section id="qc"><h2>C · 분야별 핵심 검증 (우리 분석 기반)</h2>
+<p class="lede">우리가 2008 도서로 판독한 내용을 <b>현장에서 검증·확정</b>받기 위한 질문입니다.</p><div class="tablewrap"><table><thead><tr><th>#</th><th>질문 (한국어)</th><th>질문 (영어 · 미팅용)</th><th>목적 · 확인 포인트</th></tr></thead><tbody><tr><td class="num">9</td><td class="item"><b>전기</b>: 메인 800A(현재 접속부하 87%·698A) — 미디어·프로젝션+상업주방 추가 시 충분한가? <b>승압/한전(Xcel) 협의</b> 필요?</td><td class=""><span style="color:#555">Electrical: main service is 800A @ 480/277V (current connected load ~87%). Is it adequate for added media/projection + commercial kitchen, or is a service upgrade / Xcel coordination needed?</span></td><td class="">우리 분석의 최대 리스크 — 총부하 재계산·수용률·증설 판단</td></tr><tr><td class="num">10</td><td class="item"><b>전기</b>: 전기실 2곳(RM109=MDP·주 / RM104=DP2·2차), 변압기 T-1(≈105%)·T-2·T-3 재사용/증설?</td><td class=""><span style="color:#555">Electrical: two rooms (RM109 = MDP main / RM104 = DP2), transformers T-1 (~105% loaded), T-2, T-3 — reuse or upsize?</span></td><td class="">상류 인프라 활용/교체 판정 검증</td></tr><tr><td class="num">11</td><td class="item"><b>공조</b>: 기존 <b>RTU 10대(111.5톤)</b> 재사용 가능? 존 재구획 시 급배기·존잉? 잔여 수명?</td><td class=""><span style="color:#555">HVAC: can the ten existing rooftop units (111.5 tons) be reused? Re-zoning air distribution for the new layout? Remaining useful life / replacement?</span></td><td class="">공조 재사용 여부가 예산·일정에 큰 영향</td></tr><tr><td class="num">12</td><td class="item"><b>배관</b>: 급수(SW)/배수(SE), 주방 <b>그리스트랩</b>·화장실 증설 배관, <b>ISC 바닥드레인</b> 활용 가능?</td><td class=""><span style="color:#555">Plumbing: water in (SW) / sanitary out (SE); grease interceptor + restroom expansion; can the existing ISC floor drains be reused for the kitchen/wet zones?</span></td><td class="">주방·습식 배치의 핵심 제약 — 배수 위치·용량</td></tr><tr><td class="num">13</td><td class="item"><b>소방</b>: 스프링클러 전관 — 칸막이·놀이구조물(§424) 하부 헤드 보강, <b>인입관/펌프</b> 용량? 기존 설계도서 확보 경로?</td><td class=""><span style="color:#555">Fire protection: building is fully sprinklered — head additions for partitions & play structures (obstruction), incoming main / pump capacity? Where to get the existing sprinkler design docs?</span></td><td class="">벽·구조물 추가 시 헤드 재설계 · NFPA 13</td></tr><tr><td class="num">14</td><td class="item"><b>소방</b>: 화재경보 <b>A-3 강화</b>(감지·시각경보 스트로브), <b>비상방송(EVAC)</b> 필요 여부?</td><td class=""><span style="color:#555">Fire alarm: A-3 upgrades (detection, visual notification/strobes); is a voice evacuation (EVAC) system required?</span></td><td class="">비상방송 유무가 복도폭·피난 계산을 좌우</td></tr><tr><td class="num">15</td><td class="item"><b>피난/코드</b>: <b>M→A-3 용도변경</b> → 수용인원 계수(운동실 4.65 vs 집회 1.39) 관청 협의, 복도 2,200mm, 비상구 5개소·여행거리·막다른복도 판정?</td><td class=""><span style="color:#555">Life-safety/code: change of occupancy M→A-3 — occupant-load factor negotiation (gym 4.65 vs assembly 1.39 m²/occ), 2,200 mm corridors, 5 exits, travel distance, dead-ends?</span></td><td class="">840명 vs 1,840명 판정이 프로젝트 전체 좌우</td></tr><tr><td class="num">16</td><td class="item"><b>접근성 ADA</b>: 화장실·문폭(≥813mm)·접근로·카운터 적합?</td><td class=""><span style="color:#555">Accessibility (ADA / ICC A117.1): restrooms, door clear width (≥32"), accessible route, counters?</span></td><td class="">용도변경 시 접근성 상향 트리거</td></tr><tr><td class="num">17</td><td class="item"><b>구조</b>: 트램펄린·클라이밍(§424)·2층 놀이구조물 <b>하중·천장 지지·내진</b>?</td><td class=""><span style="color:#555">Structural: loads for trampoline / climbing (§424) / multi-level play; ceiling/roof support and seismic anchoring?</span></td><td class="">대형 놀이구조물 도입 시 구조 검토 필수</td></tr><tr><td class="num">18</td><td class="item"><b>에너지코드</b>(2021 IECC): 조명·외피·기계 업그레이드 트리거?</td><td class=""><span style="color:#555">Energy code (2021 IECC): does the scope trigger lighting / envelope / mechanical upgrades?</span></td><td class="">용도변경·개보수 범위에 따른 코드 트리거 확인</td></tr></tbody></table></div>
+<div class="note"><span class="lab">우리 측 근거 요약</span>전기 MDP 800A(접속 87%)·전기실 RM109(주)/RM104(2차) · 공조 RTU 10대(111.5T) · 급수 SW/배수 SE·ISC 바닥드레인 · 스프링클러 전관 · 용도변경 M→A-3(수용 840명·복도 2,200mm·비상구 5) · 화장실 증설 +22~31㎡·ADA. 이 자료(HTML)를 설계사에 제공하면 조사 효율↑.</div></section>
+
+<section id="qd"><h2>D · 인허가 · 관할 (AHJ)</h2>
+<p class="lede">Centennial 건축과 + South Metro Fire Rescue + 주(州) 놀이기구 등록 + 식품영업까지, 여러 라인을 누가 어떻게 다루는지.</p><div class="tablewrap"><table><thead><tr><th>#</th><th>질문 (한국어)</th><th>질문 (영어 · 미팅용)</th><th>목적 · 확인 포인트</th></tr></thead><tbody><tr><td class="num">19</td><td class="item">관할 <b>AHJ</b>: Centennial 건축과 + <b>South Metro Fire Rescue</b> — 사전협의(pre-application) 주관해 주나?</td><td class=""><span style="color:#555">AHJ: City of Centennial Building Dept + South Metro Fire Rescue — will you lead a pre-application meeting?</span></td><td class="">조기 관청 협의로 리스크 조기 파악</td></tr><tr><td class="num">20</td><td class="item"><b>용도변경(Change of Occupancy)</b> 프로세스·예상 기간·필요 도서는?</td><td class=""><span style="color:#555">What is the change-of-occupancy process, expected timeline, and required submittal documents?</span></td><td class="">일정 계획 수립</td></tr><tr><td class="num">21</td><td class="item">콜로라도 <b>놀이기구 주정부 등록(7 CCR 1101-12)</b> — 설계사가 대행? 별도 라인?</td><td class=""><span style="color:#555">Colorado amusement-device registration (7 CCR 1101-12) — do you handle it, or is it a separate track?</span></td><td class="">트램펄린·로프·클라이밍 등 등록 없이는 개장 불가</td></tr><tr><td class="num">22</td><td class="item">배관 통합코드(2021 IPC)·<b>식품영업 허가(Arapahoe County Public Health)</b> 별도 라인 안내?</td><td class=""><span style="color:#555">Plumbing (2021 IPC statewide) and food-service permitting (Arapahoe County Public Health) — separate tracks?</span></td><td class="">주방 관련 별도 인허가 라인 파악</td></tr></tbody></table></div></section>
+
+<section id="qe"><h2>E · 일정 · 비용 · 팀</h2>
+<p class="lede">현실적인 실행 조건을 확인합니다.</p><div class="tablewrap"><table><thead><tr><th>#</th><th>질문 (한국어)</th><th>질문 (영어 · 미팅용)</th><th>목적 · 확인 포인트</th></tr></thead><tbody><tr><td class="num">23</td><td class="item"><b>리포트 소요기간</b>·현장조사 일정(운영 중/공실)?</td><td class=""><span style="color:#555">Report turnaround and site-survey scheduling (occupied vs vacant)?</span></td><td class="">일정·접근 조율</td></tr><tr><td class="num">24</td><td class="item"><b>비용 구조</b>(고정 fee/시간제), 재방문·추가 파괴검사 비용?</td><td class=""><span style="color:#555">Fee structure (fixed vs hourly), and cost of re-visits / additional destructive investigation?</span></td><td class="">예산 예측 · 숨은 비용 방지</td></tr><tr><td class="num">25</td><td class="item">각 분야 담당 <b>PE(콜로라도 면허)</b> 여부, <b>단일 창구(PM)</b>?</td><td class=""><span style="color:#555">Are discipline leads licensed PEs in Colorado, and is there a single project-manager point of contact?</span></td><td class="">자격·책임·소통 창구</td></tr><tr><td class="num">26</td><td class="item">후속 <b>설계·인허가 대행</b>까지 확장 가능? 별도 계약?</td><td class=""><span style="color:#555">Can the engagement extend into design and permitting? Separate contract?</span></td><td class="">연속 진행 가능성</td></tr><tr><td class="num">27</td><td class="item">보증/책임(<b>E&amp;O 보험</b>), 리포트의 <b>인허가 제출 활용</b> 가능성?</td><td class=""><span style="color:#555">Professional liability (E&O) coverage; can the report be used for permit submittals?</span></td><td class="">리포트의 법적 효력·활용 범위</td></tr></tbody></table></div></section>
+
+<section id="qf"><h2>F · 자료 제공 · 요청</h2>
+<p class="lede">우리가 줄 수 있는 것과, 설계사가 임대인에게 요청하길 권하는 것.</p><div class="tablewrap"><table><thead><tr><th>#</th><th>질문 (한국어)</th><th>질문 (영어 · 미팅용)</th><th>목적 · 확인 포인트</th></tr></thead><tbody><tr><td class="num">28</td><td class="item">우리가 제공: <b>2008 인허가 도서(58장)</b>·AKP 레이아웃·<b>우리 판독 자료(HTML)</b> — 활용 가능?</td><td class=""><span style="color:#555">We can provide the 2008 permit set (58 sheets), the AKP layout, and our own read-out (this document set) — can you use them?</span></td><td class="">조사 범위·비용 절감 · 정보 공유 범위</td></tr><tr><td class="num">29</td><td class="item">임대인에게 <b>어떤 자료를 우선</b> 받아야 하나? (아래 체크리스트)</td><td class=""><span style="color:#555">Which landlord-held documents should we prioritize requesting? (see checklist below)</span></td><td class="">자료 요청 우선순위 정렬</td></tr><tr><td class="num">30</td><td class="item">현장 <b>접근·조사 협조</b>(임대인 허가, 운영시간 외 작업, 지붕 접근)?</td><td class=""><span style="color:#555">Site access & survey cooperation — landlord permission, after-hours work, roof access?</span></td><td class="">조사 실행 가능성 확보</td></tr></tbody></table></div></section>
+
+<section id="ll"><h2>★ 임대인(관리사)에게 받아야 할 자료 체크리스트</h2>
+<p class="lede">임대인에게 자료 리스트를 요청한 상태이므로, <b>우선순위</b>를 정해 두면 좋습니다. 준공도면(As-built)은 없을 확률이 높으니 <b>실측으로 대체</b>하되, 아래 필수 항목은 반드시 확보를 시도하세요.</p><div class="tablewrap"><table><thead><tr><th>요청 자료 (임대인/관리사)</th><th>영문 명칭</th><th>우선</th><th>비고</th></tr></thead><tbody><tr><td class="item">준공도면 / 기록도면</td><td class="num">As-built / record drawings</td><td class="num"><span class='st st-mid'>있으면</span></td><td class="">없을 확률 높음 → 현장 실측으로 대체</td></tr><tr><td class="item">과거 인허가·개보수 도서</td><td class="num">Prior permit sets & TI drawings</td><td class="num"><span class='st st-no'>필수</span></td><td class="">2008 원본 외 이후 변경분</td></tr><tr><td class="item">소방 설계·점검 이력</td><td class="num">Sprinkler/alarm shop dwgs & ITM reports</td><td class="num"><span class='st st-no'>필수</span></td><td class="">스프링클러 도면·최근 점검 기록</td></tr><tr><td class="item">전기 단선도·부하표</td><td class="num">Electrical one-line & panel schedules</td><td class="num"><span class='st st-mid'>있으면</span></td><td class="">우리 E-5/E-7 판독 검증용</td></tr><tr><td class="item">기계(HVAC) 도면·장비 이력</td><td class="num">Mechanical dwgs & RTU service records</td><td class="num"><span class='st st-mid'>있으면</span></td><td class="">RTU 잔여수명 판단</td></tr><tr><td class="item">지붕·구조 보고서</td><td class="num">Roof & structural reports / warranty</td><td class="num"><span class='st st-mid'>있으면</span></td><td class="">지붕 보증·구조 하중</td></tr><tr><td class="item">환경 조사(석면 등)</td><td class="num">Environmental / ACM (asbestos) survey</td><td class="num"><span class='st st-no'>필수</span></td><td class="">2008년 건물 → 개보수 전 확인</td></tr><tr><td class="item">유틸리티 계약·용량</td><td class="num">Utility (Xcel) service info & capacity</td><td class="num"><span class='st st-mid'>있으면</span></td><td class="">800A 승압 협의 시 필요</td></tr><tr><td class="item">사용승인/점유</td><td class="num">Certificate of Occupancy (existing)</td><td class="num"><span class='st st-mid'>있으면</span></td><td class="">기존 용도(M) 확인</td></tr><tr><td class="item">리스 조건(원상복구·반환)</td><td class="num">Lease terms — restoration / surrender</td><td class="num"><span class='st st-no'>필수</span></td><td class="">철거·반환 의무 범위</td></tr></tbody></table></div>
+<div class="danger"><span class="lab">가장 중요</span><b>리스의 원상복구·반환 의무</b>(무엇을 철거/반환해야 하는지)와 <b>환경 조사(석면 등)</b>는 예산·일정에 큰 영향을 주므로 초기에 확보하세요. As-built이 없어도 <b>현장 실측</b>으로 진행 가능함을 설계사가 확인해 주면 문제없습니다.</div></section>
+
+<div class="foot">설계사 미팅용 질문지 · 근거: CEN0800595(2008) 58장 판독 · IBC/2021 IPC/ADA · Centennial·South Metro Fire · d'strict AKP USA 2026.08.25</div>
+</main></div></body></html>
