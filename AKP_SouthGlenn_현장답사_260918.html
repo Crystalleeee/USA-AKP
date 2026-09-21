@@ -426,6 +426,14 @@ section,.parthead{scroll-margin-top:22px}
   nav.side{display:none}
   .layout{display:block}
 }
+
+.key .qa{margin-top:5px;font-size:13px;line-height:1.6}
+.key .qa b{color:var(--pine)}
+.key ul.sub{margin:6px 0 2px;padding-left:17px;list-style:disc}
+.key ul.sub li{margin:2px 0;font-size:12.5px;line-height:1.6;color:var(--sub)}
+
+ol.key ul.sub li{counter-increment:none;position:static;padding:0;margin:2px 0}
+ol.key ul.sub li::before{display:none;content:none}
 </style>
 </head>
 <body>
@@ -496,14 +504,68 @@ section,.parthead{scroll-margin-top:22px}
 
 <section id="s1-2">
 <h2><span class="no">2</span>지금 결정해야 할 것</h2>
-<p>현장 지적과 주방 질문에서 <b>우리가 결정·회신해야 스코프가 잡히는 항목</b>을 모았습니다. 순서는 우선순위입니다.</p>
+<p>현장 지적과 주방 질문에서 <b>우리가 결정·회신해야 스코프가 잡히는 항목</b>을 모았습니다. 각 항목에 <b>누가 · 어떻게</b>를 붙였습니다. 순서는 우선순위입니다.</p>
 <ol class="key">
-<li><b>F&amp;B 콘셉트 확정 (최우선)</b> — 주방 설비 수준이 Renovo 견적의 상위 결정입니다. <b>권장: 그랩앤고 + 간이 조리(그리스 조리 제외)</b>. 이 방향이면 가스=올-일렉트릭 · 후드=Type II · 그리스=싱크 하부 트랩으로 자동 정리됩니다(상세 4번 표).</li>
-<li><b>레이아웃 수정 (지금 착수)</b> — 덱 30p <b>Lockers · Sand Beach</b>를 전기 그리드 밖으로, <b>Sky Riding</b>은 배수관 기둥을 피해 재배치. 그리드 이설은 고비용이라 조닝을 조정합니다.</li>
-<li><b>조사 3건 발주 여부</b> — ① 3D 레이저 스캔(AV 캘리브레이션 · MEP 좌표) ② HVAC 상태 진단(우선순위 TAB · RUL) ③ 외벽 벽돌부 확인. ①·②는 NWS 제안서 포함 여부 확인 후 중복 방지.</li>
-<li><b>보건 인허가 관할</b> — <b>Arapahoe County Public Health</b> 조기 접촉(메일의 「Yonkers/Westchester County」는 오기). 장비 확정 전 등급 분류.</li>
-<li><b>HVAC 재사용 vs 교체</b> — 10년 경과 · 실사용 4~5년 · 유지보수 이력 불명. 진단(RUL · TAB) 결과를 판정 입력으로 — 진단 전 확정 불가.</li>
-<li><b>옥상 좌표 확인 (우리가 직접 재는 게 아님)</b> — <b>① 랜드로드(센터)에 자료 요청</b>: Verizon 옥상 임대차/이용 계약(전용 구역·제한), 옥상 설비 도면(안테나·장비·케이블 트레이 위치, RF 제외구역), 후면 디젤발전기 위치·연료·배기 상세. <b>② 우리 옥상 MEP 배치도와 겹쳐 NWS(설계)·구조 엔지니어에 확인 의뢰</b> — 점검 4가지: (a) 신설/교체 RTU·주방 Type II 배기구와의 간섭, (b) RF 제외구역 침범 여부, (c) 지붕(바 조이스트) 구조 하중, (d) 발전기 배기가 우리 외기 흡입구로 유입되지 않는지. Verizon 설비는 임대 계약상 이설 불가이므로, 충돌 시 <b>우리 쪽 관통 위치를 옮깁니다.</b> 3D 스캔·구조 조사(3번) 결과가 (a)(c)의 입력이 됩니다.</li>
+
+<li><b>F&amp;B 콘셉트 확정 (최우선)</b>
+<div class="qa"><b>누가</b> — 우리(d'strict)가 콘셉트 결정 → Renovo(시공사)에 전달해 견적 착수</div>
+<div class="qa"><b>어떻게</b> — 메뉴 유형을 그랩앤고 / 간이조리 / 본격조리 중에서 확정</div>
+<ul class="sub">
+<li>권장: <b>그랩앤고 + 간이조리</b> (그리스 발생 조리 제외)</li>
+<li>이 방향이면 가스=올-일렉트릭 · 후드=Type II · 그리스=싱크 하부 트랩으로 자동 결정</li>
+<li>항목별 상세는 아래 <b>4번 「우리 답변 9개 항목」 표</b></li>
+</ul>
+</li>
+
+<li><b>레이아웃 수정 (지금 착수)</b>
+<div class="qa"><b>누가</b> — 우리(d'strict 디자인팀)</div>
+<div class="qa"><b>어떻게</b> — 센터에서 받은 PDF의 전기 그리드·배수관 위치를 우리 조닝 도면에 겹쳐 두 구역을 이동</div>
+<ul class="sub">
+<li><b>Lockers · Sand Beach</b> → 전기 그리드 밖으로</li>
+<li><b>Sky Riding</b> → 배수관 기둥 회피 (존 뒤 여유 공간 활용)</li>
+<li>존 면적·비율은 유지하고 위치만 조정</li>
+</ul>
+</li>
+
+<li><b>조사 3건 발주</b>
+<div class="qa"><b>누가</b> — 발주 결정=우리 / 수행=전문업체·엔지니어 / 조율=NWS(설계사)</div>
+<div class="qa"><b>어떻게</b> — NWS 제안서에 포함되는지 먼저 확인해 중복을 피한 뒤 발주</div>
+<ul class="sub">
+<li><b>3D 레이저 스캔</b> — 측량업체 (AV 캘리브레이션 · 구조/MEP 좌표)</li>
+<li><b>HVAC 상태 진단</b> — HVAC 엔지니어 (우선순위 TAB · RUL)</li>
+<li><b>외벽 벽돌부</b> — 구조 엔지니어 (전면 우측 벌어짐)</li>
+</ul>
+</li>
+
+<li><b>보건 인허가 관할</b>
+<div class="qa"><b>누가</b> — 우리가 접촉 개시 → 이후 F&amp;B · 설계팀이 요건 반영</div>
+<div class="qa"><b>어떻게</b> — <b>Arapahoe County Public Health</b>(보건국)에 조기 접촉</div>
+<ul class="sub">
+<li>메뉴 · 장비 기준으로 등급 분류를 받은 뒤 장비 사양 확정</li>
+<li>메일의 「Yonkers/Westchester County」는 오기 — 우리 현장은 콜로라도 <b>Arapahoe County</b></li>
+</ul>
+</li>
+
+<li><b>HVAC 재사용 vs 교체</b>
+<div class="qa"><b>누가</b> — 판정=HVAC 엔지니어(진단 기반) / 발주=우리</div>
+<div class="qa"><b>어떻게</b> — 3번의 HVAC 상태 진단 결과(RUL · TAB)를 받아 판정</div>
+<ul class="sub">
+<li>10년 경과 · 실사용 4~5년 · 유지보수 이력 불명 → 진단 전에는 확정 불가</li>
+<li>결과는 설비 분석(재사용 판정)과 연결</li>
+</ul>
+</li>
+
+<li><b>옥상 좌표 확인</b>
+<div class="qa"><b>누가</b> — 자료 요청=우리 → 랜드로드(센터) / 검토=NWS(설계) · 구조 엔지니어</div>
+<div class="qa"><b>어떻게</b> — Verizon 옥상 도면 · 계약을 받아 우리 옥상 MEP 배치와 겹쳐 검토 의뢰</div>
+<ul class="sub">
+<li><b>Verizon</b> = 미국 이동통신사(우리 KT · SKT 같은 통신사). 우리 건물 옥상에 이동통신 <b>기지국 · 안테나 · 장비</b>를 임대해 운영하고, 후면에 장비실 · 비상 디젤발전기가 있음</li>
+<li>받을 자료 — 임대차 계약(전용 구역 · 개조 제한), 설비 도면(안테나 · 케이블 · RF 제외구역), 발전기 위치 · 연료 · 배기</li>
+<li>점검 4 — (a) 신설/교체 RTU · 주방 배기구 간섭 (b) RF 제외구역 (c) 지붕(바 조이스트) 구조 하중 (d) 발전기 배기 vs 우리 외기 흡입</li>
+<li>Verizon 설비는 임대 계약상 이설 불가 → 충돌 시 <b>우리 관통 위치를 이동</b></li>
+</ul>
+</li>
+
 </ol>
 </section>
 
