@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AKP 파티룸 기획 Phase 1</title>
-<meta name="description" content="Arte Kids Park 파티룸 기획 Phase 1 — 미국 가족 체류형 F&B·생일파티 사례 조사와 패키지·가격·수익모델 검토">
+<meta name="description" content="Arte Kids Park 파티룸 기획 — 미국 유사시설 24곳 파티패키지 벤치마크, 인기 체류형 F&B·생일 사례, AKP 파티 기본계획·가격·운영 수익모델">
 <style>
   @import url('https://cdn.jsdelivr.net/gh/fonts-archive/LINESeedKR/LINESeedKR.css');
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
@@ -13,104 +13,85 @@
     /* 팔레트 #26 — Arte kids park */
     --c1:#0065B2; --c2:#FFDF00; --c3:#E41E2E; --c4:#00913B;
     --c5:#FF8000; --c6:#ED92B9; --c7:#62B5E5; --c8:#00A7B5;
-    /* 기본 */
     --bg:#FFFFFF; --ink:#111111; --sub:#353535; --line:#D6D6D6;
-    --soft:#F6F6F6;      /* 연한 배경 */
-    --soft2:#EFEFEF;     /* 트랙/보조 배경 */
+    --soft:#F6F6F6; --soft2:#EFEFEF;
     --shadow:0 1px 3px rgba(17,17,17,.06), 0 6px 20px rgba(17,17,17,.05);
     --radius:14px;
     --font:'LINE Seed KR','Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
-    --maxw:1180px;
+    --maxw:1200px;
   }
-
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
+  body{margin:0; background:var(--bg); color:var(--ink);
     font-family:var(--font); font-size:16px; line-height:1.72;
-    -webkit-font-smoothing:antialiased; word-break:keep-all;
-  }
+    -webkit-font-smoothing:antialiased; word-break:keep-all;}
   a{color:var(--c1); text-decoration:none}
   a:hover{text-decoration:underline}
 
-  /* ===== Layout ===== */
-  .wrap{display:grid; grid-template-columns:248px minmax(0,1fr); gap:0; max-width:var(--maxw); margin:0 auto}
+  .wrap{display:grid; grid-template-columns:256px minmax(0,1fr); gap:0; max-width:var(--maxw); margin:0 auto}
 
-  /* ===== Sidebar TOC ===== */
-  aside{
-    position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto;
-    background:var(--soft); border-right:1px solid var(--line);
-    padding:26px 18px 40px;
-  }
+  /* Sidebar */
+  aside{position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto;
+    background:var(--soft); border-right:1px solid var(--line); padding:26px 18px 40px;}
   .brand{font-size:13px; letter-spacing:.14em; color:var(--sub); font-weight:700; text-transform:uppercase}
   .brand b{color:var(--c1)}
   .aside-title{font-size:18px; font-weight:800; margin:10px 0 2px; line-height:1.4}
+  .aside-desc{font-size:13px; color:var(--sub); line-height:1.5}
   .aside-meta{font-size:13px; color:var(--sub); border-top:1px solid var(--line); margin-top:16px; padding-top:14px}
-  nav{margin-top:18px}
+  nav{margin-top:16px}
   nav ol{list-style:none; margin:0; padding:0; counter-reset:toc}
   nav li{counter-increment:toc}
-  nav a{
-    display:flex; gap:10px; align-items:baseline;
-    color:var(--ink); font-size:13.5px; line-height:1.45;
-    padding:8px 10px; border-radius:9px; margin-bottom:2px;
-  }
-  nav a::before{
-    content:counter(toc,decimal-leading-zero);
-    font-size:13px; color:var(--sub); font-weight:700; min-width:22px;
-  }
+  nav a{display:flex; gap:9px; align-items:baseline; color:var(--ink); font-size:13.5px; line-height:1.4;
+    padding:7px 10px; border-radius:9px; margin-bottom:1px;}
+  nav a::before{content:counter(toc,decimal-leading-zero); font-size:13px; color:var(--sub); font-weight:700; min-width:22px}
   nav a:hover{background:var(--soft2); text-decoration:none}
   nav a.active{background:#fff; font-weight:800; box-shadow:var(--shadow)}
   nav a.active::before{color:var(--c1)}
 
-  /* ===== Main ===== */
-  main{padding:0 clamp(16px,4vw,52px) 80px; min-width:0}
+  main{padding:0 clamp(16px,4vw,54px) 84px; min-width:0}
 
   /* Hero */
   .hero{padding:46px 0 26px; border-bottom:1px solid var(--line)}
   .kicker{display:inline-flex; gap:8px; align-items:center; font-size:13px; font-weight:700; color:var(--sub); letter-spacing:.04em}
   .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
-  h1{font-size:clamp(26px,4.4vw,40px); line-height:1.22; margin:14px 0 10px; font-weight:800; letter-spacing:-.01em}
-  .lead{font-size:17px; color:var(--sub); max-width:66ch; margin:0}
+  h1{font-size:clamp(26px,4.3vw,40px); line-height:1.22; margin:14px 0 10px; font-weight:800; letter-spacing:-.01em}
+  .lead{font-size:17px; color:var(--sub); max-width:70ch; margin:0}
   .hero-meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px}
 
-  /* badges / tags */
   .tag{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700;
        padding:4px 11px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--ink)}
   .tag.sm{font-size:13px; padding:3px 9px}
   .tag.solid-b{background:var(--c1); color:#fff; border-color:var(--c1)}
   .tag.solid-r{background:var(--c3); color:#fff; border-color:var(--c3)}
   .tag.solid-g{background:var(--c4); color:#fff; border-color:var(--c4)}
-  /* 밝은 면(노랑·오렌지·핑크·하늘·청록)은 글자 #111111 */
   .tag.solid-y{background:var(--c2); color:var(--ink); border-color:var(--c2)}
   .tag.solid-o{background:var(--c5); color:var(--ink); border-color:var(--c5)}
   .tag.solid-p{background:var(--c6); color:var(--ink); border-color:var(--c6)}
   .tag.solid-s{background:var(--c7); color:var(--ink); border-color:var(--c7)}
   .tag.solid-t{background:var(--c8); color:var(--ink); border-color:var(--c8)}
 
-  /* Section */
   section{padding:40px 0; border-bottom:1px solid var(--line)}
   section:last-of-type{border-bottom:0}
   .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:6px}
   .sec-no{font-size:13px; font-weight:800; color:var(--sub)}
   h2{font-size:clamp(20px,2.8vw,26px); margin:0; font-weight:800; letter-spacing:-.01em}
-  .sec-sub{font-size:14.5px; color:var(--sub); margin:8px 0 22px; max-width:72ch}
+  .sec-sub{font-size:14.5px; color:var(--sub); margin:8px 0 22px; max-width:76ch}
   h3{font-size:18px; margin:30px 0 10px; font-weight:800}
   h4{font-size:15px; margin:0 0 6px; font-weight:800}
   p{margin:0 0 12px}
   .muted{color:var(--sub)}
 
-  /* KPI row */
   .kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:6px 0 4px}
   .kpi{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:18px 16px; box-shadow:var(--shadow)}
-  .kpi .n{font-size:27px; font-weight:800; line-height:1.1; color:var(--c1)}
+  .kpi .n{font-size:26px; font-weight:800; line-height:1.1; color:var(--c1)}
   .kpi .n.g{color:var(--c4)} .kpi .n.o{color:var(--c5)} .kpi .n.r{color:var(--c3)}
   .kpi .l{font-size:13px; color:var(--sub); margin-top:6px; font-weight:700}
   .kpi .s{font-size:13px; color:var(--sub); margin-top:3px; line-height:1.4}
 
-  /* cards grid */
   .grid{display:grid; gap:16px}
   .g2{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
   .card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
   .card .top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:8px}
   .card h4{font-size:16px}
@@ -118,526 +99,485 @@
   .card ul{margin:10px 0 0; padding-left:18px}
   .card li{font-size:14px; margin-bottom:5px}
   .card li::marker{color:var(--sub)}
+  .pill-no{display:inline-flex; align-items:center; justify-content:center; min-width:26px; height:26px;
+    border-radius:8px; background:var(--soft); border:1px solid var(--line); font-size:13px; font-weight:800; color:var(--ink)}
 
-  /* type map */
   .typemap{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
   .type{background:var(--soft); border:1px solid var(--line); border-radius:var(--radius); padding:18px}
   .type .lbl{font-size:13px; font-weight:800; color:var(--sub); letter-spacing:.06em}
   .type h4{margin:8px 0 6px; font-size:15.5px}
   .type p{font-size:13.5px; color:var(--sub); margin:0 0 10px}
-  .type .who{font-size:13px; font-weight:700}
+  .type .who{font-size:13px; font-weight:700; display:flex; flex-wrap:wrap; gap:5px}
 
-  /* table */
   .tbl-scroll{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow)}
-  table{border-collapse:collapse; width:100%; min-width:720px; background:#fff}
-  th,td{text-align:left; padding:12px 14px; font-size:13.5px; border-bottom:1px solid var(--line); vertical-align:top}
+  table{border-collapse:collapse; width:100%; min-width:760px; background:#fff}
+  th,td{text-align:left; padding:11px 14px; font-size:13.5px; border-bottom:1px solid var(--line); vertical-align:top}
   thead th{background:var(--soft); font-size:13px; font-weight:800; white-space:nowrap; position:sticky; top:0}
   tbody tr:last-child td{border-bottom:0}
+  tbody tr.hl td{background:#FFFDF0} /* Arte 소속군 강조: 컬러 라인 대신 연한 배경 */
   td b{font-weight:800}
   .num{font-variant-numeric:tabular-nums; white-space:nowrap}
+  caption{caption-side:top; text-align:left; font-size:13px; color:var(--sub); padding:0 0 8px}
 
-  /* bar chart (revenue mix) */
   .bars{display:grid; gap:12px; margin-top:6px}
-  .bar{display:grid; grid-template-columns:150px 1fr 56px; align-items:center; gap:12px}
+  .bar{display:grid; grid-template-columns:168px 1fr 66px; align-items:center; gap:12px}
   .bar .bl{font-size:13.5px; font-weight:700}
   .bar .track{height:16px; background:var(--soft2); border-radius:999px; overflow:hidden}
   .bar .fill{height:100%; border-radius:999px}
   .bar .bv{font-size:13px; font-weight:800; text-align:right; font-variant-numeric:tabular-nums}
 
-  /* callout / note (라인 없이 연한 배경 + 테두리만) */
   .note{background:var(--soft); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; margin:16px 0}
   .note .lab{display:inline-block; font-size:13px; font-weight:800; margin-bottom:4px; color:var(--ink)}
   .note p{font-size:14px; margin:0; color:var(--sub)}
   .note.concl{background:#fff; box-shadow:var(--shadow)}
 
-  /* lists */
   .clean{list-style:none; margin:0; padding:0}
   .clean li{position:relative; padding-left:22px; margin-bottom:9px; font-size:14.5px}
   .clean li::before{content:""; position:absolute; left:4px; top:9px; width:7px; height:7px; border-radius:50%; background:var(--c1)}
   .clean.g li::before{background:var(--c4)}
   .clean.o li::before{background:var(--c5)}
 
-  /* footnote ref */
-  sup a{font-size:13px; font-weight:700}
+  /* timeline */
+  .tl{display:grid; gap:8px; margin-top:8px}
+  .tl-row{display:grid; grid-template-columns:62px 1fr; gap:12px; align-items:center}
+  .tl-row .lab{font-size:13.5px; font-weight:800}
+  .tl-track{position:relative; height:30px; background:var(--soft); border:1px solid var(--line); border-radius:8px; overflow:hidden}
+  .tl-bar{position:absolute; top:3px; height:24px; background:var(--c1); border-radius:6px; display:flex; align-items:center; padding:0 9px; color:#fff; font-size:13px; font-weight:700; white-space:nowrap}
+  .tl-turn{position:absolute; top:3px; height:24px; background:var(--soft2); border-radius:6px; display:flex; align-items:center; justify-content:center; color:var(--sub); font-size:13px; font-weight:700}
+  .tl-axis{display:grid; grid-template-columns:62px 1fr; gap:12px; font-size:13px; color:var(--sub); margin-top:2px}
+  .tl-axis .ticks{display:flex; justify-content:space-between}
 
-  /* sources */
+  sup a{font-size:13px; font-weight:700}
   .src{font-size:13.5px}
   .src li{margin-bottom:9px; color:var(--sub)}
   .src a{word-break:break-all}
-
   .disc{font-size:13px; color:var(--sub); margin-top:10px}
 
-  /* mobile */
   .menu-btn{display:none}
-  @media (max-width:860px){
+  @media (max-width:880px){
     .wrap{grid-template-columns:1fr}
     aside{position:static; height:auto; border-right:0; border-bottom:1px solid var(--line)}
     nav{columns:2; column-gap:10px}
-    .kpis{grid-template-columns:repeat(2,1fr)}
+    .kpis,.g4{grid-template-columns:repeat(2,1fr)}
     .typemap{grid-template-columns:repeat(2,1fr)}
     .g2,.g3{grid-template-columns:1fr}
-    .bar{grid-template-columns:110px 1fr 46px}
+    .bar{grid-template-columns:120px 1fr 52px}
   }
   @media (max-width:480px){
     body{font-size:15px}
     nav{columns:1}
-    .kpis{grid-template-columns:1fr 1fr}
+    .kpis,.g4{grid-template-columns:1fr 1fr}
+    .tl-row{grid-template-columns:48px 1fr}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- ================= SIDEBAR TOC ================= -->
+  <!-- SIDEBAR -->
   <aside>
     <div class="brand"><b>ARTE</b> KIDS PARK</div>
     <div class="aside-title">파티룸 기획 Phase 1</div>
-    <div class="brand" style="font-weight:700;letter-spacing:.02em;text-transform:none;color:var(--sub);font-size:13px">미국 가족 체류형 F&amp;B·생일파티 리서치</div>
+    <div class="aside-desc">미국 유사시설 벤치마크 · AKP 파티 기본계획 · 가격·수익모델</div>
     <nav>
       <ol>
         <li><a href="#s1" class="active">개요 · 목표 · 타깃</a></li>
-        <li><a href="#s2">조사 방법과 한계</a></li>
-        <li><a href="#s3">미국 사례 유형 맵</a></li>
-        <li><a href="#s4">핵심 사례 상세</a></li>
-        <li><a href="#s5">사례 비교표</a></li>
-        <li><a href="#s6">시장·수익 인사이트</a></li>
-        <li><a href="#s7">AKP 시사점·콘텐츠 연계</a></li>
-        <li><a href="#s8">패키지 구성(안)</a></li>
-        <li><a href="#s9">가격(안)</a></li>
-        <li><a href="#s10">운영 수익모델 검토</a></li>
+        <li><a href="#s2">조사 방법 · 자료</a></li>
+        <li><a href="#s3">미국 유사시설 24곳 벤치마크</a></li>
+        <li><a href="#s4">인기 체류형 F&amp;B·생일 사례</a></li>
+        <li><a href="#s5">시장·수익 인사이트</a></li>
+        <li><a href="#s6">AKP 파티 기본계획(4축)</a></li>
+        <li><a href="#s7">패키지 구성 · 가격</a></li>
+        <li><a href="#s8">애드온 · 객단가 상승구조</a></li>
+        <li><a href="#s9">운영 타임라인 · 일 매출</a></li>
+        <li><a href="#s10">티켓·멤버십·수익모델</a></li>
         <li><a href="#s11">다음 단계 · 리스크</a></li>
         <li><a href="#s12">출처</a></li>
       </ol>
     </nav>
-    <div class="aside-meta">
-      작성 2026-10-26 · Phase 1<br>
-      Palette #26 · LINE Seed KR
-    </div>
+    <div class="aside-meta">작성 2026-10-26 · Phase 1<br>Palette #26 · LINE Seed KR</div>
   </aside>
 
-  <!-- ================= MAIN ================= -->
+  <!-- MAIN -->
   <main>
-
-    <!-- HERO -->
     <header class="hero">
-      <span class="kicker"><span class="dot" style="background:var(--c1)"></span><span class="dot" style="background:var(--c2)"></span><span class="dot" style="background:var(--c3)"></span> ARTE KIDS PARK · 파티룸 기획</span>
-      <h1>미국 가족 체류형 F&amp;B·생일파티 사례 조사와<br>패키지·가격·운영 수익모델 검토</h1>
-      <p class="lead">아르떼 키즈파크(AKP) 파티룸 기획 1단계 보고서입니다. 미국에서 가장 많이 언급되고 인기 있는 가족 체류형 F&amp;B·생일파티 사례를 유형별로 정리하고, MoPA 등 벤치마크를 기준으로 패키지 구성·가격·수익모델의 초기 가설을 제시합니다. 콘텐츠 연계 프로그램·공간 아이디어는 2단계에서 구체화합니다.</p>
+      <span class="kicker"><span class="dot" style="background:var(--c1)"></span><span class="dot" style="background:var(--c2)"></span><span class="dot" style="background:var(--c3)"></span> ARTE KIDS PARK · PARTY ROOM</span>
+      <h1>미국 가족 체류형 F&amp;B·생일파티 벤치마크와<br>AKP 파티 패키지·가격·운영 수익모델</h1>
+      <p class="lead">아르떼 키즈파크(AKP) 파티룸 기획 1단계 통합 보고서입니다. 사내 유사시설 조사(24곳)와 미국 인기 체류형 사례를 종합하고, AKP 파티 기본계획(덱)을 기준으로 패키지 구성·가격·운영 수익모델을 검토합니다.</p>
       <div class="hero-meta">
-        <span class="tag"><span class="dot" style="background:var(--c4)"></span> 타깃: 전 연령 다세대 가족</span>
-        <span class="tag">사례 11건 · 유형 4종</span>
-        <span class="tag">패키지·가격·수익모델 가설 포함</span>
-        <span class="tag sm">Phase 1 / 리서치 + 벤치마크</span>
+        <span class="tag"><span class="dot" style="background:var(--c4)"></span> 코어 타깃: 아동 5–10세 + 동반 가족</span>
+        <span class="tag">유사시설 24곳 벤치마크</span>
+        <span class="tag">소형 $300 · 대형 $450</span>
+        <span class="tag">일 최대 매출 $5,400</span>
       </div>
     </header>
 
-    <!-- 1. 개요 -->
+    <!-- 1 -->
     <section id="s1">
       <div class="sec-head"><span class="sec-no">01</span><h2>개요 · 목표 · 타깃</h2></div>
-      <p class="sec-sub">본 기획의 목적, 범위, 타깃을 정의합니다. 요청하신 작업 순서(① 미국 사례 조사 → ② 콘텐츠 연계 프로그램·공간 → ③ 패키지·가격·수익모델)에 따라 이번 문서는 ①과 ③의 초기 검토까지 다루며, ②는 다음 단계 과제로 남겨둡니다.</p>
-
+      <p class="sec-sub">요청 순서(① 미국 사례 조사 → ② 콘텐츠 연계 프로그램·공간 → ③ 패키지·가격·수익모델)를 기준으로, 이번 문서는 ①·③을 사내 자료(파티 기본계획 덱, 유사시설 24곳 xlsx)와 통합해 다룹니다. ②는 기본계획의 'Interactive Party·Special Event' 축을 토대로 §06·§11에서 방향을 제시하고 2단계에서 구체화합니다.</p>
       <div class="kpis">
-        <div class="kpi"><div class="n">11건</div><div class="l">조사 사례 수</div><div class="s">미국 중심 + MoPA·teamLab 벤치마크</div></div>
-        <div class="kpi"><div class="n g">4유형</div><div class="l">체류형 모델 분류</div><div class="s">키즈 F&amp;B · 올에이지 · 체험뮤지엄 · 놀이+아트</div></div>
-        <div class="kpi"><div class="n o">$20–60</div><div class="l">1인 파티 단가 밴드</div><div class="s">사례별 패키지 기준(아래 상세)</div></div>
-        <div class="kpi"><div class="n r">3단계</div><div class="l">제안 패키지 티어</div><div class="s">Standard · Deluxe · Premium 가설</div></div>
+        <div class="kpi"><div class="n">5–10세</div><div class="l">코어 타깃 연령</div><div class="s">생일 주인공 중심 + 동반 가족 체류</div></div>
+        <div class="kpi"><div class="n g">24곳</div><div class="l">유사시설 벤치마크</div><div class="s">카테고리 ①~⑤ · 사내 조사(xlsx)</div></div>
+        <div class="kpi"><div class="n o">$300/$450</div><div class="l">소형/대형 기본가(안)</div><div class="s">덱 기준 · 2시간 예약 상품</div></div>
+        <div class="kpi"><div class="n r">$5,400</div><div class="l">실별 일 최대 매출</div><div class="s">4실·4회전·아이 최대 180명</div></div>
       </div>
 
       <h3>프로젝트 목표</h3>
       <ul class="clean">
-        <li><b>1차 목표</b> — 미국에서 언급·인기가 높은 가족 체류형 F&amp;B·생일파티 사례를 수집·유형화하고, AKP에 이식 가능한 요소를 식별한다.</li>
-        <li><b>최종 목표</b> — MoPA 등 벤치마크 기준으로 <b>패키지 구성 · 가격 · 운영 수익모델</b>을 검토한다.</li>
-        <li><b>연계 과제(2단계)</b> — AKP 보유 콘텐츠(몰입형 미디어아트)와 결합 가능한 프로그램·공간 아이디어 정리.</li>
+        <li><b>1차 목표</b> — 미국 인기·유사 가족 체류형 F&amp;B·생일파티 사례를 수집·유형화하고 AKP 이식 요소를 식별한다.</li>
+        <li><b>최종 목표</b> — 유사시설 벤치마크 기준으로 <b>패키지 구성 · 가격 · 운영 수익모델</b>을 검토한다.</li>
+        <li><b>연계 과제(2단계)</b> — AKP 미디어아트 콘텐츠와 결합한 프로그램·공간 아이디어 구체화.</li>
       </ul>
 
-      <h3>타깃 정의</h3>
+      <h3>타깃 정의 <span class="tag sm solid-g" style="vertical-align:middle">확정</span></h3>
       <div class="note">
-        <span class="lab">타깃 해석 메모</span>
-        <p>요청서의 타깃은 "<b>5–140세</b>"로 기재되어 있습니다. 숫자 그대로의 연령이라기보다 <b>5세 아동부터 조부모까지 전 연령·다세대 가족 전체</b>를 포괄하라는 의미로 해석했습니다. "가족 체류형"이라는 방향과도 일치합니다. 만약 "5–14세(아동)"를 의도하신 것이라면 알려주세요 — 패키지·공간 설계의 중심 연령이 바뀝니다.</p>
+        <span class="lab">타깃 업데이트</span>
+        <p>초안의 "5–140세"는 <b>오타로 확인</b>되었고, 코어 타깃은 <b>아동 5–10세</b>로 확정했습니다(사용자 확인). 파티 설계의 중심 연령은 5–10세 생일 주인공이며, 부모·형제·조부모 등 <b>동반 가족의 체류·F&amp;B</b>로 객단가를 확장합니다.</p>
       </div>
       <div class="grid g3" style="margin-top:14px">
-        <div class="card"><div class="top"><h4>코어 유저</h4><span class="tag sm solid-y">주인공</span></div><p class="muted" style="font-size:14px;margin:0">만 4–10세 생일 주인공. 체험·놀이·포토 중심.</p></div>
+        <div class="card"><div class="top"><h4>코어 유저</h4><span class="tag sm solid-y">주인공</span></div><p class="muted" style="font-size:14px;margin:0">만 5–10세 생일 주인공. 인터랙티브 미디어 체험·포토 중심.</p></div>
         <div class="card"><div class="top"><h4>동반 결정자</h4><span class="tag sm solid-b">지갑</span></div><p class="muted" style="font-size:14px;margin:0">30–40대 부모. 예약·결제·안전·편의가 구매 결정 요인.</p></div>
-        <div class="card"><div class="top"><h4>확장 가족</h4><span class="tag sm solid-t">체류</span></div><p class="muted" style="font-size:14px;margin:0">형제·조부모·친척. 성인 F&amp;B·휴게로 체류시간·객단가 확장.</p></div>
+        <div class="card"><div class="top"><h4>확장 가족</h4><span class="tag sm solid-t">체류</span></div><p class="muted" style="font-size:14px;margin:0">형제·조부모·친지. 성인 F&amp;B·휴게로 체류·객단가 확장.</p></div>
       </div>
     </section>
 
-    <!-- 2. 방법 -->
+    <!-- 2 -->
     <section id="s2">
-      <div class="sec-head"><span class="sec-no">02</span><h2>조사 방법과 한계</h2></div>
-      <p class="sec-sub">공개 웹 자료(공식 사이트·업계 매체·시장조사 요약) 기반의 2차 자료 리서치입니다. 신뢰도를 높이기 위해 가격·수치는 가능한 한 공식 출처를 우선했고, 불명확한 값은 명시했습니다.</p>
+      <div class="sec-head"><span class="sec-no">02</span><h2>조사 방법 · 자료</h2></div>
+      <p class="sec-sub">사내 1차 자료(파티 기본계획 덱, 유사시설 24곳 조사 xlsx)를 기준선으로 삼고, 공개 웹 자료로 미국 인기 사례·시장 수치를 보강했습니다. 가격·시장 수치는 변동되므로 기획 확정 시 재확인이 필요합니다.</p>
       <div class="grid g2">
         <div class="card">
-          <h4>확인된 사실(신뢰도 상)</h4>
+          <h4>기준 자료 (사내 · 신뢰도 상)</h4>
           <ul class="clean g" style="margin-top:8px">
-            <li>Chuck E. Cheese · Dave &amp; Buster's · Color Factory의 <b>공식 파티 패키지 가격</b></li>
-            <li>FEC(가족 엔터테인먼트 센터) <b>시장 규모·성장률</b> 복수 기관 추정치</li>
-            <li>Dave &amp; Buster's FY2025 매출·점포 수, Pinstripes F&amp;B 매출</li>
+            <li><b>AKP 파티 기본계획 덱</b> — 패키지 4축·가격·운영 타임라인(261012)</li>
+            <li><b>유사시설 24곳 조사 xlsx</b> — 파티패키지·티켓권종·애드온(0803)</li>
+            <li>두 자료가 다를 경우 <b>최신 덱(261012)을 우선</b> 적용</li>
           </ul>
         </div>
         <div class="card">
-          <h4>한계와 미확인(솔직히)</h4>
+          <h4>보강 자료와 한계 (솔직히)</h4>
           <ul class="clean o" style="margin-top:8px">
-            <li><b>"MOPA"의 정확한 지칭 대상</b>은 100% 확정하지 못함 → 아래 가정 참고</li>
-            <li>체류시간(dwell time)·F&amp;B 어태치율의 <b>공식 수치 부재</b> — 업계 추정·단편 사례만 존재</li>
-            <li>American Girl·Museum of Ice Cream 등 <b>일부 가격은 과거 자료</b> → 참고용</li>
-            <li>환율 환산치는 <b>가정값(≈)</b>이며 실제와 다를 수 있음</li>
+            <li>Chuck E. Cheese·Color Factory·FEC 시장 수치는 <b>공개 웹 자료</b></li>
+            <li>체류시간·F&amp;B 어태치율의 <b>공식 수치는 부재</b> — 업계 추정 사용</li>
+            <li>환율 환산은 <b>가정값(≈)</b>, 실제와 다를 수 있음</li>
+            <li>Windows 데스크톱 경로의 원본 파일은 세션에서 접근 불가 → 업로드 PDF로 반영</li>
           </ul>
         </div>
       </div>
-      <div class="note">
-        <span class="lab">"MOPA" 해석</span>
-        <p>요청서의 "MOPA 등 사례"는 맥락상 <b>MoPA — Museum of Play and Art(호주 멜버른)</b>, 즉 '놀이+아트+F&amp;B+생일 기능'을 묶은 체류형 어린이 공간으로 해석했습니다. AKP(몰입형 아트 기반 키즈파크)와 포맷이 가장 유사하기 때문입니다. 다른 "MOPA"(예: Museum of Pop Culture 등)를 의도하셨다면 알려주시면 해당 사례로 교체하겠습니다.</p>
-      </div>
     </section>
 
-    <!-- 3. 유형 맵 -->
+    <!-- 3 -->
     <section id="s3">
-      <div class="sec-head"><span class="sec-no">03</span><h2>미국 사례 유형 맵</h2></div>
-      <p class="sec-sub">가족 체류형 F&amp;B·생일파티 사례는 "무엇으로 체류를 만드는가"에 따라 4가지로 나뉩니다. AKP는 유형 C(체험·몰입)와 D(놀이+아트)에 F&amp;B(유형 A의 생일 운영력)를 결합하는 포지션이 유력합니다.</p>
-      <div class="typemap">
-        <div class="type">
-          <div class="lbl">TYPE A</div>
-          <h4>키즈 특화 F&amp;B + 놀이</h4>
-          <p>피자·케이크 등 F&amp;B와 게임을 묶은 '생일 공장'. 운영 표준화·회전율 강점.</p>
-          <div class="who"><span class="tag sm">Chuck E. Cheese</span> <span class="tag sm">American Girl Cafe</span></div>
-        </div>
-        <div class="type">
-          <div class="lbl">TYPE B</div>
-          <h4>올에이지 이터테인먼트</h4>
-          <p>액티비티(게임·골프·볼링)+레스토랑/바. 성인 객단가·단체·저녁 수요.</p>
-          <div class="who"><span class="tag sm">Dave &amp; Buster's</span> <span class="tag sm">Topgolf</span> <span class="tag sm">Pinstripes</span></div>
-        </div>
-        <div class="type">
-          <div class="lbl">TYPE C</div>
-          <h4>체험·몰입형 뮤지엄</h4>
-          <p>포토제닉·몰입 콘텐츠로 입장권 매출 주도. 프라이빗룸으로 파티 확장.</p>
-          <div class="who"><span class="tag sm">Color Factory</span> <span class="tag sm">Museum of Ice Cream</span> <span class="tag sm">Meow Wolf</span> <span class="tag sm">teamLab</span></div>
-        </div>
-        <div class="type">
-          <div class="lbl">TYPE D</div>
-          <h4>놀이 + 아트 복합</h4>
-          <p>어린이 놀이·아트 체험 + 라이선스 F&amp;B(바·케이터링). 다세대 체류 설계.</p>
-          <div class="who"><span class="tag sm solid-g">MoPA</span> <span class="tag sm">(AKP 벤치마크)</span></div>
-        </div>
-      </div>
-      <div class="note concl">
-        <span class="lab">결론</span>
-        <p>AKP의 전략적 공백은 <b>'TYPE C의 몰입 콘텐츠력' × 'TYPE A의 표준화된 생일 운영' × 'TYPE D의 다세대 F&amp;B 체류'</b>의 교집합입니다. 단일 입장권이 아니라 <b>파티룸 패키지 + F&amp;B 어태치 + 굿즈</b>로 객단가를 쌓는 구조가 핵심입니다.</p>
-      </div>
-    </section>
-
-    <!-- 4. 사례 상세 -->
-    <section id="s4">
-      <div class="sec-head"><span class="sec-no">04</span><h2>핵심 사례 상세</h2></div>
-      <p class="sec-sub">사례별 핵심 포맷·가격·시사점. 가격은 공식 또는 최신 공개 자료 기준이며, 변동이 크므로 실제 기획 시 현행 요금 재확인이 필요합니다. 환산(원)은 가정 환율(USD≈1,400원 · AUD≈920원)로 표기한 참고값입니다.</p>
-
-      <h3>TYPE A · 키즈 특화 F&amp;B + 놀이</h3>
-      <div class="grid g2">
-        <div class="card">
-          <div class="top"><h4>Chuck E. Cheese</h4><span class="tag sm solid-r">생일 1위 자처</span></div>
-          <div class="meta">미국 전역 FEC · 피자+게임+캐릭터</div>
-          <ul>
-            <li>자사 발표상 <b>미국 최다 어린이 생일(연 ~50만 건)</b> 개최 주장<sup><a href="#f-cec">1</a></sup></li>
-            <li>기본 생일 패키지: <b>어린이 6명 $99.99</b>, 추가 1인당 <b>$19.99</b> (≈ 14만원 / 2.8만원)<sup><a href="#f-cec">1</a></sup></li>
-            <li>시사점: <b>'인당 추가' 모듈 과금</b>과 캐릭터 IP·게임 토큰의 재방문 유도 구조</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="top"><h4>American Girl Cafe</h4><span class="tag sm solid-p">IP×다이닝</span></div>
-          <div class="meta">인형 IP 리테일 + 카페 + 생일</div>
-          <ul>
-            <li>카페 식사 <b>약 $23–27/인</b>(음료·코스 포함 기준)<sup><a href="#f-ag">2</a></sup></li>
-            <li>생일 애드온 <b>아동 $40·성인 $30</b>, 공식 파티 패키지 <b>약 $60/인~</b>(≈ 8.4만원~)<sup><a href="#f-ag">2</a></sup></li>
-            <li>시사점: <b>IP·굿즈·케이크·포토</b>를 묶어 객단가를 올리는 '테마 다이닝' 모델</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>TYPE B · 올에이지 이터테인먼트</h3>
-      <div class="grid g3">
-        <div class="card">
-          <div class="top"><h4>Dave &amp; Buster's</h4><span class="tag sm solid-b">상장사</span></div>
-          <div class="meta">아케이드 + 레스토랑/바</div>
-          <ul>
-            <li>키즈 파티 패키지 <b>약 $20–39/인</b>, 최소 인원·지점별 상이<sup><a href="#f-db">3</a></sup></li>
-            <li>FY2025 매출 <b>약 $21억 / 243개 점</b><sup><a href="#f-mkt">7</a></sup></li>
-            <li>Power Card(게임 크레딧) 등급제로 F&amp;B+게임 번들</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="top"><h4>Topgolf</h4><span class="tag sm">올에이지</span></div>
-          <div class="meta">골프 엔터 + F&amp;B</div>
-          <ul>
-            <li>2024년 <b>3,000만+ 방문객</b>, 1인 F&amp;B <b>약 $20–40</b>(추정)<sup><a href="#f-tg">8</a></sup></li>
-            <li>그룹 행사에서 이터테인먼트 선호 <b>70%</b>(Technomic)<sup><a href="#f-tg">8</a></sup></li>
-            <li>단, '24 2분기 동일점 매출 −8% → <b>재방문 보장 안 됨</b></li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="top"><h4>Pinstripes</h4><span class="tag sm">볼링·보치</span></div>
-          <div class="meta">비스트로 + 게임 + 이벤트</div>
-          <ul>
-            <li>F&amp;B 매출 <b>+10.5% → $27.5M</b>, 타 매출 대비 성장 견인<sup><a href="#f-mkt">7</a></sup></li>
-            <li>시사점: 체류형에서 <b>F&amp;B가 성장 레버</b>임을 보여주는 사례</li>
-            <li>생일·단체·기업행사 혼합 수요</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>TYPE C · 체험·몰입형 뮤지엄</h3>
-      <div class="grid g2">
-        <div class="card">
-          <div class="top"><h4>Color Factory</h4><span class="tag sm solid-o">파티 가격 공개</span></div>
-          <div class="meta">컬러 테마 몰입 체험 + 프라이빗룸</div>
-          <ul>
-            <li>파티 <b>평일 $45/인 · 주말·공휴일 $55/인</b>(최대 40명)<sup><a href="#f-cf">4</a></sup></li>
-            <li>정액 티어 예: 평일 11–25명 <b>$450</b> / 주말 최대 10명 <b>$650</b><sup><a href="#f-cf">4</a></sup></li>
-            <li>전시 전관 + <b>프라이빗 셀러브레이션룸 2시간</b>, 음식 반입 허용, 숍 10% 할인</li>
-            <li>시사점: <b>입장권+프라이빗룸+BYO F&amp;B+굿즈</b> — AKP에 가장 이식성 높은 구조</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="top"><h4>Meow Wolf</h4><span class="tag sm solid-t">몰입 아트</span></div>
-          <div class="meta">대형 몰입형 아트 설치(산타페 등)</div>
-          <ul>
-            <li>산타페 1년차 <b>방문 ~40만 명</b>, 매출 <b>$6–7M</b>, 그중 <b>입장권 85%</b><sup><a href="#f-mw">5</a></sup></li>
-            <li>2017년 티켓 성인 $20 / 아동 $14 (현재는 상이)<sup><a href="#f-mw">5</a></sup></li>
-            <li>시사점: 몰입 콘텐츠의 <b>집객·입장권 매출력</b>, 단 F&amp;B·파티는 별도 설계 필요</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="top"><h4>teamLab</h4><span class="tag sm solid-s">레퍼런스</span></div>
-          <div class="meta">디지털 아트 몰입 체험(일본 등)</div>
-          <ul>
-            <li>티켓 성인 ≈¥3,600–3,800 · 아동(4–12) ≈¥1,300–1,500 · 4세 미만 무료<sup><a href="#f-tl">6</a></sup></li>
-            <li><b>만질 수 있는 체험</b>은 아동 강점, 단 어두운 미로형은 영유아에게 부담될 수 있음<sup><a href="#f-tl">6</a></sup></li>
-            <li>시사점: AKP의 <b>미디어아트 자산</b>과 가장 가까운 콘텐츠 톤앤매너</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="top"><h4>Museum of Ice Cream</h4><span class="tag sm">테마 몰입</span></div>
-          <div class="meta">아이스크림 테마 포토·체험</div>
-          <ul>
-            <li>과거(2022) 입장 ≈$46 수준, <b>현행 파티 가격 미확인</b>(참고용)<sup><a href="#f-moic">9</a></sup></li>
-            <li>시사점: <b>SNS 포토존 중심</b> 집객 — 체류보다 회전·바이럴형</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>TYPE D · 놀이 + 아트 복합 (핵심 벤치마크: MoPA)</h3>
-      <div class="card">
-        <div class="top"><h4>MoPA — Museum of Play and Art (호주 멜버른: Sandringham · Geelong)</h4><span class="tag sm solid-g">AKP 포맷 유사</span></div>
-        <div class="meta">어린이 놀이·아트 체험 + 라이선스 바 + 셰프 케이터링 + 생일 기능</div>
-        <ul>
-          <li>입장 <b>성인 ≈A$18 · 아동(1–18) ≈A$24</b>(2025.8 기준, ≈ 1.7만원 / 2.2만원)<sup><a href="#f-mopa">10</a></sup></li>
-          <li>기능(이벤트) 공간: <b>카나페 패키지 A$69/인~(3시간)</b> 등, 상업용 주방·바 보유<sup><a href="#f-mopa">10</a></sup></li>
-          <li>Geelong 지점 <b>착석 80 / 스탠딩 150명</b>, 아동 놀이구역 + 성인 바 운영<sup><a href="#f-mopa">10</a></sup></li>
-          <li><b>핵심 시사점</b>: '아이는 논다 + 어른은 먹고 마신다'의 <b>다세대 동시 체류</b> 모델. 라이선스(주류)·셰프 케이터링이 성인 객단가를 끌어올림 — AKP 타깃(전 연령)과 정확히 부합</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 5. 비교표 -->
-    <section id="s5">
-      <div class="sec-head"><span class="sec-no">05</span><h2>사례 비교표</h2></div>
-      <p class="sec-sub">파티 단가·포맷·타깃·F&amp;B 모델 기준 요약. 단가는 공개 기준의 대략값이며 지점·시즌·인원에 따라 변동합니다.</p>
-      <div class="tbl-scroll">
-        <table>
-          <thead>
-            <tr><th>사례</th><th>유형</th><th>핵심 포맷</th><th class="num">파티/입장 단가(대략)</th><th>F&amp;B 모델</th><th>AKP 이식 포인트</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><b>Chuck E. Cheese</b></td><td>A</td><td>피자+게임+캐릭터</td><td class="num">6인 $99.99<br>+인당 $19.99</td><td>인하우스(피자·케이크)</td><td>인당 추가 모듈 과금</td></tr>
-            <tr><td><b>American Girl</b></td><td>A</td><td>IP 리테일+카페</td><td class="num">파티 $60/인~</td><td>인하우스+굿즈</td><td>IP×다이닝 번들</td></tr>
-            <tr><td><b>Dave &amp; Buster's</b></td><td>B</td><td>아케이드+바</td><td class="num">$20–39/인</td><td>인하우스(풀서비스)</td><td>크레딧 등급제</td></tr>
-            <tr><td><b>Topgolf</b></td><td>B</td><td>골프엔터+F&amp;B</td><td class="num">F&amp;B $20–40/인</td><td>인하우스(필수 소비)</td><td>최소 F&amp;B 소비 룰</td></tr>
-            <tr><td><b>Pinstripes</b></td><td>B</td><td>볼링·보치+비스트로</td><td class="num">행사 맞춤</td><td>인하우스(성장 레버)</td><td>F&amp;B 매출 비중 확대</td></tr>
-            <tr><td><b>Color Factory</b></td><td>C</td><td>컬러 몰입+프라이빗룸</td><td class="num">$45–55/인<br>정액 $450~</td><td>BYO 허용+숍</td><td><b>입장+룸+BYO+굿즈</b></td></tr>
-            <tr><td><b>Meow Wolf</b></td><td>C</td><td>대형 몰입 아트</td><td class="num">입장권 중심</td><td>제한적(별도)</td><td>몰입 집객·입장권</td></tr>
-            <tr><td><b>teamLab</b></td><td>C</td><td>디지털 아트 몰입</td><td class="num">성인 ≈¥3.6–3.8k<br>아동 ≈¥1.3–1.5k</td><td>일부 카페</td><td>미디어아트 톤앤매너</td></tr>
-            <tr><td><b>MoPA</b></td><td>D</td><td>놀이·아트+바+케이터링</td><td class="num">입장 A$18–24<br>행사 A$69/인~</td><td><b>라이선스 바+셰프</b></td><td><b>다세대 동시 체류</b></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="disc">※ Museum of Ice Cream은 현행 파티 가격 미확인으로 표에서 제외. 환율 환산은 §04 가정값 기준.</p>
-    </section>
-
-    <!-- 6. 시장 인사이트 -->
-    <section id="s6">
-      <div class="sec-head"><span class="sec-no">06</span><h2>시장·수익 인사이트</h2></div>
-      <p class="sec-sub">가족 엔터테인먼트 센터(FEC) 시장은 성장세이며, 수익의 축은 '입장/티켓'이지만 성장 레버는 'F&amp;B'입니다. 체류시간·객단가를 함께 끌어올리는 설계가 수익성의 관건입니다.</p>
+      <div class="sec-head"><span class="sec-no">03</span><h2>미국 유사시설 24곳 파티패키지 벤치마크</h2></div>
+      <p class="sec-sub">사내 조사(xlsx) 기준. 과금 방식은 '정액 패키지'와 '인당 과금'이 주류이며, 10명 환산 대표가는 약 <b>$300–330</b> 수준입니다. AKP는 카테고리 ③(실내 액티브·대규모)에 속합니다.</p>
 
       <div class="kpis">
-        <div class="kpi"><div class="n">$32.6B+</div><div class="l">FEC 글로벌 시장(2025)</div><div class="s">기관별 $23–38B, CAGR 4–11%<sup><a href="#f-mkt">7</a></sup></div></div>
-        <div class="kpi"><div class="n g">31.9%</div><div class="l">0–8세 자녀 가구 매출 비중</div><div class="s">FEC 매출 기여(2025, Mordor)<sup><a href="#f-mkt">7</a></sup></div></div>
-        <div class="kpi"><div class="n o">70%</div><div class="l">그룹 행사 이터테인먼트 선호</div><div class="s">일반 캐주얼 다이닝 대비(Technomic)<sup><a href="#f-tg">8</a></sup></div></div>
-        <div class="kpi"><div class="n r">1.15B</div><div class="l">LBE·테마파크 방문(2025)</div><div class="s">글로벌 location-based 방문 수<sup><a href="#f-mkt">7</a></sup></div></div>
+        <div class="kpi"><div class="n">11곳</div><div class="l">정액 패키지</div><div class="s">$200–410 · 중앙 $329</div></div>
+        <div class="kpi"><div class="n g">7곳</div><div class="l">인당 과금</div><div class="s">$12.99–79.99/인 · 10명 중앙 $299</div></div>
+        <div class="kpi"><div class="n o">13곳</div><div class="l">등급(티어)제 운영</div><div class="s">기본·고급 등 3단 이상</div></div>
+        <div class="kpi"><div class="n r">5곳</div><div class="l">애드온 별매 공개</div><div class="s">$6–300 · 추가아동 $12–45/인</div></div>
       </div>
 
-      <h3>수익 믹스 — "티켓이 크고, F&amp;B가 성장한다"</h3>
-      <p class="muted" style="font-size:14px">대표 모델에서 티켓이 단일 최대 스트림(약 41%)이며, 나머지를 F&amp;B·굿즈·광고/스폰서가 채웁니다. 아래는 업계 통념을 반영한 <b>예시 비중(가설)</b>입니다.</p>
+      <h3>인당 가격 분포 (인원 구간별)</h3>
       <div class="bars">
-        <div class="bar"><span class="bl">입장·티켓</span><span class="track"><span class="fill" style="width:41%;background:var(--c1)"></span></span><span class="bv">41%</span></div>
-        <div class="bar"><span class="bl">F&amp;B</span><span class="track"><span class="fill" style="width:30%;background:var(--c5)"></span></span><span class="bv">30%</span></div>
-        <div class="bar"><span class="bl">파티·단체</span><span class="track"><span class="fill" style="width:17%;background:var(--c4)"></span></span><span class="bv">17%</span></div>
-        <div class="bar"><span class="bl">굿즈·리테일</span><span class="track"><span class="fill" style="width:8%;background:var(--c8)"></span></span><span class="bv">8%</span></div>
-        <div class="bar"><span class="bl">광고·스폰서</span><span class="track"><span class="fill" style="width:4%;background:var(--c6)"></span></span><span class="bv">4%</span></div>
+        <div class="bar"><span class="bl">6–9명 (4곳)</span><span class="track"><span class="fill" style="width:92%;background:var(--c1)"></span></span><span class="bv">$27.44</span></div>
+        <div class="bar"><span class="bl">10–15명 (8곳)</span><span class="track"><span class="fill" style="width:90%;background:var(--c4)"></span></span><span class="bv">$26.90</span></div>
+        <div class="bar"><span class="bl">15명+ (9곳)</span><span class="track"><span class="fill" style="width:67%;background:var(--c5)"></span></span><span class="bv">$20.00</span></div>
       </div>
-      <div class="note">
-        <span class="lab">해석</span>
-        <p>Pinstripes의 F&amp;B 매출 +10.5% 성장은 "체류형에서 추가 성장은 F&amp;B에서 나온다"는 신호입니다. 반면 Topgolf의 동일점 매출 −8%는 "콘텐츠가 노후화되면 재방문이 빠지는" 리스크를 보여줍니다. → AKP는 <b>F&amp;B 어태치 설계 + 콘텐츠 리뉴얼 주기</b>를 처음부터 수익모델에 내장해야 합니다.</p>
-      </div>
-    </section>
+      <p class="disc">※ 막대는 구간 중앙값(인당). 인원이 늘수록 인당 단가는 하락 → 대형은 '인당 $' 유지가 프리미엄 포지션.</p>
 
-    <!-- 7. 시사점·콘텐츠 연계 -->
-    <section id="s7">
-      <div class="sec-head"><span class="sec-no">07</span><h2>AKP 시사점 · 콘텐츠 연계 방향</h2></div>
-      <p class="sec-sub">아래는 2단계(프로그램·공간 아이디어)로 이어질 가설적 방향입니다. AKP의 미디어아트 콘텐츠를 '파티의 주인공 경험'으로 전환하는 것이 차별점입니다.</p>
-      <div class="grid g3">
-        <div class="card"><div class="top"><h4>콘텐츠=무대</h4><span class="tag sm solid-s">몰입</span></div><p class="muted" style="font-size:14px;margin:0">teamLab·Meow Wolf식 몰입 공간을 <b>생일 주인공이 등장하는 무대</b>로. 이름·메시지가 벽면에 투사되는 개인화 연출.</p></div>
-        <div class="card"><div class="top"><h4>인터랙티브 프로그램</h4><span class="tag sm solid-o">참여</span></div><p class="muted" style="font-size:14px;margin:0">드로잉이 영상으로 살아나는 체험, 미션형 룸 등 <b>아동 참여 콘텐츠</b>로 체류·재방문 유도.</p></div>
-        <div class="card"><div class="top"><h4>다세대 F&amp;B</h4><span class="tag sm solid-t">체류</span></div><p class="muted" style="font-size:14px;margin:0">MoPA식 '아이는 논다+어른은 먹는다'. 성인 카페/바 + 아동 안전식 <b>동시 체류 F&amp;B</b>.</p></div>
-        <div class="card"><div class="top"><h4>프라이빗 파티룸</h4><span class="tag sm solid-y">핵심</span></div><p class="muted" style="font-size:14px;margin:0">Color Factory식 <b>전관 체험 + 2시간 프라이빗룸</b>. 운영 표준화로 회전·수익 확보.</p></div>
-        <div class="card"><div class="top"><h4>굿즈·포토</h4><span class="tag sm solid-p">객단가</span></div><p class="muted" style="font-size:14px;margin:0">IP 굿즈·커스텀 케이크·포토 패키지로 <b>파티당 추가 매출</b>. American Girl식 번들.</p></div>
-        <div class="card"><div class="top"><h4>리뉴얼 주기</h4><span class="tag sm solid-r">재방문</span></div><p class="muted" style="font-size:14px;margin:0">콘텐츠 교체·시즌 테마로 <b>Topgolf형 노후화 리스크</b> 방어. 멤버십 연동.</p></div>
-      </div>
-    </section>
-
-    <!-- 8. 패키지 -->
-    <section id="s8">
-      <div class="sec-head"><span class="sec-no">08</span><h2>패키지 구성(안)</h2></div>
-      <p class="sec-sub">MoPA·Color Factory·Chuck E. Cheese 구조를 합성한 <b>3티어 가설</b>입니다. 공통적으로 '전관 체험 + 프라이빗룸 + F&amp;B + 굿즈'를 모듈화하고, 인원 기준 정액 + 인당 추가 과금을 병행합니다.</p>
+      <h3>카테고리별 대표 시설 · 파티 패키지</h3>
       <div class="tbl-scroll">
         <table>
+          <caption>엔트리=기준 인원(대개 10명) 정액 또는 인당가. 인당 환산·상위 티어 병기. 노란 배경 행 = AKP 소속군(③).</caption>
           <thead>
-            <tr><th>구성 요소</th><th>Standard</th><th>Deluxe</th><th>Premium</th></tr>
+            <tr><th>카테고리</th><th>시설</th><th class="num">엔트리(가격·인원)</th><th class="num">인당 환산</th><th class="num">상위 티어(최고)</th></tr>
           </thead>
           <tbody>
-            <tr><td><b>기준 인원</b></td><td>아동 8명</td><td>아동 10명 + 성인 4</td><td>아동 12명 + 성인 6</td></tr>
-            <tr><td>전관 콘텐츠 체험</td><td>○ 90분</td><td>○ 120분</td><td>○ 150분 + 우선입장</td></tr>
-            <tr><td>프라이빗 파티룸</td><td>60분</td><td>90분</td><td>120분 + 전용 호스트</td></tr>
-            <tr><td>개인화 미디어 연출</td><td>기본(이름 투사)</td><td>+ 주인공 영상</td><td>+ 가족 커스텀 영상</td></tr>
-            <tr><td>F&amp;B</td><td>아동 세트+케이크</td><td>+ 성인 플래터</td><td>+ 성인 바/카페 크레딧</td></tr>
-            <tr><td>굿즈·포토</td><td>기념 굿즈 1종</td><td>+ 포토 1컷</td><td>+ 포토북·IP 굿즈</td></tr>
-            <tr><td>추가 인원</td><td>인당 과금</td><td>인당 과금(할인)</td><td>인당 과금(최다 할인)</td></tr>
+            <tr><td rowspan="4"><b>① 역할놀이·소규모</b></td><td>Pikes Peak</td><td class="num">$200 / 10명·1h</td><td class="num">$20</td><td class="num">Package Two $300</td></tr>
+            <tr><td>Bloom Play Lab</td><td class="num">$399 / 최대40명·2h 전관</td><td class="num">~$10</td><td class="num">단일 티어</td></tr>
+            <tr><td>Play Street Springs</td><td class="num">$300 / 20명(평일)</td><td class="num">$15</td><td class="num">Sit Back $995</td></tr>
+            <tr><td>Play Street Lowry</td><td class="num">$365 / 20명·1.5h</td><td class="num">$18.25</td><td class="num">Sit Back $995</td></tr>
+
+            <tr><td rowspan="5"><b>② 실내 액티브·소규모</b></td><td>Kids Wonder</td><td class="num">$239 / 8명·2h</td><td class="num">$29.9</td><td class="num">Awesome $949</td></tr>
+            <tr><td>Spark the Senses</td><td class="num">$239 / 10명·1.5h</td><td class="num">$23.9</td><td class="num">DELUXE $799</td></tr>
+            <tr><td>Kids Empire</td><td class="num">$29.90/인 / 10명·2.5h</td><td class="num">$29.90</td><td class="num">Play Big $52.90/인</td></tr>
+            <tr><td>The Sand Place</td><td class="num">$299 / 10명·2h</td><td class="num">$29.9</td><td class="num">Full Venue $599</td></tr>
+            <tr><td>SweetPlay</td><td class="num">$410 / 10명·1.5h</td><td class="num">$41</td><td class="num">Lollipop $575</td></tr>
+
+            <tr class="hl"><td rowspan="5"><b>③ 실내 액티브·대규모</b> <span class="tag sm solid-y">AKP 소속군</span></td><td>Urban Air</td><td class="num">$249 / 10명·2h</td><td class="num">$24.9</td><td class="num">Platinum $399</td></tr>
+            <tr class="hl"><td>Lava Island</td><td class="num">$350 / 3h</td><td class="num">$23.3</td><td class="num">단일 티어</td></tr>
+            <tr class="hl"><td>Sky Zone</td><td class="num">$350 / 10명(EPIC)</td><td class="num">$35</td><td class="num">MEGA $440</td></tr>
+            <tr class="hl"><td>Air City 360</td><td class="num">$29.99/인 / 10명·2h</td><td class="num">$29.99</td><td class="num">Uptown $39.99/인</td></tr>
+            <tr class="hl"><td>Bounce Empire</td><td class="num">최소지출 아동 $50/인</td><td class="num">$50</td><td class="num">성인 $10/인</td></tr>
+
+            <tr><td rowspan="5"><b>④ 가족·어른 함께</b></td><td>Main Event</td><td class="num">$17.99/인 / 1h</td><td class="num">$17.99</td><td class="num">Main Event $29.99/인</td></tr>
+            <tr><td>Activate Aurora</td><td class="num">세션 $28–38/인</td><td class="num">—</td><td class="num">전용룸 없음</td></tr>
+            <tr><td>Immersive Gamebox</td><td class="num">$30–35/인 / 7명·60분</td><td class="num">$30–35</td><td class="num">전용룸+장식 +$100</td></tr>
+            <tr><td>Malibu Jack's</td><td class="num">$12.99/인 / 8명</td><td class="num">$12.99</td><td class="num">Unlimited $44.99/인</td></tr>
+            <tr><td>Elitch Gardens</td><td class="num">$59.99/인 / 8명</td><td class="num">$59.99</td><td class="num">Party Place $79.99/인</td></tr>
+
+            <tr><td><b>⑤ 전시·관람</b></td><td>(Children's Museum 등)</td><td class="num">대부분 파티 상품 없음</td><td class="num">—</td><td class="num">대관 $750–1,750 / 30–75명</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="note concl">
-        <span class="lab">설계 원칙</span>
-        <p>① <b>모듈 과금</b>(인당 추가) — Chuck E. Cheese식 · ② <b>BYO 여지 + 인하우스 F&amp;B 병행</b> — Color Factory × MoPA · ③ <b>프라이빗룸 2시간</b> 표준으로 회전 설계 · ④ <b>성인 F&amp;B 라인</b> 분리로 다세대 객단가 확보.</p>
-      </div>
-    </section>
-
-    <!-- 9. 가격 -->
-    <section id="s9">
-      <div class="sec-head"><span class="sec-no">09</span><h2>가격(안)</h2></div>
-      <p class="sec-sub">아래는 벤치마크 단가에서 역산한 <b>가격 가설</b>입니다(국내 판매가는 입지·원가·경쟁 분석 후 확정 필요). 벤치마크: Color Factory $45–55/인, MoPA 행사 A$69/인, Chuck E. Cheese 6인 $99.99.</p>
-      <div class="tbl-scroll">
-        <table>
-          <thead>
-            <tr><th>티어</th><th class="num">패키지 정액(가설)</th><th class="num">인당 추가(가설)</th><th>근거 벤치마크</th><th>목표 포지션</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><b>Standard</b></td><td class="num">29–35만원</td><td class="num">2.5–3만원</td><td>CEC 6인 $99.99 / CF 평일 $45</td><td>엔트리·평일 회전</td></tr>
-            <tr><td><b>Deluxe</b></td><td class="num">45–55만원</td><td class="num">3–3.5만원</td><td>CF 주말 $55 / MoPA A$69</td><td>주력·주말 수요</td></tr>
-            <tr><td><b>Premium</b></td><td class="num">70–90만원</td><td class="num">3.5–4.5만원</td><td>AG 파티 $60/인~ + 프리미엄 애드온</td><td>프리미엄·VIP</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="note">
-        <span class="lab">가격 설계 메모</span>
-        <p>• 성인 F&amp;B·주류는 <b>별도 과금/크레딧</b>으로 분리(MoPA 라이선스 모델). • 평일/주말 <b>차등가</b>(Color Factory 방식)로 수요 분산. • 성수기·시즌 테마 <b>시즌 요금</b> 적용. • 환산치는 가정 환율 기반의 참고값이며 확정가 아님.</p>
-      </div>
-    </section>
-
-    <!-- 10. 수익모델 -->
-    <section id="s10">
-      <div class="sec-head"><span class="sec-no">10</span><h2>운영 수익모델 검토</h2></div>
-      <p class="sec-sub">단일 입장권 의존을 피하고 <b>파티·F&amp;B·굿즈·멤버십</b>으로 매출을 다변화합니다. 아래 비중은 벤치마크(티켓 ~41%, F&amp;B 성장)를 반영한 <b>AKP 목표 믹스 가설</b>입니다.</p>
-      <div class="bars">
-        <div class="bar"><span class="bl">일반 입장권</span><span class="track"><span class="fill" style="width:35%;background:var(--c1)"></span></span><span class="bv">35%</span></div>
-        <div class="bar"><span class="bl">파티 패키지</span><span class="track"><span class="fill" style="width:25%;background:var(--c4)"></span></span><span class="bv">25%</span></div>
-        <div class="bar"><span class="bl">F&amp;B</span><span class="track"><span class="fill" style="width:22%;background:var(--c5)"></span></span><span class="bv">22%</span></div>
-        <div class="bar"><span class="bl">굿즈·포토</span><span class="track"><span class="fill" style="width:10%;background:var(--c8)"></span></span><span class="bv">10%</span></div>
-        <div class="bar"><span class="bl">멤버십·스폰서</span><span class="track"><span class="fill" style="width:8%;background:var(--c6)"></span></span><span class="bv">8%</span></div>
-      </div>
-
-      <h3 style="margin-top:26px">매출 레버 4종</h3>
-      <div class="grid g2">
-        <div class="card"><h4>1. 파티 회전율</h4><p class="muted" style="font-size:14px;margin:0">프라이빗룸 2시간 표준 × 룸 수 × 주말 슬롯. 피크(주말·오후) 가격 차등으로 수율 극대화.</p></div>
-        <div class="card"><h4>2. F&amp;B 어태치</h4><p class="muted" style="font-size:14px;margin:0">성인 카페/바 분리 운영 + 아동 세트. 1인 F&amp;B 소비 밴드 $20–40(Topgolf) 참고한 최소 소비·크레딧.</p></div>
-        <div class="card"><h4>3. 굿즈·포토 객단가</h4><p class="muted" style="font-size:14px;margin:0">IP 굿즈·커스텀 케이크·포토북. 파티당 추가 10만원대 상향 목표(American Girl 번들형).</p></div>
-        <div class="card"><h4>4. 멤버십·재방문</h4><p class="muted" style="font-size:14px;margin:0">연간 패스·시즌 테마 교체로 Topgolf형 노후화 방어. 생일 DB 기반 재마케팅.</p></div>
-      </div>
-
       <div class="note concl">
         <span class="lab">결론</span>
-        <p>AKP 파티룸의 수익 구조는 "<b>입장권으로 모객 → 파티 패키지로 예약 선점 → F&amp;B·굿즈로 객단가 상향 → 멤버십으로 재방문 고정</b>"의 4단 깔때기로 설계하는 것을 권장합니다. 핵심 KPI는 <b>파티 예약률 · 1인 F&amp;B 소비 · 파티당 굿즈 객단가 · 콘텐츠 리뉴얼 주기</b>입니다.</p>
+        <p>AKP 소속군(③)의 인당 밴드는 <b>$23–50</b>, 대표가는 $24.9~$35. AKP의 <b>소형 $300(10명·$30/인)·대형 $450(15명·$30/인)</b>은 이 밴드 내에서 <b>미디어아트 프리미엄(+$50~100)</b>을 반영한 상단 포지션으로 정합합니다(§07).</p>
       </div>
     </section>
 
-    <!-- 11. 다음 단계 -->
+    <!-- 4 -->
+    <section id="s4">
+      <div class="sec-head"><span class="sec-no">04</span><h2>인기 체류형 F&amp;B·생일 사례 (미국 랜드스케이프)</h2></div>
+      <p class="sec-sub">위 유사시설(FEC 중심) 외에, 미국에서 많이 언급되는 체류형 F&amp;B·몰입 사례입니다. '콘텐츠력·F&amp;B·파티 운영'의 조합 관점에서 AKP 이식 포인트를 정리합니다. (공개 웹 자료 · 환율 USD≈1,400원)</p>
+      <div class="typemap">
+        <div class="type">
+          <div class="lbl">키즈 F&amp;B</div>
+          <h4>Chuck E. Cheese</h4>
+          <p>미국 최다 어린이 생일 자처(연 ~50만). 6인 $99.99·추가 $19.99/인.<sup><a href="#f-cec">1</a></sup></p>
+          <div class="who"><span class="tag sm">인당 추가 모듈 과금</span></div>
+        </div>
+        <div class="type">
+          <div class="lbl">체험 몰입</div>
+          <h4>Color Factory</h4>
+          <p>전관 체험 + 프라이빗룸 2h. 평일 $45/주말 $55/인, BYO 허용·숍 10%.<sup><a href="#f-cf">4</a></sup></p>
+          <div class="who"><span class="tag sm solid-y">입장+룸+F&amp;B+굿즈</span></div>
+        </div>
+        <div class="type">
+          <div class="lbl">놀이+아트</div>
+          <h4>MoPA (호주)</h4>
+          <p>놀이·아트+라이선스 바+셰프 케이터링. 입장 A$18–24, 행사 A$69/인~.<sup><a href="#f-mopa">10</a></sup></p>
+          <div class="who"><span class="tag sm solid-g">다세대 동시 체류</span></div>
+        </div>
+        <div class="type">
+          <div class="lbl">미디어아트</div>
+          <h4>teamLab / Meow Wolf</h4>
+          <p>몰입 콘텐츠의 집객·입장권 매출력. teamLab 아동 ≈¥1.3–1.5k.<sup><a href="#f-tl">6</a></sup></p>
+          <div class="who"><span class="tag sm solid-s">콘텐츠 톤앤매너</span></div>
+        </div>
+      </div>
+      <div class="note">
+        <span class="lab">이식 포인트</span>
+        <p>Color Factory의 <b>'입장+프라이빗룸+BYO F&amp;B+굿즈'</b> 구조, MoPA의 <b>'아이는 놀고 어른은 먹는' 다세대 체류</b>, teamLab/Meow Wolf의 <b>몰입 콘텐츠력</b> — 이 셋의 교집합이 AKP 파티룸의 차별 포지션입니다. AKP 기본계획(§06)의 4축이 정확히 이를 겨냥합니다.</p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="s5">
+      <div class="sec-head"><span class="sec-no">05</span><h2>시장 · 수익 인사이트</h2></div>
+      <p class="sec-sub">가족 엔터테인먼트 센터(FEC) 시장은 성장세이며, 수익 축은 '입장/티켓', 성장 레버는 'F&amp;B'입니다. 체류·재방문 설계가 수익성의 관건입니다.</p>
+      <div class="kpis">
+        <div class="kpi"><div class="n">$32.6B+</div><div class="l">FEC 글로벌(2025)</div><div class="s">기관별 $23–38B · CAGR 4–11%<sup><a href="#f-mkt">7</a></sup></div></div>
+        <div class="kpi"><div class="n g">31.9%</div><div class="l">0–8세 가구 매출 비중</div><div class="s">FEC 매출 기여(Mordor)<sup><a href="#f-mkt">7</a></sup></div></div>
+        <div class="kpi"><div class="n o">70%</div><div class="l">그룹행사 이터테인먼트 선호</div><div class="s">캐주얼 다이닝 대비(Technomic)<sup><a href="#f-tg">8</a></sup></div></div>
+        <div class="kpi"><div class="n r">−8%</div><div class="l">Topgolf 동일점 매출(’24 2Q)</div><div class="s">콘텐츠 노후화 = 재방문 리스크<sup><a href="#f-tg">8</a></sup></div></div>
+      </div>
+      <div class="note concl">
+        <span class="lab">해석</span>
+        <p>Pinstripes의 F&amp;B 매출 +10.5% 성장은 "체류형의 추가 성장은 F&amp;B에서 나온다"는 신호이고, Topgolf 동일점 −8%는 "콘텐츠가 노후화되면 재방문이 빠진다"는 경고입니다. → AKP는 <b>F&amp;B 어태치 설계 + 콘텐츠 리뉴얼 주기</b>를 수익모델에 내장해야 합니다(§08·§10).</p>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section id="s6">
+      <div class="sec-head"><span class="sec-no">06</span><h2>AKP 파티 기본계획 — 4개 축</h2></div>
+      <p class="sec-sub">사내 덱(261012) 기준. 파티 세팅과 인터랙티브 미디어 체험을 패키지로 묶고, 외부 레스토랑 협업·스페셜 이벤트 연계로 차별화합니다. ②·③ 축이 요청하신 '콘텐츠 연계 프로그램'의 기반입니다.</p>
+      <div class="grid g2">
+        <div class="card"><div class="top"><h4><span class="pill-no">01</span> Party Package</h4><span class="tag sm">기본</span></div><p class="muted" style="font-size:14px;margin:0">파티룸·음식·테이블 세팅·소품을 포함한 <b>정액형 기본 패키지</b>.</p></div>
+        <div class="card"><div class="top"><h4><span class="pill-no">02</span> Interactive Party</h4><span class="tag sm solid-p">콘텐츠</span></div><p class="muted" style="font-size:14px;margin:0">체험형 미디어 파티 콘텐츠. <b>생일 케이크 위 이름·테마 맵핑</b> 등 인터랙티브 연출.</p></div>
+        <div class="card"><div class="top"><h4><span class="pill-no">03</span> Special Event</h4><span class="tag sm solid-o">공간연계</span></div><p class="muted" style="font-size:14px;margin:0">메인 광장·공간과 연계한 <b>생일자·주최자 스페셜 이벤트</b> 콘텐츠 연출.</p></div>
+        <div class="card"><div class="top"><h4><span class="pill-no">04</span> F&amp;B Partnership</h4><span class="tag sm solid-t">F&amp;B</span></div><p class="muted" style="font-size:14px;margin:0">인근 <b>레스토랑과 연계</b>해 파티 맞춤형 F&amp;B 옵션 제공(외부 협업).</p></div>
+      </div>
+      <h3>콘텐츠 연계 선택 옵션 (덱)</h3>
+      <div class="grid g3">
+        <div class="card"><h4>맞춤 생일 영상</h4><p class="muted" style="font-size:14px;margin:0">이름·사진을 반영한 생일 축하 영상.</p></div>
+        <div class="card"><h4>광장 인터랙션 연출</h4><p class="muted" style="font-size:14px;margin:0">광장 월(media wall)과 연계하는 연출.</p></div>
+        <div class="card"><h4>생일 축하곡 제작</h4><p class="muted" style="font-size:14px;margin:0">생일자 이름·취향을 담은 맞춤 축하 노래.</p></div>
+        <div class="card"><h4>굿디백 · 보물찾기</h4><p class="muted" style="font-size:14px;margin:0">인원 수에 비례하는 인당 옵션.</p></div>
+        <div class="card"><h4>케이터링 · 디저트</h4><p class="muted" style="font-size:14px;margin:0">기본 패키지와 분리해 별도 판매.</p></div>
+        <div class="card"><h4><span class="tag sm solid-b">Phase 2</span> 확장 아이디어</h4><p class="muted" style="font-size:14px;margin:0">드로잉→영상 체험, 미션형 룸, 시즌 테마 맵핑 등 재방문 콘텐츠.</p></div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section id="s7">
+      <div class="sec-head"><span class="sec-no">07</span><h2>패키지 구성 · 가격</h2></div>
+      <p class="sec-sub">덱 기준. <b>플레이 60분 + 파티룸 60분 = 총 2시간 예약 상품</b>. 미디어아트 연출·프리미엄 공간을 반영해 기본가 소형 $300 / 대형 $450로 검토합니다.</p>
+      <div class="tbl-scroll">
+        <table>
+          <thead>
+            <tr><th>구분</th><th>대형 파티룸 · 1실</th><th>소형 파티룸 · 3실</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>공간</b></td><td>W4.8 × D3.0m · 14.4㎡</td><td>W4.0 × D2.5m · 10㎡</td></tr>
+            <tr><td><b>기본 인원</b></td><td>아이 최대 15명(주인공 포함)</td><td>아이 최대 10명(주인공 포함)</td></tr>
+            <tr><td><b>기본 패키지</b></td><td class="num"><b>$450</b> <span class="muted">(경쟁평균 $350 대비 +$100)</span></td><td class="num"><b>$300</b> <span class="muted">(경쟁평균 $250 대비 +$50)</span></td></tr>
+            <tr><td><b>인당 환산</b></td><td class="num">$30/인 (15명) <span class="muted">경쟁 $23.3 대비 +$6.7</span></td><td class="num">$30/인 (10명) <span class="muted">경쟁 $25.0 대비 +$5.0</span></td></tr>
+            <tr><td><b>구성</b></td><td colspan="2">파티룸 + 테이블 세팅·소품 + 인터랙티브 미디어 체험. 보호자 별도 · F&amp;B·애드온은 분리 판매.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <span class="lab">버전 메모</span>
+        <p>초기 모델(xlsx·0803)은 대형을 <b>18명·$25/인</b>으로 산정했으나, 최신 덱(261012)은 <b>15명·$30/인</b>으로 조정되었습니다. 본 문서는 <b>최신 덱 기준(15명·$30/인)</b>을 적용했습니다. 실인원·원가 확정 시 재검증 필요.</p>
+      </div>
+      <h3>운영 기준</h3>
+      <div class="grid g3">
+        <div class="card"><h4>운영 시간</h4><p class="muted" style="font-size:14px;margin:0"><b>10:00–20:00</b> · 마지막 예약 17:30.</p></div>
+        <div class="card"><h4>1회 구성</h4><p class="muted" style="font-size:14px;margin:0">플레이 60분 + 파티룸 60분 + <b>정리·전환 30분</b>.</p></div>
+        <div class="card"><h4>차등 운영(권장)</h4><p class="muted" style="font-size:14px;margin:0">평일/주말 차등가·시즌 요금으로 수요 분산(Color Factory 방식).</p></div>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section id="s8">
+      <div class="sec-head"><span class="sec-no">08</span><h2>애드온 · 객단가 상승구조</h2></div>
+      <p class="sec-sub">엔트리 정액은 '기준 인원' 가격일 뿐입니다. 유사시설 24곳의 파티 매출은 아래 4개 요인으로 base 위에서 실현됩니다(xlsx). AKP는 미디어아트 연출을 상위 티어·애드온의 핵심 레버로 활용할 수 있습니다.</p>
+      <div class="grid g4">
+        <div class="card"><div class="top"><h4>① 추가 아동</h4><span class="tag sm">인원</span></div><p class="muted" style="font-size:14px;margin:0">기준 초과 시 <b>$12–45/명</b>. (Sand $25·Sky $35–44·SweetPlay $30–45)</p></div>
+        <div class="card"><div class="top"><h4>② 티어 업셀</h4><span class="tag sm">전환</span></div><p class="muted" style="font-size:14px;margin:0">엔트리→최고 <b>+12~234%</b>. AKP는 프로젝션 연출로 차등.</p></div>
+        <div class="card"><div class="top"><h4>③ 애드온</h4><span class="tag sm">별매</span></div><p class="muted" style="font-size:14px;margin:0">품목별 <b>+$25~300</b>. (굿디백·풍선·연장·프라이빗)</p></div>
+        <div class="card"><div class="top"><h4>④ F&amp;B</h4><span class="tag sm">부착</span></div><p class="muted" style="font-size:14px;margin:0">피자·음료·케이터링 <b>incremental</b>. (외부 협업)</p></div>
+      </div>
+
+      <h3>애드온 별매 단가 (관측 · 24곳)</h3>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>품목</th><th class="num">단가</th><th>관측 출처</th><th>품목</th><th class="num">단가</th><th>관측 출처</th></tr></thead>
+          <tbody>
+            <tr><td>굿디백</td><td class="num">$6/인</td><td>The Sand Place</td><td>테이블 장식</td><td class="num">$100</td><td>Immersive Gamebox</td></tr>
+            <tr><td>보물찾기</td><td class="num">$8/인</td><td>The Sand Place</td><td>프라이빗 업그레이드</td><td class="num">$50</td><td>Urban Air</td></tr>
+            <tr><td>디저트</td><td class="num">$25</td><td>Immersive Gamebox</td><td>1시간 연장</td><td class="num">$250</td><td>Kickin' It</td></tr>
+            <tr><td>30분 연장</td><td class="num">$70</td><td>Play Street</td><td>All Star 애드온</td><td class="num">$300</td><td>Kickin' It</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>실현 객단가 시나리오 (소형 $300 base 예시)</h3>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>시나리오</th><th>구성</th><th class="num">실현 객단가</th><th>해당 요인</th></tr></thead>
+          <tbody>
+            <tr><td>Base only</td><td>아동 10명 정액</td><td class="num">$300</td><td>기준</td></tr>
+            <tr><td>추가 아동(13명)</td><td>3명 × $30</td><td class="num">$390</td><td>①</td></tr>
+            <tr><td>애드온 부착</td><td>+$30 ~ 80</td><td class="num">$420 ~ 470</td><td>③</td></tr>
+            <tr><td>상위 티어 전환</td><td>+$50 ~ 150 (프로젝션 활용)</td><td class="num">$470 ~ 620</td><td>②</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="disc">※ 예시 시나리오 — 실제 기대수익 = 상품 설계·부착률 가정에 따라 산정(xlsx).</p>
+    </section>
+
+    <!-- 9 -->
+    <section id="s9">
+      <div class="sec-head"><span class="sec-no">09</span><h2>운영 타임라인 · 일 매출</h2></div>
+      <p class="sec-sub">덱 기준. 10:00 오픈~마지막 예약 17:30, 실별 하루 최대 <b>4회</b> 운영 시 전체 예약(16건) 기준 아이 최대 180명, 실별 일 최대 매출 <b>$5,400</b>.</p>
+      <div class="tl">
+        <div class="tl-row"><span class="lab">1회차</span><div class="tl-track"><span class="tl-bar" style="left:0%; width:20%">10:00~12:00</span><span class="tl-turn" style="left:20%; width:5%">30분</span></div></div>
+        <div class="tl-row"><span class="lab">2회차</span><div class="tl-track"><span class="tl-bar" style="left:25%; width:20%">12:30~14:30</span><span class="tl-turn" style="left:45%; width:5%">30분</span></div></div>
+        <div class="tl-row"><span class="lab">3회차</span><div class="tl-track"><span class="tl-bar" style="left:50%; width:20%">15:00~17:00</span><span class="tl-turn" style="left:70%; width:5%">30분</span></div></div>
+        <div class="tl-row"><span class="lab">4회차</span><div class="tl-track"><span class="tl-bar" style="left:75%; width:20%">17:30~19:30</span><span class="tl-turn" style="left:95%; width:5%">30분</span></div></div>
+      </div>
+      <div class="tl-axis"><span></span><span class="ticks"><span>10:00</span><span>12:30</span><span>15:00</span><span>17:30</span><span>20:00</span></span></div>
+
+      <div class="grid g3" style="margin-top:20px">
+        <div class="card"><div class="top"><h4>소형 3실</h4><span class="tag sm">회전</span></div><p class="num" style="font-size:20px;font-weight:800;margin:0;color:var(--c1)">$3,600</p><p class="muted" style="font-size:13px;margin:4px 0 0">$300 × 3실 × 4회</p></div>
+        <div class="card"><div class="top"><h4>대형 1실</h4><span class="tag sm">프리미엄</span></div><p class="num" style="font-size:20px;font-weight:800;margin:0;color:var(--c4)">$1,800</p><p class="muted" style="font-size:13px;margin:4px 0 0">$450 × 1실 × 4회</p></div>
+        <div class="card"><div class="top"><h4>일 최대 매출</h4><span class="tag sm solid-o">합계</span></div><p class="num" style="font-size:20px;font-weight:800;margin:0;color:var(--c5)">$5,400</p><p class="muted" style="font-size:13px;margin:4px 0 0">16건·아이 180명 · 애드온·운영비 제외</p></div>
+      </div>
+      <div class="note">
+        <span class="lab">상향 여지</span>
+        <p>$5,400은 <b>base 정액만</b>의 상한입니다. §08의 추가아동·티어·애드온·F&amp;B 부착률을 반영하면 실현 일 매출은 이보다 높아집니다. 단, 4회 만실은 성수기 가정이며 평일 가동률은 별도 추정 필요.</p>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section id="s10">
+      <div class="sec-head"><span class="sec-no">10</span><h2>티켓 · 멤버십 · 종합 수익모델</h2></div>
+      <p class="sec-sub">파티는 체류형 사업의 한 축입니다. 일반 입장·회차권·멤버십과 함께 파티·F&amp;B·굿즈로 매출을 다변화합니다. 티켓 구조는 사내 조사(xlsx) 결론 기준입니다.</p>
+      <div class="tbl-scroll">
+        <table>
+          <caption>Arte(③ 대규모 액티브군) 티켓·멤버십 결론 — 24곳 할인 밴드·종일가 범위 내 적정 구조.</caption>
+          <thead><tr><th>권종</th><th class="num">가격(안)</th><th>근거(24곳 밴드)</th></tr></thead>
+          <tbody>
+            <tr><td>종일권(기준)</td><td class="num">$25</td><td>③군 기본가 $22–36 범위 내</td></tr>
+            <tr><td>회차권</td><td class="num">−20%</td><td>②③군 10회권 −20% 관측</td></tr>
+            <tr><td>형제 할인</td><td class="num">−15%</td><td>Sand·Spark 등 형제 10–20%</td></tr>
+            <tr><td>멤버십(월)</td><td class="num">$59.9</td><td>Kids Wonder $69·Spark $65·Sand $60 범위</td></tr>
+            <tr><td>멤버십(연)</td><td class="num">$599 <span class="muted">(월환산 $49.9)</span></td><td>연간 선결제 할인 구조</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>AKP 목표 매출 믹스 (가설)</h3>
+      <div class="bars">
+        <div class="bar"><span class="bl">일반 입장·회차권</span><span class="track"><span class="fill" style="width:35%;background:var(--c1)"></span></span><span class="bv">35%</span></div>
+        <div class="bar"><span class="bl">파티 패키지</span><span class="track"><span class="fill" style="width:25%;background:var(--c4)"></span></span><span class="bv">25%</span></div>
+        <div class="bar"><span class="bl">F&amp;B(애드온·협업)</span><span class="track"><span class="fill" style="width:22%;background:var(--c5)"></span></span><span class="bv">22%</span></div>
+        <div class="bar"><span class="bl">굿즈·애드온</span><span class="track"><span class="fill" style="width:10%;background:var(--c8)"></span></span><span class="bv">10%</span></div>
+        <div class="bar"><span class="bl">멤버십·스폰서</span><span class="track"><span class="fill" style="width:8%;background:var(--c6)"></span></span><span class="bv">8%</span></div>
+      </div>
+      <div class="note concl">
+        <span class="lab">결론</span>
+        <p>수익 구조는 "<b>입장권으로 모객 → 파티 패키지로 예약 선점 → 애드온·F&amp;B로 객단가 상향 → 멤버십으로 재방문 고정</b>"의 4단 깔때기를 권장합니다. 핵심 KPI는 <b>파티 예약률·실 가동률 · 추가아동/티어/애드온 부착률 · 1인 F&amp;B 소비 · 콘텐츠 리뉴얼 주기</b>입니다.</p>
+      </div>
+    </section>
+
+    <!-- 11 -->
     <section id="s11">
       <div class="sec-head"><span class="sec-no">11</span><h2>다음 단계 · 리스크</h2></div>
       <div class="grid g2">
         <div class="card">
           <h4>다음 단계 (Phase 2)</h4>
           <ul class="clean g" style="margin-top:8px">
-            <li>AKP 보유 콘텐츠 인벤토리 매핑 → <b>파티용 프로그램화</b></li>
-            <li>프라이빗 파티룸·동선·안전 기준 <b>공간 설계안</b></li>
-            <li>원가(F&amp;B·인건비·콘텐츠)·입지 반영 <b>확정 가격·손익 모델</b></li>
-            <li>"5–140세" 타깃 범위 <b>확정</b> 후 핵심 연령 재조정</li>
+            <li>'Interactive Party·Special Event' 축 <b>콘텐츠 프로그램화</b> (케이크 맵핑·광장 연출·맞춤 영상)</li>
+            <li>소형3·대형1 기준 <b>동선·안전·전환(30분) 공간 설계안</b></li>
+            <li>원가·가동률 반영 <b>확정 가격·손익 모델</b>(평일/주말, 부착률 가정)</li>
+            <li>F&amp;B <b>외부 협업 구조·반입 정책</b> 확정</li>
           </ul>
         </div>
         <div class="card">
           <h4>리스크 체크</h4>
           <ul class="clean o" style="margin-top:8px">
             <li><b>콘텐츠 노후화</b> → 리뉴얼 주기·시즌 테마 내장(Topgolf 교훈)</li>
-            <li><b>영유아 안전·감각 과부하</b> → 연령별 존 분리(teamLab 교훈)</li>
-            <li><b>F&amp;B 운영 복잡도</b> → 메뉴 표준화·반입 정책 결정 필요</li>
-            <li><b>벤치마크 가격의 지역·시즌 변동</b> → 현행 요금 재확인</li>
+            <li><b>평일 가동률</b> → $5,400은 4회 만실 상한, 평일 수요 분산 필요</li>
+            <li><b>5–10세 안전·운영</b> → 연령 적합 콘텐츠·보호자 동선</li>
+            <li><b>벤치마크 가격 변동</b> → 지역·시즌별 현행 요금 재확인</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 12. 출처 -->
+    <!-- 12 -->
     <section id="s12">
       <div class="sec-head"><span class="sec-no">12</span><h2>출처</h2></div>
-      <p class="sec-sub">모든 수치는 아래 공개 출처 기준이며, 가격·시장 수치는 변동됩니다. 일부는 자사 발표·업계 매체·제3자 페이지로 신뢰도 차이가 있어 본문에 표기했습니다.</p>
+      <p class="sec-sub">사내 자료(업로드)와 공개 웹 자료를 구분해 표기합니다. 가격·시장 수치는 변동되며, 일부 웹 자료는 자사 발표·제3자 페이지로 신뢰도 차이가 있습니다.</p>
+      <h3>사내 자료 (업로드 · 공개 링크 없음)</h3>
       <ol class="src">
-        <li id="f-cec">Chuck E. Cheese 2025 확장 발표(생일 건수·$99.99 패키지) — <a href="https://www.qsrmagazine.com/news/chuck-e-cheese-announces-expansion-plans-for-2025/" target="_blank" rel="noopener">QSR Magazine</a> · <a href="https://www.chuckecheese.com/" target="_blank" rel="noopener">chuckecheese.com</a></li>
-        <li id="f-ag">American Girl 카페·생일 패키지 가격(리뷰·기사) — <a href="https://lajollamom.com/american-girl-store-los-angeles-packages/" target="_blank" rel="noopener">La Jolla Mom</a> · <a href="https://www.minnesotamonthly.com/food-drink/dining-american-girl-style/" target="_blank" rel="noopener">Minnesota Monthly</a></li>
-        <li id="f-db">Dave &amp; Buster's 키즈 파티 패키지(공식) — <a href="https://www.daveandbusters.com/us/en/celebrate/kids-birthday" target="_blank" rel="noopener">daveandbusters.com</a></li>
-        <li id="f-cf">Color Factory 생일 파티 가격·구성 — <a href="https://colorfactory.getanchor.io/birthdaysindex.html" target="_blank" rel="noopener">Color Factory Birthdays</a></li>
-        <li id="f-mw">Meow Wolf 산타페 방문·매출·티켓(2017) — <a href="https://www.washingtontimes.com/news/2017/jul/15/hit-for-profit-santa-fe-art-venue-seeks-out-tiny-i/" target="_blank" rel="noopener">AP / Washington Times</a> · <a href="https://en.wikipedia.org/wiki/House_of_Eternal_Return" target="_blank" rel="noopener">House of Eternal Return (Wikipedia)</a></li>
-        <li id="f-tl">teamLab 티켓·가족 관람 정보 — <a href="https://www.teamlab.art/" target="_blank" rel="noopener">teamlab.art(공식)</a> · <a href="https://www.littlestepsasia.com/macau/events/culture-arts/teamlab-immersive-museum-in-macau" target="_blank" rel="noopener">Little Steps Asia</a></li>
-        <li id="f-mkt">FEC 시장 규모·매출 믹스·Dave &amp; Buster's 매출 — <a href="https://www.mordorintelligence.com/industry-reports/global-family-entertainment-center-market" target="_blank" rel="noopener">Mordor Intelligence</a> · <a href="https://www.futuremarketinsights.com/reports/family-entertainment-center-fec-market" target="_blank" rel="noopener">Future Market Insights</a></li>
-        <li id="f-tg">Topgolf 방문·1인 소비·Technomic 선호도 — <a href="https://www.smartbarusa.com/blog/fnw8vziybyaxybtfrwiyvw4zlr4024" target="_blank" rel="noopener">SmartBar USA (Dwell Time 분석)</a> · <a href="https://www.restaurantdive.com/news/topgolf-opens-upscale-bar-and-restaurant-concept/570923/" target="_blank" rel="noopener">Restaurant Dive</a></li>
-        <li id="f-moic">Museum of Ice Cream 입장가(과거, 참고용) — <a href="https://thesmartlocal.com/read/museum-of-ice-cream-promotion/" target="_blank" rel="noopener">TheSmartLocal</a></li>
-        <li id="f-mopa">MoPA(Museum of Play and Art) 입장·행사 패키지·공간 — <a href="https://venuenow.com/au/melbourne/venue/venue844-6242" target="_blank" rel="noopener">VenueNow — MoPA Sandringham</a> · <a href="https://venuenow.com/au/melbourne/venue/museum-of-play-and-art-geelong1-6243" target="_blank" rel="noopener">VenueNow — MoPA Geelong</a></li>
+        <li>AKP 파티 기본계획 덱 — <b>261012_dstrict_artekidspark_USA_party.pdf</b> (패키지 4축·가격·운영 타임라인)</li>
+        <li>유사시설 조사 — <b>dstrict_Arte_kids_park_USA_Facility_research.xlsx</b> (파티패키지·티켓권종·애드온, 24곳, 0803 기준)</li>
       </ol>
-      <p class="disc">※ 환율 가정: USD≈1,400원 · AUD≈920원 · JPY는 원문(¥) 표기. 환산치는 규모 감을 위한 참고값이며 실제 환율·판매가와 다를 수 있습니다. 작성일 2026-10-26 기준 공개 자료.</p>
+      <h3>공개 웹 자료</h3>
+      <ol class="src">
+        <li id="f-cec">Chuck E. Cheese 2025 패키지·생일 건수 — <a href="https://www.qsrmagazine.com/news/chuck-e-cheese-announces-expansion-plans-for-2025/" target="_blank" rel="noopener">QSR Magazine</a> · <a href="https://www.chuckecheese.com/" target="_blank" rel="noopener">chuckecheese.com</a></li>
+        <li id="f-cf">Color Factory 생일 파티 가격·구성 — <a href="https://colorfactory.getanchor.io/birthdaysindex.html" target="_blank" rel="noopener">Color Factory Birthdays</a></li>
+        <li id="f-mopa">MoPA(Museum of Play and Art) 입장·행사 패키지 — <a href="https://venuenow.com/au/melbourne/venue/venue844-6242" target="_blank" rel="noopener">VenueNow(Sandringham)</a> · <a href="https://venuenow.com/au/melbourne/venue/museum-of-play-and-art-geelong1-6243" target="_blank" rel="noopener">VenueNow(Geelong)</a></li>
+        <li id="f-tl">teamLab 티켓·가족 관람 — <a href="https://www.teamlab.art/" target="_blank" rel="noopener">teamlab.art</a> · Meow Wolf 방문·매출 — <a href="https://en.wikipedia.org/wiki/House_of_Eternal_Return" target="_blank" rel="noopener">House of Eternal Return(Wikipedia)</a></li>
+        <li id="f-mkt">FEC 시장 규모·매출 믹스 — <a href="https://www.mordorintelligence.com/industry-reports/global-family-entertainment-center-market" target="_blank" rel="noopener">Mordor Intelligence</a> · <a href="https://www.futuremarketinsights.com/reports/family-entertainment-center-fec-market" target="_blank" rel="noopener">Future Market Insights</a></li>
+        <li id="f-tg">Topgolf·Technomic·Pinstripes — <a href="https://www.smartbarusa.com/blog/fnw8vziybyaxybtfrwiyvw4zlr4024" target="_blank" rel="noopener">SmartBar USA</a> · <a href="https://www.restaurantdive.com/news/topgolf-opens-upscale-bar-and-restaurant-concept/570923/" target="_blank" rel="noopener">Restaurant Dive</a></li>
+      </ol>
+      <p class="disc">※ 환율 가정: USD≈1,400원 · AUD≈920원 · JPY는 원문(¥). 환산치는 규모 감을 위한 참고값입니다. 작성일 2026-10-26.</p>
     </section>
 
   </main>
 </div>
 
 <script>
-  // TOC active highlight
-  const links = [...document.querySelectorAll('nav a')];
-  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        links.forEach(l=>l.classList.remove('active'));
-        const a = map.get(e.target.id);
-        if(a) a.classList.add('active');
-      }
-    });
-  }, {rootMargin:'-20% 0px -70% 0px', threshold:0});
+  const links=[...document.querySelectorAll('nav a')];
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=map.get(e.target.id);if(a)a.classList.add('active');}});},{rootMargin:'-20% 0px -70% 0px',threshold:0});
   document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
 </script>
 </body>
