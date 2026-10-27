@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>디자인 가이드(Type A) 검토 — 피드백 필요 항목</title>
+<style>
+:root{
+  --ink:#1a1a1a; --sub:#444; --muted:#6b6b6b; --line:#e2e2e2; --line2:#eee;
+  --bg:#ffffff; --panel:#fafafa;
+  --red:#C8102E; --red-bg:#FCEBEB; --amber:#B45309; --amber-bg:#FEF3C7;
+  --blue:#0065B2; --blue-bg:#E9F2FB; --green:#0B7A43;
+}
+*{box-sizing:border-box}
+body{font-family:"LINE Seed KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  color:var(--ink);background:var(--bg);margin:0;padding:44px 22px;line-height:1.72;font-size:15px;-webkit-font-smoothing:antialiased}
+main{max-width:920px;margin:0 auto}
+.kicker{font-size:12px;letter-spacing:.14em;color:#B06A00;font-weight:700;text-transform:uppercase;margin:0 0 6px}
+h1{font-size:25px;margin:0 0 8px;letter-spacing:-.01em}
+.meta{color:var(--muted);font-size:13px;margin:0 0 4px}
+.lede{color:var(--sub);font-size:14.5px;margin:14px 0 0;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:6px}
+h2{font-size:18.5px;margin:40px 0 6px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+h2 .n{color:#B06A00}
+.sectdesc{color:var(--muted);font-size:13px;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;margin:10px 0 6px;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;word-break:keep-all}
+th{background:#f3f3f3;font-weight:700;font-size:12.5px;letter-spacing:.01em}
+td.item{font-weight:700;width:20%;white-space:nowrap}
+td.now{width:34%;color:var(--sub)}
+tr.p-red td.item{box-shadow:inset 4px 0 0 var(--red)}
+tr.p-amber td.item{box-shadow:inset 4px 0 0 var(--amber)}
+tr.p-blue td.item{box-shadow:inset 4px 0 0 var(--blue)}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:2px 8px;border-radius:999px;margin-bottom:6px}
+.t-red{background:var(--red-bg);color:var(--red)}
+.t-amber{background:var(--amber-bg);color:var(--amber)}
+.t-blue{background:var(--blue-bg);color:var(--blue)}
+strong{font-weight:700}
+.hl{background:#FFF3CD;padding:0 3px;border-radius:3px}
+.q{color:var(--blue);font-weight:700}
+small.pg{color:var(--muted);font-weight:600;font-size:11.5px}
+.foot{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+</style>
+</head>
+<body>
+<main>
+<p class="kicker">Design Guide Review · Feedback</p>
+<h1>디자인 가이드(Type A) 검토 — 피드백 필요 항목</h1>
+<p class="meta">ARTE KIDS PARK DENVER · 6707 S. Vine St, Centennial CO · 2026-10-27</p>
+<p class="lede">GC 예산용 디자인 가이드(Type A, 21쪽, 영문·2026.10) 검토 결과 중 <strong>확인·수정이 필요한 항목만</strong> 추렸습니다. 가이드와 정합이 맞는 항목(올-일렉트릭 주방, 피난 조도 1fc, 구조 엔지니어 조이스트 확인, 기본 설비 데이터)은 생략했습니다. 쪽수는 가이드 기준입니다.</p>
+
+<h2><span class="n">A.</span> 지정 검토 3항목</h2>
+<p class="sectdesc">전달해 주신 3가지에 대한 확인 결과와 남은 확인 포인트.</p>
+<table>
+<thead><tr><th>항목</th><th>가이드 현황</th><th>피드백 · 확인/질문</th></tr></thead>
+<tbody>
+<tr class="p-blue">
+  <td class="item"><span class="tag t-blue">현장확인</span>스크린·벽체 높이·유형</td>
+  <td class="now">예상치 반영 잘 됨. 스크린(Adventure·Sand Beach 4,500 / Color Ground 4,000 / Sketchbook 3,600+450 / Block 3,000 / Party 3,600), 벽체(WT-1 전고~21ft · WT-2 14ft · WT-3 유리 4,500+소핏 · WT-4 기둥랩) 내부 정합도 일치 <small class="pg">p4·p6</small></td>
+  <td>반영 상태는 양호. <strong>저천고 구역(클리어 5,560)</strong>에서 스크린 4,500 + 흑색밴드 1,000 = 5,500 → 상부 여유가 <span class="hl">약 60mm</span>뿐. <span class="q">조이스트·덕트·프로젝터 마운트 간섭을 현장(3D 스캔)으로 확인.</span></td>
+</tr>
+<tr class="p-blue">
+  <td class="item"><span class="tag t-blue">제외권장</span>퍼즐매트 마감</td>
+  <td class="now">FL-1 퍼즐매트를 <strong>놀이 영역 + 순환 동선 전반</strong>에 적용(동선은 "open for recs"로 열어둠). 비놀이 공간(파티·F&amp;B·로비·화장실·주방·서버·락커/BOH)은 이미 제외 <small class="pg">p8</small></td>
+  <td><strong>주 순환 동선·피난 경로는 퍼즐매트 제외 권장</strong> — ① ADA 접근로 '견고·안정' 표면 ② 피난 경로 바닥등급·ASTM D2859 ③ 유모차·청소카트 주행·내구성 ④ 들뜸/트립. <span class="q">동선·피난로는 경질 바닥(LVT, 이미 ALT-1 산정), 퍼즐매트는 실제 놀이 영역에 한정.</span> 또 놀이구조물 하부는 <strong>벤더 폼핏·안전서피스와 중복 산정 주의</strong>(p15).</td>
+</tr>
+<tr class="p-blue">
+  <td class="item"><span class="tag t-blue">기준확인</span>천장 (F&amp;B·파티룸)</td>
+  <td class="now">F&amp;B: FB-1 커브 GWB 소핏+LED 코브, <strong>"Ignore FB-1 for now"</strong> 표기. 파티룸: 흑색 GWB 천장 4,000, 프로젝터 상부 설치 <small class="pg">p9·p20·p21</small></td>
+  <td><strong>F&amp;B</strong>: "지금은 제외" 표기라 <span class="q">BOQ에서 커브 천장 가격이 빠져 있는지 확인</span>(넣을지/보류할지 결정). <strong>파티룸</strong>: 흑색 GWB 4,000은 <strong>"파티룸=몰입형 생일 프로젝션 룸"</strong> 전제의 사양(암막·프로젝터 은폐·음향·MEP 은폐). <span class="q">파티룸 프로젝션 실제 적용 여부 확인</span> — 미적용 시 일반 마감 천장으로 완화 가능.</td>
+</tr>
+</tbody>
+</table>
+
+<h2><span class="n">B.</span> 수정 권장 <span class="tag t-red" style="font-size:11px">🔴 우선</span></h2>
+<p class="sectdesc">명백한 불일치 또는 물량·면적에 직접 영향을 주는 항목.</p>
+<table>
+<thead><tr><th>항목</th><th>가이드 현황</th><th>문제 · 수정 방향</th></tr></thead>
+<tbody>
+<tr class="p-red">
+  <td class="item">화장실 면적 (A-3 미반영 의심)</td>
+  <td class="now">주방 + 화장실 <strong>합계 140㎡</strong>(1,510 SF) <small class="pg">p3</small></td>
+  <td>우리 분석상 <strong>집회(A-3) 전환 시 화장실만 약 115~135㎡</strong>(여자 변기 3→14 등). 140㎡에 주방까지 넣으면 <span class="hl">A-3 위생기구 증설분이 안 들어간 것</span>(판매시설 M 기준 잔존 가능). <span class="q">→ A-3 위생기구 수(IPC Table 403.1) 기준으로 화장실 면적 재산정.</span></td>
+</tr>
+<tr class="p-red">
+  <td class="item">기둥 수 불일치</td>
+  <td class="now">WT-4·PD-2·안전패드 모두 <strong>12 columns</strong> <small class="pg">p6·p13</small></td>
+  <td>우리 인테리어 자료·원도면 기준은 <strong>15개</strong>. <span class="q">→ 기둥 수 재확인.</span> 컬럼 랩·패드 물량(LF)에 직접 영향.</td>
+</tr>
+<tr class="p-red">
+  <td class="item">Mission 부스 수</td>
+  <td class="now">p3 "Mission (<strong>11</strong> booths)" ↔ p15/16 "<strong>12</strong> game booths" <small class="pg">p3·p16</small></td>
+  <td>가이드 <strong>내부에서 숫자가 다름</strong>. <span class="q">→ 11/12 통일.</span> 우리 조닝의 'QUEST 9종'과 명칭·개수 정합도 함께 확인.</td>
+</tr>
+<tr class="p-red">
+  <td class="item">천고 상한 불일치</td>
+  <td class="now">가이드 <strong>5.56~6.40m</strong>(18'-3"~21'-0") <small class="pg">p2·p5</small></td>
+  <td>우리 인테리어 RFP는 <strong>5.56~7.06m</strong>. <span class="q">→ 상한값 통일</span>(현장 실측 기준). 스크린(≤4,500)엔 영향 없으나 문서 간 수치 정합 필요.</td>
+</tr>
+</tbody>
+</table>
+
+<h2><span class="n">C.</span> 확인 <span class="tag t-amber" style="font-size:11px">🟠 정합성</span></h2>
+<p class="sectdesc">오류는 아니나 다른 트랙(소방·MEP·코드)과 맞물려 확인이 필요한 항목.</p>
+<table>
+<thead><tr><th>항목</th><th>가이드 현황</th><th>확인 사항</th></tr></thead>
+<tbody>
+<tr class="p-amber">
+  <td class="item">면적 기준(테넌트/건물)</td>
+  <td class="now">30,500 SF <small class="pg">p2·p3</small></td>
+  <td>가이드 30,500 = <strong>테넌트 전용</strong>. 소방·법규 미팅 doc은 "건물 32,000". 허용면적·507.3 심사는 <strong>건물 단위</strong>라, 가이드 수치가 테넌트 기준임을 명시.</td>
+</tr>
+<tr class="p-amber">
+  <td class="item">스프링클러 범위</td>
+  <td class="now">"wide deck 하부 추가(ALT-3)" 수준 <small class="pg">p15</small></td>
+  <td>소방·법규 미팅의 <strong>전관 재설계(집회 기준) 전제</strong>와 BOQ 소방 범위가 정합하는지 확인.</td>
+</tr>
+<tr class="p-amber">
+  <td class="item">슬래브 5" 무근</td>
+  <td class="now">5" slab on grade, unreinforced <small class="pg">p2</small></td>
+  <td>화장실 증설·주방 플로어싱크·그리스 배관은 <strong>콘크리트 절단</strong> 수반. 무근이라 절단·재타설 유의 — 가이드에 바닥배수 언급 적음.</td>
+</tr>
+<tr class="p-amber">
+  <td class="item">HW 전력 76 kW</td>
+  <td class="now">장비 전력 합계 약 76 kW <small class="pg">p12</small></td>
+  <td>별내 참조(~60kW)보다 큼. <strong>Denver 장비 리스트 기준</strong>인지 확인(전기 용량 800A엔 여유).</td>
+</tr>
+<tr class="p-amber">
+  <td class="item">메자닌</td>
+  <td class="now">가이드에 구조·피난 언급 없음</td>
+  <td>생길 수 있음(소방 미팅 Level 3 trigger). <strong>메자닌 면적(1/3 한도)·독립 피난·층수 산정·구조 하중</strong> 별도 검토.</td>
+</tr>
+</tbody>
+</table>
+
+<p class="foot">우선순위: <strong>B① 화장실 면적(A-3 증설 반영)</strong> → <strong>B② 기둥 수 · B③ 부스 수 불일치</strong> 순으로 확인. 가이드는 "design intent · budget pricing, final design by Architect of Record, verify in field"이므로, GC가 이 가이드로 가격을 뽑기 전에 위 항목을 정리하는 것이 목적입니다.</p>
+</main>
+</body>
+</html>
