@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKP 완구 굿즈 리서치 재검증</title>
+<style>
+  /* ── d'strict 컬러 시스템 #26 (Arte kids park) ──
+     C1 #0065B2 · C2 #FFDF00 · C3 #E41E2E · C4 #00913B
+     C5 #FF8000 · C6 #ED92B9 · C7 #62B5E5 · C8 #00A7B5
+     배경 #FFFFFF · 본문 #111111 · 서브 #353535 · 라인 #D6D6D6
+     폰트 LINE Seed KR
+     규칙: 장식용 컬러 라인 금지 / 모든 글자 13px 이상 /
+           노랑·오렌지·핑크·하늘·청록 면 위 글자는 #111111 */
+  :root{
+    --c1:#0065B2; --c2:#FFDF00; --c3:#E41E2E; --c4:#00913B;
+    --c5:#FF8000; --c6:#ED92B9; --c7:#62B5E5; --c8:#00A7B5;
+    --bg:#FFFFFF; --ink:#111111; --sub:#353535; --line:#D6D6D6;
+    --panel:#FAFAFA; --tint:#F2F2F2;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'LINE Seed KR','LINESeedKR','Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+    font-size:16px; line-height:1.7; letter-spacing:-0.01em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{display:flex; max-width:1180px; margin:0 auto; gap:0;}
+
+  /* ── 좌측 목차 (회색 배경 + 1px 회색 구분선, 컬러 라인 없음) ── */
+  nav.toc{
+    width:236px; flex:0 0 236px; align-self:flex-start;
+    position:sticky; top:0; max-height:100vh; overflow:auto;
+    background:var(--panel); border-right:1px solid var(--line);
+    padding:28px 18px;
+  }
+  nav.toc .brand{font-size:13px; color:var(--sub); font-weight:700; letter-spacing:0.02em; margin-bottom:4px;}
+  nav.toc .brand span{color:var(--c1);}
+  nav.toc h2{font-size:14px; margin:0 0 16px; color:var(--ink); font-weight:800;}
+  nav.toc ol{list-style:none; margin:0; padding:0; counter-reset:toc;}
+  nav.toc li{margin:2px 0;}
+  nav.toc a{
+    display:flex; gap:9px; align-items:baseline;
+    text-decoration:none; color:var(--sub); font-size:13.5px;
+    padding:8px 10px; border-radius:7px; line-height:1.4;
+  }
+  nav.toc a .num{font-size:13px; color:#8a8a8a; min-width:15px; font-weight:700;}
+  nav.toc a:hover{background:#efefef; color:var(--ink);}
+  nav.toc a.active{background:#ececec; color:var(--ink); font-weight:800;} /* 현재 항목: 연한 배경+굵게, 컬러 라인 없음 */
+
+  main{flex:1 1 auto; min-width:0; padding:40px 44px 80px;}
+
+  /* ── 히어로 (컬러 라인 없음, 하단 1px 회색선으로만 구분) ── */
+  header.hero{border-bottom:1px solid var(--line); padding-bottom:26px; margin-bottom:34px;}
+  header.hero .eyebrow{font-size:13px; font-weight:700; color:var(--sub); letter-spacing:0.04em;}
+  header.hero .eyebrow b{color:var(--c1);}
+  header.hero h1{font-size:30px; line-height:1.28; margin:12px 0 10px; font-weight:800; letter-spacing:-0.02em;}
+  header.hero p.lead{font-size:15px; color:var(--sub); margin:0; max-width:760px;}
+  header.hero .meta{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;}
+
+  /* ── 배지/태그 (색 구분은 컬러 라인 대신 작은 배지로) ── */
+  .badge{display:inline-flex; align-items:center; font-size:13px; font-weight:700;
+    padding:3px 10px; border-radius:999px; line-height:1.5; white-space:nowrap;}
+  .b-conc{background:var(--c1); color:#fff;}                 /* 결론 */
+  .b-refute{background:var(--c3); color:#fff;}               /* 반박 */
+  .b-fact{background:var(--c4); color:#fff;}                 /* 확인된 사실 */
+  .b-partial{background:#FFF0C2; color:var(--ink); border:1px solid #E8CE66;} /* 부분 확인 (노랑 계열→#111) */
+  .b-unver{background:var(--tint); color:var(--sub); border:1px solid var(--line);} /* 미검증 */
+  .b-risk{background:var(--c5); color:var(--ink);}           /* 리스크/검토 (오렌지→#111) */
+  .b-info{background:var(--c7); color:var(--ink);}           /* 참고 (하늘→#111) */
+  .b-ghost{background:#fff; color:var(--sub); border:1px solid var(--line);}
+
+  section{margin:0 0 48px; scroll-margin-top:20px;}
+  section > h2.sec{font-size:21px; font-weight:800; margin:0 0 6px; letter-spacing:-0.02em; display:flex; align-items:center; gap:10px;}
+  section > h2.sec .n{font-size:14px; font-weight:800; color:#fff; background:var(--ink);
+    width:26px; height:26px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; flex:0 0 26px;}
+  section > p.desc{font-size:14.5px; color:var(--sub); margin:2px 0 20px;}
+
+  h3{font-size:16px; font-weight:800; margin:26px 0 10px;}
+  p{margin:0 0 12px;}
+  a.link{color:var(--c1); text-decoration:none; border-bottom:1px solid #bcd7ec; font-weight:600;}
+  a.link:hover{border-bottom-color:var(--c1);}
+  small, .small{font-size:13px;}
+
+  /* ── 카드 (컬러 라인 금지: 1px 회색 테두리 + 연한 배경 + 은은한 그림자) ── */
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:18px 0;}
+  .card{border:1px solid var(--line); border-radius:12px; background:#fff;
+    padding:18px 18px 16px; box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .card .k{font-size:13px; font-weight:700; color:var(--sub); margin-bottom:8px;}
+  .card .v{font-size:23px; font-weight:800; line-height:1.2; letter-spacing:-0.02em;}
+  .card .v.sm{font-size:17px;}
+  .card .u{font-size:13px; color:var(--sub); margin-top:7px; line-height:1.5;}
+
+  /* ── 알림/결론 박스 (컬러 라인 금지: 연한 배경 + 1px 회색 테두리) ── */
+  .box{border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0; background:var(--panel);}
+  .box.key{background:#F3F8FC;}       /* 결론 강조: 아주 연한 하늘 배경 */
+  .box.warn{background:#FFF6F6;}       /* 리스크 강조: 아주 연한 분홍 배경 */
+  .box .box-h{display:flex; align-items:center; gap:9px; margin-bottom:10px; font-weight:800; font-size:15px;}
+  .box ul{margin:6px 0 0; padding-left:18px;}
+  .box li{margin:6px 0; font-size:14.5px;}
+
+  /* ── 표 ── */
+  .tbl-wrap{overflow-x:auto; margin:16px 0; border:1px solid var(--line); border-radius:12px;}
+  table{border-collapse:collapse; width:100%; min-width:560px; font-size:14px;}
+  thead th{background:var(--tint); color:var(--ink); text-align:left; font-weight:800; font-size:13.5px;
+    padding:12px 14px; border-bottom:1px solid var(--line); white-space:nowrap;}
+  tbody td{padding:12px 14px; border-bottom:1px solid #ececec; vertical-align:top; color:var(--ink);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:#fcfcfc;}
+  td .muted{color:var(--sub); font-size:13px;}
+
+  ul.plain{margin:10px 0; padding-left:18px;}
+  ul.plain li{margin:8px 0; font-size:14.5px;}
+  ul.plain li b{font-weight:800;}
+
+  .linklist{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin:16px 0;}
+  .linkcard{border:1px solid var(--line); border-radius:11px; padding:15px 16px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .linkcard .site{font-size:13px; font-weight:800; color:var(--sub); margin-bottom:6px; display:flex; align-items:center; gap:7px;}
+  .linkcard .dot{width:9px; height:9px; border-radius:3px; display:inline-block;}
+  .linkcard a{font-size:14px; display:block; margin-top:3px;}
+  .linkcard .note{font-size:13px; color:var(--sub); margin-top:7px;}
+
+  .foot{border-top:1px solid var(--line); margin-top:40px; padding-top:22px; font-size:13px; color:var(--sub);}
+  .foot h3{font-size:14px; margin:0 0 10px; color:var(--ink);}
+  .foot ol{margin:0; padding-left:20px;}
+  .foot li{margin:6px 0; line-height:1.55;}
+  .foot a{color:var(--c1); word-break:break-all;}
+
+  .disc{font-size:13px; color:var(--sub); background:var(--tint); border:1px solid var(--line);
+    border-radius:10px; padding:13px 15px; margin:14px 0; line-height:1.6;}
+
+  @media (max-width:860px){
+    nav.toc{display:none;}
+    main{padding:26px 18px 60px;}
+    header.hero h1{font-size:24px;}
+    .wrap{display:block;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ───────── 좌측 목차 ───────── -->
+  <nav class="toc" aria-label="목차">
+    <div class="brand">d<span>'</span>strict · Arte kids park</div>
+    <h2>완구 굿즈 리서치 (재검증)</h2>
+    <ol>
+      <li><a href="#s1" class="active"><span class="num">01</span>재검증 요약 (결론)</a></li>
+      <li><a href="#s2"><span class="num">02</span>검증 방법과 한계</a></li>
+      <li><a href="#s3"><span class="num">03</span>원안(참고) 반박·재검증</a></li>
+      <li><a href="#s4"><span class="num">04</span>사이트별 직접 확인 링크</a></li>
+      <li><a href="#s5"><span class="num">05</span>검증된 수요 사실</a></li>
+      <li><a href="#s6"><span class="num">06</span>MD 도입 체크리스트</a></li>
+      <li><a href="#s7"><span class="num">07</span>다음 단계 제안</a></li>
+      <li><a href="#src"><span class="num">08</span>출처</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- ───────── 히어로 ───────── -->
+    <header class="hero">
+      <div class="eyebrow">제주 <b>아르떼 키즈파크</b> · MD 소싱 리서치</div>
+      <h1>완구 굿즈 · 구디백 수요 리서치 <br>(쿠팡·네이버·G마켓·11번가 교차 재검증)</h1>
+      <p class="lead">
+        기존 11번가 단일 기준 정리를 다른 채널까지 확장하고, 참고로 받은 외부(생성형 AI) 초안을
+        조목조목 재검증했습니다. 검증되지 않은 수치는 사실로 쓰지 않고, 직접 확인 가능한 유효 링크와
+        검증된 사실만 정리했습니다. <b>아르떼 자체 굿즈는 요청에 따라 제외</b>했습니다.
+      </p>
+      <div class="meta">
+        <span class="badge b-ghost">조사일 2026.11.03</span>
+        <span class="badge b-ghost">범위 국내 온라인 4개 채널</span>
+        <span class="badge b-info">참고 초안 = 재검증 대상</span>
+      </div>
+    </header>
+
+    <!-- ───────── 1. 요약 ───────── -->
+    <section id="s1">
+      <h2 class="sec"><span class="n">1</span>재검증 요약 <span class="badge b-conc">결론</span></h2>
+      <p class="desc">바쁘면 이 단락만 보셔도 됩니다. 핵심은 “숫자를 믿지 말고, 링크로 직접 확인”입니다.</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="k">상세페이지 자동 접근</div>
+          <div class="v">차단</div>
+          <div class="u">쿠팡·G마켓·11번가 403/503, 네이버쇼핑은 검색 미노출. 수치 독립 검증 불가.</div>
+        </div>
+        <div class="card">
+          <div class="k">참고 초안의 판매 수치</div>
+          <div class="v sm">미검증 / 재확인 필요</div>
+          <div class="u">리뷰 557개·월 900명·구매 38,788건 등은 원 출처에서 재확인되지 않음.</div>
+        </div>
+        <div class="card">
+          <div class="k">독립 확인된 사실</div>
+          <div class="v sm">3가지</div>
+          <div class="u">4달라마켓=실존(간식 위주), 비눗방울=대표 완구, 예산 1,000~3,000원/인.</div>
+        </div>
+        <div class="card">
+          <div class="k">아르떼 자체 굿즈</div>
+          <div class="v sm">제외</div>
+          <div class="u">요청에 따라 본 리서치에서 완전히 제거함.</div>
+        </div>
+      </div>
+
+      <div class="box key">
+        <div class="box-h"><span class="badge b-conc">핵심 결론</span></div>
+        <ul>
+          <li><b>참고로 받은 외부 초안은 그대로 쓰기 위험합니다.</b> 상품 이미지가 전부 생성형 AI 캐시 URL(openai.com)이고, 링크에 <code>utm_source=chatgpt.com</code>이 붙어 있으며, 근거로 든 블로그에는 실제 순위 수치가 없었습니다.</li>
+          <li><b>실시간 판매 지표(구매수·리뷰수)는 이 리서치 환경에서 자동으로 가져올 수 없습니다.</b> 주요 쇼핑몰이 봇 접근을 막습니다. 정확한 수치는 아래 <a class="link" href="#s4">직접 확인 링크</a>에서 ‘판매순/리뷰순’ 정렬로 보셔야 합니다.</li>
+          <li><b>완구 굿즈와 간식 구디백은 분리해서 봐야 합니다.</b> 시중 “구디백 베스트”의 상당수는 간식 꾸러미입니다. 아르떼가 원하는 것은 ‘놀이 경험이 이어지는 완구’이므로, 비눗방울·블록·미니완구 중심으로 별도 접근이 필요합니다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────── 2. 검증 방법과 한계 ───────── -->
+    <section id="s2">
+      <h2 class="sec"><span class="n">2</span>검증 방법과 한계 <span class="badge b-info">투명성</span></h2>
+      <p class="desc">무엇을 시도했고, 왜 수치를 단정하지 못하는지 밝힙니다.</p>
+
+      <h3>시도한 방법</h3>
+      <ul class="plain">
+        <li>쿠팡·네이버·G마켓·11번가에 대해 <b>검색(web search)</b>과 <b>상품 상세 페이지 직접 열람(web fetch)</b>을 각각 시도.</li>
+        <li>참고 초안에 적힌 개별 상품 링크(쿠팡·G마켓 goodsCode)를 하나씩 열어 실존·수치 확인 시도.</li>
+        <li>‘구디백/답례품/완구’ 관련 블로그·가이드 글에서 교차 근거 수집.</li>
+      </ul>
+
+      <h3>확인된 한계</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>채널</th><th>자동 접근 결과</th><th>의미</th></tr></thead>
+          <tbody>
+            <tr><td><b>쿠팡</b></td><td><span class="badge b-refute">403 차단</span></td><td>상품 상세·리뷰수·구매지표 자동 확인 불가</td></tr>
+            <tr><td><b>G마켓</b></td><td><span class="badge b-refute">403 차단</span></td><td>누적 구매건수(예: 38,788건) 확인 불가</td></tr>
+            <tr><td><b>11번가</b></td><td><span class="badge b-refute">503 차단</span></td><td>기존 ‘11번가만’ 정리본의 수치도 재확인 어려움</td></tr>
+            <tr><td><b>네이버쇼핑</b></td><td><span class="badge b-unver">검색 미노출</span></td><td>검색 결과에 쇼핑 페이지 자체가 거의 안 잡힘</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box warn">
+        <div class="box-h"><span class="badge b-risk">주의</span> 왜 외부 초안 수치를 사실로 쓰면 안 되나</div>
+        <ul>
+          <li>상품 이미지 URL이 전부 <code>images.openai.com/...</code> — 쇼핑몰 원본이 아니라 <b>생성형 AI가 캐시한 임시 이미지</b>라 곧 만료되어 깨집니다.</li>
+          <li>모든 상품 링크에 <code>?utm_source=chatgpt.com</code> — <b>생성형 도구가 만든 링크</b>라는 표식입니다. 실제 상품과 일치하는지 사람이 확인해야 합니다.</li>
+          <li>초안이 근거로 든 “10월 판매순위 TOP5” 블로그를 직접 열어보니 <b>순위 산정 기준도, 판매 수치도 없는 제목뿐인 글</b>이었습니다.</li>
+          <li>그래서 본 재검증본은 이미지를 억지로 넣지 않고(깨진 이미지 방지), 실물은 각 링크에서 보도록 했습니다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────── 3. 반박·재검증 ───────── -->
+    <section id="s3">
+      <h2 class="sec"><span class="n">3</span>원안(참고 초안) 반박 · 재검증 <span class="badge b-refute">반박</span></h2>
+      <p class="desc">참고로 받은 초안의 주장별로 재검증 상태를 표시했습니다. ‘미검증’은 틀렸다는 뜻이 아니라 <b>근거를 아직 확인하지 못했다</b>는 뜻입니다.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>원안 주장</th><th>제시 수치</th><th>재검증 상태</th><th>재검증 코멘트</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>베이빈 모래놀이 구디백 (쿠팡)</td>
+              <td class="muted">2,900원 · 리뷰 557 · 월 900명+</td>
+              <td><span class="badge b-unver">미검증</span></td>
+              <td>독립 검색에 ‘베이빈’ 브랜드 미노출. 쿠팡 상세 403으로 리뷰/구매지표 확인 불가.</td>
+            </tr>
+            <tr>
+              <td>베이빈 공룡 색칠 레이싱카 / 구슬퍼즐 (쿠팡)</td>
+              <td class="muted">2,650~3,300원 · 리뷰 54~143</td>
+              <td><span class="badge b-unver">미검증</span></td>
+              <td>동일 사유. 상세 페이지 접근 불가로 수치 확인 불가.</td>
+            </tr>
+            <tr>
+              <td>4달라마켓 간식 구디백 (G마켓)</td>
+              <td class="muted">2,800~3,500원 · 구매 614~38,788건</td>
+              <td><span class="badge b-partial">부분 확인</span></td>
+              <td><b>판매자 실존은 확인</b>(G마켓·11번가 간식 꾸러미 다수 판매). 단, 구체 구매건수와 초안의 goodsCode는 검증 불가. <b>간식 위주라 ‘완구 굿즈’와는 결이 다름.</b></td>
+            </tr>
+            <tr>
+              <td>꿀벌놀이터 모래놀이+비눗방울 (아이디어스)</td>
+              <td class="muted">4,000원 · 구매자 33명</td>
+              <td><span class="badge b-unver">미검증</span></td>
+              <td>해당 상품 독립 확인 불가. 모래놀이+비눗방울 조합 자체는 수요가 있는 카테고리.</td>
+            </tr>
+            <tr>
+              <td>근거로 든 “10월 판매순위 TOP5” 블로그</td>
+              <td class="muted">판매순위라고 표기</td>
+              <td><span class="badge b-refute">반박</span></td>
+              <td>직접 열람 결과 <b>순위 기준·수치가 전혀 없음.</b> 판매순위 근거로 인용하기 부적절.</td>
+            </tr>
+            <tr>
+              <td>상품 이미지 / 링크</td>
+              <td class="muted">openai.com 이미지 · chatgpt.com 링크</td>
+              <td><span class="badge b-refute">반박</span></td>
+              <td>생성형 캐시 이미지(만료 위험) + 생성형 링크. 유효 출처로 쓸 수 없음.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="disc">
+        위 ‘제시 수치’는 <b>참고 초안에 적힌 값을 그대로 옮긴 것</b>이며, 본 리서치가 확인·보증한 수치가 아닙니다.
+        초안이 붙인 원본 링크에는 <code>utm_source=chatgpt.com</code>이 포함돼 있어 본 문서의 정식 출처 목록에는 넣지 않았습니다.
+      </div>
+    </section>
+
+    <!-- ───────── 4. 직접 확인 링크 ───────── -->
+    <section id="s4">
+      <h2 class="sec"><span class="n">4</span>사이트별 직접 확인 링크 <span class="badge b-fact">실사용</span></h2>
+      <p class="desc">아래 링크를 열고 <b>‘판매량순’ 또는 ‘리뷰많은순’</b>으로 정렬하면, 지금 시점의 실제 인기·수치를 바로 보실 수 있습니다. (상품 사진도 여기서 확인)</p>
+
+      <h3>완구 굿즈 (놀이 중심) — 권장 검색</h3>
+      <div class="linklist">
+        <div class="linkcard">
+          <div class="site"><span class="dot" style="background:var(--c3)"></span>쿠팡</div>
+          <a class="link" href="https://www.coupang.com/np/search?q=%EA%B5%AC%EB%94%94%EB%B0%B1%20%EC%99%84%EA%B5%AC" target="_blank" rel="noopener">구디백 완구 검색 →</a>
+          <a class="link" href="https://www.coupang.com/np/search?q=%EB%8B%A8%EC%B2%B4%20%EB%8B%B5%EB%A1%80%ED%92%88%20%EC%9E%A5%EB%82%9C%EA%B0%90" target="_blank" rel="noopener">단체 답례품 장난감 →</a>
+          <div class="note">정렬: 쿠팡 랭킹순 → 리뷰순 비교</div>
+        </div>
+        <div class="linkcard">
+          <div class="site"><span class="dot" style="background:var(--c4)"></span>네이버쇼핑</div>
+          <a class="link" href="https://search.shopping.naver.com/search/all?query=%EA%B5%AC%EB%94%94%EB%B0%B1%20%EC%99%84%EA%B5%AC%20%EB%8B%B5%EB%A1%80%ED%92%88" target="_blank" rel="noopener">구디백 완구 답례품 →</a>
+          <a class="link" href="https://search.shopping.naver.com/search/all?query=%EC%96%B4%EB%A6%B0%EC%9D%B4%20%EB%8B%A8%EC%B2%B4%20%EC%84%A0%EB%AC%BC%20%EC%9E%A5%EB%82%9C%EA%B0%90" target="_blank" rel="noopener">어린이 단체 선물 장난감 →</a>
+          <div class="note">정렬: 리뷰많은순 / 구매순 추천</div>
+        </div>
+        <div class="linkcard">
+          <div class="site"><span class="dot" style="background:var(--c1)"></span>G마켓</div>
+          <a class="link" href="https://browse.gmarket.co.kr/search?keyword=%EA%B5%AC%EB%94%94%EB%B0%B1%20%EC%99%84%EA%B5%AC" target="_blank" rel="noopener">구디백 완구 검색 →</a>
+          <a class="link" href="https://browse.gmarket.co.kr/search?keyword=%EB%8B%B5%EB%A1%80%ED%92%88%20%EC%9E%A5%EB%82%9C%EA%B0%90%20%EB%8B%A8%EC%B2%B4" target="_blank" rel="noopener">답례품 장난감 단체 →</a>
+          <div class="note">정렬: 판매인기순</div>
+        </div>
+        <div class="linkcard">
+          <div class="site"><span class="dot" style="background:var(--c5)"></span>11번가</div>
+          <a class="link" href="https://search.11st.co.kr/Search.tmall?kwd=%EA%B5%AC%EB%94%94%EB%B0%B1%20%EC%99%84%EA%B5%AC" target="_blank" rel="noopener">구디백 완구 검색 →</a>
+          <a class="link" href="https://search.11st.co.kr/Search.tmall?kwd=%EC%96%B4%EB%A6%B0%EC%9D%B4%20%EB%8B%B5%EB%A1%80%ED%92%88%20%EC%9E%A5%EB%82%9C%EA%B0%90" target="_blank" rel="noopener">어린이 답례품 장난감 →</a>
+          <div class="note">기존 정리본과 동일 채널(재확인용)</div>
+        </div>
+      </div>
+
+      <h3>실존이 확인된 판매자 (참고)</h3>
+      <div class="linklist">
+        <div class="linkcard">
+          <div class="site"><span class="dot" style="background:var(--c1)"></span>G마켓 · 4달라마켓</div>
+          <a class="link" href="https://item.gmarket.co.kr/Item?goodsCode=2871313241" target="_blank" rel="noopener">4달라마켓 간식 구디백 상품 →</a>
+          <div class="note">실존 확인. 단 <b>간식 꾸러미</b> 중심 — 완구 굿즈로는 부적합할 수 있음.</div>
+        </div>
+      </div>
+      <div class="disc">검색 URL은 각 쇼핑몰의 표준 검색 주소 패턴입니다. 사이트 개편으로 파라미터가 바뀌면, 각 쇼핑몰 검색창에 같은 키워드를 직접 입력해 주세요.</div>
+    </section>
+
+    <!-- ───────── 5. 검증된 수요 사실 ───────── -->
+    <section id="s5">
+      <h2 class="sec"><span class="n">5</span>검증 가능한 수요 사실 <span class="badge b-fact">확인됨</span></h2>
+      <p class="desc">여러 독립 자료에서 교차로 확인된 내용만 모았습니다. (개별 상품 순위가 아니라 ‘경향’)</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="k">대표 완구 아이템</div>
+          <div class="v sm">비눗방울</div>
+          <div class="u">여러 가이드·상품목록에서 공통으로 등장하는 1순위 완구형 구디백 아이템. 실외·즉시놀이에 강함.</div>
+        </div>
+        <div class="card">
+          <div class="k">저가 답례 완구</div>
+          <div class="v sm">블록 · 미니완구</div>
+          <div class="u">미니 블록은 1,000원대부터 답례품으로 흔히 사용(중고·소매 모두).</div>
+        </div>
+        <div class="card">
+          <div class="k">통념 예산</div>
+          <div class="v">1,000~3,000원</div>
+          <div class="u">아이 1인당 답례품 예산의 일반적 범위(가이드 블로그 기준).</div>
+        </div>
+        <div class="card">
+          <div class="k">안전 필수 확인</div>
+          <div class="v sm">소부품 · 연령</div>
+          <div class="u">영유아 삼킴 위험 소부품 유무, 권장 사용연령 표기 확인이 핵심.</div>
+        </div>
+      </div>
+
+      <h3>완구 굿즈로 자주 조합되는 품목</h3>
+      <ul class="plain">
+        <li><b>비눗방울류</b> — 자동 버블건, 카메라형, 리필액 등 상품군이 두텁고 가격대도 다양.</li>
+        <li><b>물놀이/실외</b> — 물총, 비치볼, 바람개비 (계절 영향 큼).</li>
+        <li><b>촉감/말랑이</b> — 스퀴시·요요류(초안의 ‘말랑이’ 계열). 간식과 묶여 판매되는 경우 많음.</li>
+        <li><b>조립/퍼즐</b> — 미니 블록, 구슬퍼즐, 과학 조립완구(‘집에서도 놀이 연장’ 장점).</li>
+        <li><b>간식 꾸러미</b> — 가장 물량이 큰 카테고리지만 <b>완구가 아님</b>. 아르떼 콘셉트와 분리 판단 필요.</li>
+      </ul>
+      <div class="disc">위 ‘대표/자주’ 표현은 여러 자료에 반복 등장했다는 의미이며, 특정 상품의 판매 1위를 보증하지 않습니다. 순위 확정은 <a class="link" href="#s4">4장 링크</a>의 실시간 정렬로 하셔야 합니다.</div>
+    </section>
+
+    <!-- ───────── 6. MD 체크리스트 ───────── -->
+    <section id="s6">
+      <h2 class="sec"><span class="n">6</span>아르떼 키즈파크 MD 도입 체크리스트 <span class="badge b-risk">검토</span></h2>
+      <p class="desc">가장 중요한 전제: 지금 조사되는 가격은 <b>소비자 판매가</b>이지 <b>B2B 공급단가</b>가 아닙니다. 그대로 매입해 재판매하면 마진 확보가 어렵습니다.</p>
+
+      <div class="box">
+        <div class="box-h"><span class="badge b-conc">공급처 확인 항목</span></div>
+        <ul>
+          <li><b>납품 단가</b> — 100 / 300 / 500개 기준 완제품 공급가(소비자가 대비 할인율).</li>
+          <li><b>매장 판매 적합성</b> — 별도 재포장 없이 매대 진열·판매 가능한 패키지인지.</li>
+          <li><b>라벨 변경</b> — ‘생일·답례품’ 문구 제거 또는 <b>아르떼 전용 라벨</b> 교체 가능 여부.</li>
+          <li><b>인증·표시</b> — 완구 KC 인증·권장연령, 식품 포함 시 소비기한·알레르기 표시.</li>
+          <li><b>물류</b> — 제주 추가 배송비, 최소발주수량(MOQ), 리드타임·시즌 물량.</li>
+          <li><b>안전</b> — 영유아 소부품 삼킴 위험, 뾰족·파손 리스크 사전 점검.</li>
+        </ul>
+      </div>
+
+      <div class="box warn">
+        <div class="box-h"><span class="badge b-risk">리스크</span> 재판매 마진 주의</div>
+        <ul>
+          <li>소비자가 2,900~5,800원대 상품을 그대로 매입 시, 아르떼 매장 판매가에서 마진이 거의 없거나 역마진 가능.</li>
+          <li>간식 포함 구디백은 소비기한·보관(특히 제주 하계) 관리 부담이 큼.</li>
+          <li>제주 추가 배송비(예: 일부 상품 4,000원 별도 안내 사례)로 단가가 올라감.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────── 7. 다음 단계 ───────── -->
+    <section id="s7">
+      <h2 class="sec"><span class="n">7</span>다음 단계 제안 <span class="badge b-conc">실행</span></h2>
+      <p class="desc">‘검증된 숫자’로 의사결정하려면 아래 중 하나가 필요합니다.</p>
+      <ul class="plain">
+        <li><b>① 실시간 정렬 확인</b> — <a class="link" href="#s4">4장 링크</a>에서 채널별 ‘판매순/리뷰순’ 상위 10개를 캡처. (가장 빠름)</li>
+        <li><b>② 페이지 원문 제공</b> — 보고 계신 상품 페이지의 <b>화면 캡처나 HTML</b>을 주시면, 상품명·가격·리뷰수를 정확히 추출해 표로 정리해 드립니다.</li>
+        <li><b>③ 공급처 직접 문의</b> — 후보 판매자에게 <a class="link" href="#s6">6장 체크리스트</a> 그대로 견적 요청 → 공급단가 기준으로 마진 재계산.</li>
+        <li><b>④ 범위 재확정</b> — ‘완구 굿즈만’으로 좁힐지, ‘간식 포함 구디백’까지 볼지 결정하면 추천 리스트를 다시 좁혀 드립니다.</li>
+      </ul>
+      <div class="box key">
+        <div class="box-h"><span class="badge b-conc">권장</span></div>
+        <p style="margin:0;">먼저 <b>①번으로 채널별 상위 상품 캡처</b>를 주시면, 그 실제 데이터로 ‘완구 굿즈 추천 TOP’ 표와 공급처 후보를 <b>검증된 수치 기반</b>으로 다시 작성하겠습니다. 지금 단계에서 특정 상품을 ‘판매 1위’로 단정하지 않는 것이 더 안전합니다.</p>
+      </div>
+    </section>
+
+    <!-- ───────── 출처 ───────── -->
+    <div class="foot" id="src">
+      <h3>출처 (유효 링크)</h3>
+      <ol>
+        <li>생일답례품 가이드·상품 경향 — inblog:
+          <a href="https://inblog.ai/baby/생일답례품-10월-판매순위-top5-장단점-제품별-가격비교-어린이집-유치원-생일-영유아-구디백-스티커-간식-4009" target="_blank" rel="noopener">생일답례품 정리 글</a>
+          <span class="small">(제목은 ‘판매순위’이나 본문에 실제 순위 수치 없음 — 경향 참고용)</span></li>
+        <li>구디백 구성·예산·위생 가이드 — foxcg:
+          <a href="https://foxcg.com/birthday-gift-guide/" target="_blank" rel="noopener">유치원·어린이집 답례품 준비 요령</a></li>
+        <li>답례품 완구 안전·연령 주의 — 유가크루:
+          <a href="https://www.yugacrew.com/crewletter/daycare-birthday-return-gifts" target="_blank" rel="noopener">daycare birthday return gifts</a></li>
+        <li>실존 판매자(간식 구디백) — G마켓 4달라마켓:
+          <a href="https://item.gmarket.co.kr/Item?goodsCode=2871313241" target="_blank" rel="noopener">4달라마켓 상품 페이지</a></li>
+        <li>쿠팡 완구/답례 카테고리(랭킹순 확인용):
+          <a href="https://www.coupang.com/np/categories/331822" target="_blank" rel="noopener">쿠팡 카테고리</a></li>
+      </ol>
+      <p style="margin-top:14px;">
+        ※ 쿠팡·G마켓·11번가 상품 상세 페이지는 조사 시점(2026.11.03) 자동 접근이 차단(403/503)되어, 개별 상품의 리뷰수·구매지표는 본 문서에서 보증하지 않습니다.
+        참고 초안이 제시한 상품 링크는 <code>utm_source=chatgpt.com</code> 표식이 포함되어 정식 출처 목록에서 제외했습니다.
+        디자인: d'strict 컬러 시스템 #26 (Arte kids park) · 폰트 LINE Seed KR.
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // 목차 현재 항목 표시 (컬러 라인 없이 연한 배경+굵게만)
+  const links = Array.from(document.querySelectorAll('nav.toc a'));
+  const map = {};
+  links.forEach(a=>{ const id=a.getAttribute('href').slice(1); const el=document.getElementById(id); if(el) map[id]=a; });
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const a=map[e.target.id]; if(a) a.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px', threshold:0});
+  Object.keys(map).forEach(id=>{ const el=document.getElementById(id); if(el) obs.observe(el); });
+</script>
+</body>
+</html>
