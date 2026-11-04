@@ -93,3 +93,41 @@ for groups, students, price in [(1, 30, 15), (2, 40, 15), (2, 40, 18)]:
     ft.append({"groups": groups, "students": students, "price": price, "rev": rev, "staff": round(staff), "contrib": round(rev-staff)})
 out["fieldtrip"] = ft
 print(json.dumps(out, ensure_ascii=False, indent=1))
+
+# 8) Plaza birthday spotlight — 4 rooms (S1,S2,S3,L), conflict check (REASONING)
+#    Party = play 0-50, plaza window 50-55, move 55-60, room 60-120, turnover 120-150 (DECK cycle 2h + 30m)
+WAVES = [600, 750, 900, 1050]          # DECK: 10:00, 12:30, 15:00, 17:30 (minutes from 00:00)
+CLOSE = 1200                           # DECK: 20:00
+def hm(m): return f"{m//60:02d}:{m%60:02d}"
+def schedule(offsets):
+    rows = []
+    for room, off in offsets.items():
+        for w in WAVES:
+            s = w + off
+            rows.append({"room": room, "start": s, "spot": (s + 50, s + 55), "end": s + 120, "clean_end": s + 150})
+    return rows
+def conflicts(rows):
+    spots = sorted(r["spot"] for r in rows)
+    return sum(1 for a, b in zip(spots, spots[1:]) if b[0] < a[1])
+sync = schedule({"S1": 0, "S2": 0, "S3": 0, "L": 0})
+stag = schedule({"S1": 0, "S2": 10, "S3": 20, "L": 30})
+out["spotlight"] = {
+    "sync_conflicts": conflicts(sync),
+    "stagger_conflicts": conflicts(stag),
+    "stagger_last_end": hm(max(r["end"] for r in stag)),
+    "stagger_last_start": hm(max(r["start"] for r in stag)),
+    "stagger_table": {room: [f'{hm(r["start"])} / ★{hm(r["spot"][0])}' for r in stag if r["room"] == room] for room in ("S1", "S2", "S3", "L")},
+    "plaza_min_per_day_max": len(stag) * 5,
+}
+assert conflicts(sync) == 12          # failure control: synchronized starts collide (3 per wave x 4 waves)
+assert conflicts(stag) == 0           # staggered starts never overlap
+assert max(r["end"] for r in stag) <= CLOSE
+assert all(b["start"] >= a["clean_end"] for room in ("S1","S2","S3","L")
+           for a, b in zip([r for r in stag if r["room"]==room], [r for r in stag if r["room"]==room][1:]))
+# Revenue of solo spotlight add-on (ASSUME price $89 within $79-99 band, attach 30% of base-scenario parties)
+spot_price, attach = 89, 0.30
+spot_week = sims["base"]["parties_week"] * attach
+spot_cost = 20/60*host_wage*burden + 10/60*host_wage*burden + spot_price*pay_fee   # content QA 20m + plaza MC 10m + fees
+out["spotlight"].update({"price": spot_price, "attach": attach, "per_week": round(spot_week, 1),
+    "rev_year": round(spot_week*spot_price*weeks), "cost_each": round(spot_cost, 1), "contrib_each": round(spot_price-spot_cost, 1)})
+print(json.dumps(out["spotlight"], ensure_ascii=False, indent=1))
