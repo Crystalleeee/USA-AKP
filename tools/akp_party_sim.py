@@ -96,9 +96,9 @@ tiers = {"casual": {"per_kid": 36, "min": 10, "goodie": False},
          "hosted": {"per_kid": 48, "min": 10, "goodie": True}}
 out["tiers"] = {k: {**v, "min_price": v["per_kid"]*v["min"], "econ": unit(v["per_kid"]*v["min"], v["min"], v["goodie"])} for k, v in tiers.items()}
 
-# 6) Daily throughput vs dwell (REASONING): capacity 615 (DECK), 9 h open 10:00-19:00 (decision 2026-11-05), peak factor 0.5 (ASSUME)
-out["throughput"] = {f"{d}h": round(615*9/d*0.5) for d in (1.5, 2.0, 2.5)}
-assert out["throughput"] == {"1.5h": 1845, "2.0h": 1384, "2.5h": 1107}
+# 6) Daily throughput vs dwell (REASONING): capacity 615 (DECK), 10 h open 10:00-20:00 (under review 2026-11-05), peak factor 0.5 (ASSUME)
+out["throughput"] = {f"{d}h": round(615*10/d*0.5) for d in (1.5, 2.0, 2.5)}
+assert out["throughput"] == {"1.5h": 2050, "2.0h": 1538, "2.5h": 1230}
 
 # 7) Weekday field-trip model (REASONING; $15/student CITED Meow Wolf Denver; chaperone 1:8 free CITED)
 ft = []
@@ -109,9 +109,9 @@ for groups, students, price in [(1, 30, 15), (2, 40, 15), (2, 40, 18)]:
 out["fieldtrip"] = ft
 print(json.dumps(out, ensure_ascii=False, indent=1))
 
-# 8) Confirmed operating model A (2026-11-05): ROOM FIRST, then play; open 10:00-19:00; 10-min staggered starts
+# 8) Operating model A: ROOM FIRST, then play; open 10:00-20:00 (under review); 10-min staggered starts
 #    Party = room 0-60 -> plaza window 60-65 -> play 65-120. Room is free after 60 min, cleanup 30 -> room cycle 90 min.
-OPEN, CLOSE = 600, 1140                # 10:00, 19:00 (decision 2026-11-05)
+OPEN, CLOSE = 600, 1200                # 10:00, 20:00 (opening hours under review, 2026-11-05)
 def hm(m): return f"{m//60:02d}:{m%60:02d}"
 OFFSETS = {"S1": 0, "S2": 10, "S3": 20, "L": 30}
 def plan(order, offsets, room_cycle, party_len=120):
@@ -142,20 +142,20 @@ out["model_a"] = {
     "plaza_min_day": len(model_a) * 5, "plaza_share": round(len(model_a) * 5 / (CLOSE - OPEN) * 100, 1),
     "week_capacity": len(model_a) * 7, "rev_week_max": day_rev(model_a) * 7, "rev_year_max": day_rev(model_a) * 7 * weeks,
 }
-assert per_room == {"S1": 5, "S2": 5, "S3": 5, "L": 5}             # 5 rotations per room in 10:00-19:00
-assert len(deck_style) == 12                                         # deck order fits only 3 per room
-assert conflicts(model_a) == 0 and conflicts(model_sync) == 15       # control: no stagger -> 3 clashes x 5 waves
+assert per_room == {"S1": 6, "S2": 6, "S3": 6, "L": 6}             # 6 rotations per room in 10:00-20:00
+assert len(deck_style) == 16                                         # deck order (play first) fits 4 per room
+assert conflicts(model_a) == 0 and conflicts(model_sync) == 18       # control: no stagger -> 3 clashes x 6 waves
 assert max(x["end"] for x in model_a) <= CLOSE
 assert all(b["start"] - a["start"] >= 90 for r in OFFSETS
            for a, b in zip([x for x in model_a if x["room"] == r], [x for x in model_a if x["room"] == r][1:]))
-assert day_rev(model_a) == 6750 and day_kids(model_a) == 225
+assert day_rev(model_a) == 8100 and day_kids(model_a) == 270
 # Cleanup sensitivity: how long may room cleanup take before the 10-min stagger loses a rotation?
 def per_room_with_cleanup(c):
     rows = plan("room_first", OFFSETS, 60 + c)
     return {r: sum(1 for x in rows if x["room"] == r) for r in OFFSETS}
-assert all(v == 5 for v in per_room_with_cleanup(37).values())     # 37-min cleanup still gives 20/day
-assert per_room_with_cleanup(38)["L"] == 4                          # 38 min: large room L drops to 4
-out["model_a"]["max_cleanup_min_for_20"] = 37
+assert all(v == 6 for v in per_room_with_cleanup(30).values())     # 30-min cleanup gives 24/day (L ends exactly 20:00)
+assert per_room_with_cleanup(31)["L"] == 5                          # 31 min: large room L drops to 5 -> 23/day
+out["model_a"]["max_cleanup_min_for_24"] = 30
 # Spotlight add-on economics (ASSUME $89, attach 30% of base-scenario parties)
 spot_price, attach = 89, 0.30
 spot_week = sims["base"]["parties_week"] * attach
