@@ -60,27 +60,16 @@ wage = 15.71       # CITED: Colorado state minimum 2027 (opening year per deck c
 host_wage = 20.0   # ASSUME market host wage above minimum
 burden = 1.20      # ASSUME payroll burden
 host_hours = 2.5   # ASSUME: 60 room + 30 setup/cleanup + 60 play supervision partial
-# Goodie Bag, US-sourced (CITED: 4imprint product pages read 2026-11-05; unit price at 1,000 pcs, USD)
-goodie_items = {"bag 113971-SB (CPSIA)": 2.89, "crayon 4-pack 1556 (CPSIA)": 0.49,
-                "sticker sheet 122247-GG (CPSIA)": 0.52, "button 1.5in 157188-RD-112": 0.49}
-goodie_setup = 35 + 35          # set-up: bag $35/color + crayons $35; stickers and buttons have none
-ship_mult = 1.10                # ASSUME domestic shipping/tax allowance
-goodie_unit = sum(goodie_items.values()) + goodie_setup / 1000
-goodie_landed = round(goodie_unit * ship_mult, 2)
-premium_unit = 2.89 + 1.19 + 0.52 + 0.49 + (35 + 30) / 1000   # coloring book & crayon set 157900-SET replaces crayons
-premium_landed = round(premium_unit * ship_mult, 2)
-assert round(sum(goodie_items.values()), 2) == 4.39 and goodie_landed == 4.91 and premium_landed == 5.67
+# Goodie Bag and the paid invitation card are kept as design concepts only (no cost or price in this phase)
 consum = 20.0      # ASSUME tableware/decor/cleaning per party
 pay_fee = 0.03     # ASSUME card fees
-def unit(price, kids, goodie_incl):
+def unit(price):
     labor = host_wage*burden*host_hours
-    g = goodie_landed*kids if goodie_incl else 0
-    cost = labor + consum + price*pay_fee + g
+    cost = labor + consum + price*pay_fee
     return {"price": price, "labor": round(labor,1), "consumables": consum, "fees": round(price*pay_fee,1),
-            "goodie": round(g,1), "cost": round(cost,1), "contrib": round(price-cost,1), "margin": round((price-cost)/price*100)}
-out["goodie"] = {"items_sum": round(sum(goodie_items.values()), 2), "unit_with_setup": round(goodie_unit, 3), "landed": goodie_landed, "premium_landed": premium_landed}
-out["unit_small_deck"] = unit(300, 10, False)
-out["unit_small_deck_goodie"] = unit(300, 10, True)
+            "cost": round(cost,1), "contrib": round(price-cost,1), "margin": round((price-cost)/price*100)}
+out["unit_small_deck"] = unit(300)
+assert out["unit_small_deck"]["contrib"] == 211.0 and out["unit_small_deck"]["margin"] == 70
 
 # 4) Price-gap check: party per-kid vs ticket (DECK: Child $30 regular, effective $24-27)
 gap = {"party_per_kid": 300/10, "ticket_regular": 30, "ticket_eff_low": 24, "ticket_eff_high": 27}
@@ -92,9 +81,10 @@ aud = 0.65
 out["mopa_usd"] = {"casual": round(39*aud,1), "hosted": round(59*aud,1), "casual_min": round(390*aud), "hosted_min": round(590*aud)}
 
 # 5) Proposed per-child tiers (REASONING) and their unit economics
-tiers = {"casual": {"per_kid": 36, "min": 10, "goodie": False},
-         "hosted": {"per_kid": 48, "min": 10, "goodie": True}}
-out["tiers"] = {k: {**v, "min_price": v["per_kid"]*v["min"], "econ": unit(v["per_kid"]*v["min"], v["min"], v["goodie"])} for k, v in tiers.items()}
+tiers = {"casual": {"per_kid": 36, "min": 10}, "hosted": {"per_kid": 48, "min": 10}}
+out["tiers"] = {k: {**v, "min_price": v["per_kid"]*v["min"], "econ": unit(v["per_kid"]*v["min"])} for k, v in tiers.items()}
+assert out["tiers"]["casual"]["econ"]["contrib"] == 269.2 and out["tiers"]["hosted"]["econ"]["contrib"] == 385.6
+assert out["tiers"]["hosted"]["econ"]["margin"] == 80
 
 # 6) Daily throughput vs dwell (REASONING): capacity 615 (DECK), 10 h open 10:00-20:00 (under review 2026-11-05), peak factor 0.5 (ASSUME)
 out["throughput"] = {f"{d}h": round(615*10/d*0.5) for d in (1.5, 2.0, 2.5)}
