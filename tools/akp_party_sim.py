@@ -60,11 +60,16 @@ wage = 15.71       # CITED: Colorado state minimum 2027 (opening year per deck c
 host_wage = 20.0   # ASSUME market host wage above minimum
 burden = 1.20      # ASSUME payroll burden
 host_hours = 2.5   # ASSUME: 60 room + 30 setup/cleanup + 60 play supervision partial
-gbp_usd = 1.30     # ASSUME FX
-goodie_gbp = 1.16 + 0.38 + 0.15 + 0.59   # CITED (Merch plugin, qty 1000, incl. print): bag+crayons+stickers+badge
-goodie_usd = round(goodie_gbp * gbp_usd, 2)
-freight_mult = 1.35  # ASSUME freight/duty/testing allowance (UK->US, CPSIA)
-goodie_landed = round(goodie_usd * freight_mult, 2)
+# Goodie Bag, US-sourced (CITED: 4imprint product pages read 2026-11-05; unit price at 1,000 pcs, USD)
+goodie_items = {"bag 113971-SB (CPSIA)": 2.89, "crayon 4-pack 1556 (CPSIA)": 0.49,
+                "sticker sheet 122247-GG (CPSIA)": 0.52, "button 1.5in 157188-RD-112": 0.49}
+goodie_setup = 35 + 35          # set-up: bag $35/color + crayons $35; stickers and buttons have none
+ship_mult = 1.10                # ASSUME domestic shipping/tax allowance
+goodie_unit = sum(goodie_items.values()) + goodie_setup / 1000
+goodie_landed = round(goodie_unit * ship_mult, 2)
+premium_unit = 2.89 + 1.19 + 0.52 + 0.49 + (35 + 30) / 1000   # coloring book & crayon set 157900-SET replaces crayons
+premium_landed = round(premium_unit * ship_mult, 2)
+assert round(sum(goodie_items.values()), 2) == 4.39 and goodie_landed == 4.91 and premium_landed == 5.67
 consum = 20.0      # ASSUME tableware/decor/cleaning per party
 pay_fee = 0.03     # ASSUME card fees
 def unit(price, kids, goodie_incl):
@@ -73,7 +78,7 @@ def unit(price, kids, goodie_incl):
     cost = labor + consum + price*pay_fee + g
     return {"price": price, "labor": round(labor,1), "consumables": consum, "fees": round(price*pay_fee,1),
             "goodie": round(g,1), "cost": round(cost,1), "contrib": round(price-cost,1), "margin": round((price-cost)/price*100)}
-out["goodie"] = {"gbp": round(goodie_gbp,2), "usd": goodie_usd, "landed_usd": goodie_landed}
+out["goodie"] = {"items_sum": round(sum(goodie_items.values()), 2), "unit_with_setup": round(goodie_unit, 3), "landed": goodie_landed, "premium_landed": premium_landed}
 out["unit_small_deck"] = unit(300, 10, False)
 out["unit_small_deck_goodie"] = unit(300, 10, True)
 
@@ -144,6 +149,13 @@ assert max(x["end"] for x in model_a) <= CLOSE
 assert all(b["start"] - a["start"] >= 90 for r in OFFSETS
            for a, b in zip([x for x in model_a if x["room"] == r], [x for x in model_a if x["room"] == r][1:]))
 assert day_rev(model_a) == 6750 and day_kids(model_a) == 225
+# Cleanup sensitivity: how long may room cleanup take before the 10-min stagger loses a rotation?
+def per_room_with_cleanup(c):
+    rows = plan("room_first", OFFSETS, 60 + c)
+    return {r: sum(1 for x in rows if x["room"] == r) for r in OFFSETS}
+assert all(v == 5 for v in per_room_with_cleanup(37).values())     # 37-min cleanup still gives 20/day
+assert per_room_with_cleanup(38)["L"] == 4                          # 38 min: large room L drops to 4
+out["model_a"]["max_cleanup_min_for_20"] = 37
 # Spotlight add-on economics (ASSUME $89, attach 30% of base-scenario parties)
 spot_price, attach = 89, 0.30
 spot_week = sims["base"]["parties_week"] * attach
