@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오픈 사운드 플라자 · 메이커 아뜰리에 디자인안</title>
+<style>
+:root{
+  --ink:#1b1b1b; --sub:#454545; --muted:#6e6e6e; --line:#e3e1dc; --bg:#FBFAF7; --card:#ffffff;
+  --accent:#C05A12;
+  --h0:#5E9E6E; --h1:#2A8A8A; --h2:#2F6FB3; --h3:#E07A2E; --h4:#C0392B; --h5:#6C4AA3;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"LINE Seed KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 20px 64px}
+.kicker{font-size:12px;letter-spacing:.14em;font-weight:800;color:var(--accent);margin:0 0 6px;text-transform:uppercase}
+h1{font-size:27px;line-height:1.3;margin:0 0 8px;letter-spacing:-.01em}
+.meta{color:var(--muted);font-size:13px;margin:0}
+.lede{margin:18px 0 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:8px;color:var(--sub)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.kpi b{display:block;font-size:20px;letter-spacing:-.02em}
+.kpi span{font-size:12px;color:var(--muted)}
+h2{font-size:19px;margin:44px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h2 .n{color:var(--accent);margin-right:6px}
+.desc{color:var(--muted);font-size:13px;margin:0 0 14px}
+.planrow{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:22px;align-items:start}
+.planbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.planbox svg{display:block;width:100%;height:auto}
+.legend{display:grid;gap:8px}
+.lg{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13px}
+.sw{flex:0 0 auto;width:18px;height:18px;border-radius:4px;margin-top:2px}
+.sw.ring{border-radius:50%}
+.lg b{display:block;font-size:13.5px}
+.lg span{color:var(--muted);font-size:12.5px}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+.secbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;overflow-x:auto}
+.secbox svg{display:block;min-width:720px;width:100%;height:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 15px;position:relative}
+.card .no{position:absolute;top:13px;right:13px;width:26px;height:26px;border-radius:50%;background:#1b1b1b;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.card h3{margin:0 34px 4px 0;font-size:15.5px}
+.card p{margin:0 0 9px;color:var(--sub);font-size:13.5px}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:11.5px;padding:2px 8px;border-radius:999px;background:#F1EFEA;color:#444;white-space:nowrap}
+.chip.h{color:#fff;font-weight:700}
+.grp{font-size:13px;font-weight:800;color:var(--accent);margin:18px 0 8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;word-break:keep-all}
+th{background:#F3F1EC;font-size:12.5px}
+.tw{overflow-x:auto}
+.rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.rule{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px}
+.rule b{display:block;margin-bottom:3px}
+.rule span{color:var(--sub);font-size:13.5px}
+.chk td:first-child{font-weight:700;white-space:nowrap}
+.ask{background:#FFF7EE;border:1px solid #F2D2AE;border-radius:10px;padding:14px 18px}
+.ask ol{margin:6px 0 0;padding-left:20px}
+.ask li{margin:4px 0}
+.foot{margin-top:36px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+@media (max-width:860px){
+  .planrow{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="kicker">Arte Kids Park Denver · Open Experience Zone</p>
+<h1>미정 구역 디자인안 — 오픈 사운드 플라자 · 오픈 메이커 아뜰리에</h1>
+<p class="meta">사운드 메이커 개방 배치안 기준 · 대상: R41 일대 오픈 영역, 아뜰리에, R38 · 2026-11-25</p>
+<p class="lede">콘텐츠가 정해지지 않은 <b>R41·아뜰리에</b>를 벽으로 막힌 방이 아니라 <b>높은 벽 없이 열린 체험 공간</b>으로 구성한 안입니다. 레퍼런스 3D의 문법(<b>겹치는 원형 바닥 · 곡면 저벽 · 원통 타워 · 프레임 패널 · 기어 패널</b>)을 그대로 가져오고, 배치안 이름에 맞춰 <b>‘소리를 만들고 듣는’</b> 테마로 묶었습니다. 아뜰리에에서 만든 것이 플라자에 나타나도록 두 공간을 하나의 흐름으로 연결했습니다.</p>
+
+<div class="kpis">
+  <div class="kpi"><b>≈71㎡</b><span>오픈 사운드 플라자 (4.7 × 15.2m)</span></div>
+  <div class="kpi"><b>≈42㎡</b><span>메이커 아뜰리에 + R38</span></div>
+  <div class="kpi"><b>2,100</b><span>최고 벽 높이 · 타워만 3,200</span></div>
+  <div class="kpi"><b>13개</b><span>체험 스테이션 (플라자 7 · 아뜰리에 6)</span></div>
+</div>
+
+<h2><span class="n">01</span>배치 평면</h2>
+<p class="desc">원형 바닥(소프트)이 놀이 구역, 밖은 LVT 동선입니다. 벽은 구역을 나누는 칸막이가 아니라 놀이 면입니다. 높이는 색으로 구분했습니다.</p>
+
+<div class="planrow">
+<div class="planbox">
+<svg viewBox="-1.8 -1.6 15 24.8" role="img" aria-label="오픈 사운드 플라자와 메이커 아뜰리에 배치 평면도">
+  <style>
+    .ex{stroke:#a9a6a0;stroke-width:.05}
+    .t{font-family:"LINE Seed KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;fill:#3a3a3a}
+    .tm{fill:#7a7772}
+    .halo{paint-order:stroke;stroke:#ECE9E2;stroke-width:.12;stroke-linejoin:round}
+    .haloW{paint-order:stroke;stroke:#ffffff;stroke-width:.12;stroke-linejoin:round}
+    .cl{stroke:#8d8a84;stroke-width:.05;stroke-dasharray:.25 .18;fill:none}
+    .wall{stroke:#2b2b2b;stroke-width:.14}
+    .bdg circle{fill:#1b1b1b}
+    .bdg text{fill:#fff;font-weight:800;font-size:.34px;text-anchor:middle;dominant-baseline:central}
+  </style>
+  <rect x="-1.8" y="-1.6" width="15" height="24.8" fill="#FBFAF7"/>
+
+  <!-- 기존(고정) 공간 -->
+  <rect x="-1.8" y="1.8" width="1.8" height="11.1" fill="#F7E9D3" class="ex"/>
+  <text class="t tm" x="-0.9" y="7.35" font-size=".3" text-anchor="middle" transform="rotate(-90 -0.9 7.35)">컬러그라운드 (기존)</text>
+  <rect x="-1.8" y="12.9" width="1.8" height="9.5" fill="#EFEDE8" class="ex"/>
+  <text class="t tm" x="-0.9" y="17.6" font-size=".3" text-anchor="middle" transform="rotate(-90 -0.9 17.6)">MD · 로비 (서측)</text>
+  <rect x="6.9" y="-1.6" width="6.3" height="5.9" fill="#EEEAF6" class="ex"/>
+  <text class="t tm" x="10.05" y="1.6" font-size=".3" text-anchor="middle">비치뷰 F&amp;B · 워터 접근 통로</text>
+  <rect x="9" y="4.4" width="4.2" height="7.7" fill="#F6E4E8" class="ex"/>
+  <text class="t tm" x="11.1" y="8.3" font-size=".32" text-anchor="middle">파티룸 1</text>
+  <rect x="11.1" y="14.7" width="2.1" height="7.7" fill="#F6E4E8" class="ex"/>
+  <text class="t tm" x="12.15" y="18.5" font-size=".32" text-anchor="middle" transform="rotate(-90 12.15 18.5)">파티룸 2</text>
+  <rect x="0" y="16.9" width="5" height="4.9" fill="#F7E9D3" class="ex"/>
+  <text class="t" x="2.5" y="19.2" font-size=".34" text-anchor="middle" font-weight="700">블럭</text>
+  <text class="t tm" x="2.5" y="19.65" font-size=".26" text-anchor="middle">기존 유지</text>
+  <line x1="0" y1="12.9" x2="0" y2="22.4" class="wall"/>
+  <line x1="-1.8" y1="22.4" x2="13.2" y2="22.4" class="wall" stroke-width=".2"/>
+
+  <!-- 동선 (LVT, 유효폭 상시 확보) -->
+  <rect x="-1.8" y="-1.1" width="8.7" height="2.2" fill="#ECE9E2"/>
+  <line x1="-1.8" y1="0" x2="6.9" y2="0" class="cl"/>
+  <text class="t tm halo" x="2.6" y="-0.35" font-size=".28" text-anchor="middle">주 동선 · 유효 2,200</text>
+  <rect x="0.2" y="1.1" width="2" height="15.8" fill="#ECE9E2"/>
+  <line x1="1.2" y1="1.1" x2="1.2" y2="16.9" class="cl"/>
+  <text class="t tm halo" x="1.2" y="9" font-size=".27" text-anchor="middle" transform="rotate(-90 1.2 9)">서측 통로 · 블럭·로비 연결 · 유효 2,000</text>
+  <rect x="6.9" y="4.3" width="1.8" height="9.9" fill="#ECE9E2"/>
+  <rect x="6.9" y="12.4" width="6.3" height="1.8" fill="#ECE9E2"/>
+  <line x1="7.8" y1="4.3" x2="7.8" y2="13.3" class="cl"/>
+  <line x1="7.8" y1="13.3" x2="13.2" y2="13.3" class="cl"/>
+  <text class="t tm halo" x="7.8" y="8.4" font-size=".26" text-anchor="middle" transform="rotate(-90 7.8 8.4)">파티룸 운영 동선 · 유효 1,800</text>
+  <text class="t tm halo" x="10.6" y="13.18" font-size=".26" text-anchor="middle">→ 파티룸 1·2·3</text>
+
+  <!-- 아뜰리에 바닥 -->
+  <rect x="5" y="16.3" width="6.1" height="6.1" fill="#E5F0E1" stroke="#9DC48F" stroke-width=".05" stroke-dasharray=".2 .12"/>
+
+  <!-- 플라자 경계(개방, 벽 아님) -->
+  <rect x="2.2" y="1.1" width="4.7" height="15.2" fill="none" stroke="#C05A12" stroke-width=".05" stroke-dasharray=".3 .18"/>
+
+  <!-- 원형 소프트 바닥 -->
+  <circle cx="4.55" cy="5.6" r="2.2" fill="#CFE4F6" stroke="#7FB0DC" stroke-width=".05"/>
+  <circle cx="4.55" cy="5.6" r="1.5" fill="none" stroke="#7FB0DC" stroke-width=".04" stroke-dasharray=".18 .14"/>
+  <circle cx="4.55" cy="12.2" r="2.2" fill="#F5E6CC" stroke="#D9B77E" stroke-width=".05"/>
+  <circle cx="4.55" cy="8.9" r="1.3" fill="#E9DDF3" stroke="#B89AD0" stroke-width=".05" opacity=".95"/>
+  <circle cx="6.05" cy="16.1" r="1" fill="#FBE3D2" stroke="#E8A87C" stroke-width=".05"/>
+
+  <!-- 존 타이틀 -->
+  <text class="t" x="4.55" y="1.62" font-size=".32" text-anchor="middle" font-weight="800" fill="#C05A12">오픈 사운드 플라자</text>
+  <text class="t tm" x="4.55" y="1.98" font-size=".23" text-anchor="middle">R41 대체 · 4,700 × 15,200</text>
+  <text class="t tm" x="4.55" y="7.1" font-size=".25" text-anchor="middle">리듬 플로어 Ø4,400</text>
+  <text class="t tm" x="4.55" y="12.32" font-size=".25" text-anchor="middle">리스닝 가든</text>
+  <text class="t" x="8" y="17.38" font-size=".32" text-anchor="middle" font-weight="800" fill="#3F7A45">오픈 메이커 아뜰리에</text>
+  <text class="t tm" x="8" y="17.74" font-size=".23" text-anchor="middle">아뜰리에·R38 대체 · 6,100 × 6,100</text>
+
+  <!-- ① 사운드 프레임 (H2,100) -->
+  <rect x="3.75" y="2.4" width="1.6" height=".26" fill="#C0392B" rx=".05"/>
+  <!-- ③ 드럼 벤치 (H450) -->
+  <path d="M 2.558 6.75 A 2.3 2.3 0 0 1 2.558 4.45" fill="none" stroke="#5E9E6E" stroke-width=".36" stroke-linecap="round"/>
+  <!-- ⑤ 말하는 관 (상부 H2,200) -->
+  <path d="M 3.95 9.3 Q 3.05 9.75 3.12 11.25" fill="none" stroke="#C0392B" stroke-width=".09" stroke-dasharray=".16 .1"/>
+  <path d="M 5.15 9.3 Q 6.05 9.75 5.98 11.25" fill="none" stroke="#C0392B" stroke-width=".09" stroke-dasharray=".16 .1"/>
+  <!-- ④ 에코 타워 (Ø1,400 · H3,200) -->
+  <circle cx="4.55" cy="8.9" r=".7" fill="#6C4AA3"/>
+  <circle cx="4.55" cy="8.9" r=".45" fill="#EDE6F7"/>
+  <path d="M 4.2 9.52 L 4.9 9.52" stroke="#EDE6F7" stroke-width=".22"/>
+  <!-- ⑥ 기어 뮤직월 (H1,500) / ⑦ 피크홀 리스닝월 (H1,200) -->
+  <path d="M 3.7 13.672 A 1.7 1.7 0 0 1 3.7 10.728" fill="none" stroke="#E07A2E" stroke-width=".22" stroke-linecap="round"/>
+  <path d="M 5.643 10.898 A 1.7 1.7 0 0 1 5.643 13.502" fill="none" stroke="#2F6FB3" stroke-width=".22" stroke-linecap="round"/>
+  <g fill="#2F6FB3"><circle cx="6.12" cy="11.6" r=".06"/><circle cx="6.24" cy="12.2" r=".06"/><circle cx="6.12" cy="12.8" r=".06"/></g>
+  <g fill="none" stroke="#E07A2E" stroke-width=".04"><circle cx="3.15" cy="11.7" r=".14"/><circle cx="2.98" cy="12.2" r=".1"/><circle cx="3.15" cy="12.72" r=".14"/></g>
+
+  <!-- 아뜰리에 -->
+  <!-- ⑬ 재료 스테이션 (구 R38, H900) -->
+  <rect x="7.1" y="14.8" width="3.8" height="1.4" fill="#2A8A8A" rx=".06"/>
+  <text class="t" x="9.6" y="15.58" font-size=".24" text-anchor="middle" fill="#ffffff">재료 스테이션 (구 R38)</text>
+  <!-- ⑧ 사운드 스캐너 (H1,050) -->
+  <rect x="5.3" y="17.6" width=".6" height=".5" fill="#2A8A8A" rx=".05"/>
+  <!-- ⑨ 메이커 테이블 + 스툴 10 -->
+  <ellipse cx="7.9" cy="19.3" rx="1.7" ry=".85" fill="#ffffff" stroke="#5E9E6E" stroke-width=".07"/>
+  <g fill="#F2C58A" stroke="#C99B5C" stroke-width=".03">
+    <circle cx="10.02" cy="19.3" r=".18"/><circle cx="9.615" cy="20.047" r=".18"/><circle cx="8.555" cy="20.508" r=".18"/>
+    <circle cx="7.245" cy="20.508" r=".18"/><circle cx="6.185" cy="20.047" r=".18"/><circle cx="5.78" cy="19.3" r=".18"/>
+    <circle cx="6.185" cy="18.553" r=".18"/><circle cx="7.245" cy="18.092" r=".18"/><circle cx="8.555" cy="18.092" r=".18"/>
+    <circle cx="9.615" cy="18.553" r=".18"/>
+  </g>
+  <!-- ⑩ 공구·부품 작업대 (H600 + 페그보드) -->
+  <rect x="10.45" y="16.9" width=".65" height="4.8" fill="#5E9E6E" rx=".05"/>
+  <!-- ⑪ 작품 갤러리 선반 (H1,200) -->
+  <rect x="5.2" y="21.75" width="5.1" height=".6" fill="#2F6FB3" rx=".05"/>
+  <!-- ⑫ 촉감 소리 트레이 (H450) -->
+  <rect x="5.3" y="20.6" width="1.2" height=".8" fill="#5E9E6E" opacity=".75" rx=".08"/>
+
+  <!-- 치수 -->
+  <g stroke="#7a7772" stroke-width=".035">
+    <line x1="2.2" y1="14.75" x2="6.9" y2="14.75"/>
+    <line x1="2.2" y1="14.6" x2="2.2" y2="14.9"/><line x1="6.9" y1="14.6" x2="6.9" y2="14.9"/>
+  </g>
+  <text class="t tm haloW" x="4.55" y="14.68" font-size=".22" text-anchor="middle">4,700</text>
+
+  <!-- 번호 배지 -->
+  <g class="bdg">
+    <g transform="translate(5.68 2.53)"><circle r=".3"/><text>1</text></g>
+    <g transform="translate(6.02 4.08)"><circle r=".3"/><text>2</text></g>
+    <g transform="translate(3.1 5.6)"><circle r=".3"/><text>3</text></g>
+    <g transform="translate(5.6 8.35)"><circle r=".3"/><text>4</text></g>
+    <g transform="translate(3.2 9.8)"><circle r=".3"/><text>5</text></g>
+    <g transform="translate(3.42 12.2)"><circle r=".3"/><text>6</text></g>
+    <g transform="translate(5.7 12.2)"><circle r=".3"/><text>7</text></g>
+    <g transform="translate(5.6 17.25)"><circle r=".28"/><text>8</text></g>
+    <g transform="translate(7.9 19.3)"><circle r=".3"/><text>9</text></g>
+    <g transform="translate(10.78 16.55)"><circle r=".28"/><text style="font-size:.28px">10</text></g>
+    <g transform="translate(7.75 21.42)"><circle r=".28"/><text style="font-size:.28px">11</text></g>
+    <g transform="translate(5.9 21)"><circle r=".28"/><text style="font-size:.28px">12</text></g>
+    <g transform="translate(7.55 15.5)"><circle r=".28"/><text style="font-size:.28px">13</text></g>
+  </g>
+
+  <!-- 축척·방위 -->
+  <g stroke="#3a3a3a" stroke-width=".05">
+    <line x1="0" y1="22.95" x2="5" y2="22.95"/>
+    <line x1="0" y1="22.8" x2="0" y2="23.1"/><line x1="5" y1="22.8" x2="5" y2="23.1"/>
+  </g>
+  <text class="t tm" x="5.2" y="23.05" font-size=".24">5 m</text>
+  <polygon points="12.6,22.6 12.42,23.1 12.78,23.1" fill="#3a3a3a"/>
+  <text class="t" x="12.95" y="23.08" font-size=".26">N</text>
+</svg>
+</div>
+
+<div class="legend">
+  <div class="lg"><div class="sw" style="background:#5E9E6E"></div><div><b>H 450~600 · 벤치·테이블·작업대</b><span>아이가 앉고 손을 올리는 높이. 시야를 전혀 가리지 않음</span></div></div>
+  <div class="lg"><div class="sw" style="background:#2A8A8A"></div><div><b>H 900~1,050 · 재료 스테이션·스캐너</b><span>스태프 카운터·키오스크 높이</span></div></div>
+  <div class="lg"><div class="sw" style="background:#2F6FB3"></div><div><b>H 1,200 · 리스닝월·갤러리 선반</b><span>보호자가 서서 넘겨 볼 수 있는 저벽 (성인 눈높이 ≈1,550)</span></div></div>
+  <div class="lg"><div class="sw" style="background:#E07A2E"></div><div><b>H 1,500 · 기어 뮤직월</b><span>아이에게는 아늑한 벽, 보호자는 위로 보임. 원 바깥쪽에 배치</span></div></div>
+  <div class="lg"><div class="sw" style="background:#C0392B"></div><div><b>H 2,100~2,200 · 사운드 프레임·말하는 관</b><span>폭이 좁은 자립형 패널·상부 파이프만. 시선 방향과 직각 배치</span></div></div>
+  <div class="lg"><div class="sw" style="background:#6C4AA3"></div><div><b>H 3,200 · 에코 타워 (랜드마크 1개)</b><span>플라자 어디서나 보이는 유일한 높은 요소</span></div></div>
+  <div class="lg"><div class="sw ring" style="background:#CFE4F6;border:2px solid #7FB0DC"></div><div><b>원형 소프트 바닥 = 놀이 구역</b><span>EVA 컬러 인레이. 원이 겹치며 구역이 자연스럽게 이어짐 (레퍼런스와 동일 문법)</span></div></div>
+  <div class="lg"><div class="sw" style="background:#ECE9E2;border:1px solid #cfccc5"></div><div><b>LVT 동선 = 상시 확보 통로</b><span>주 동선 2,200 · 서측 2,000 · 파티룸 운영 1,800. 콘텐츠 배치 금지</span></div></div>
+  <p class="note">치수는 평면 이미지의 축척 막대(5,000)로 읽은 값이라 ±0.3m 오차가 있습니다. 실측 도면으로 확정이 필요합니다.</p>
+</div>
+</div>
+
+<h2><span class="n">02</span>높이 계획 — 벽은 낮게, 랜드마크는 하나</h2>
+<p class="desc">성인 눈높이(≈1,550) 아래의 벽이 대부분이라 보호자가 어디서든 아이를 볼 수 있습니다. 구조체까지 올라가는 벽은 없습니다.</p>
+<div class="secbox">
+<svg viewBox="0 0 16 7.3" role="img" aria-label="스테이션별 높이 단면 다이어그램">
+  <style>
+    .s{font-family:"LINE Seed KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;fill:#3a3a3a}
+    .sm{fill:#7a7772}
+  </style>
+  <rect x="0" y="0" width="16" height="7.3" fill="#ffffff"/>
+  <!-- 천장·스프링클러 -->
+  <line x1=".2" y1="1.04" x2="15.3" y2="1.04" stroke="#2b2b2b" stroke-width=".04" stroke-dasharray=".2 .12"/>
+  <text class="s" x=".25" y=".86" font-size=".25">클리어 최저 5,560 · 검정 노출천장(C-1) · 스프링클러 살수 범위 개방</text>
+  <g fill="#C0392B"><polygon points="2,1.04 1.92,1.2 2.08,1.2"/><polygon points="5,1.04 4.92,1.2 5.08,1.2"/><polygon points="8,1.04 7.92,1.2 8.08,1.2"/><polygon points="11,1.04 10.92,1.2 11.08,1.2"/><polygon points="14,1.04 13.92,1.2 14.08,1.2"/></g>
+  <!-- 성인 눈높이 -->
+  <line x1=".2" y1="5.05" x2="15.3" y2="5.05" stroke="#E07A2E" stroke-width=".035" stroke-dasharray=".14 .1"/>
+  <text class="s" x="3.0" y="4.95" font-size=".22" text-anchor="start" fill="#C05A12">성인 눈높이 ≈1,550</text>
+  <!-- 바닥 -->
+  <line x1=".2" y1="6.6" x2="15.3" y2="6.6" stroke="#2b2b2b" stroke-width=".05"/>
+  <!-- 사람 -->
+  <g fill="#B9B5AE">
+    <circle cx=".72" cy="5.82" r=".11"/><rect x=".6" y="5.93" width=".24" height=".67" rx=".08"/>
+    <circle cx="1.45" cy="5.53" r=".13"/><rect x="1.3" y="5.66" width=".3" height=".94" rx=".1"/>
+    <circle cx="2.3" cy="5.05" r=".15"/><rect x="2.11" y="5.2" width=".38" height="1.4" rx=".12"/>
+  </g>
+  <text class="s sm" x=".72" y="6.92" font-size=".2" text-anchor="middle">영유아 900</text>
+  <text class="s sm" x="1.45" y="7.18" font-size=".2" text-anchor="middle">7세 1,200</text>
+  <text class="s sm" x="2.3" y="6.92" font-size=".2" text-anchor="middle">성인 1,700</text>
+  <!-- 항목 -->
+  <rect x="3" y="6.15" width=".9" height=".45" fill="#5E9E6E" rx=".05"/>
+  <rect x="4.2" y="6.05" width="1" height=".1" fill="#5E9E6E"/><rect x="4.3" y="6.15" width=".08" height=".45" fill="#5E9E6E"/><rect x="5.02" y="6.15" width=".08" height=".45" fill="#5E9E6E"/>
+  <rect x="5.5" y="6" width=".7" height=".6" fill="#5E9E6E" rx=".04"/><rect x="5.5" y="5.1" width=".7" height=".6" fill="none" stroke="#5E9E6E" stroke-width=".04" stroke-dasharray=".08 .06"/>
+  <rect x="6.5" y="5.7" width=".8" height=".9" fill="#2A8A8A" rx=".04"/>
+  <rect x="7.6" y="5.55" width=".5" height="1.05" fill="#2A8A8A" rx=".04"/><line x1="7.85" y1="5.55" x2="7.85" y2="5.12" stroke="#2A8A8A" stroke-width=".04"/><circle cx="7.85" cy="5.02" r=".12" fill="#9ACD32"/>
+  <rect x="8.4" y="5.4" width=".9" height="1.2" fill="#2F6FB3" rx=".04"/>
+  <g fill="#ffffff"><circle cx="8.62" cy="6.0" r=".05"/><circle cx="8.85" cy="5.7" r=".05"/><circle cx="9.08" cy="5.5" r=".05"/></g>
+  <rect x="9.6" y="5.1" width=".9" height="1.5" fill="#E07A2E" rx=".04"/>
+  <circle cx="9.88" cy="5.95" r=".16" fill="none" stroke="#fff" stroke-width=".04"/><circle cx="10.2" cy="5.65" r=".11" fill="none" stroke="#fff" stroke-width=".04"/>
+  <rect x="10.8" y="4.5" width=".35" height="2.1" fill="#C0392B" rx=".04"/>
+  <path d="M 11.45 5.7 L 11.45 4.4 L 12.6 4.4" fill="none" stroke="#C0392B" stroke-width=".08" stroke-dasharray=".14 .08"/>
+  <rect x="12.7" y="3.4" width="1" height="3.2" fill="#6C4AA3" rx=".08"/>
+  <g fill="#EDE6F7"><rect x="12.85" y="5.85" width=".25" height=".18" rx=".04"/><rect x="13.3" y="5.55" width=".25" height=".18" rx=".04"/><rect x="12.85" y="5.25" width=".25" height=".18" rx=".04"/><rect x="13.05" y="3.6" width=".3" height=".3" rx=".15"/></g>
+  <!-- 높이 라벨 -->
+  <g class="s" font-size=".22" text-anchor="middle" font-weight="700">
+    <text x="3.45" y="6.02">450</text><text x="4.7" y="5.92">550</text><text x="5.85" y="4.98">600 / 1,500</text>
+    <text x="6.9" y="5.57">900</text><text x="7.85" y="4.82">1,050</text><text x="8.85" y="5.27">1,200</text>
+    <text x="10.05" y="4.97">1,500</text><text x="10.97" y="4.37">2,100</text><text x="12" y="4.27">2,200</text><text x="13.2" y="3.27">3,200</text>
+  </g>
+  <g class="s sm" font-size=".19" text-anchor="middle">
+    <text x="3.45" y="6.92">③ 벤치</text><text x="4.7" y="6.92">⑨ 테이블</text><text x="5.85" y="6.92">⑩ 작업대</text>
+    <text x="6.9" y="6.92">⑬ 재료</text><text x="7.85" y="6.92">⑧ 스캐너</text><text x="8.85" y="6.92">⑦⑪ 저벽</text>
+    <text x="10.05" y="6.92">⑥ 기어월</text><text x="10.97" y="7.18">① 프레임</text><text x="12" y="6.92">⑤ 말하는 관</text><text x="13.2" y="7.18">④ 에코 타워</text>
+  </g>
+  <!-- 높이축 -->
+  <g stroke="#9a968f" stroke-width=".03"><line x1="15.05" y1="6.6" x2="15.05" y2="1.04"/>
+    <line x1="14.95" y1="5.6" x2="15.15" y2="5.6"/><line x1="14.95" y1="4.6" x2="15.15" y2="4.6"/><line x1="14.95" y1="3.6" x2="15.15" y2="3.6"/><line x1="14.95" y1="2.6" x2="15.15" y2="2.6"/><line x1="14.95" y1="1.6" x2="15.15" y2="1.6"/></g>
+  <g class="s sm" font-size=".18"><text x="15.2" y="5.66">1m</text><text x="15.2" y="4.66">2m</text><text x="15.2" y="3.66">3m</text><text x="15.2" y="2.66">4m</text><text x="15.2" y="1.66">5m</text></g>
+</svg>
+</div>
+
+<h2><span class="n">03</span>체험 스테이션</h2>
+<p class="desc">플라자는 ‘듣고 울리는’ 곳, 아뜰리에는 ‘만들어서 플라자로 보내는’ 곳입니다.</p>
+
+<div class="grp">오픈 사운드 플라자 (R41 대체)</div>
+<div class="cards">
+  <div class="card"><div class="no">1</div><h3>사운드 프레임</h3><p>플라자 입구의 양면 인터랙티브 패널. 손으로 그린 선이 소리로 바뀝니다. 주 동선에서 보이는 ‘간판’ 역할.</p><div class="chips"><span class="chip h" style="background:#C0392B">H 2,100</span><span class="chip">1,600 W · 양면</span><span class="chip">4~10세</span><span class="chip">전원·데이터</span></div></div>
+  <div class="card"><div class="no">2</div><h3>리듬 플로어</h3><p>Ø4,400 원형 소프트 바닥에 천장 프로젝터로 비트 패턴을 투사합니다. 밟으면 드럼·멜로디가 납니다. 센서는 천장형이라 바닥 매립이 없습니다.</p><div class="chips"><span class="chip">바닥</span><span class="chip">동시 8~10명</span><span class="chip">3~10세</span><span class="chip">프로젝터 1 · 센서</span></div></div>
+  <div class="card"><div class="no">3</div><h3>드럼 벤치</h3><p>리듬 플로어 서측 곡면 벤치. 보호자 좌석이면서 상판 일부가 타악기 패드입니다(아날로그).</p><div class="chips"><span class="chip h" style="background:#5E9E6E">H 450</span><span class="chip">길이 ≈2.4m</span><span class="chip">전 연령</span><span class="chip">무전원</span></div></div>
+  <div class="card"><div class="no">4</div><h3>에코 타워</h3><p>플라자 랜드마크. 안에 들어가 말하면 꼭대기 조명이 소리 크기만큼 차오릅니다. 창 높이를 600·900·1,200으로 나눠 연령별로 들여다봅니다.</p><div class="chips"><span class="chip h" style="background:#6C4AA3">H 3,200</span><span class="chip">Ø1,400 · 입구 ≥900</span><span class="chip">2~10세</span><span class="chip">전원</span></div></div>
+  <div class="card"><div class="no">5</div><h3>말하는 관</h3><p>타워와 양쪽 곡면벽을 상부(H2,200) 파이프로 잇고, 끝단만 입·귀 높이로 내립니다. 멀리 있는 친구와 비밀 대화를 합니다.</p><div class="chips"><span class="chip h" style="background:#C0392B">상부 H 2,200</span><span class="chip">관경 Ø100</span><span class="chip">4~10세</span><span class="chip">무전원</span></div></div>
+  <div class="card"><div class="no">6</div><h3>기어 뮤직월</h3><p>리스닝 가든 서측 곡면벽. 크랭크와 기어를 돌리면 오르골 멜로디가 납니다(기계식). 레퍼런스의 기어 패널을 소리 장치로 바꾼 것.</p><div class="chips"><span class="chip h" style="background:#E07A2E">H 1,500</span><span class="chip">곡면 ≈3.6m</span><span class="chip">4~10세</span><span class="chip">조명용 전원(선택)</span></div></div>
+  <div class="card"><div class="no">7</div><h3>피크홀 리스닝월</h3><p>동측 곡면벽. 높이별 구멍(600·900·1,100)에 귀를 대면 자연·동물 소리가 납니다. 소리는 구멍 안에서만 들리도록 근거리 스피커를 씁니다.</p><div class="chips"><span class="chip h" style="background:#2F6FB3">H 1,200</span><span class="chip">곡면 ≈3.0m</span><span class="chip">2~7세</span><span class="chip">전원</span></div></div>
+</div>
+
+<div class="grp">오픈 메이커 아뜰리에 (아뜰리에 · R38 대체)</div>
+<div class="cards">
+  <div class="card"><div class="no">8</div><h3>사운드 스캐너</h3><p>아뜰리에 입구 키오스크. 아이가 그린 ‘소리 생물’을 스캔하면 리듬 플로어·블럭 벽에 등장합니다. 두 공간을 잇는 연결 고리.</p><div class="chips"><span class="chip h" style="background:#2A8A8A">H 1,050</span><span class="chip">캐릭터 사인 포함 1,600</span><span class="chip">4~10세</span><span class="chip">전원·데이터</span></div></div>
+  <div class="card"><div class="no">9</div><h3>메이커 테이블</h3><p>타원형 공용 테이블과 스툴 10개. 쉐이커·종이 드럼·고무줄 기타 같은 건식 악기 만들기를 합니다.</p><div class="chips"><span class="chip h" style="background:#5E9E6E">H 550</span><span class="chip">3,400 × 1,700</span><span class="chip">동시 10명</span><span class="chip">4~10세</span></div></div>
+  <div class="card"><div class="no">10</div><h3>공구·부품 작업대</h3><p>파티룸 2 벽면의 카운터. 상단 페그보드에 재료와 부품을 걸어 셀프로 가져갑니다.</p><div class="chips"><span class="chip h" style="background:#5E9E6E">H 600</span><span class="chip">페그보드 상단 1,500</span><span class="chip">길이 4.8m</span></div></div>
+  <div class="card"><div class="no">11</div><h3>작품 갤러리 선반</h3><p>남측 외벽의 큐비 선반. 이름표를 붙여 당일 전시하고, 퇴장할 때 가져갑니다.</p><div class="chips"><span class="chip h" style="background:#2F6FB3">H 1,200</span><span class="chip">길이 5.1m</span><span class="chip">큐비형</span></div></div>
+  <div class="card"><div class="no">12</div><h3>촉감 소리 트레이</h3><p>영유아용 밀폐형 촉감·소리 트레이(방울·쌀알 등). 보호자와 함께 앉아서 놉니다.</p><div class="chips"><span class="chip h" style="background:#5E9E6E">H 450</span><span class="chip">1,200 × 800</span><span class="chip">0~3세</span></div></div>
+  <div class="card"><div class="no">13</div><h3>재료 스테이션 (구 R38)</h3><p>잠금 수납과 스태프 카운터. 아뜰리에 쪽(남향)으로 열리고, 운영 동선 쪽 면은 안내판으로 씁니다.</p><div class="chips"><span class="chip h" style="background:#2A8A8A">H 900</span><span class="chip">3,800 × 1,400</span><span class="chip">스태프 1인</span></div></div>
+</div>
+
+<h2><span class="n">04</span>디자인 원칙</h2>
+<div class="rules">
+  <div class="rule"><b>벽은 칸막이가 아니라 놀이 면</b><span>모든 벽에 소리·구멍·기어 같은 기능이 있습니다. 구조체까지 올라가는 벽은 없습니다.</span></div>
+  <div class="rule"><b>경계는 바닥 색으로</b><span>원형 소프트 바닥이 놀이 구역, 그 밖은 LVT 동선입니다. 원끼리 겹치며 구역이 자연스럽게 이어집니다.</span></div>
+  <div class="rule"><b>높은 요소는 타워 하나</b><span>3,200 타워가 플라자 어디서나 보이는 길잡이이고, 나머지는 2,100 이하로 시야를 엽니다.</span></div>
+  <div class="rule"><b>만들고 → 보내고 → 듣는다</b><span>아뜰리에에서 그린 소리 생물이 스캐너를 거쳐 플라자 리듬 플로어에 나타납니다. 다시 아뜰리에로 돌아오는 순환 동선입니다.</span></div>
+  <div class="rule"><b>보호자 시선 우선</b><span>1,200 이하 벽을 원 안쪽에, 1,500 벽은 원 바깥쪽에 둡니다. 드럼 벤치에서 두 원이 모두 보입니다.</span></div>
+</div>
+
+<h2><span class="n">05</span>기존 계획 대비 변경</h2>
+<div class="tw"><table>
+<thead><tr><th>구역</th><th>현재 평면</th><th>제안</th></tr></thead>
+<tbody>
+<tr><td><b>R41</b></td><td>2.2 × 7.5m 박스(용도 미정)</td><td>박스를 없애고 <b>오픈 사운드 플라자</b>로 영역 전체(≈71㎡)를 활용</td></tr>
+<tr><td><b>아뜰리에</b></td><td>소형 폐쇄형 부스 5개</td><td>부스 대신 <b>공용 테이블 + 벽면 작업대 + 갤러리 선반</b>으로 개방</td></tr>
+<tr><td><b>R38</b></td><td>소형 구획(용도 미정)</td><td>아뜰리에 <b>재료 스테이션·스태프 카운터</b>(H900)</td></tr>
+<tr><td><b>블럭</b></td><td>—</td><td>기존 유지. 사운드 스캐너 결과를 블럭 벽에도 송출(선택)</td></tr>
+</tbody></table></div>
+
+<h2><span class="n">06</span>설계 조율 체크 — 앞선 검토와 연결</h2>
+<div class="tw"><table class="chk">
+<thead><tr><th>항목</th><th>이 안의 대응</th></tr></thead>
+<tbody>
+<tr><td>스프링클러</td><td>벽은 최대 2,100(타워 3,200)이고 상부가 열려 있어 살수 장애가 없습니다. 단 <b>폭 1.2m(4ft)를 넘는 지붕·캐노피는 두지 않습니다</b>(NFPA 13상 하부 헤드 추가 대상). 타워 상부도 개방 또는 그릴로 처리합니다.</td></tr>
+<tr><td>피난 · 동선</td><td>주 동선 2,200 · 서측 2,000 · 파티룸 운영 1,800을 LVT로 상시 확보하고 그 위엔 콘텐츠를 두지 않습니다. 곡면벽 양쪽에 1,200 이상 개구를 둬서 막다른 공간이 생기지 않습니다.</td></tr>
+<tr><td>음향</td><td>북쪽 비치뷰 F&amp;B, 동쪽 파티룸과 붙어 있습니다. <b>근거리 스피커(사운드 돔·리스닝 홀)</b>로 소리를 가두고, 3m 지점 70 dB(A) 이하를 목표로 합니다. 곡면벽 안쪽 흡음 펠트, ‘조용한 시간’ 운영 모드도 둡니다.</td></tr>
+<tr><td>전원 · 데이터</td><td><b>5" 무근 슬래브 절단을 피하도록 천장에서 내려받습니다</b>(타워 내부·프레임 상부로 배선). 리듬 플로어 센서도 천장형이라 바닥 매립이 없습니다.</td></tr>
+<tr><td>바닥 마감</td><td>원형 = 소프트 EVA 컬러 인레이, 동선 = LVT. 디자인 가이드 피드백(동선은 경질 바닥)과 같은 원칙이고, 경계 단차는 0입니다.</td></tr>
+<tr><td>물 · 위생</td><td>건식 공예만 운영해 급배수가 필요 없습니다. 물감·점토 같은 습식 공예를 원하면 손세정대가 필요하고, 이때 배수 때문에 슬래브 절단·재타설 비용이 생깁니다.</td></tr>
+<tr><td>운영</td><td>아뜰리에는 프로그램 시간에 스태프 1인(재료 스테이션), 그 외 시간은 자유 이용입니다. 플라자는 무인 운영입니다.</td></tr>
+</tbody></table></div>
+
+<h2><span class="n">07</span>레퍼런스 3D에서 가져온 것</h2>
+<div class="tw"><table>
+<thead><tr><th>레퍼런스 요소</th><th>이 안에서의 적용</th></tr></thead>
+<tbody>
+<tr><td>겹치는 원형 컬러 바닥</td><td>리듬 플로어 · 타워 원 · 리스닝 가든 · 아뜰리에 입구 원이 겹치며 이어짐</td></tr>
+<tr><td>창·구멍이 난 흰 곡면 저벽</td><td>기어 뮤직월(1,500) · 피크홀 리스닝월(1,200)</td></tr>
+<tr><td>원통 타워</td><td>에코 타워 — 유일한 랜드마크</td></tr>
+<tr><td>노란 프레임 패널</td><td>사운드 프레임 — 플라자 입구 양면 패널</td></tr>
+<tr><td>기어·바퀴 패널</td><td>기어 뮤직월의 크랭크 오르골</td></tr>
+<tr><td>캐릭터 사인 박스</td><td>사운드 스캐너 상부 캐릭터 사인</td></tr>
+<tr><td>아치 브리지와 파이프</td><td>말하는 관 — 상부 연결 파이프</td></tr>
+</tbody></table></div>
+
+<h2><span class="n">08</span>정해 주셔야 할 것</h2>
+<div class="ask">
+<ol>
+  <li><b>테마</b> — 배치안 이름에 맞춰 ‘사운드 메이커’로 가정했습니다. 다른 테마로 가도 골격(원형 바닥 + 곡면 저벽 + 타워 + 아뜰리에 연결)은 그대로 쓸 수 있습니다.</li>
+  <li><b>대상 연령 비중</b> — 영유아 비중이 크면 1,200 벽을 900으로 낮추고 촉감 트레이를 키웁니다.</li>
+  <li><b>아뜰리에 운영 방식</b> — 자유 이용인지, 예약형(유료) 워크숍인지에 따라 테이블 수와 스태프 배치가 달라집니다.</li>
+  <li><b>미디어 범위</b> — 프로젝터 1, 터치 패널 1, 스캐너 1 수준으로 가정했습니다. 줄이면 아날로그 비중이 커지고 예산이 내려갑니다.</li>
+</ol>
+</div>
+
+<p class="foot">ARTE KIDS PARK DENVER · 6707 S. Vine St, Centennial CO · 평면 치수는 ‘사운드 메이커 개방 배치안’ 이미지(축척 막대 5,000) 판독값이며, 실측 도면으로 확정이 필요합니다.</p>
+</div>
+</body>
+</html>
